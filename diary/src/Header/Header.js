@@ -1,6 +1,11 @@
 import React from "react";
 import * as S from "./HeaderS";
-// import { AccessAlarm } from "@mui/icons-material";
+import {
+  WbSunnyOutlined,
+  CloudOutlined,
+  BeachAccessOutlined,
+  AcUnitOutlined,
+} from "@material-ui/icons";
 const Today = () => {
   const date = new Date();
   const year = date.getFullYear();
@@ -18,7 +23,12 @@ const Header = () => {
         <S.Hright>
           <Today />
         </S.Hright>
-        <S.Hleft>{/* <AccessAlarm /> */}</S.Hleft>
+        <S.Hleft>
+          <WbSunnyOutlined />
+          <CloudOutlined />
+          <BeachAccessOutlined />
+          <AcUnitOutlined />
+        </S.Hleft>
       </S.Header>
     </>
   );

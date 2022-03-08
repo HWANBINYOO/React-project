@@ -5,8 +5,10 @@ export const Header = styled.header`
   
   width: 90%;
   height: 10vh;
-  background-color: red;
+//   background-color: red;
   margin 0 auto;
+
+  border: px black solid;
 `;
 
 export const Hright = styled.div`

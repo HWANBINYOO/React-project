@@ -1,7 +1,7 @@
 import React from "react";
-import * as S from "./mainS";
+import * as S from "./PicktureS";
 
-const Main = () => {
+const Pickture = () => {
   return (
     <>
       <S.DiaryBox>
@@ -13,4 +13,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Pickture;
