@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <>
       <S.DiaryBox>
-        {/* <S.Header />
+        {/* 
         <S.Pickture />
         <S.Pooter /> */}
       </S.DiaryBox>

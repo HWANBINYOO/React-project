@@ -10,5 +10,5 @@ export const DiaryBox = styled.div`
 
   display: flex;
   justify-content: center;
-  margin 10vh auto;
+  margin 0 auto;
 `;
