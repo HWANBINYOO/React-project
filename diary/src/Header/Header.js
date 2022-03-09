@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./HeaderS";
 import {
   WbSunnyOutlined,
@@ -6,6 +6,7 @@ import {
   BeachAccessOutlined,
   AcUnitOutlined,
 } from "@material-ui/icons";
+
 const Today = () => {
   const date = new Date();
   const year = date.getFullYear();
@@ -17,6 +18,12 @@ const Today = () => {
 };
 
 const Header = () => {
+  const [isActive, setActive] = useState("false");
+
+  const toggleIconStyle = () => {
+    setActive(!isActive);
+  };
+
   return (
     <>
       <S.Header>
@@ -24,10 +31,26 @@ const Header = () => {
           <Today />
         </S.Hright>
         <S.Hleft>
-          <WbSunnyOutlined />
-          <CloudOutlined />
-          <BeachAccessOutlined />
-          <AcUnitOutlined />
+          <WbSunnyOutlined
+            className={isActive ? "paintedSun" : null}
+            fontSize="large"
+            onClick={toggleIconStyle}
+          />
+          <CloudOutlined
+            fontSize="large"
+            className={isActive ? "paintedCloud" : null}
+            onClick={toggleIconStyle}
+          />
+          <BeachAccessOutlined
+            fontSize="large"
+            className={isActive ? "paintedUm" : null}
+            onClick={toggleIconStyle}
+          />
+          <AcUnitOutlined
+            fontSize="large"
+            className={isActive ? "paintedSnow" : null}
+            onClick={toggleIconStyle}
+          />
         </S.Hleft>
       </S.Header>
     </>

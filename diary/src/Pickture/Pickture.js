@@ -5,9 +5,10 @@ const Pickture = () => {
   return (
     <>
       <S.DiaryBox>
-        {/* 
-        <S.Pickture />
-        <S.Pooter /> */}
+        <label className="input-file-button" for="input-file">
+          사진업로드
+        </label>
+        <input type="file" id="input-file" style={{ display: "none" }} />
       </S.DiaryBox>
     </>
   );

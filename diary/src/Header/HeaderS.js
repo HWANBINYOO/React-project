@@ -5,19 +5,41 @@ export const Header = styled.header`
   
   width: 90%;
   height: 10vh;
-//   background-color: red;
   margin 0 auto;
 
-  border: px black solid;
+  // border: 2px black solid;
 `;
 
 export const Hright = styled.div`
   font-size: 2rem;
-  display: flex;
   width: 50%;
+  display: flex;
   align-items: center;
+  border: 2px black solid;
+  background-color: blue;
 `;
 export const Hleft = styled.div`
+  width: 50%;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+
+  border: 2px black solid;
+
+  .paintedSun {
+    border-radius: 50%;
+    background-color: yellow;
+  }
+  .paintedCloud {
+    border-radius: 50%;
+    background-color: grey;
+  }
+  .paintedUm {
+    border-radius: 50%;
+    background-color: red;
+  }
+  .paintedSnow {
+    border-radius: 50%;
+    background-color: yellow;
+  }
 `;
