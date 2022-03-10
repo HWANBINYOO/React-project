@@ -11,7 +11,9 @@ font-family: "LeeSeoyun";
   justify-content: center;
   align-items:center;
 
-  border: 2px black solid;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
   margin 0 auto;
 
   label{

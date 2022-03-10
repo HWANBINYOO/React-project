@@ -15,6 +15,7 @@ export const Hright = styled.div`
   font-size: 2rem;
   width: 50%;
   display: flex;
+  justify-content: center;
   align-items: center;
   border-top: 2px solid black;
   border-left: 2px solid black;
@@ -35,11 +36,11 @@ export const Hleft = styled.div`
 
   .paintedSun {
     border-radius: 50%;
-    background-color: yellow;
+    background-color: #f08080;
   }
   .paintedCloud {
     border-radius: 50%;
-    background-color: grey;
+    background-color: #d3d3d3;
   }
   .paintedUm {
     border-radius: 50%;

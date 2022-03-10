@@ -1,18 +1,16 @@
 import React from "react";
-import Dontent from "./Content/Dontent";
+import Dcalendar from "./Content/Dcalendar";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
-import Picture from "./Pickture/Pickture";
 
-const MainPage = () => {
+const CalendarPage = () => {
   return (
     <>
       <Header />
-      <Picture />
-      <Dontent />
+      <Dcalendar />
       <Footer />
     </>
   );
 };
 
-export default MainPage;
+export default CalendarPage;
