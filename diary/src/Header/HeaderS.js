@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
+font-family: "LeeSeoyun";
+
   display: flex;
-  
   width: 90%;
   height: 10vh;
-  margin 0 auto;
+  margin 5vh auto 0;
 
   // border: 2px black solid;
 `;
@@ -15,8 +16,11 @@ export const Hright = styled.div`
   width: 50%;
   display: flex;
   align-items: center;
-  border: 2px black solid;
-  background-color: blue;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+
+  // border: 2px black solid;
+  // background-color: blue;
 `;
 export const Hleft = styled.div`
   width: 50%;
@@ -24,7 +28,10 @@ export const Hleft = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  border: 2px black solid;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  // border: 2px black solid;
 
   .paintedSun {
     border-radius: 50%;
