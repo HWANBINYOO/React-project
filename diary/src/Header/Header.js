@@ -6,7 +6,6 @@ import {
   BeachAccessOutlined,
   AcUnitOutlined,
 } from "@material-ui/icons";
-
 const Today = () => {
   const date = new Date();
   const year = date.getFullYear();
