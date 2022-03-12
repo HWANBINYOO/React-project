@@ -24,10 +24,11 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Routes>
+      <CalendarPage />
+      {/* <Routes>
         <Route path="/" element={<CalendarPage />} />
         <Route path="/Main" element={<MainPage />} />
-      </Routes>
+      </Routes> */}
     </>
   );
 }

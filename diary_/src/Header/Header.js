@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import * as S from "./HeaderS";
-import {
-  WbSunnyOutlined,
-  CloudOutlined,
-  BeachAccessOutlined,
-  AcUnitOutlined,
-} from "@material-ui/icons";
+// import {
+//   WbSunnyOutlinedIcon,
+//   CloudOutlinedIcon,
+//   BeachAccessOutlinedIcon,
+//   AcUnitOutlinedIcon,
+// } from "@material-ui/icons";
 const Today = () => {
   const date = new Date();
   const year = date.getFullYear();
@@ -17,23 +17,23 @@ const Today = () => {
 };
 
 const Header = () => {
-  const [isActive1, setActive1] = useState("false");
-  const [isActive2, setActive2] = useState("false");
-  const [isActive3, setActive3] = useState("false");
-  const [isActive4, setActive4] = useState("false");
+  // const [isActive1, setActive1] = useState("false");
+  // const [isActive2, setActive2] = useState("false");
+  // const [isActive3, setActive3] = useState("false");
+  // const [isActive4, setActive4] = useState("false");
 
-  const toggleIconStyle1 = () => {
-    setActive1(!isActive1);
-  };
-  const toggleIconStyle2 = () => {
-    setActive2(!isActive2);
-  };
-  const toggleIconStyle3 = () => {
-    setActive3(!isActive3);
-  };
-  const toggleIconStyle4 = () => {
-    setActive4(!isActive4);
-  };
+  // const toggleIconStyle1 = () => {
+  //   setActive1(!isActive1);
+  // };
+  // const toggleIconStyle2 = () => {
+  //   setActive2(!isActive2);
+  // };
+  // const toggleIconStyle3 = () => {
+  //   setActive3(!isActive3);
+  // };
+  // const toggleIconStyle4 = () => {
+  //   setActive4(!isActive4);
+  // };
 
   return (
     <>
@@ -41,28 +41,28 @@ const Header = () => {
         <S.Hright>
           <Today />
         </S.Hright>
-        <S.Hleft>
-          <WbSunnyOutlined
+        {/* <S.Hleft>
+          <WbSunnyOutlinedIcon
             className={isActive1 ? null : "paintedSun"}
             fontSize="large"
             onClick={toggleIconStyle1}
           />
-          <CloudOutlined
+          <CloudOutlinedIcon
             fontSize="large"
             className={isActive2 ? null : "paintedCloud"}
             onClick={toggleIconStyle2}
           />
-          <BeachAccessOutlined
+          <BeachAccessOutlinedIcon
             fontSize="large"
             className={isActive3 ? null : "paintedUm"}
             onClick={toggleIconStyle3}
           />
-          <AcUnitOutlined
+          <AcUnitOutlinedIcon
             fontSize="large"
             className={isActive4 ? null : "paintedSnow"}
             onClick={toggleIconStyle4}
           />
-        </S.Hleft>
+        </S.Hleft> */}
       </S.Header>
     </>
   );

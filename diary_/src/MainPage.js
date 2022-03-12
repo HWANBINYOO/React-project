@@ -1,14 +1,14 @@
 import React from "react";
-import Dontent from "./Content/Dontent";
+import Dontent from "./content/Dontent";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
-import Picture from "./Pickture/Pickture";
+import Pickture from "./Pickture/Pickture";
 
 const MainPage = () => {
   return (
     <>
       <Header />
-      <Picture />
+      <Pickture />
       <Dontent />
       <Footer />
     </>

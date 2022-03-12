@@ -7,12 +7,13 @@ export const Footer = styled.div`
     display: flex;
     justify-content: center;
     align-items:center;
-    
+
+    background-color : black;
+    border: 2px black solid;
+    margin 0 auto;
+
     .icon-link{
         text-decoration:none;
         color:black;
     }
-
-    border: 2px black solid;
-    margin 0 auto;
 `;
