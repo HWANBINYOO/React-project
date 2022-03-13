@@ -34,17 +34,32 @@ export const Dcontent = styled.div`
             display: flex;
             justify-content: space-around;
             align-items:center;
+
+            button{
+                font-family: "LeeSeoyun";
+                border-radius:5%;
+                height:15%;
+                width:10%;
+                border:none;
+                font-size:1rem;
+                
+            }
+
+            // .blackCircle{
+            //     border-radius:50%;
+            //     background-color:black;
+            // }
+            // .yellowCircle{
+            //     border-radius:50%;
+            //     background-color:yellow;
+            // }
+            // .redCircle{
+            //     border-radius:50%;
+            //     background-color:red;
+            // }
         }
 
-        button{
-            font-family: "LeeSeoyun";
-            border-radius:5%;
-            height:15%;
-            width:10%;
-            border:none;
-            font-size:1rem;
-            
-        }
+   
     
     }
 

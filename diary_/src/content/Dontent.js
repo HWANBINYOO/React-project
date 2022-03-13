@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./DontentS";
-import { Brightness1Outlined } from "@material-ui/icons";
+import { Brightness1 } from "@material-ui/icons";
 const Content = () => {
   return (
     <>
@@ -10,9 +10,9 @@ const Content = () => {
           <div>
             <button typeof="submit">완료</button>
             <div>
-              <Brightness1Outlined />
-              <Brightness1Outlined />
-              <Brightness1Outlined />
+              <Brightness1 className={"redCircle"} />
+              <Brightness1 color="primary" className={"blackCircle"} />
+              <Brightness1 color="secondary" className={"yellowCircle"} />
             </div>
           </div>
         </form>
