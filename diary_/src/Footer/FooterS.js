@@ -8,7 +8,6 @@ export const Footer = styled.div`
     justify-content: center;
     align-items:center;
 
-    background-color : black;
     border: 2px black solid;
     margin 0 auto;
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import MainPage from "./MainPage";
+import MainPage from "./Page/MainPage";
+import CalendarPage from "./Page/CalendarPage";
 import { createGlobalStyle } from "styled-components";
-import CalendarPage from "./CalendarPage";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -24,11 +24,10 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <CalendarPage />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<CalendarPage />} />
         <Route path="/Main" element={<MainPage />} />
-      </Routes> */}
+      </Routes>
     </>
   );
 }

@@ -18,6 +18,7 @@ export const Dcontent = styled.div`
         // background-color:grey;
 
 
+
         textarea{
             font-family: "LeeSeoyun";
             width:100%;
@@ -26,6 +27,13 @@ export const Dcontent = styled.div`
             border: none;
             outline:none;
             font-size:1.5rem;
+        }
+
+
+        div{
+            display: flex;
+            justify-content: space-around;
+            align-items:center;
         }
 
         button{
