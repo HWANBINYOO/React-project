@@ -27,6 +27,10 @@ export const Dcontent = styled.div`
             border: none;
             outline:none;
             font-size:1.5rem;
+            color: ${(props) => props.textColor}
+        }
+        textarea::-webkit-input-placeholder {
+            color: ${(props) => props.textColor}
         }
 
 
@@ -44,24 +48,10 @@ export const Dcontent = styled.div`
                 font-size:1rem;
                 
             }
-
-            // .blackCircle{
-            //     border-radius:50%;
-            //     background-color:black;
-            // }
-            // .yellowCircle{
-            //     border-radius:50%;
-            //     background-color:yellow;
-            // }
-            // .redCircle{
-            //     border-radius:50%;
-            //     background-color:red;
-            // }
         }
 
    
     
     }
-
 
 `;

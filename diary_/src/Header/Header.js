@@ -17,22 +17,34 @@ const Today = () => {
 };
 
 const Header = () => {
-  const [isActive1, setActive1] = useState("false");
-  const [isActive2, setActive2] = useState("false");
-  const [isActive3, setActive3] = useState("false");
-  const [isActive4, setActive4] = useState("false");
+  const [isActive1, setActive1] = useState(true);
+  const [isActive2, setActive2] = useState(true);
+  const [isActive3, setActive3] = useState(true);
+  const [isActive4, setActive4] = useState(true);
 
   const toggleIconStyle1 = () => {
     setActive1(!isActive1);
+    setActive2(true);
+    setActive3(true);
+    setActive4(true);
   };
   const toggleIconStyle2 = () => {
     setActive2(!isActive2);
+    setActive1(true);
+    setActive3(true);
+    setActive4(true);
   };
   const toggleIconStyle3 = () => {
     setActive3(!isActive3);
+    setActive1(true);
+    setActive2(true);
+    setActive4(true);
   };
   const toggleIconStyle4 = () => {
     setActive4(!isActive4);
+    setActive1(true);
+    setActive3(true);
+    setActive3(true);
   };
 
   return (
@@ -43,7 +55,7 @@ const Header = () => {
         </S.Hright>
         <S.Hleft>
           <WbSunnyOutlined
-            className={isActive1 ? null : "paintedSun"}
+            className={isActive1 ? "" : "paintedSun"}
             fontSize="large"
             onClick={toggleIconStyle1}
           />
