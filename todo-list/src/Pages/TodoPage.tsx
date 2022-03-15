@@ -4,6 +4,7 @@ import Header from "../component/Header/Header";
 import Todolist from "../component/Todolist/Todolist";
 
 const TodoPage = () => {
+  let listId: number = 2;
   const [todolist, setTodolist] = useState([
     {
       id: 1,
@@ -19,10 +20,19 @@ const TodoPage = () => {
     },
   ]);
 
+  const handdleTodolist = (text: string) => {
+    const todo = {
+      id: listId + 1,
+      text,
+    };
+    setTodolist(todolist.concat(todo));
+    listId += 1;
+  };
+
   return (
     <>
       <Header />
-      <TodoInput />
+      <TodoInput onSubmit={handdleTodolist} />
       <Todolist todolist={todolist} />
     </>
   );
