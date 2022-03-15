@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { FC } from 'react';
 import * as S from './Style';
 
-const Header = () => {
+const Header: FC = () => {
   return (
     <>
       <S.Header>
-        <h1>TodoApp</h1>
+        <p>TodoList</p>
       </S.Header>
     </>
   );
