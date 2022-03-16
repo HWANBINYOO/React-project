@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Todolist = styled.div`
-  width: 80%;
-  height: 80vh;
-  border: 0.5px black solid;
+  font-family: "LeeSeoyun";
 
+  width: 80%;
+  height: 800vh;
   margin: 0 auto;
+  // border: 0.5px black solid;
 `;

@@ -1,16 +1,15 @@
+/* eslint-disable eqeqeq */
 import React, { useState } from "react";
 import * as S from "./Style";
 
 const TodoInput = (props: any) => {
   const [todoInput, setTodoInput] = useState("");
-
   const onChange = (e: any) => {
     setTodoInput(e.target.value);
   };
-
   const onSubmit = (e: any) => {
     e.preventDefault();
-    if (todoInput == null) {
+    if (todoInput == "") {
       return;
     }
     props.onSubmit(todoInput);
@@ -24,7 +23,7 @@ const TodoInput = (props: any) => {
         <form onSubmit={onSubmit}>
           <S.InputBox>
             <input
-              placeholder="할일을입력하세요"
+              placeholder="할일을 입력하세요"
               type={"text"}
               value={todoInput}
               onChange={onChange}
