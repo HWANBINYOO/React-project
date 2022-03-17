@@ -1,11 +1,10 @@
 import React from "react";
-import inputNumbers from "../component/inputNumbers/inputNumbers";
+import Calculator from "../components/Calculator";
 
 const CalculatorPage = () => {
   return (
     <>
-      <inputNumbers />
-      <Result />
+      <Calculator />
     </>
   );
 };
