@@ -1,8 +1,12 @@
 import React from "react";
-import "./Display.css";
+import * as S from "./DisplaySt";
 
 const Display = (props: any) => {
-  return <div className="Display">{props.data}</div>;
+  return (
+    <>
+      <S.Display>{props.data}</S.Display>
+    </>
+  );
 };
 
 export default Display;

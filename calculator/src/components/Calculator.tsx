@@ -1,7 +1,7 @@
 /* eslint-disable no-eval */
 import React, { useState } from "react";
-import Button from "./Button";
 import * as S from "./CalculatorSt";
+import Button from "./Button";
 import Display from "./Display";
 import Keypad from "./Keypad";
 
