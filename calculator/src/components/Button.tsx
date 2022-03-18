@@ -1,16 +1,16 @@
 import React from "react";
-import "./Button.css";
+import * as S from "./ButtonSt";
 
 const Button = (props: any) => {
   return (
-    <div
+    <S.Button
       className="Button"
       onClick={props.onClick}
       data-size={props.size}
       data-value={props.value}
     >
       {props.label}
-    </div>
+    </S.Button>
   );
 };
 
