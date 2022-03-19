@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import React, { useState } from "react";
 import * as S from "./Style";
 
@@ -9,6 +8,7 @@ const TodoInput = (props: any) => {
   };
   const onSubmit = (e: any) => {
     e.preventDefault();
+    // eslint-disable-next-line eqeqeq
     if (todoInput == "") {
       return;
     }
