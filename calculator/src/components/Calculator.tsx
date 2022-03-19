@@ -16,7 +16,7 @@ const Calculator = () => {
   };
 
   const handleClick = (e: any) => {
-    const value = e.target.getAttribute("data-value");
+    const value = e.target.getAttribute("value");
     switch (value) {
       case "c":
         setState({ data: "" });
