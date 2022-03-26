@@ -1,9 +1,14 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import HeaderPage from "./Page/HomePage";
+import { GlobalStyle } from "./style/GlobalStyle";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <GlobalStyle />
+      <HeaderPage />
+    </>
+  );
 }
 
 export default App;
