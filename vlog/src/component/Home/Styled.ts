@@ -8,7 +8,13 @@ export const Home = styled.div`
   align-items: center;
 `;
 
-export const HelloPickture = styled.img``;
+export const HelloPickture = styled.div`
+  width: 80vw;
+  height: 40vh;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px black solid;
+`;
 
 export const Intrudece = styled.div`
   width: 80vw;
