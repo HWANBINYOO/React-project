@@ -17,6 +17,7 @@ export const HeaderMenu = styled.span`
 
   font-family: "LeeSeoyun";
   cursor: pointer;
+  border-radius: 10px;
 
   font-size: 2.5rem;
   transition: all ease 0.5s 0s;

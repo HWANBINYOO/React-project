@@ -25,12 +25,13 @@ export const HelloPickture = styled.div`
 `;
 
 export const Intrudece = styled.div`
-  width: 80vw;
+  width: 60vw;
   height: 15vh;
   border: 1px solid black;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 10%;
 
   p {
     text-decoration: none;

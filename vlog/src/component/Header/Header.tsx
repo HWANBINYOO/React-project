@@ -1,5 +1,5 @@
 import * as S from "./Styled";
-
+import { Link } from "react-router-dom";
 interface Homes {
   HeaderColor: string;
 }
@@ -7,15 +7,42 @@ interface Homes {
 export default function Header({ HeaderColor }: Homes) {
   return (
     <S.Header>
-      <S.HeaderMenu
-        style={{ fontSize: "2.5rem", backgroundColor: `${HeaderColor}` }}
-      >
-        Home
-      </S.HeaderMenu>
+      <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+        <S.HeaderMenu
+          style={{
+            backgroundColor: `${HeaderColor === "blue" ? "#a3d1f5" : "white"}`,
+          }}
+        >
+          Home
+        </S.HeaderMenu>
+      </Link>
 
-      <S.HeaderMenu style={{ fontSize: "2.5rem" }}>Profile</S.HeaderMenu>
-      <S.HeaderMenu style={{ fontSize: "2.5rem" }}>Project</S.HeaderMenu>
-      <S.HeaderMenu style={{ fontSize: "2.5rem" }}>Blog</S.HeaderMenu>
+      <Link to="/profile" style={{ textDecoration: "none", color: "black" }}>
+        <S.HeaderMenu
+          style={{
+            backgroundColor: `${
+              HeaderColor === "purple" ? "#c8abc5" : "white"
+            }`,
+          }}
+        >
+          Profile
+        </S.HeaderMenu>{" "}
+      </Link>
+
+      <S.HeaderMenu
+        style={{
+          backgroundColor: `${HeaderColor === "yellow" ? "" : "white"}`,
+        }}
+      >
+        Project
+      </S.HeaderMenu>
+      <S.HeaderMenu
+        style={{
+          backgroundColor: `${HeaderColor === "red" ? "red" : "white"}`,
+        }}
+      >
+        Blog
+      </S.HeaderMenu>
     </S.Header>
   );
 }

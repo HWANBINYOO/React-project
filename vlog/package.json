@@ -1,7 +1,7 @@
-
 {
-  "typeRoots": ["src/types"],
-
+  "typeRoots": [
+    "src/types"
+  ],
   "name": "vlog",
   "version": "0.1.0",
   "private": true,
