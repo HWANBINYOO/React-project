@@ -10,10 +10,18 @@ export const Home = styled.div`
 
 export const HelloPickture = styled.div`
   width: 80vw;
-  height: 40vh;
+  height: 45vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   border: 1px black solid;
+
+  img {
+    border: 1px black solid;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+  }
 `;
 
 export const Intrudece = styled.div`

@@ -24,6 +24,6 @@ export const HeaderMenu = styled.span`
 
   &:hover {
     // background-color: ${(props: any) => props.backgroundColor};
-    background-color: #fffbde;
+    background-color: ${(props: any) => props.ProfileColor};
   }
 `;

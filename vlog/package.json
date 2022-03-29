@@ -1,4 +1,7 @@
+
 {
+  "typeRoots": ["src/types"],
+
   "name": "vlog",
   "version": "0.1.0",
   "private": true,
@@ -10,8 +13,12 @@
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.3",
+    "history": "5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router": "^6.2.2",
+    "react-router-dom": "6",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.5",
     "typescript": "^4.4.2",
@@ -42,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router": "^5.1.18",
     "@types/styled-components": "^5.1.24"
   }
 }

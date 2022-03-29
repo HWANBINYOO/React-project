@@ -91,6 +91,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: "LeeSeoyun";
 }
 input:focus,
 select:focus,
@@ -100,7 +101,7 @@ button:focus {
 }
 
 body {
-  background-color: #ecd8cd;
+  background-color: #ffffff;
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;
