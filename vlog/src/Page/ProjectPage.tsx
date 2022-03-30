@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../component/Header/Header";
 import Project from "../component/Project/Project";
+import ProjectButton from "../component/ProjectButton/ProjectButton";
 
 interface Homes {
   HeaderColor: string;
@@ -42,6 +43,11 @@ export const ProjectPage: React.FC<Homes> = ({
       Ido: "Ts 첫 프로젝트로 만들어봤다",
     },
   ]);
+
+  const handleProjects = (id: number): void => {
+    setProjects(Projects.filter((Pr) => Pr.id === id));
+  };
+
   return (
     <>
       <Header HeaderColor={HeaderColor} />
@@ -53,6 +59,7 @@ export const ProjectPage: React.FC<Homes> = ({
         cost={0}
         Ido={""}
       />
+      <ProjectButton Projects={Projects} id={1} onCLick={handleProjects} />
     </>
   );
 };

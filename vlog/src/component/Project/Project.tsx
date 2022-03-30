@@ -11,8 +11,6 @@ interface Home {
   Projects: any;
 }
 
-const handleProject = () => {};
-
 const Project: React.FC<Home> = ({ name, term, cost, Ido, Projects }) => {
   return (
     <>
@@ -28,14 +26,6 @@ const Project: React.FC<Home> = ({ name, term, cost, Ido, Projects }) => {
           />
         ))}
       </S.Project>
-
-      <S.ShowButoons>
-        {Projects.map((ProjectList: any) => (
-          <S.ProjectButton onClick={() => handleProject(ProjectList.id)}>
-            {ProjectList.id}
-          </S.ProjectButton>
-        ))}
-      </S.ShowButoons>
     </>
   );
 };
