@@ -33,7 +33,7 @@ export const ProjectItem: React.FC<Homes> = ({
         </S.ProjectBox>
         <S.ProjectBox>
           <p>한일</p>
-          {ProjectList.Ido}
+          <span> {ProjectList.Ido}</span>
         </S.ProjectBox>
       </S.ProjectItem>
     </>

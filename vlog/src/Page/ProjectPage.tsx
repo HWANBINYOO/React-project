@@ -23,7 +23,6 @@ export const ProjectPage: React.FC<Homes> = ({
     {
       id: 1,
       name: "DM",
-
       term: 50,
       cost: 30000,
       Ido: "DM 디자인과 로그인,게시판 구역을 프론트하는중이다.",
@@ -46,7 +45,14 @@ export const ProjectPage: React.FC<Homes> = ({
   return (
     <>
       <Header HeaderColor={HeaderColor} />
-      <Project Projects={Projects} />
+      <Project
+        Projects={Projects}
+        id={0}
+        name={""}
+        term={0}
+        cost={0}
+        Ido={""}
+      />
     </>
   );
 };
