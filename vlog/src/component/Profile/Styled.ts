@@ -1,21 +1,25 @@
 import styled from "styled-components";
 
 export const Protile = styled.div`
-  width: 100%;
-  height: 80vh;
+  width: 75vw;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  /* background-color: black; */
+  border: 1px black solid;
 `;
 
 export const Content = styled.div`
-  width: 60vw;
+  width: 55vw;
   height: 15vh;
   border: 1px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 10vw;
 
   p {
     text-decoration: none;

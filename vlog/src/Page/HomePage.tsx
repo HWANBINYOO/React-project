@@ -6,7 +6,7 @@ interface Homes {
   HeaderColor: string;
 }
 
-export default function HeaderPage({ HeaderColor }: Homes) {
+export default function HomePage({ HeaderColor }: Homes) {
   return (
     <>
       <Header HeaderColor={HeaderColor} />
