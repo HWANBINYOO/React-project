@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectButton from "../ProjectButton/ProjectButton";
 import ProjectItem from "../ProjectItem/ProjectItem";
 import * as S from "./Styled";
@@ -23,7 +23,7 @@ const Project: React.FC<Homes> = () => {
     },
     {
       id: 2,
-      name: "Hlog",
+      name: "blog",
       term: 4,
       cost: 0,
       Ido: "유환빈을 소개하는 웹사이트를 만드는중이다.",
@@ -45,6 +45,10 @@ const Project: React.FC<Homes> = () => {
   let handleProjectt = (id: any): void => {
     projects.map((item) => item.id);
   };
+
+  // useEffect(() => {
+  //   handleProjects(1);
+  // }, []);
 
   return (
     <>

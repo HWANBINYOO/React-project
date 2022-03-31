@@ -8,12 +8,36 @@ interface Hom {
 }
 
 const ProjectButton: React.FC<Hom> = ({ id, Projects, onClick }) => {
+  const HandleonClick = (n: number) => {
+    onClick((id = n));
+  };
   return (
     <>
       <S.ShowButoons>
-        {Projects.map((ProjectList: any) => (
+        {/* {Projects.map((ProjectList: any) => (
           <S.Pbutton onClick={onClick}>{ProjectList.id}</S.Pbutton>
-        ))}
+        ))} */}
+        <S.Pbutton
+          onClick={() => {
+            HandleonClick(1);
+          }}
+        >
+          1
+        </S.Pbutton>
+        <S.Pbutton
+          onClick={() => {
+            HandleonClick(2);
+          }}
+        >
+          2
+        </S.Pbutton>
+        <S.Pbutton
+          onClick={() => {
+            HandleonClick(3);
+          }}
+        >
+          3
+        </S.Pbutton>
       </S.ShowButoons>
     </>
   );
