@@ -10,7 +10,7 @@ export const ShowButoons = styled.div`
   border: 1px black solid;
 `;
 
-export const ProjectButton = styled.button`
+export const Pbutton = styled.button`
   width: 5vw;
   height: 3vh;
 `;

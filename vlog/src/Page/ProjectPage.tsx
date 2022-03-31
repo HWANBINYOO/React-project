@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../component/Header/Header";
 import Project from "../component/Project/Project";
-import ProjectButton from "../component/ProjectButton/ProjectButton";
-
 interface Homes {
   HeaderColor: string;
   id: number;
@@ -20,46 +18,10 @@ export const ProjectPage: React.FC<Homes> = ({
   cost,
   Ido,
 }) => {
-  const [Projects, setProjects] = useState([
-    {
-      id: 1,
-      name: "DM",
-      term: 50,
-      cost: 30000,
-      Ido: "DM 디자인과 로그인,게시판 구역을 프론트하는중이다.",
-    },
-    {
-      id: 2,
-      name: "Hlog",
-      term: 4,
-      cost: 0,
-      Ido: "유환빈을 소개하는 웹사이트를 만드는중이다.",
-    },
-    {
-      id: 3,
-      name: "Todolist",
-      term: 3,
-      cost: 0,
-      Ido: "Ts 첫 프로젝트로 만들어봤다",
-    },
-  ]);
-
-  const handleProjects = (id: number): void => {
-    setProjects(Projects.filter((Pr) => Pr.id === id));
-  };
-
   return (
     <>
       <Header HeaderColor={HeaderColor} />
-      <Project
-        Projects={Projects}
-        id={0}
-        name={""}
-        term={0}
-        cost={0}
-        Ido={""}
-      />
-      <ProjectButton Projects={Projects} id={1} onCLick={handleProjects} />
+      <Project id={1} name={""} term={0} cost={0} Ido={""} />
     </>
   );
 };

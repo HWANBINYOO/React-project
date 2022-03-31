@@ -4,20 +4,15 @@ import * as S from "./Styled";
 interface Hom {
   id: number;
   Projects: any;
-  handleProjects: any;
+  onClick: (e: any) => void;
 }
 
-const ProjectButton: React.FC<Hom> = ({ id, Projects, handleProjects }) => {
-  const CLickButton = () => {
-    handleProjects((id = Projects.id));
-  };
+const ProjectButton: React.FC<Hom> = ({ id, Projects, onClick }) => {
   return (
     <>
       <S.ShowButoons>
         {Projects.map((ProjectList: any) => (
-          <S.ProjectButton onClick={CLickButton}>
-            {ProjectList.id}
-          </S.ProjectButton>
+          <S.Pbutton onClick={onClick}>{ProjectList.id}</S.Pbutton>
         ))}
       </S.ShowButoons>
     </>
