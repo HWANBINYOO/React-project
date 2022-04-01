@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProjectItem = styled.div`
   width: 90%;
-  height: 300px;
+  height: 450px;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -17,6 +17,6 @@ export const ProjectBox = styled.div`
     font-size: 2rem;
   }
   span {
-    width: 50%;
+    width: 40%;
   }
 `;

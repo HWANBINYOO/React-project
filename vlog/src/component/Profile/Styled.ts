@@ -9,13 +9,13 @@ export const Protile = styled.div`
   justify-content: space-around;
   margin: 0 auto;
   /* background-color: black; */
-  border: 1px black solid;
+  /* border: 1px black solid; */
 `;
 
 export const Content = styled.div`
   width: 55vw;
   height: 15vh;
-  border: 1px solid black;
+  border: 3px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;

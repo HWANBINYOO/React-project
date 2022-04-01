@@ -23,18 +23,18 @@ const ProjectButton: React.FC<Hom> = ({
   return (
     <>
       <S.ShowButoons>
-        {a.map((index: number) => (
+        {/* {a.map((N: number) => (
           <S.Pbutton
             key={a.id}
             onClick={() => {
-              HandleonClick(a.id);
+              HandleonClick(N);
             }}
           >
             {a.id}
           </S.Pbutton>
-        ))}
+        ))} */}
 
-        {/* <S.Pbutton
+        <S.Pbutton
           onClick={() => {
             HandleonClick(1);
           }}
@@ -61,7 +61,7 @@ const ProjectButton: React.FC<Hom> = ({
           }}
         >
           4
-        </S.Pbutton> */}
+        </S.Pbutton>
       </S.ShowButoons>
     </>
   );

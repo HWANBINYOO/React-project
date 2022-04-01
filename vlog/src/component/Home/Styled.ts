@@ -16,10 +16,10 @@ export const HelloPickture = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px black solid;
+  /* border: 1px black solid; */
 
   img {
-    border: 1px black solid;
+    /* border: 1px black solid; */
     border-radius: 50%;
     width: 250px;
     height: 250px;
@@ -29,7 +29,8 @@ export const HelloPickture = styled.div`
 export const Intrudece = styled.div`
   width: 55vw;
   height: 15vh;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
