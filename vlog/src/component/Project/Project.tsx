@@ -76,6 +76,7 @@ const Project: React.FC<Homes> = () => {
         ))}
 
         <ProjectButton
+          a={a}
           alength={alength}
           Projects={projects}
           id={1}

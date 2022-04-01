@@ -6,7 +6,7 @@ interface Hom {
   Projects: any;
   onClick: (e: any) => void;
   alength: number;
-  buttons: [];
+  a: any;
 }
 
 const ProjectButton: React.FC<Hom> = ({
@@ -14,27 +14,23 @@ const ProjectButton: React.FC<Hom> = ({
   Projects,
   onClick,
   alength,
-  buttons,
+  a,
 }) => {
   const HandleonClick = (n: number) => {
     onClick((id = n));
   };
 
-  let buttons = [1, 2, 3, 4];
-
   return (
     <>
       <S.ShowButoons>
-        {/* {buttons()} */}
-
-        {buttons.map((index: number) => (
+        {a.map((index: number) => (
           <S.Pbutton
-            key={index}
+            key={a.id}
             onClick={() => {
-              HandleonClick(index);
+              HandleonClick(a.id);
             }}
           >
-            {index}
+            {a.id}
           </S.Pbutton>
         ))}
 
