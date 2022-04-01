@@ -1,50 +1,27 @@
 import styled from "styled-components";
 
 export const Home = styled.div`
-  width: 90%;
-  height: 75vh;
+  width: 100%;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  border: 1px black solid;
+  overflow-y: scroll;
   /* background-color: black; */
 `;
 
 export const HelloPickture = styled.div`
-  width: 75vw;
-  height: 45vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  /* height: 100%; */
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, minmax(100px, auto));
+
   /* border: 1px black solid; */
-
-  img {
-    /* border: 1px black solid; */
-    border-radius: 50%;
-    width: 250px;
-    height: 250px;
-  }
 `;
-
-export const Intrudece = styled.div`
-  width: 55vw;
-  height: 15vh;
-  border: 2px solid black;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10vw;
-
-  p {
-    text-decoration: none;
-    font-size: 2rem;
-  }
-`;
-
-export const InputBox = styled.input`
-  outline: none;
-  border: none;
-  width: 10rem;
-  height: 12vh;
+export const Img = styled.img`
+  width: 100%;
 `;

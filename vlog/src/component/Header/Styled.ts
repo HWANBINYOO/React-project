@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const Header = styled.div`
   width: 100%;
-  height: 20vh;
+  height: 5vh;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 export const HeaderMenu = styled.span`
-  width: 22vw;
-  height: 7vh;
+  width: 5vw;
+  height: 2vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ export const HeaderMenu = styled.span`
   cursor: pointer;
   border-radius: 10px;
 
-  font-size: 2.5rem;
+  font-size: 0.5rem;
   transition: all ease 0.5s 0s;
   // border-radius: 20%;
 
