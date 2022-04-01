@@ -10,35 +10,46 @@ interface Homes {
   term: number;
   cost: number;
   Ido: string;
+  alength: number;
 }
 
+const a = [
+  {
+    id: 1,
+    name: "DM",
+    term: 50,
+    cost: 30000,
+    Ido: "DM 디자인과 로그인,게시판 구역을 프론트하는중이다.",
+  },
+  {
+    id: 2,
+    name: "blog",
+    term: 4,
+    cost: 0,
+    Ido: "유환빈을 소개하는 웹사이트를 만드는중이다.",
+  },
+  {
+    id: 3,
+    name: "Todolist",
+    term: 3,
+    cost: 0,
+    Ido: "Ts 첫 프로젝트로 만들어봤다",
+  },
+  {
+    id: 4,
+    name: "list",
+    term: 5,
+    cost: 10,
+    Ido: "프로젝트로 만들어봤다",
+  },
+];
+
 const Project: React.FC<Homes> = () => {
-  const [projects, setProjects] = useState([
-    {
-      id: 1,
-      name: "DM",
-      term: 50,
-      cost: 30000,
-      Ido: "DM 디자인과 로그인,게시판 구역을 프론트하는중이다.",
-    },
-    {
-      id: 2,
-      name: "blog",
-      term: 4,
-      cost: 0,
-      Ido: "유환빈을 소개하는 웹사이트를 만드는중이다.",
-    },
-    {
-      id: 3,
-      name: "Todolist",
-      term: 3,
-      cost: 0,
-      Ido: "Ts 첫 프로젝트로 만들어봤다",
-    },
-  ]);
+  const [projects, setProjects] = useState(a);
+  let alength = a.length;
 
   const handleProjects = (id: any): void => {
-    setProjects(projects.filter((Pr) => Pr.id === id));
+    setProjects(a.filter((Pr) => Pr.id === id));
     handleProjectt(id);
   };
 
@@ -46,9 +57,10 @@ const Project: React.FC<Homes> = () => {
     projects.map((item) => item.id);
   };
 
-  // useEffect(() => {
-  //   handleProjects(1);
-  // }, []);
+  useEffect(() => {
+    handleProjects(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -63,11 +75,12 @@ const Project: React.FC<Homes> = () => {
           />
         ))}
 
-        {/* fillter 예시
-            const result = words.filter(word => word.length > 6); */}
-        {/* (projects.filter((Pr) => Pr.id === id)); */}
-
-        <ProjectButton Projects={projects} id={1} onClick={handleProjects} />
+        <ProjectButton
+          alength={alength}
+          Projects={projects}
+          id={1}
+          onClick={handleProjects}
+        />
       </S.Project>
     </>
   );
