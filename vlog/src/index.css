@@ -101,7 +101,7 @@ button:focus {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;

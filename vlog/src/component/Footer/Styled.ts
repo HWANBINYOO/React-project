@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const Footer = styled.div`
+  padding: 10px 0;
   width: 100%;
-  height: 5vh;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;

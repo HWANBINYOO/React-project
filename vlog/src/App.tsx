@@ -15,13 +15,14 @@ function App() {
           path="/project"
           element={
             <ProjectPage
-              HeaderColor="yellow"
+              HeaderColor="Orange"
               id={0}
               name={""}
-              term={0}
+              term={""}
               cost={0}
               Ido={""}
               alength={0}
+              imgSrc={""}
             />
           }
         />

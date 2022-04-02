@@ -7,7 +7,7 @@ export const Home = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  border: 1px black solid;
+  /* border: 1px black solid; */
   overflow-y: scroll;
   /* background-color: black; */
 `;

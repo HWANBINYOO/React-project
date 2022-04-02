@@ -4,46 +4,55 @@ import Footer from "../Footer/Footer";
 import ProjectButton from "../ProjectButton/ProjectButton";
 import ProjectItem from "../ProjectItem/ProjectItem";
 import ProjectImg from "../../Assets/ProjectImg.jpg";
+import DMImg from "../../Assets/dmm.png";
+import TodolistImg from "../../Assets/todolist.png";
+import BlogImg from "../../Assets/blog.png";
+import kakaoImg from "../../Assets/kakao.png";
 
 import * as S from "./Styled";
 
 interface Homes {
   id: number;
   name: string;
-  term: number;
+  term: string;
   cost: number;
   Ido: string;
   alength: number;
+  imgSrc: string;
 }
 
 const a = [
   {
     id: 1,
-    name: "DM",
-    term: 50,
+    name: "DM(Diet-Management)",
+    term: "50일(예정)",
     cost: 30000,
     Ido: "DM 디자인과 로그인,게시판 구역을 프론트하는중이다.",
+    imgSrc: DMImg,
   },
   {
     id: 2,
     name: "blog",
-    term: 4,
+    term: "2주(예정)",
     cost: 0,
     Ido: "유환빈을 소개하는 웹사이트를 만드는중이다.",
+    imgSrc: BlogImg,
   },
   {
     id: 3,
     name: "Todolist",
-    term: 3,
+    term: "3일",
     cost: 0,
     Ido: "Ts 첫 프로젝트로 만들어봤다",
+    imgSrc: TodolistImg,
   },
   {
     id: 4,
-    name: "list",
-    term: 5,
-    cost: 10,
-    Ido: "프로젝트로 만들어봤다",
+    name: "kakao",
+    term: "2주",
+    cost: 0,
+    Ido: "카카오 웹사이트를 보면서 퍼블리싱했다",
+    imgSrc: kakaoImg,
   },
 ];
 
@@ -78,6 +87,7 @@ const Project: React.FC<Homes> = () => {
               term={item.term}
               cost={item.cost}
               Ido={item.Ido}
+              imgSrc={item.imgSrc}
             />
           ))}
 

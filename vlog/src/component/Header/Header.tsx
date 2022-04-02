@@ -33,7 +33,7 @@ export default function Header({ HeaderColor }: Homes) {
         <S.HeaderMenu
           style={{
             backgroundColor: `${
-              HeaderColor === "yellow" ? "#ffff9e" : "white"
+              HeaderColor === "Orange" ? "#ffb769" : "white"
             }`,
           }}
         >

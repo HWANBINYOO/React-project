@@ -6,6 +6,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  gap: 10px;
 `;
 
 export const HeaderMenu = styled.span`

@@ -7,10 +7,11 @@ interface Homes {
   HeaderColor: string;
   id: number;
   name: string;
-  term: number;
+  term: string;
   cost: number;
   Ido: string;
   alength: number;
+  imgSrc: string;
 }
 
 export const ProjectPage: React.FC<Homes> = ({
@@ -20,12 +21,21 @@ export const ProjectPage: React.FC<Homes> = ({
   term,
   cost,
   Ido,
+  imgSrc,
 }) => {
   return (
     <>
       <Title />
       <Header HeaderColor={HeaderColor} />
-      <Project id={1} name={""} term={0} cost={0} Ido={""} alength={0} />
+      <Project
+        id={1}
+        name={""}
+        term={""}
+        cost={0}
+        Ido={""}
+        imgSrc={""}
+        alength={0}
+      />
       <Footer />
     </>
   );

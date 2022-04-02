@@ -3,18 +3,32 @@ import styled from "styled-components";
 export const ProjectItem = styled.div`
   width: 90%;
   height: 450px;
-  font-size: 1.2rem;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+`;
+
+export const Projectdesc = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  /* align-items: center; */
+`;
+
+export const Img = styled.img`
+  width: 55%;
+  /* height: 250px; */
+  margin: auto 0;
 `;
 
 export const ProjectBox = styled.div`
+  width: 30vw;
   display: flex;
   justify-content: space-between;
 
   p {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
   span {
     width: 40%;

@@ -19,7 +19,7 @@ export default function About() {
           <br />
           지금 Ts 공부하고 있어요
           <br />
-          react 값넘기는거랑 Ts 값주는거 연습하기 위해서 만들어봤어요
+          react 값넘기는거랑 Ts 타입주는거 연습하기 위해서 만들어봤어요
           <br />
           자격증은 컴활2급있고 산업기사 딸려고요
         </S.Intrudece>

@@ -3,31 +3,35 @@ import * as S from "./Styled";
 
 interface Homes {
   name: string;
-  term: number;
+  term: string;
   cost: number;
   Ido: string;
+  imgSrc: string;
 }
 
-export const ProjectItem = ({ name, term, cost, Ido }: Homes) => {
+export const ProjectItem = ({ name, term, cost, Ido, imgSrc }: Homes) => {
   return (
     <>
       <S.ProjectItem>
-        <S.ProjectBox>
-          <p>프로젝트명</p>
-          {name}
-        </S.ProjectBox>
-        <S.ProjectBox>
-          <p>프로젝트 기간</p>
-          {term}
-        </S.ProjectBox>
-        <S.ProjectBox>
-          <p>프로젝트비용</p>
-          {cost}
-        </S.ProjectBox>
-        <S.ProjectBox>
-          <p>한일</p>
-          <span> {Ido}</span>
-        </S.ProjectBox>
+        <S.Img src={imgSrc} />
+        <S.Projectdesc>
+          <S.ProjectBox>
+            <p>name:</p>
+            {name}
+          </S.ProjectBox>
+          <S.ProjectBox>
+            <p>term :</p>
+            {term}
+          </S.ProjectBox>
+          <S.ProjectBox>
+            <p>cost :</p>
+            {cost}원
+          </S.ProjectBox>
+          <S.ProjectBox>
+            <p>do : </p>
+            <span> {Ido}</span>
+          </S.ProjectBox>
+        </S.Projectdesc>
       </S.ProjectItem>
     </>
   );
