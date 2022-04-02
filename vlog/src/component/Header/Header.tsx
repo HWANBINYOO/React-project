@@ -17,7 +17,7 @@ export default function Header({ HeaderColor }: Homes) {
         </S.HeaderMenu>
       </Link>
 
-      <Link to="/profile" style={{ textDecoration: "none", color: "black" }}>
+      <Link to="/About" style={{ textDecoration: "none", color: "black" }}>
         <S.HeaderMenu
           style={{
             backgroundColor: `${
@@ -25,7 +25,7 @@ export default function Header({ HeaderColor }: Homes) {
             }`,
           }}
         >
-          Profile
+          About
         </S.HeaderMenu>{" "}
       </Link>
 

@@ -6,6 +6,7 @@ import manImg from "../../Assets/dhd.webp";
 import songImg from "../../Assets/song.png";
 import goodImg from "../../Assets/2977.jpg";
 import carImg from "../../Assets/car.webp";
+import Footer from "../Footer/Footer";
 
 export default function Home() {
   return (
@@ -14,10 +15,11 @@ export default function Home() {
         <S.Img src={manImg} />
         <S.Img src={goodImg} />
         <S.Img src={sesiImg} />
-        <S.Img src={pianoImg} />
         <S.Img src={songImg} />
+        <S.Img src={pianoImg} />
         <S.Img src={carImg} />
       </S.HelloPickture>
+      <Footer />
     </S.Home>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
-import Profile from "../component/Profile/Profile";
 import Header from "../component/Header/Header";
+import Title from "../component/Title/Title";
+import About from "../component/About/About";
 
 interface Homes {
   HeaderColor: string;
@@ -9,8 +10,9 @@ interface Homes {
 export default function HeaderPage({ HeaderColor }: Homes) {
   return (
     <>
+      <Title />
       <Header HeaderColor={HeaderColor} />
-      <Profile />
+      <About />
     </>
   );
 }

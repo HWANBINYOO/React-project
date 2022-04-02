@@ -9,7 +9,7 @@ export const Header = styled.div`
 `;
 
 export const HeaderMenu = styled.span`
-  width: 5vw;
+  width: 10vw;
   height: 2vh;
   display: flex;
   justify-content: center;

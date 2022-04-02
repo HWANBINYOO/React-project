@@ -1,4 +1,5 @@
 import React from "react";
+import { Footer } from "../component/Footer/Styled";
 import Header from "../component/Header/Header";
 import Home from "../component/Home/Home";
 import Title from "../component/Title/Title";
@@ -13,6 +14,7 @@ export default function HomePage({ HeaderColor }: Homes) {
       <Title />
       <Header HeaderColor={HeaderColor} />
       <Home />
+      <Footer />
     </>
   );
 }

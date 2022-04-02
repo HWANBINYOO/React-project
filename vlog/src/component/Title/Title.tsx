@@ -4,7 +4,7 @@ import * as S from "./Styled";
 export default function Title() {
   return (
     <S.Title>
-      <S.TitleP>My Blog</S.TitleP>
+      <S.TitleP>Blog</S.TitleP>
     </S.Title>
   );
 }

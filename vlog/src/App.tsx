@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Page/HomePage";
-import ProfilePage from "./Page/ProfilePage";
 import ProjectPage from "./Page/ProjectPage";
 import { GlobalStyle } from "./style/GlobalStyle";
+import AboutPage from "./Page/AboutPage";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<HomePage HeaderColor="blue" />} />
-        <Route path="/profile" element={<ProfilePage HeaderColor="purple" />} />
+        <Route path="/About" element={<AboutPage HeaderColor="purple" />} />
         <Route
           path="/project"
           element={

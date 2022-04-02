@@ -1,6 +1,8 @@
 import React from "react";
+import { Footer } from "../component/Footer/Styled";
 import Header from "../component/Header/Header";
 import Project from "../component/Project/Project";
+import Title from "../component/Title/Title";
 interface Homes {
   HeaderColor: string;
   id: number;
@@ -21,8 +23,10 @@ export const ProjectPage: React.FC<Homes> = ({
 }) => {
   return (
     <>
+      <Title />
       <Header HeaderColor={HeaderColor} />
       <Project id={1} name={""} term={0} cost={0} Ido={""} alength={0} />
+      <Footer />
     </>
   );
 };
