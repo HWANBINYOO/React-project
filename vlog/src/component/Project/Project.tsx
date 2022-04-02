@@ -1,7 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useEffect, useState } from "react";
+import Footer from "../Footer/Footer";
 import ProjectButton from "../ProjectButton/ProjectButton";
 import ProjectItem from "../ProjectItem/ProjectItem";
+import ProjectImg from "../../Assets/ProjectImg.jpg";
+
 import * as S from "./Styled";
 
 interface Homes {
@@ -65,23 +68,28 @@ const Project: React.FC<Homes> = () => {
   return (
     <>
       <S.Project>
-        {projects.map((item) => (
-          <ProjectItem
-            key={item.id}
-            name={item.name}
-            term={item.term}
-            cost={item.cost}
-            Ido={item.Ido}
-          />
-        ))}
+        <S.Img style={{ width: "40%" }} src={ProjectImg} />
+        <S.ProjectTitle>저의 프로젝트들</S.ProjectTitle>
+        <S.myProject>
+          {projects.map((item) => (
+            <ProjectItem
+              key={item.id}
+              name={item.name}
+              term={item.term}
+              cost={item.cost}
+              Ido={item.Ido}
+            />
+          ))}
 
-        <ProjectButton
-          a={a}
-          alength={alength}
-          Projects={projects}
-          id={1}
-          onClick={handleProjects}
-        />
+          <ProjectButton
+            a={a}
+            alength={alength}
+            Projects={projects}
+            id={1}
+            onClick={handleProjects}
+          />
+        </S.myProject>
+        <Footer />
       </S.Project>
     </>
   );

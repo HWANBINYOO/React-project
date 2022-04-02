@@ -1,13 +1,24 @@
 import styled from "styled-components";
 
 export const Project = styled.div`
-  width: 75vw;
-  height: 75vh;
+  width: 100%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  overflow-y: scroll;
   /* background-color: black; */
-  border: 1px black solid;
+`;
+
+export const ProjectTitle = styled.p`
+  font-size: 1.5rem;
+`;
+
+export const myProject = styled.div``;
+
+export const Img = styled.img`
+  // background-color: ${(props: any) => props.backgroundColor};
+  width: ${(props: any) => props.width};
 `;
