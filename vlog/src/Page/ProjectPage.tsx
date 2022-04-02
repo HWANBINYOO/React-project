@@ -14,7 +14,7 @@ interface Homes {
   imgSrc: string;
 }
 
-export const ProjectPage: React.FC<Homes> = ({
+const ProjectPage: React.FC<Homes> = ({
   HeaderColor,
   id,
   name,

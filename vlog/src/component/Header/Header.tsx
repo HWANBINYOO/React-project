@@ -41,13 +41,15 @@ export default function Header({ HeaderColor }: Homes) {
         </S.HeaderMenu>
       </Link>
 
-      <S.HeaderMenu
-        style={{
-          backgroundColor: `${HeaderColor === "red" ? "red" : "white"}`,
-        }}
-      >
-        Blog
-      </S.HeaderMenu>
+      <Link to="/blog" style={{ textDecoration: "none", color: "black" }}>
+        <S.HeaderMenu
+          style={{
+            backgroundColor: `${HeaderColor === "red" ? "red" : "white"}`,
+          }}
+        >
+          Blog
+        </S.HeaderMenu>
+      </Link>
     </S.Header>
   );
 }

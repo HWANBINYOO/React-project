@@ -27,7 +27,7 @@ const a = [
     name: "DM(Diet-Management)",
     term: "50일(예정)",
     cost: 30000,
-    Ido: "DM 디자인과 로그인,게시판 구역을 프론트하는중이다.",
+    Ido: "식단조절을 해주는 웹사이트를 만드는 중이다",
     imgSrc: DMImg,
   },
   {
@@ -78,7 +78,7 @@ const Project: React.FC<Homes> = () => {
     <>
       <S.Project>
         <S.Img style={{ width: "40%" }} src={ProjectImg} />
-        <S.ProjectTitle>저의 프로젝트들</S.ProjectTitle>
+        <S.ProjectTitle>내 프로젝트들</S.ProjectTitle>
         <S.myProject>
           {projects.map((item) => (
             <ProjectItem

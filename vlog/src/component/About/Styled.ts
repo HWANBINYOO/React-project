@@ -47,7 +47,7 @@ export const AboutContents = styled.div`
 `;
 
 export const AboutContent = styled.div`
-  width: 55%;
+  width: 65%;
   height: 200px;
   display: flex;
   justify-content: space-between;
@@ -57,6 +57,8 @@ export const AboutContent = styled.div`
 export const decs = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  width: 40%;
+  align-items: center;
+  gap: 5px;
+  width: 80%;
+  margin: auto 0;
 `;

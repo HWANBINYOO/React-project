@@ -16,7 +16,9 @@ export const ProjectTitle = styled.p`
   font-size: 1.5rem;
 `;
 
-export const myProject = styled.div``;
+export const myProject = styled.div`
+  margin: auto 0;
+`;
 
 export const Img = styled.img`
   // background-color: ${(props: any) => props.backgroundColor};

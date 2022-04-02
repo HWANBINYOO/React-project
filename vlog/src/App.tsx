@@ -3,6 +3,7 @@ import HomePage from "./Page/HomePage";
 import ProjectPage from "./Page/ProjectPage";
 import { GlobalStyle } from "./style/GlobalStyle";
 import AboutPage from "./Page/AboutPage";
+import BlogPage from "./Page/BlogPage";
 
 function App() {
   return (
@@ -23,6 +24,19 @@ function App() {
               Ido={""}
               alength={0}
               imgSrc={""}
+            />
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <BlogPage
+              BlogImg={""}
+              date={""}
+              title={""}
+              desc={""}
+              id={0}
+              HeaderColor="red"
             />
           }
         />
