@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const BlogItem = styled.div`
   width: 300px;
-  height: max-content;
+  height: 400px;
   display: flex;
   flex-direction: column;
   border: 1px black solid;
-  margin: 0 auto;
+  margin: 2rem auto;
   border-radius: 10px;
+  justify-content: space-between;
 `;
 
 export const TextBox = styled.div`
@@ -16,7 +17,7 @@ export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   /* padding: 2rem 1rem; */
-  border: 1px black solid;
+  /* border: 1px black solid; */
   text-align: center;
 `;
 
@@ -31,7 +32,7 @@ export const Title = styled.span`
   height: 30px;
   font-size: 1rem;
   font-weight: bold;
-  border: 1px black solid;
+  /* border: 1px black solid; */
   text-align: center;
 `;
 
@@ -39,7 +40,7 @@ export const desc = styled.div`
   width: 100%;
   height: 30px;
   font-size: 0.7%;
-  border: 1px black solid;
+  /* border: 1px black solid; */
   text-align: center;
 `;
 
@@ -50,5 +51,7 @@ export const date = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border: 1px black solid;
+  padding-left: 1.5rem;
+  color: gray;
+  /* border: 1px black solid; */
 `;
