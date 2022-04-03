@@ -24,26 +24,26 @@ interface Homes {
 const a = [
   {
     id: 1,
-    name: "DM(Diet-Management)",
-    term: "50일(예정)",
-    cost: 30000,
-    Ido: "식단조절을 해주는 웹사이트를 만드는 중이다",
-    imgSrc: DMImg,
-  },
-  {
-    id: 2,
     name: "blog",
     term: "2주(예정)",
     cost: 0,
-    Ido: "유환빈을 소개하는 웹사이트를 만드는중이다.",
+    Ido: "유환빈을 소개하는 웹사이트를 만드는중이에요",
     imgSrc: BlogImg,
+  },
+  {
+    id: 2,
+    name: "DM(Diet-Management)",
+    term: "50일(예정)",
+    cost: 30000,
+    Ido: "식단조절을 해주는 웹사이트를 만드는 중이에요",
+    imgSrc: DMImg,
   },
   {
     id: 3,
     name: "Todolist",
     term: "3일",
     cost: 0,
-    Ido: "Ts 첫 프로젝트로 만들어봤다",
+    Ido: "Ts로 첫 프로젝트를 만들어봤어요",
     imgSrc: TodolistImg,
   },
   {
@@ -51,7 +51,7 @@ const a = [
     name: "kakao",
     term: "2주",
     cost: 0,
-    Ido: "카카오 웹사이트를 보면서 퍼블리싱했다",
+    Ido: "카카오 웹사이트를 보면서 퍼블리싱했어요",
     imgSrc: kakaoImg,
   },
 ];

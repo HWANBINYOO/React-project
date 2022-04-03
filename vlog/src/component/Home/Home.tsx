@@ -15,8 +15,8 @@ export default function Home() {
         <S.Img src={manImg} />
         <S.Img src={goodImg} />
         <S.Img src={sesiImg} />
-        <S.Img src={songImg} />
         <S.Img src={pianoImg} />
+        <S.Img src={songImg} />
         <S.Img src={carImg} />
       </S.HelloPickture>
       <Footer />

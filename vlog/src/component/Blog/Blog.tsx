@@ -1,6 +1,11 @@
 import { useState } from "react";
 import BlogItem from "../BlogItem/BlogItem";
 import * as S from "./Styled";
+import kakaoImg from "../../Assets/kakao.png";
+import manImg from "../../Assets/dhd.webp";
+import songImg from "../../Assets/song.png";
+import goodImg from "../../Assets/2977.jpg";
+import carImg from "../../Assets/car.webp";
 
 interface BlogType {
   BlogImg: string;
@@ -13,14 +18,28 @@ interface BlogType {
 const a = [
   {
     id: 1,
-    BlogImg: "img",
+    BlogImg: kakaoImg,
     title: "블로그 디자인",
     desc: "오늘 블로그 디자인 마저했다  오늘은 About 과 Project 를 꾸몄다",
     date: "2022년4월2일",
   },
   {
     id: 2,
-    BlogImg: "img",
+    BlogImg: manImg,
+    title: "블로그 디자인",
+    desc: "오늘 블로그 디자인 마저했다  오늘은 About 과 Project 를 꾸몄다",
+    date: "2022년4월2일",
+  },
+  {
+    id: 3,
+    BlogImg: songImg,
+    title: "블로그 디자인",
+    desc: "오늘 블로그 디자인 마저했다  오늘은 About 과 Project 를 꾸몄다",
+    date: "2022년4월2일",
+  },
+  {
+    id: 4,
+    BlogImg: goodImg,
     title: "블로그 디자인",
     desc: "오늘 블로그 디자인 마저했다  오늘은 About 과 Project 를 꾸몄다",
     date: "2022년4월2일",
