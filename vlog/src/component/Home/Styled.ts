@@ -13,7 +13,7 @@ export const Home = styled.div`
 `;
 
 export const HelloPickture = styled.div`
-  width: 100%;
+  width: 82%;
   /* height: 100%; */
   display: grid;
   gap: 10px;
@@ -24,4 +24,5 @@ export const HelloPickture = styled.div`
 `;
 export const Img = styled.img`
   width: 100%;
+  /* cursor: grab; */
 `;

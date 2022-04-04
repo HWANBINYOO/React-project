@@ -1,5 +1,4 @@
 import React from "react";
-import { Footer } from "../component/Footer/Styled";
 import Header from "../component/Header/Header";
 import Project from "../component/Project/Project";
 import Title from "../component/Title/Title";
@@ -36,7 +35,6 @@ const ProjectPage: React.FC<Homes> = ({
         imgSrc={""}
         alength={0}
       />
-      <Footer />
     </>
   );
 };

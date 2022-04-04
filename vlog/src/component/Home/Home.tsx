@@ -10,16 +10,18 @@ import Footer from "../Footer/Footer";
 
 export default function Home() {
   return (
-    <S.Home>
-      <S.HelloPickture>
-        <S.Img src={manImg} />
-        <S.Img src={goodImg} />
-        <S.Img src={sesiImg} />
-        <S.Img src={pianoImg} />
-        <S.Img src={songImg} />
-        <S.Img src={carImg} />
-      </S.HelloPickture>
-      <Footer />
-    </S.Home>
+    <>
+      <S.Home>
+        <S.HelloPickture>
+          <S.Img src={manImg} />
+          <S.Img src={goodImg} />
+          <S.Img src={sesiImg} />
+          <S.Img src={pianoImg} />
+          <S.Img src={songImg} />
+          <S.Img src={carImg} />
+        </S.HelloPickture>
+        <Footer />
+      </S.Home>
+    </>
   );
 }

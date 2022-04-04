@@ -25,7 +25,7 @@ export const Pbutton = styled.button`
   text-decoration: none;
 
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
 
   & :hover {

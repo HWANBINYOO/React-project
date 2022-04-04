@@ -1,14 +1,8 @@
 import styled from "styled-components";
 
-export const BlogItem = styled.div`
-  width: 300px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  border: 1px black solid;
-  margin: 2rem auto;
-  border-radius: 5px;
-  justify-content: space-between;
+export const BlogIn = styled.div`
+  width: 100vw;
+  height: 80vh;
 `;
 
 export const TextBox = styled.div`

@@ -4,6 +4,7 @@ import ProjectPage from "./Page/ProjectPage";
 import { GlobalStyle } from "./style/GlobalStyle";
 import AboutPage from "./Page/AboutPage";
 import BlogPage from "./Page/BlogPage";
+import BlogInPage from "./Page/BlogInPage";
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
               HeaderColor="red"
             />
           }
+        />
+        <Route
+          path="/:id/:title"
+          element={<BlogInPage HeaderColor="red" id={0} />}
         />
       </Routes>
     </BrowserRouter>

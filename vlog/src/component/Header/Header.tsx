@@ -44,7 +44,7 @@ export default function Header({ HeaderColor }: Homes) {
       <Link to="/blog" style={{ textDecoration: "none", color: "black" }}>
         <S.HeaderMenu
           style={{
-            backgroundColor: `${HeaderColor === "red" ? "red" : "white"}`,
+            backgroundColor: `${HeaderColor === "red" ? "#ff9d95" : "white"}`,
           }}
         >
           Blog
