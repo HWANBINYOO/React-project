@@ -2,22 +2,18 @@
 import * as S from "./Styled";
 
 interface BlogType {
-  BlogImg: string;
-  date: string;
-  title: string;
-  desc: string;
-  id: number;
+  blogIn: any;
 }
 
-const BlogIn: React.FC<BlogType> = ({ BlogImg, date, title, desc, id }) => {
+const BlogIn: React.FC<BlogType> = ({ blogIn }) => {
   return (
     <>
       <S.BlogIn>
-        <S.Img src={BlogImg} />
+        <S.Img src={blogIn.BlogImg} />
         <S.TextBox>
-          <S.Title>{title}</S.Title>
-          <S.desc>{desc}</S.desc>
-          <S.date>{date}</S.date>
+          <S.Title>{blogIn.title}</S.Title>
+          <S.desc>{blogIn.desc}</S.desc>
+          <S.date>{blogIn.date}</S.date>
         </S.TextBox>
       </S.BlogIn>
     </>

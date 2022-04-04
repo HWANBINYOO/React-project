@@ -5,32 +5,28 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import BlogIn from "../component/BlogIn/BlogIn";
 // import BlogItem from "../component/BlogItem/BlogItem";
-// import Footer from "../component/Footer/Footer";
 
 interface Homes {
   HeaderColor: string;
-  BlogImgg:string;
+  BlogImg: string;
 }
 
-const BlogInPage: React.FC<Homes> = ({ HeaderColor,BlogImgg }) => {
+const BlogInPage: React.FC<Homes> = ({ HeaderColor, BlogImg }) => {
   const param = useParams();
   console.log(param);
-  const [blogin, setBlogIn] = useState("");
-  const BlogImgg ;
+  //   const [blogIn, setBlogIn] = useState([]);
+  //   const BlogImg ;
 
   axios
-    .post(
-      "/v1/blog",
-      {
+    .get("/blog", {
+      params: {
         id: param.id,
         title: param.title,
       },
-      {
-        headers: { "Content-Type": "application/json" },
-      }
-    )
-    .then(({ data }) => {
-      BlogImgg = 
+    })
+    .then(function (response) {
+      console.log(response);
+      //   setBlogIn(data);
     })
     .catch((error) => {
       console.log(error);
@@ -39,8 +35,7 @@ const BlogInPage: React.FC<Homes> = ({ HeaderColor,BlogImgg }) => {
     <>
       <Title />
       <Header HeaderColor={HeaderColor} />
-      <BlogIn BlogImg={""} date={""} title={""} desc={""} id={0} />
-      {/* <Footer /> */}
+      {/* <BlogIn blogIn={blogIn} /> */}
     </>
   );
 };
