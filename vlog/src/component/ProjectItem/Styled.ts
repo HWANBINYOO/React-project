@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ProjectItem = styled.div`
   width: 90%;
   height: 450px;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -28,7 +28,7 @@ export const ProjectBox = styled.div`
   justify-content: space-between;
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   span {
     width: 40%;

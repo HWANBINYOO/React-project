@@ -16,11 +16,10 @@ export const HeaderMenu = styled.span`
   justify-content: center;
   align-items: center;
 
-  font-family: "LeeSeoyun";
   cursor: pointer;
   border-radius: 10px;
 
-  font-size: 0.5rem;
+  font-size: 1rem;
   transition: all ease 0.5s 0s;
   // border-radius: 20%;
 

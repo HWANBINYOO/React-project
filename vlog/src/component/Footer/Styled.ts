@@ -8,16 +8,16 @@ export const Footer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  gap: 10px;
+  gap: 1rem;
   background-color: black;
 `;
 
 export const Ftitle = styled.p`
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: white;
 `;
 
 export const P = styled.p`
-  font-size: 0.3rem;
+  font-size: 0.5rem;
   color: white;
 `;

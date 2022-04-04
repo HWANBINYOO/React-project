@@ -1,11 +1,10 @@
 @font-face {
-  font-family: "LeeSeoyun";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+  font-family: "GangwonEduSaeeum_OTFMediumA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
 html,
 body,
 div,
@@ -91,7 +90,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "LeeSeoyun";
+  font-family: "GangwonEduSaeeum_OTFMediumA";
 }
 input:focus,
 select:focus,
@@ -101,7 +100,7 @@ button:focus {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #ffffff;
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;

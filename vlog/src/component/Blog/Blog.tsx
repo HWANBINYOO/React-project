@@ -8,18 +8,18 @@ import goodImg from "../../Assets/2977.jpg";
 import carImg from "../../Assets/car.webp";
 
 interface BlogType {
+  id: number;
   BlogImg: string;
-  date: string;
   title: string;
   desc: string;
-  id: number;
+  date: string;
 }
 
 const a = [
   {
     id: 1,
     BlogImg: kakaoImg,
-    title: "블로그",
+    title: "[React] 블로그만들기 5일차 About/Project 디자인",
     desc: "오늘 블로그 디자인 마저했다  오늘은 About 과 Project 를 꾸몄다",
     date: "2022년4월2일",
   },
