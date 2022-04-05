@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/alt-text */
 import * as S from "./Styled";
-import AboutImg from "../../Assets/About.webp";
-import pianoImg from "../../Assets/piano.jpg";
-import songImg from "../../Assets/song.png";
-import goodImg from "../../Assets/2977.jpg";
-import carImg from "../../Assets/car.webp";
-import sesiImg from "../../Assets/11.jpg";
+// import AboutImg from "/img/About.webp";
+// import pianoImg from "/img/piano.jpg";
+// import songImg from "/img/song.png";
+// import goodImg from "/img/2977.jpg";
+// import carImg from "/img/car.webp";
+// import sesiImg from "/img/11.jpg";
 import Footer from "../Footer/Footer";
 
 export default function About() {
   return (
     <>
       <S.About>
-        <S.Img style={{ width: "40%" }} src={AboutImg} />
+        <S.Img style={{ width: "40%" }} src={"/img/About.webp"} />
         <S.Intrudece>
           <p>유환빈</p>
           안녕하세요
@@ -25,7 +25,7 @@ export default function About() {
         </S.Intrudece>
         <S.AboutContents>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={goodImg} />
+            <S.Img style={{ width: "200px" }} src={"/img/2977.jpg"} />
             <S.decs>
               <p>제가 제일 좋아하는 과일</p>
               <p>귤</p>
@@ -33,7 +33,7 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={sesiImg} />
+            <S.Img style={{ width: "200px" }} src={"/img/11.jpg"} />
             <S.decs>
               <p>제가 좋아하는 음식</p>
               <p>초밥</p>
@@ -42,7 +42,7 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={songImg} />
+            <S.Img style={{ width: "200px" }} src={"/img/song.png"} />
             <S.decs>
               <p>음악감상이 취미</p>
               <p>주로 팝송을 들어요</p>
@@ -50,7 +50,7 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={pianoImg} />
+            <S.Img style={{ width: "200px" }} src={"/img/piano.jpg"} />
             <S.decs>
               <p>치아노치기가 취미</p>
               <p>주로 클래식곡 쳐요</p>
@@ -59,7 +59,7 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={carImg} />
+            <S.Img style={{ width: "200px" }} src={"/img/car.webp"} />
             <S.decs>
               <p>이건 그림이 멋져서.ㅎ</p>
             </S.decs>

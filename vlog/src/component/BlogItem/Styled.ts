@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BlogItem = styled.div`
   width: 300px;
-  height: 400px;
+  height: 440px;
   display: flex;
   flex-direction: column;
   border: 1px black solid;
@@ -30,7 +30,7 @@ export const Img = styled.img`
 export const Title = styled.span`
   width: 100%;
   height: 30px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   /* border: 1px black solid; */
   text-align: center;
@@ -44,8 +44,8 @@ export const Title = styled.span`
 
 export const desc = styled.div`
   width: 100%;
-  height: 30px;
-  font-size: 1rem;
+  /* height: 40px; */
+  font-size: 0.8rem;
   /* border: 1px black solid; */
   overflow: hidden;
   text-overflow: ellipsis;

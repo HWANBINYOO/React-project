@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import ProjectButton from "../ProjectButton/ProjectButton";
 import ProjectItem from "../ProjectItem/ProjectItem";
-import ProjectImg from "../../Assets/ProjectImg.jpg";
-import DMImg from "../../Assets/dmm.png";
-import TodolistImg from "../../Assets/todolist.png";
-import BlogImg from "../../Assets/blog.png";
-import kakaoImg from "../../Assets/kakao.png";
+
+// import ProjectImg from "/img/ProjectImg.jpg";
+// import DMImg from "/imgs/dmm.png";
+// import TodolistImg from "/img/todolist.png";
+// import BlogImg from "/img/blog.png";
+// import kakaoImg from "/img/kakao.png";
 
 import * as S from "./Styled";
 
@@ -28,7 +29,7 @@ const a = [
     term: "2주(예정)",
     cost: 0,
     Ido: "유환빈을 소개하는 웹사이트를 만드는중이에요",
-    imgSrc: BlogImg,
+    imgSrc: "/img/blog.png",
   },
   {
     id: 2,
@@ -36,7 +37,7 @@ const a = [
     term: "50일(예정)",
     cost: 30000,
     Ido: "식단조절을 해주는 웹사이트를 만드는 중이에요",
-    imgSrc: DMImg,
+    imgSrc: "/imgs/dmm.png",
   },
   {
     id: 3,
@@ -44,7 +45,7 @@ const a = [
     term: "3일",
     cost: 0,
     Ido: "Ts로 첫 프로젝트를 만들어봤어요",
-    imgSrc: TodolistImg,
+    imgSrc: "/img/todolist.png",
   },
   {
     id: 4,
@@ -52,7 +53,7 @@ const a = [
     term: "2주",
     cost: 0,
     Ido: "카카오 웹사이트를 보면서 퍼블리싱했어요",
-    imgSrc: kakaoImg,
+    imgSrc: "/img/kakao.png",
   },
 ];
 
@@ -77,7 +78,7 @@ const Project: React.FC<Homes> = () => {
   return (
     <>
       <S.Project>
-        <S.Img style={{ width: "40%" }} src={ProjectImg} />
+        <S.Img style={{ width: "40%" }} src={"/img/ProjectImg.jpg"} />
         <S.ProjectTitle>내 프로젝트들</S.ProjectTitle>
         <S.myProject>
           {projects.map((item) => (
