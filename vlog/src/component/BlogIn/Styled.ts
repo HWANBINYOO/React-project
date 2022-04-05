@@ -16,7 +16,7 @@ export const TextBox = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 100%;
+  width: 20%;
   border-radius: 5px;
   /* height: 50%; */
 `;
