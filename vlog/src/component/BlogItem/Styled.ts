@@ -5,10 +5,17 @@ export const BlogItem = styled.div`
   height: 440px;
   display: flex;
   flex-direction: column;
-  border: 1px black solid;
+  border: 1px gray solid;
   margin: 2rem auto;
   border-radius: 5px;
   justify-content: space-between;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+  transition: all ease 0.25s 0s;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 `;
 
 export const TextBox = styled.div`

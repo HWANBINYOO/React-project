@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BlogIn = styled.div`
   width: 100vw;
   height: 80vh;
-  border: 1px black solid;
+  /* border: 1px black solid; */
 
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ export const Title = styled.span`
 `;
 
 export const Img = styled.img`
-  width: 40%;
+  width: 88%;
   border-radius: 5px;
   /* height: 50%; */
   margin: 0 auto;
@@ -51,10 +51,10 @@ export const desc = styled.div`
 
 export const date = styled.div`
   width: 100%;
-  height: 4vh;
-  font-size: 0.7rem;
+  height: 7vh;
+  font-size: 01rem;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
   padding-left: 1rem;
   color: gray;
