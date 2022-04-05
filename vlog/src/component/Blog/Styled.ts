@@ -9,3 +9,23 @@ export const Blog = styled.div`
   margin: 0 auto;
   overflow-y: scroll;
 `;
+
+export const BlogButtonBox = styled.div`
+  width: 90%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+`;
+
+export const Button = styled.button`
+  width: 4rem;
+  height: 1.3rem;
+  background-color: white;
+  border-radius: 5px;
+  outline: none;
+  /* border: 1px black solid; */
+  border: none;
+  font-size: 0.5rem;
+`;
