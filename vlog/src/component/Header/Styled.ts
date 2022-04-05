@@ -10,8 +10,8 @@ export const Header = styled.div`
 `;
 
 export const HeaderMenu = styled.span`
-  width: 10vw;
-  height: 2vh;
+  width: 12vw;
+  height: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;

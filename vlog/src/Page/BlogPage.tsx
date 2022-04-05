@@ -23,7 +23,7 @@ const BlogPage: React.FC<BlogTtpe> = ({
     <>
       <Title />
       <Header HeaderColor={HeaderColor} />
-      <Blog BlogImg={""} date={""} title={""} desc={""} id={0} />
+      <Blog BlogImg={""} date={""} title={""} desc={""} id={""} />
     </>
   );
 };

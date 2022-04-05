@@ -7,14 +7,13 @@ interface BlogType {
   date: string;
   title: string;
   desc: string;
-  id: number;
+  id: string;
 }
 
 const BlogItem: React.FC<BlogType> = ({ BlogImg, date, title, desc, id }) => {
   const navigate = useNavigate();
   const handleonClick = () => {
-    navigate(`/${id}/${title}`);
-    console.log(id);
+    navigate(`/${id}`);
   };
   return (
     <>

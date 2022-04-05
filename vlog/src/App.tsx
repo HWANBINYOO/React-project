@@ -41,10 +41,7 @@ function App() {
             />
           }
         />
-        <Route
-          path="/:id/:title"
-          element={<BlogInPage HeaderColor="red" BlogImg={""} />}
-        />
+        <Route path="/:id" element={<BlogInPage HeaderColor="red" />} />
       </Routes>
     </BrowserRouter>
   );
