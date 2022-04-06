@@ -78,7 +78,7 @@ const Project: React.FC<Homes> = () => {
   return (
     <>
       <S.Project>
-        <S.Img style={{ width: "40%" }} src={"/img/ProjectImg.jpg"} />
+        <S.Img style={{ width: "40%" }} src={"/img/start.png"} />
         <S.ProjectTitle>내 프로젝트들</S.ProjectTitle>
         <S.myProject>
           {projects.map((item) => (
