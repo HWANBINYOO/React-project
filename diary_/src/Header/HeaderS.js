@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-font-family: "LeeSeoyun";
+  font-family: "LeeSeoyun";
 
   display: flex;
   width: 90%;
   height: 10vh;
-  margin 5vh auto 0;
+  margin: auto 0;
 
   // border: 2px black solid;
 `;

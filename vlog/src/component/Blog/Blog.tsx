@@ -2,14 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import BlogItem from "../BlogItem/BlogItem";
 import * as S from "./Styled";
-// import kakaoImg from "../../Assets/kakao.png";
-// import manImg from "/img/man.jpg";
-// import songImg from "/img/song.png";
-// import goodImg from "/img/2977.jpg";
-// import startImg from "/img/start.png";
+import { BlogType } from "../../types";
 
 // import Footer from "../Footer/Footer";
-
 // const a = [
 //   {
 //     id: "1",
@@ -61,44 +56,32 @@ import * as S from "./Styled";
 //     date: "2022년4월6일",
 //   },
 // ];
-// interface BlogTypeProp {
-//   Blogs: BlogType;
+
+// interface BlogType {
+//   id: string;
+//   BlogImg: string;
+//   title: string;
+//   desc: string;
+//   date: string;
 // }
 
-interface BlogType {
-  id: string;
-  BlogImg: string;
-  title: string;
-  desc: string;
-  date: string;
-}
-
 const Blog: React.FC<BlogType> = () => {
-  const [Blogs, setBlogs] = useState();
-
+  const [Blogs, setBlogs] = useState<BlogType[] | null>();
   useEffect(() => {
     axios.get(`/blog`).then((res) => {
       console.log(res);
       setBlogs(res.data);
     });
   }, []);
-
   return (
     <>
-      <S.BlogButtonBox>
-        <S.Button style={{ backgroundColor: "#aeddff" }}>추가</S.Button>
-        <S.Button style={{ backgroundColor: "#d3d3d3" }}>수정</S.Button>
-        <S.Button style={{ backgroundColor: "#fb7a74" }}>삭제</S.Button>
-      </S.BlogButtonBox>
       <S.Blog>
-        {Blogs.map(
-          (item: {
-            id: string;
-            BlogImg: string;
-            title: string;
-            desc: string;
-            date: string;
-          }) => (
+        <S.BlogButtonBox>
+          <S.Button backgroundColor="#aeddff">+</S.Button>
+          <S.Button backgroundColor="#fb7a74">x</S.Button>
+        </S.BlogButtonBox>
+        {Blogs ? (
+          Blogs.map((item) => (
             <BlogItem
               key={item.id}
               BlogImg={item.BlogImg}
@@ -107,7 +90,9 @@ const Blog: React.FC<BlogType> = () => {
               date={item.date}
               id={item.id}
             />
-          )
+          ))
+        ) : (
+          <div>로딩중....</div>
         )}
         {/* <Footer /> */}
       </S.Blog>
