@@ -3,7 +3,7 @@ export interface BlogType {
   date: string;
   title: string;
   desc: string;
-  id: string;
+  id: number;
 }
 
 export interface BlogTypeH {
@@ -11,6 +11,6 @@ export interface BlogTypeH {
   date: string;
   title: string;
   desc: string;
-  id: string;
+  id: number;
   HeaderColor: string;
 }

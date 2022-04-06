@@ -3,12 +3,24 @@ import * as S from "./Styled";
 import { BlogType } from "../../types";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import axios from "axios";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface BlogTypeProp {
   blogIn: BlogType;
 }
 
 const BlogIn = ({ blogIn }: BlogTypeProp) => {
+  const onBloginRemove = (n: number) => {
+    axios
+      .delete("/blog")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error: any) => {
+        console.log(error);
+      });
+  };
+
   return (
     <>
       <S.BlogIn>
@@ -19,7 +31,14 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           >
             <S.Button style={{ backgroundColor: "#aeddff" }}>+</S.Button>
           </Link>
-          <S.Button style={{ backgroundColor: "#fb7a74" }}>x</S.Button>
+          <S.Button
+            onClick={() => {
+              onBloginRemove(blogIn.id);
+            }}
+            style={{ backgroundColor: "#fb7a74" }}
+          >
+            x
+          </S.Button>
         </S.BlogButtonBox>
         <S.Title>{blogIn.title}</S.Title>
         <S.TextBox>

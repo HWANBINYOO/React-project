@@ -5,7 +5,6 @@ import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
 
-// import Footer from "../Footer/Footer";
 // const a = [
 //   {
 //     id: "1",
@@ -57,14 +56,6 @@ import { Link } from "react-router-dom";
 //     date: "2022년4월6일",
 //   },
 // ];
-
-// interface BlogType {
-//   id: string;
-//   BlogImg: string;
-//   title: string;
-//   desc: string;
-//   date: string;
-// }
 
 const Blog: React.FC<BlogType> = () => {
   const [Blogs, setBlogs] = useState<BlogType[] | null>();
