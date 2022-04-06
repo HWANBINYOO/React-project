@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import BlogItem from "../BlogItem/BlogItem";
 import * as S from "./Styled";
 import { BlogType } from "../../types";
+import { Link } from "react-router-dom";
 
 // import Footer from "../Footer/Footer";
 // const a = [
@@ -77,8 +78,13 @@ const Blog: React.FC<BlogType> = () => {
     <>
       <S.Blog>
         <S.BlogButtonBox>
-          <S.Button backgroundColor="#aeddff">+</S.Button>
-          <S.Button backgroundColor="#fb7a74">x</S.Button>
+          <Link
+            to="/blogadd"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <S.Button style={{ backgroundColor: "#aeddff" }}>+</S.Button>
+          </Link>
+          <S.Button style={{ backgroundColor: "#fb7a74" }}>x</S.Button>
         </S.BlogButtonBox>
         {Blogs ? (
           Blogs.map((item) => (

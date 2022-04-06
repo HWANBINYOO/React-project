@@ -2,15 +2,12 @@ import React from "react";
 import Header from "../component/Header/Header";
 import Title from "../component/Title/Title";
 import BlogAdd from "../component/BlogAdd/BlogAdd";
-import { BlogTypeH } from "../types";
 
-const BlogPage: React.FC<BlogTypeH> = ({
-  HeaderColor,
-  BlogImg,
-  date,
-  title,
-  desc,
-}) => {
+interface Homes {
+  HeaderColor: string;
+}
+
+const BlogAddPage: React.FC<Homes> = ({ HeaderColor }) => {
   return (
     <>
       <Title />
@@ -20,4 +17,4 @@ const BlogPage: React.FC<BlogTypeH> = ({
   );
 };
 
-export default BlogPage;
+export default BlogAddPage;
