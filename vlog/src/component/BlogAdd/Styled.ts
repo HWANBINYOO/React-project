@@ -67,7 +67,7 @@ export const Today = styled.span`
 export const Button = styled.button`
   font-family: "GangwonEduSaeeum_OTFMediumA";
   margin-left: 3rem;
-  background-color: #d3d3d3;
+  background-color: #ffc895;
   border-radius: 10px;
   font-size: 2rem;
   border: none;

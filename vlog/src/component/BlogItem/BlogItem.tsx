@@ -1,14 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import * as S from "./Styled";
-
-interface BlogType {
-  BlogImg: string;
-  date: string;
-  title: string;
-  desc: string;
-  id: string;
-}
+import { BlogType } from "../../types";
 
 const BlogItem: React.FC<BlogType> = ({ BlogImg, date, title, desc, id }) => {
   const navigate = useNavigate();

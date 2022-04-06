@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../component/Header/Header";
 import Title from "../component/Title/Title";
 import { useParams } from "react-router-dom";
-import axios, { AxiosResponseHeaders } from "axios";
+import axios from "axios";
 import BlogIn from "../component/BlogIn/BlogIn";
 // import BlogItem from "../component/BlogItem/BlogItem";
 import { BlogType } from "../types";

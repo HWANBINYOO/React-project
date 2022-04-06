@@ -60,3 +60,38 @@ export const date = styled.div`
   color: gray;
   /* border: 1px black solid; */
 `;
+
+export const BlogButtonBox = styled.div`
+  width: max-content;
+  height: max-content;
+
+  position: fixed;
+  left: 670px;
+  top: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px black solid; */
+  border-radius: 10%;
+  z-index: 100;
+  gap: 1px;
+  transition: all ease 0.25s 0s;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &:hover {
+    background-color: #d3d3d3;
+  }
+`;
+
+export const Button = styled.button`
+  /* display: none; */
+  z-index: -10;
+  width: 4rem;
+  height: 1.3rem;
+  background-color: ${(props: any) => props.backgroundColor};
+  outline: none;
+  border-radius: 10px;
+  /* border: 1px black solid; */
+  border: none;
+  font-size: 0.3rem;
+`;
