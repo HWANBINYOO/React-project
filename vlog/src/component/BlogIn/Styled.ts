@@ -42,7 +42,7 @@ export const Img = styled.img`
 
 export const desc = styled.div`
   width: 50%;
-  height: max-content;
+  height: 210px;
   font-size: 1.5rem;
   /* border: 1px black solid; */
   padding-top: 5rem;

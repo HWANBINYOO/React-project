@@ -18,7 +18,7 @@ const BlogInPage: React.FC<Homes> = ({ HeaderColor }) => {
   const [blogIn, setBlogIn] = useState<BlogType>();
   //   const BlogImg ;
   useEffect(() => {
-    axios.get(`/blog/id=${param.id}`).then((res) => {
+    axios.get(`/blog/${param.id}`).then((res) => {
       setBlogIn(res.data);
       console.log(blogIn);
       console.log(res.data);

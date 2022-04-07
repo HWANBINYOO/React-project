@@ -10,14 +10,15 @@ interface BlogTypeProp {
 }
 
 const BlogIn = ({ blogIn }: BlogTypeProp) => {
-  const onBloginRemove = (n: number) => {
+  const onBloginRemove = (deletId: number) => {
     axios
-      .delete("/blog")
+      .delete(`/blog/${deletId}`)
       .then((res) => {
         console.log(res);
       })
       .catch((error: any) => {
         console.log(error);
+        console.log(deletId);
       });
   };
 
