@@ -1,8 +1,10 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable jsx-a11y/alt-text */
 import * as S from "./Styled";
 import { BlogType } from "../../types";
 import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface BlogTypeProp {
@@ -15,12 +17,21 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
       .delete(`/blog/${deletId}`)
       .then((res) => {
         console.log(res);
+        console.log(res.status);
+        window.location.reload();
+
+        // if (res.status === 200) {
+        //   Navigate("/blog");
+        // }
       })
       .catch((error: any) => {
         console.log(error);
-        console.log(deletId);
       });
   };
+
+  // const goBack = () => {
+  //   history.push("/blog");
+  // };
 
   return (
     <>
@@ -32,14 +43,17 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           >
             <S.Button style={{ backgroundColor: "#aeddff" }}>+</S.Button>
           </Link>
-          <S.Button
-            onClick={() => {
-              onBloginRemove(blogIn.id);
-            }}
-            style={{ backgroundColor: "#fb7a74" }}
-          >
-            x
-          </S.Button>
+
+          <Link to="/blog" style={{ textDecoration: "none", color: "black" }}>
+            <S.Button
+              onClick={() => {
+                onBloginRemove(blogIn.id);
+              }}
+              style={{ backgroundColor: "#fb7a74" }}
+            >
+              x
+            </S.Button>
+          </Link>
         </S.BlogButtonBox>
         <S.Title>{blogIn.title}</S.Title>
         <S.TextBox>

@@ -24,6 +24,20 @@ export const InputBox = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
+
+  textarea {
+    font-family: "GangwonEduSaeeum_OTFMediumA";
+    width: 90%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    outline: none;
+    font-size: 3rem;
+    resize: none;
+  }
 `;
 
 export const DescInputBox = styled.div`
@@ -49,15 +63,15 @@ export const DescInputBox = styled.div`
   }
 `;
 
-export const Input = styled.input`
-  font-family: "GangwonEduSaeeum_OTFMediumA";
+// export const Input = styled.input`
+//   font-family: "GangwonEduSaeeum_OTFMediumA";
 
-  background-color: transparent;
-  border: none;
-  outline: none;
-  width: 90%;
-  height: 80%;
-`;
+//   background-color: transparent;
+//   border: none;
+//   outline: none;
+//   width: 90%;
+//   height: 80%;
+// `;
 
 export const Today = styled.span`
   margin-left: 3rem;

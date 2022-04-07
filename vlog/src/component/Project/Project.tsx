@@ -37,7 +37,7 @@ const a = [
     term: "50일(예정)",
     cost: 30000,
     Ido: "식단조절을 해주는 웹사이트를 만드는 중이에요",
-    imgSrc: "/imgs/dmm.png",
+    imgSrc: "/img/DM.png",
   },
   {
     id: 3,

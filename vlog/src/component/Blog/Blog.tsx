@@ -6,13 +6,13 @@ import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
 
 // const a = [
-//   {
-//     id: "1",
-//     BlogImg: "/img/1day.gif",
-//     title: "[React] 블로그만들기 1일차  Home/About 페이지만듬",
-//     desc: "오늘 블로그프로젝트를 시작했다 아직 ts interface로  타입주는게 미숙하고 컴포넌트 간의 값전달하는것이 좀 여려워서 프로젝트를 하기로했다. 지금은 잘 못하지만 프로젝트 끝날떄 되면 아마 ts장인이 되어있을거다.",
-//     date: "2022년3월26일",
-//   },
+// {
+//   id: "1",
+//   BlogImg: "/img/1day.gif",
+//   title: "[React] 블로그만들기 1일차  Home/About 페이지만듬",
+//   desc: "오늘 블로그프로젝트를 시작했다 아직 ts interface로  타입주는게 미숙하고 컴포넌트 간의 값전달하는것이 좀 여려워서 프로젝트를 하기로했다. 지금은 잘 못하지만 프로젝트 끝날떄 되면 아마 ts장인이 되어있을거다.",
+//   date: "2022년3월26일",
+// },
 //   {
 //     id: "2",
 //     BlogImg: "/img/2day.gif",
@@ -60,7 +60,7 @@ import { Link } from "react-router-dom";
 const Blog: React.FC<BlogType> = () => {
   const [Blogs, setBlogs] = useState<BlogType[] | null>();
   useEffect(() => {
-    axios.get(`/blog`).then((res) => {
+    axios.get("/blog").then((res) => {
       console.log(res);
       setBlogs(res.data);
     });
