@@ -12,9 +12,9 @@ const Todolist = () => {
     <>
       <S.Todolist>
         <TodoInput />
-        {TodoListR.map((todo) => {
-          <TodoItem key={todo.id} todo={todo} />;
-        })}
+        {TodoListR.map((todo) => (
+          <TodoItem key={todo.id} item={todo} />
+        ))}
         {/* {todolist.map((todo: any) => (
           <TodoItem todo={todo} key={todo.id} onRemove={onRemove} />
         ))} */}

@@ -7,7 +7,7 @@ import * as S from "./Style";
 const TodoInput = () => {
   const [todoInput, setTodoInput] = useState("");
   const setTodoList = useSetRecoilState(todoListR);
-  let id: number = 4;
+  let [todoListid, setTodoListid] = useState<number>(4);
 
   const onChange = (e: any) => {
     setTodoInput(e.target.value);
@@ -22,17 +22,19 @@ const TodoInput = () => {
   //   setTodoInput("");
   //   //input 창 비우기
   // };
-  const addItem = () => {
+  const addItem = (e: any) => {
+    e.preventDefault();
     setTodoList((todo) => {
       return [
         ...todo,
         {
-          id: id,
+          id: todoListid,
           text: todoInput,
         },
       ];
     });
     setTodoInput("");
+    setTodoListid(todoListid + 1);
   };
 
   return (

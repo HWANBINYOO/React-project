@@ -13,11 +13,11 @@ export const todoListR = atom<TodoListR[]>({
       text: "todolist 1",
     },
     {
-      id: 1,
+      id: 2,
       text: "todolist 2",
     },
     {
-      id: 1,
+      id: 3,
       text: "todolist 3",
     },
   ],
