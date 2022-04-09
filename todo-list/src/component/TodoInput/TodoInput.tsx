@@ -7,7 +7,7 @@ import * as S from "./Style";
 const TodoInput = () => {
   const [todoInput, setTodoInput] = useState("");
   const setTodoList = useSetRecoilState(todoListR);
-  let [todoListid, setTodoListid] = useState<number>(4);
+  let [todoListid, setTodoListid] = useState<number>(3);
 
   const onChange = (e: any) => {
     setTodoInput(e.target.value);

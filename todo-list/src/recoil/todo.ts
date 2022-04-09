@@ -16,9 +16,5 @@ export const todoListR = atom<TodoListR[]>({
       id: 2,
       text: "todolist 2",
     },
-    {
-      id: 3,
-      text: "todolist 3",
-    },
   ],
 });
