@@ -12,13 +12,27 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={<HomePage HeaderColor="blue" />} />
-        <Route path="/About" element={<AboutPage HeaderColor="purple" />} />
+        <Route
+          path="/"
+          element={
+            <HomePage
+            //  HeaderColor="blue"
+            />
+          }
+        />
+        <Route
+          path="/About"
+          element={
+            <AboutPage
+            // HeaderColor="purple"
+            />
+          }
+        />
         <Route
           path="/project"
           element={
             <ProjectPage
-              HeaderColor="Orange"
+              // HeaderColor="Orange"
               id={0}
               name={""}
               term={""}
@@ -38,12 +52,26 @@ function App() {
               title={""}
               desc={""}
               id={0}
-              HeaderColor="red"
+              // HeaderColor="red"
             />
           }
         />
-        <Route path="/:id" element={<BlogInPage HeaderColor="red" />} />
-        <Route path="/blogadd" element={<BlogAddPage HeaderColor="red" />} />
+        <Route
+          path="/:id"
+          element={
+            <BlogInPage
+            // HeaderColor="red"
+            />
+          }
+        />
+        <Route
+          path="/blogadd"
+          element={
+            <BlogAddPage
+            // HeaderColor="red"
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

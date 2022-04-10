@@ -45,9 +45,6 @@ const BlogAdd = () => {
       .catch((error: any) => {
         console.log(error);
       });
-
-    console.log("zsio");
-    window.location.reload();
   };
 
   return (

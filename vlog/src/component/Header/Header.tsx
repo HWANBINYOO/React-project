@@ -1,10 +1,14 @@
 import * as S from "./Styled";
 import { Link } from "react-router-dom";
-interface Homes {
-  HeaderColor: string;
-}
+import { useRecoilValue } from "recoil";
+import { HeaderColor } from "../../recoil/HeaderColor";
+// interface Homes {
+//   HeaderColor: string;
+// }
 
-export default function Header({ HeaderColor }: Homes) {
+// export default function Header({ HeaderColor }: Homes) {
+export default function Header() {
+  const BlogHeaderColor = useRecoilValue(HeaderColor);
   return (
     <S.Header>
       <Link to="/" style={{ textDecoration: "none", color: "black" }}>
@@ -47,7 +51,7 @@ export default function Header({ HeaderColor }: Homes) {
             backgroundColor: `${HeaderColor === "red" ? "#ff9d95" : "white"}`,
           }}
         >
-          Blog
+          Blog6
         </S.HeaderMenu>
       </Link>
     </S.Header>
