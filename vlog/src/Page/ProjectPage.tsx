@@ -10,7 +10,6 @@ interface Homes {
   term: string;
   cost: number;
   Ido: string;
-  alength: number;
   imgSrc: string;
 }
 
@@ -23,20 +22,12 @@ const ProjectPage: React.FC<Homes> = ({
   imgSrc,
 }) => {
   const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);
-  setHeaderColor("Orange");
+  setHeaderColor("blue");
   return (
     <>
       <Title />
       <Header HeaderColor={HeaderColor} />
-      <Project
-        id={1}
-        name={""}
-        term={""}
-        cost={0}
-        Ido={""}
-        imgSrc={""}
-        alength={0}
-      />
+      <Project id={1} name={""} term={""} cost={0} Ido={""} imgSrc={""} />
     </>
   );
 };

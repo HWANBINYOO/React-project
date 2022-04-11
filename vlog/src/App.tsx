@@ -25,13 +25,11 @@ function App() {
           path="/project"
           element={
             <ProjectPage
-              // HeaderColor="Orange"
               id={0}
               name={""}
               term={""}
               cost={0}
               Ido={""}
-              alength={0}
               imgSrc={""}
             />
           }

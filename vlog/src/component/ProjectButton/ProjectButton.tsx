@@ -5,17 +5,9 @@ interface Hom {
   id: number;
   Projects: any;
   onClick: (e: any) => void;
-  alength: number;
-  a: any;
 }
 
-const ProjectButton: React.FC<Hom> = ({
-  id,
-  Projects,
-  onClick,
-  alength,
-  a,
-}) => {
+const ProjectButton: React.FC<Hom> = ({ id, Projects, onClick }) => {
   const HandleonClick = (n: number) => {
     onClick((id = n));
   };

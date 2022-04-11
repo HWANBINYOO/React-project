@@ -18,7 +18,6 @@ interface Homes {
   term: string;
   cost: number;
   Ido: string;
-  alength: number;
   imgSrc: string;
 }
 
@@ -59,7 +58,6 @@ const a = [
 
 const Project: React.FC<Homes> = () => {
   const [projects, setProjects] = useState(a);
-  let alength = a.length;
 
   const handleProjects = (id: any): void => {
     setProjects(a.filter((Pr) => Pr.id === id));
@@ -92,13 +90,7 @@ const Project: React.FC<Homes> = () => {
             />
           ))}
 
-          <ProjectButton
-            a={a}
-            alength={alength}
-            Projects={projects}
-            id={1}
-            onClick={handleProjects}
-          />
+          <ProjectButton Projects={projects} id={1} onClick={handleProjects} />
         </S.myProject>
         <Footer />
       </S.Project>
