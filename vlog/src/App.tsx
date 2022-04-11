@@ -6,6 +6,7 @@ import AboutPage from "./Page/AboutPage";
 import BlogPage from "./Page/BlogPage";
 import BlogInPage from "./Page/BlogInPage";
 import BlogAddPage from "./Page/BlogAddPage";
+import LoginPage from "./Page/LoginPage";
 
 function App() {
   return (
@@ -59,6 +60,14 @@ function App() {
           path="/blogadd"
           element={
             <BlogAddPage
+            // HeaderColor="red"
+            />
+          }
+        />
+        <Route
+          path="/Login"
+          element={
+            <LoginPage
             // HeaderColor="red"
             />
           }

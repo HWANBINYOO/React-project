@@ -2,18 +2,16 @@ import styled from "styled-components";
 
 export const Home = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  /* border: 1px black solid; */
-  overflow-y: scroll;
-  /* background-color: black; */
+  /* overflow-y: scroll; */
 `;
 
 export const HelloPickture = styled.div`
-  width: 82%;
+  width: 85%;
   /* height: 100%; */
   display: grid;
   gap: 10px;
@@ -25,4 +23,9 @@ export const HelloPickture = styled.div`
 export const Img = styled.img`
   width: 100%;
   /* cursor: grab; */
+`;
+
+export const GoLogin = styled.div`
+  display: flex;
+  gap: 20px;
 `;

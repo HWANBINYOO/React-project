@@ -22,7 +22,7 @@ const ProjectPage: React.FC<Homes> = ({
   imgSrc,
 }) => {
   const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);
-  setHeaderColor("blue");
+  setHeaderColor("Orange");
   return (
     <>
       <Title />

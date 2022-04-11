@@ -9,7 +9,7 @@ export default function Header({ HeaderColor }: { HeaderColor: string }) {
   // export default function Header({ BLUE }: { BLUE: string }) {
   return (
     <S.Header>
-      <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+      {/* <Link to="/" style={{ textDecoration: "none", color: "black" }}>
         <S.HeaderMenu
           style={{
             backgroundColor: `${HeaderColor === "blue" ? "#a3d1f5" : "white"}`,
@@ -17,7 +17,7 @@ export default function Header({ HeaderColor }: { HeaderColor: string }) {
         >
           Home
         </S.HeaderMenu>
-      </Link>
+      </Link> */}
 
       <Link to="/About" style={{ textDecoration: "none", color: "black" }}>
         <S.HeaderMenu

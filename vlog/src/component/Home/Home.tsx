@@ -1,12 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import * as S from "./Styled";
-// import sesiImg from "/img/11.jpg";
-// import pianoImg from "/img/piano.jpg";
-// import manImg from "/img/dhd.webp";
-// import songImg from "/img/song.png";
-// import goodImg from "/img/2977.jpg";
-// import carImg from "/img/car.webp";
-import Footer from "../Footer/Footer";
+// import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -20,7 +15,13 @@ export default function Home() {
           <S.Img src={"/img/song.png"} />
           <S.Img src={"/img/car.webp"} />
         </S.HelloPickture>
-        <Footer />
+        <S.GoLogin>
+          <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
+            <h2>Login</h2>
+          </Link>
+          <h2>Signup</h2>
+        </S.GoLogin>
+        {/* <Footer /> */}
       </S.Home>
     </>
   );
