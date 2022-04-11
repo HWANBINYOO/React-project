@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as S from "./Styled";
 
-const Login = () => {
+const Signup = () => {
   const [Email, setEmail] = useState<string>("");
   const [PassWord, setPassWord] = useState<string>("");
 
@@ -18,7 +18,7 @@ const Login = () => {
 
   axios
     .post(
-      "/blog/login",
+      "/blog/",
       {
         Email: Email,
         Password: PassWord,
@@ -37,25 +37,28 @@ const Login = () => {
   return (
     <>
       <S.Login>
-        <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
-          <S.LoginTitle>로그인</S.LoginTitle>
+        <Link to="/signup" style={{ textDecoration: "none", color: "black" }}>
+          <S.LoginTitle>회원가입</S.LoginTitle>
         </Link>
-        <S.LoginInput>
+        <S.SignupInput>
           <p>Email</p>
-          <input onChange={onChangeEmail} placeholder="Email을 입력하세요" />
-        </S.LoginInput>
-        <S.LoginInput>
-          <p>PassWord</p>
           <input
             type="password"
+            onChange={onChangeEmail}
+            placeholder="Email을 입력하세요"
+          />
+        </S.SignupInput>
+        <S.SignupInput>
+          <p>PassWord</p>
+          <input
             onChange={onChangePassWord}
             placeholder="PassWord을 입력하세요"
           />
-        </S.LoginInput>
-        <S.LoginButton>Login</S.LoginButton>
+        </S.SignupInput>
+        <S.LoginButton>Signup</S.LoginButton>
       </S.Login>
     </>
   );
 };
 
-export default Login;
+export default Signup;

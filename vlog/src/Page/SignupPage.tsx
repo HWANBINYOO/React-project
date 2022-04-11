@@ -1,12 +1,12 @@
 import React from "react";
-import Login from "../component/Login/Login";
+import Signup from "../component/Signup/Signup";
 
 const LoginPage: React.FC = () => {
   return (
     <>
       {/* <Title />
       <Header HeaderColor={HeaderColor} /> */}
-      <Login />
+      <Signup />
     </>
   );
 };

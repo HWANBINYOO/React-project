@@ -17,8 +17,12 @@ export const HelloPickture = styled.div`
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, minmax(100px, auto));
+  transition: all ease 0.2s 0s;
 
   /* border: 1px black solid; */
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 export const Img = styled.img`
   width: 100%;

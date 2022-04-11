@@ -13,11 +13,13 @@ export const Project = styled.div`
 `;
 
 export const ProjectTitle = styled.p`
-  font-size: 1.5rem;
+  padding: 3rem 0 0 0;
+  font-size: 2.5rem;
 `;
 
 export const myProject = styled.div`
   margin: auto 0;
+  padding: 3rem 0;
 `;
 
 export const Img = styled.img`

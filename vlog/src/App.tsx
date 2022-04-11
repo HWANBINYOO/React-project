@@ -7,6 +7,7 @@ import BlogPage from "./Page/BlogPage";
 import BlogInPage from "./Page/BlogInPage";
 import BlogAddPage from "./Page/BlogAddPage";
 import LoginPage from "./Page/LoginPage";
+import SignupPage from "./Page/SignupPage";
 
 function App() {
   return (
@@ -14,14 +15,7 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route
-          path="/About"
-          element={
-            <AboutPage
-            // HeaderColor="purple"
-            />
-          }
-        />
+        <Route path="/About" element={<AboutPage />} />
         <Route
           path="/project"
           element={
@@ -38,40 +32,13 @@ function App() {
         <Route
           path="/blog"
           element={
-            <BlogPage
-              BlogImg={""}
-              date={""}
-              title={""}
-              desc={""}
-              id={0}
-              // HeaderColor="red"
-            />
+            <BlogPage BlogImg={""} date={""} title={""} desc={""} id={0} />
           }
         />
-        <Route
-          path="/:id"
-          element={
-            <BlogInPage
-            // HeaderColor="red"
-            />
-          }
-        />
-        <Route
-          path="/blogadd"
-          element={
-            <BlogAddPage
-            // HeaderColor="red"
-            />
-          }
-        />
-        <Route
-          path="/Login"
-          element={
-            <LoginPage
-            // HeaderColor="red"
-            />
-          }
-        />
+        <Route path="/:id" element={<BlogInPage />} />
+        <Route path="/blogadd" element={<BlogAddPage />} />
+        <Route path="/Login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
     </BrowserRouter>
   );

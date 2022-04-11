@@ -14,7 +14,7 @@ export const LoginTitle = styled.span`
   font-size: 5.5rem;
 `;
 
-export const LoginInput = styled.div`
+export const SignupInput = styled.div`
   p {
     font-size: 2rem;
     font-weight: bold;
@@ -33,7 +33,8 @@ export const LoginInput = styled.div`
     outline: none;
     font-size: 1.5rem;
     resize: none;
-    transition: all ease 0.3s 0s;
+    overflow-y: hidden;
+    transition: all ease 0.2s 0s;
   }
   input:focus {
     border-color: #c8abc5;
@@ -52,6 +53,7 @@ export const LoginButton = styled.button`
   font-size: 1rem;
   background-color: #c8abc5;
   transition: all ease 0.2s 0s;
+
   /* font-weight: bold; */
 
   &:hover {
