@@ -4,7 +4,7 @@ import * as S from "./Styled";
 import { BlogType } from "../../types";
 import Footer from "../Footer/Footer";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface BlogTypeProp {
@@ -12,12 +12,14 @@ interface BlogTypeProp {
 }
 
 const BlogIn = ({ blogIn }: BlogTypeProp) => {
+  const navigate = useNavigate();
   const onBloginRemove = (deletId: number) => {
     axios
       .delete(`/blog/${deletId}`)
       .then((res) => {
         console.log(res);
         console.log(res.status);
+        navigate("/blog");
         window.location.reload();
 
         // if (res.status === 200) {
@@ -44,16 +46,14 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
             <S.Button style={{ backgroundColor: "#aeddff" }}>+</S.Button>
           </Link>
 
-          <Link to="/blog" style={{ textDecoration: "none", color: "black" }}>
-            <S.Button
-              onClick={() => {
-                onBloginRemove(blogIn.id);
-              }}
-              style={{ backgroundColor: "#fb7a74" }}
-            >
-              x
-            </S.Button>
-          </Link>
+          <S.Button
+            onClick={() => {
+              onBloginRemove(blogIn.id);
+            }}
+            style={{ backgroundColor: "#fb7a74" }}
+          >
+            x
+          </S.Button>
         </S.BlogButtonBox>
         <S.Title>{blogIn.title}</S.Title>
         <S.TextBox>

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
@@ -15,6 +15,7 @@ const BlogAdd = () => {
 
   const [title, setTitle] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
+  const navigate = useNavigate();
 
   const onChangeTitle = (e: any) => {
     setTitle(e.currentTarget.value);
@@ -41,6 +42,8 @@ const BlogAdd = () => {
       )
       .then((res) => {
         console.log(res);
+        alert("올렸습니다!");
+        navigate("/blog");
       })
       .catch((error: any) => {
         console.log(error);
@@ -73,9 +76,7 @@ const BlogAdd = () => {
         </S.Box>
 
         <S.Today>{`${year}년 ${month}월 ${day}일 ${dayOfWeek}요일`}</S.Today>
-        <Link to="/blog" style={{ textDecoration: "none", color: "black" }}>
-          <S.Button onClick={onSubmit}>올리기</S.Button>
-        </Link>
+        <S.Button onClick={onSubmit}>올리기</S.Button>
         {/* <Footer /> */}
       </S.BlogAdd>
     </>
