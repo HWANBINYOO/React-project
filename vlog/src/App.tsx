@@ -12,14 +12,7 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-            //  HeaderColor="blue"
-            />
-          }
-        />
+        <Route path="/" element={<HomePage />} />
         <Route
           path="/About"
           element={

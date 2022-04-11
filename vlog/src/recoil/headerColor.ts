@@ -1,23 +1,10 @@
 import { atom } from "recoil";
 
-interface headerColor {
-  color: string;
+export interface headerColor {
+  default: string;
 }
 
-export const HeaderColor = atom<headerColor[]>({
+export const BlogHeaderColor = atom({
   key: "myblogHeaderColor",
-  default: [
-    {
-      color: "blue",
-    },
-    {
-      color: "purple",
-    },
-    {
-      color: "Orange",
-    },
-    {
-      color: "red",
-    },
-  ],
+  default: "blue",
 });

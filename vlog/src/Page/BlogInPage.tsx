@@ -7,12 +7,16 @@ import axios from "axios";
 import BlogIn from "../component/BlogIn/BlogIn";
 // import BlogItem from "../component/BlogItem/BlogItem";
 import { BlogType } from "../types";
+import { useRecoilState } from "recoil";
+import { BlogHeaderColor } from "../recoil/HeaderColor";
 
-interface Homes {
-  HeaderColor: string;
-}
+// interface Homes {
+//   HeaderColor: string;
+// }
 
-const BlogInPage: React.FC<Homes> = ({ HeaderColor }) => {
+const BlogInPage: React.FC = () => {
+  const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);
+  setHeaderColor("red");
   const param = useParams();
   console.log(param);
   const [blogIn, setBlogIn] = useState<BlogType>();

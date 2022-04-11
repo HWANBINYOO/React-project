@@ -1,14 +1,12 @@
 import * as S from "./Styled";
 import { Link } from "react-router-dom";
-import { useRecoilValue } from "recoil";
-import { HeaderColor } from "../../recoil/HeaderColor";
+
 // interface Homes {
 //   HeaderColor: string;
 // }
 
-// export default function Header({ HeaderColor }: Homes) {
-export default function Header() {
-  const BlogHeaderColor = useRecoilValue(HeaderColor);
+export default function Header({ HeaderColor }: { HeaderColor: string }) {
+  // export default function Header({ BLUE }: { BLUE: string }) {
   return (
     <S.Header>
       <Link to="/" style={{ textDecoration: "none", color: "black" }}>

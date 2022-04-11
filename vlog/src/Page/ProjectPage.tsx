@@ -1,9 +1,10 @@
 import React from "react";
+import { useRecoilState } from "recoil";
 import Header from "../component/Header/Header";
 import Project from "../component/Project/Project";
 import Title from "../component/Title/Title";
+import { BlogHeaderColor } from "../recoil/HeaderColor";
 interface Homes {
-  HeaderColor: string;
   id: number;
   name: string;
   term: string;
@@ -14,7 +15,6 @@ interface Homes {
 }
 
 const ProjectPage: React.FC<Homes> = ({
-  HeaderColor,
   id,
   name,
   term,
@@ -22,6 +22,8 @@ const ProjectPage: React.FC<Homes> = ({
   Ido,
   imgSrc,
 }) => {
+  const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);
+  setHeaderColor("Orange");
   return (
     <>
       <Title />

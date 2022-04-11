@@ -2,9 +2,10 @@ import React from "react";
 import Header from "../component/Header/Header";
 import Title from "../component/Title/Title";
 import Blog from "../component/Blog/Blog";
+import { useRecoilState } from "recoil";
+import { BlogHeaderColor } from "../recoil/HeaderColor";
 
 interface BlogTtpe {
-  HeaderColor: string;
   BlogImg: string;
   date: string;
   title: string;
@@ -12,13 +13,9 @@ interface BlogTtpe {
   id: number;
 }
 
-const BlogPage: React.FC<BlogTtpe> = ({
-  HeaderColor,
-  BlogImg,
-  date,
-  title,
-  desc,
-}) => {
+const BlogPage: React.FC<BlogTtpe> = ({ BlogImg, date, title, desc }) => {
+  const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);
+  setHeaderColor("red");
   return (
     <>
       <Title />
