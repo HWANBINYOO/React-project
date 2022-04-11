@@ -20,16 +20,24 @@ export const HelloPickture = styled.div`
   transition: all ease 0.2s 0s;
 
   /* border: 1px black solid; */
-  &:hover {
-    opacity: 0.9;
-  }
 `;
 export const Img = styled.img`
   width: 100%;
   /* cursor: grab; */
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 
 export const GoLogin = styled.div`
   display: flex;
   gap: 20px;
+
+  h2 {
+    font-size: 2rem;
+    transition: all ease 0.2s 0s;
+  }
+  h2:hover {
+    color: gray;
+  }
 `;

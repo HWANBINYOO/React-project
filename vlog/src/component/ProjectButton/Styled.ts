@@ -27,8 +27,9 @@ export const Pbutton = styled.button`
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: all ease 0.3s 0s;
 
-  & :hover {
+  &:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     background-color: #ffdab3;
   }

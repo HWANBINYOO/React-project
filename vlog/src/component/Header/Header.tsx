@@ -49,7 +49,7 @@ export default function Header({ HeaderColor }: { HeaderColor: string }) {
             backgroundColor: `${HeaderColor === "red" ? "#ff9d95" : "white"}`,
           }}
         >
-          Blog6
+          Blog
         </S.HeaderMenu>
       </Link>
     </S.Header>
