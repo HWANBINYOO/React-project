@@ -19,6 +19,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
       .then((res) => {
         console.log(res);
         console.log(res.status);
+        alert("삭제되었습니다!");
         navigate("/blog");
         window.location.reload();
 
