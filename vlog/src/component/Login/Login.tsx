@@ -10,32 +10,27 @@ const Login = () => {
 
   const onChangeEmail = (e: any) => {
     setEmail(e.currentTarget.value);
-    console.log(Email);
   };
   const onChangePassWord = (e: any) => {
-    console.log(e.target.value);
     setPassWord(e.currentTarget.value);
   };
 
-  const data = [
+  const loginData = [
     {
       Email: Email,
       Password: PassWord,
     },
   ];
 
-  axios
-    .post("/blog/login", data)
-    .then((res) => {
-      console.log(res.data);
-      localStorage.setItem("Blog_accessToken", res.data.data.accessToken);
-      localStorage.setItem("Blog_refreshToken", res.data.data.refreshToken);
-      navigate("/about");
-      window.location.reload();
-    })
-    .catch((error: any) => {
-      console.log(error);
-    });
+  const onLogin = async () => {
+    const { data } = await axios.post("/blog/login", loginData);
+
+    localStorage.setItem("Blog_accessToken", data.data.accessToken);
+    localStorage.setItem("Blog_refreshToken", data.data.refreshToken);
+
+    navigate("/about");
+    window.location.reload();
+  };
 
   return (
     <>
@@ -55,7 +50,7 @@ const Login = () => {
             placeholder="PassWord을 입력하세요"
           />
         </S.LoginInput>
-        <S.LoginButton>Login</S.LoginButton>
+        <S.LoginButton onClick={() => onLogin()}>Login</S.LoginButton>
       </S.Login>
     </>
   );

@@ -4,38 +4,36 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 
-interface LOGIN {
-  setEmail: (Email: string) => void;
-  setPassWord: (PassWord: string) => void;
-}
-
-const onSignup = () => {
+// interface LOGIN {
+//   setEmail: (Email: string) => void;
+//   setPassWord: (PassWord: string) => void;
+// }
+const Signup: React.FC = () => {
   const [Email, setEmail] = useState("");
   const [PassWord, setPassWord] = useState("");
-  const navigate = useNavigate();
+  const onSignup = () => {
+    const navigate = useNavigate();
 
-  if (Email === "") return alert("이메일이 입력되지 않았어요");
-  else if (PassWord === "") return alert("패스워드가 입력되지 않았어요");
+    if (Email === "") return alert("이메일이 입력되지 않았어요");
+    else if (PassWord === "") return alert("패스워드가 입력되지 않았어요");
 
-  axios
-    .post("/blog/Signup", {
-      Email: Email,
-      Password: PassWord,
-    })
-    .then((res) => {
-      console.log(res);
-      alert("회원가입이 되었습니다!");
-      navigate("/login");
-    })
-    .catch((error: any) => {
-      console.log(error);
-    });
+    axios
+      .post("/blog/Signup", {
+        Email: Email,
+        Password: PassWord,
+      })
+      .then((res) => {
+        console.log(res);
+        alert("회원가입이 되었습니다!");
+        navigate("/login");
+      })
+      .catch((error: any) => {
+        console.log(error);
+      });
 
-  return { setEmail, setPassWord };
-};
+    return { setEmail, setPassWord };
+  };
 
-const Signup: React.FC = () => {
-  const { setEmail, setPassWord } = onSignup();
   return (
     <>
       <S.Login>

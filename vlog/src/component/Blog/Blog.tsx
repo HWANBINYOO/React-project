@@ -58,7 +58,7 @@ import { Link } from "react-router-dom";
 // ];
 
 const Blog: React.FC<BlogType> = () => {
-  const [Blogs, setBlogs] = useState<BlogType[] | null>();
+  const [Blogs, setBlogs] = useState<BlogType[]>();
   useEffect(() => {
     axios.get("/blog").then((res) => {
       console.log(res);
@@ -69,13 +69,10 @@ const Blog: React.FC<BlogType> = () => {
     <>
       <S.Blog>
         <S.BlogButtonBox>
-          <Link
-            to="/blogadd"
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <S.Button style={{ backgroundColor: "#aeddff" }}>+</S.Button>
+          <Link to="/blogadd">
+            <S.Button color="#aeddff">+</S.Button>
           </Link>
-          <S.Button style={{ backgroundColor: "#fb7a74" }}>x</S.Button>
+          <S.Button color="#fb7a74">x</S.Button>
         </S.BlogButtonBox>
         {Blogs ? (
           Blogs.map((item) => (

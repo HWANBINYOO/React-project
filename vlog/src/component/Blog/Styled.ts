@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type StyleProps = {
+  color?: string;
+};
+
 export const Blog = styled.div`
   width: 100vw;
   height: 80vh;
@@ -26,17 +30,22 @@ export const BlogButtonBox = styled.div`
   transition: all ease 0.25s 0s;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   &:hover {
     background-color: #d3d3d3;
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<StyleProps>`
   /* display: none; */
   z-index: -10;
   width: 4rem;
   height: 1.3rem;
-  background-color: ${(props: any) => props.backgroundColor};
+  background-color: ${(props) => props.color};
   outline: none;
   border-radius: 10px;
   /* border: 1px black solid; */
