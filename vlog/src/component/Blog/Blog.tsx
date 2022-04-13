@@ -64,7 +64,10 @@ const Blog: React.FC<BlogType> = () => {
       console.log(res);
       setBlogs(res.data);
     });
+    // const { data } = axios.get("/blog");
+    // setBlogs(data);
   }, []);
+
   return (
     <>
       <S.Blog>
