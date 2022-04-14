@@ -11,27 +11,24 @@ import * as S from "./Styled";
 const Signup: React.FC = () => {
   const [Email, setEmail] = useState("");
   const [PassWord, setPassWord] = useState("");
-  const onSignup = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const signupData = [
+    {
+      Email: Email,
+      Password: PassWord,
+    },
+  ];
 
-    if (Email === "") return alert("이메일이 입력되지 않았어요");
-    else if (PassWord === "") return alert("패스워드가 입력되지 않았어요");
-
-    axios
-      .post("/blog/Signup", {
-        Email: Email,
-        Password: PassWord,
-      })
-      .then((res) => {
-        console.log(res);
-        alert("회원가입이 되었습니다!");
-        navigate("/login");
-      })
-      .catch((error: any) => {
-        console.log(error);
-      });
-
-    return { setEmail, setPassWord };
+  const onSignup = async () => {
+    try {
+      if (Email === "") return alert("이메일이 입력되지 않았어요");
+      else if (PassWord === "") return alert("패스워드가 입력되지 않았어요");
+      const { data } = await axios.post("/blog/login", signupData);
+      console.log(data);
+      navigate("/login");
+    } catch (a: any) {
+      console.log(a);
+    }
   };
 
   return (

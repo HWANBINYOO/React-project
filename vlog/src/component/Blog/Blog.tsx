@@ -59,13 +59,17 @@ import { Link } from "react-router-dom";
 
 const Blog: React.FC<BlogType> = () => {
   const [Blogs, setBlogs] = useState<BlogType[]>();
+  //useEffet 훅에서 async 사용하기
   useEffect(() => {
-    axios.get("/blog").then((res) => {
-      console.log(res);
-      setBlogs(res.data);
-    });
-    // const { data } = axios.get("/blog");
-    // setBlogs(data);
+    async function getblog() {
+      try {
+        setBlogs(await axios.get("/blog"));
+      } catch (a: any) {
+        console.log(a);
+      }
+    }
+
+    getblog();
   }, []);
 
   return (

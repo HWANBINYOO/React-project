@@ -24,6 +24,7 @@ const Login = () => {
 
   const onLogin = async () => {
     const { data } = await axios.post("/blog/login", loginData);
+    console.log(data);
 
     localStorage.setItem("Blog_accessToken", data.data.accessToken);
     localStorage.setItem("Blog_refreshToken", data.data.refreshToken);
