@@ -4,10 +4,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 
-// interface LOGIN {
-//   setEmail: (Email: string) => void;
-//   setPassWord: (PassWord: string) => void;
-// }
 const Signup: React.FC = () => {
   const [Email, setEmail] = useState("");
   const [PassWord, setPassWord] = useState("");

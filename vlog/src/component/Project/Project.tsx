@@ -3,13 +3,6 @@ import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import ProjectButton from "../ProjectButton/ProjectButton";
 import ProjectItem from "../ProjectItem/ProjectItem";
-
-// import ProjectImg from "/img/ProjectImg.jpg";
-// import DMImg from "/imgs/dmm.png";
-// import TodolistImg from "/img/todolist.png";
-// import BlogImg from "/img/blog.png";
-// import kakaoImg from "/img/kakao.png";
-
 import * as S from "./Styled";
 
 interface Homes {

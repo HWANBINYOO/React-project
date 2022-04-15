@@ -4,8 +4,6 @@ import Login from "../component/Login/Login";
 const LoginPage: React.FC = () => {
   return (
     <>
-      {/* <Title />
-      <Header HeaderColor={HeaderColor} /> */}
       <Login />
     </>
   );

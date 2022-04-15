@@ -13,23 +13,16 @@ interface BlogTypeProp {
 
 const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const navigate = useNavigate();
-  const onBloginRemove = (deletId: number) => {
-    axios
-      .delete(`/blog/${deletId}`)
-      .then((res) => {
-        console.log(res);
-        console.log(res.status);
-        alert("삭제되었습니다!");
-        navigate("/blog");
-        window.location.reload();
-
-        // if (res.status === 200) {
-        //   Navigate("/blog");
-        // }
-      })
-      .catch((error: any) => {
-        console.log(error);
-      });
+  const onBloginRemove = async (deletId: number) => {
+    try {
+      const { data } = await axios.post(`/blog/${deletId}`);
+      console.log(data);
+      alert("삭제되었습니다!");
+      navigate("/blog");
+      window.location.reload();
+    } catch (a: any) {
+      console.log(a);
+    }
   };
 
   // const goBack = () => {

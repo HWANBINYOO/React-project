@@ -15,17 +15,6 @@ const ProjectButton: React.FC<Hom> = ({ id, Projects, onClick }) => {
   return (
     <>
       <S.ShowButoons>
-        {/* {a.map((N: number) => (
-          <S.Pbutton
-            key={a.id}
-            onClick={() => {
-              HandleonClick(N);
-            }}
-          >
-            {a.id}
-          </S.Pbutton>
-        ))} */}
-
         <S.Pbutton
           onClick={() => {
             HandleonClick(1);

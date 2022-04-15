@@ -1,11 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 import * as S from "./Styled";
-// import AboutImg from "/img/About.webp";
-// import pianoImg from "/img/piano.jpg";
-// import songImg from "/img/song.png";
-// import goodImg from "/img/2977.jpg";
-// import carImg from "/img/car.webp";
-// import sesiImg from "/img/11.jpg";
 import Footer from "../Footer/Footer";
 
 export default function About() {
