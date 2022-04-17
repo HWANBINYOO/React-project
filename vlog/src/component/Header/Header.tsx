@@ -1,24 +1,9 @@
 import * as S from "./Styled";
 import { Link } from "react-router-dom";
 
-// interface Homes {
-//   HeaderColor: string;
-// }
-
 export default function Header({ HeaderColor }: { HeaderColor: string }) {
-  // export default function Header({ BLUE }: { BLUE: string }) {
   return (
     <S.Header>
-      {/* <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-        <S.HeaderMenu
-          style={{
-            backgroundColor: `${HeaderColor === "blue" ? "#a3d1f5" : "white"}`,
-          }}
-        >
-          Home
-        </S.HeaderMenu>
-      </Link> */}
-
       <Link to="/About" style={{ textDecoration: "none", color: "black" }}>
         <S.HeaderMenu
           style={{

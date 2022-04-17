@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import * as S from "./Styled";
-// import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
-
 export default function Home() {
   return (
     <>
