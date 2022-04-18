@@ -4,7 +4,7 @@ import Title from "../component/Title/Title";
 import About from "../component/About/About";
 import { useRecoilState } from "recoil";
 import { BlogHeaderColor } from "../recoil/HeaderColor";
-import Logout from "../component/ProjectButton/Logout/Logout";
+import Logout from "../component/Logout/Logout";
 
 export default function AboutPage() {
   const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);

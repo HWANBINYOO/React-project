@@ -18,8 +18,8 @@ export const BlogButtonBox = styled.div`
   height: max-content;
 
   position: fixed;
-  left: 670px;
-  top: 550px;
+  right: 10vw;
+  top: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,4 +51,10 @@ export const Button = styled.button<StyleProps>`
   /* border: 1px black solid; */
   border: none;
   font-size: 0.3rem;
+`;
+
+export const Img = styled.img`
+  position: fixed;
+  right: 27vw;
+  width: 50%;
 `;

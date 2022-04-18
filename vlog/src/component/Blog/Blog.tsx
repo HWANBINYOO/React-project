@@ -4,6 +4,7 @@ import BlogItem from "../BlogItem/BlogItem";
 import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
+// import loadingImg from "/img/loading.gif";
 
 // const a = [
 // {
@@ -93,7 +94,7 @@ const Blog: React.FC<BlogType> = () => {
             />
           ))
         ) : (
-          <div>로딩중....</div>
+          <S.Img src={"/img/loading.gif"} />
         )}
         {/* <Footer /> */}
       </S.Blog>
