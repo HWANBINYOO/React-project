@@ -33,7 +33,7 @@
   "build": {
     "appId": "com.appId"
   },
-  "main": "public/main.js",
+  "main": "public/electron.js",
   "homepage": "./",
   "scripts": {
     "react-start": "react-scripts start",
@@ -41,14 +41,8 @@
     "react-test": "react-scripts test",
     "react-eject": "react-scripts eject",
     "start": "concurrently \"cross-env NODE_ENV=development BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
-    "build": "electron-packager . ElectronPJ",
+    "build": "yarn react-build && electron-builder",
     "release": "yarn react-build && electron-builder --publish=always"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

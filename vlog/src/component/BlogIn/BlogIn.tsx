@@ -1,12 +1,8 @@
-/* eslint-disable no-restricted-globals */
-/* eslint-disable jsx-a11y/alt-text */
 import * as S from "./Styled";
 import { BlogType } from "../../types";
 import Footer from "../Footer/Footer";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface BlogTypeProp {
   blogIn: BlogType;
 }

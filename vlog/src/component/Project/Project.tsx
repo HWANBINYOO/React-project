@@ -1,10 +1,8 @@
-/* eslint-disable jsx-a11y/alt-text */
 import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import ProjectButton from "../ProjectButton/ProjectButton";
 import ProjectItem from "../ProjectItem/ProjectItem";
 import * as S from "./Styled";
-
 interface Homes {
   id: number;
   name: string;
@@ -13,7 +11,6 @@ interface Homes {
   Ido: string;
   imgSrc: string;
 }
-
 const a = [
   {
     id: 1,
@@ -63,7 +60,6 @@ const Project: React.FC<Homes> = () => {
 
   useEffect(() => {
     handleProjects(1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

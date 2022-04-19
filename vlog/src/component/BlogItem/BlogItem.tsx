@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { BlogType } from "../../types";

@@ -1,9 +1,7 @@
-/* eslint-disable jsx-a11y/alt-text */
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 const BlogAdd = () => {
   const date = new Date();
@@ -61,17 +59,11 @@ const BlogAdd = () => {
               onChange={onChangeDesc}
               placeholder="내용을 입력하세요"
             />
-            {/* <S.Input
-              style={{ fontSize: "2rem" }}
-              type="text"
-              placeholder="내용을 입력해주세요"
-            /> */}
           </S.DescInputBox>
         </S.Box>
 
         <S.Today>{`${year}년 ${month}월 ${day}일 ${dayOfWeek}요일`}</S.Today>
         <S.Button onClick={onSubmit}>올리기</S.Button>
-        {/* <Footer /> */}
       </S.BlogAdd>
     </>
   );
