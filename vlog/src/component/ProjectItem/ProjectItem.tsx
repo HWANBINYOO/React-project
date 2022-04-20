@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import * as S from "./Styled";
 
 interface Homes {
