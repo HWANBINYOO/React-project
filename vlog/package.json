@@ -2,7 +2,7 @@
   "typeRoots": [
     "src/types"
   ],
-  "main": "public/electron.js",
+  "main": "public/main.js",
   "homepage": "./",
   "name": "vlog",
   "version": "0.1.0",
@@ -42,7 +42,7 @@
     "eject": "react-scripts eject",
     "react-start": "set BROWSER=none && yarn start",
     "electron-start":"set ELECTRON_START_URL=http://localhost:3000 && electron .",
-    "electron-pack": "yarn build && electron-builder build -c.extraMetadata.main=build/Main.js"
+    "electron-pack": "yarn build && electron-builder build -c.extraMetadata.main=build/main.js"
   },
   "browserslist": {
     "production": [
