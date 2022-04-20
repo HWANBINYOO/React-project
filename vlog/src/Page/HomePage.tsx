@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Home from "../component/Home/Home";
-import Title from "../component/Title/Title";
+import { Home, Title } from "../component";
+
 import isLogin from "../Libs/isLogin";
 
 export default function HomePage() {

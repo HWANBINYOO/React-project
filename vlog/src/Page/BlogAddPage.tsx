@@ -1,9 +1,8 @@
 import React from "react";
-import Header from "../component/Header/Header";
-import Title from "../component/Title/Title";
-import BlogAdd from "../component/BlogAdd/BlogAdd";
+import { Header, BlogAdd, Title } from "../component";
+
 import { useRecoilState } from "recoil";
-import { BlogHeaderColor } from "../recoil/HeaderColor";
+import { BlogHeaderColor } from "../recoil/headerColor";
 const BlogAddPage: React.FC = () => {
   const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);
   setHeaderColor("red");

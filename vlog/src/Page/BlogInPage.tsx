@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Header from "../component/Header/Header";
-import Title from "../component/Title/Title";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import BlogIn from "../component/BlogIn/BlogIn";
+import { Header, BlogAdd, Title, BlogIn } from "../component";
 import { BlogType } from "../types";
 import { useRecoilState } from "recoil";
-import { BlogHeaderColor } from "../recoil/HeaderColor";
+import { BlogHeaderColor } from "../recoil/headerColor";
 
 const BlogInPage: React.FC = () => {
   const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);

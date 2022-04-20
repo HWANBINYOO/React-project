@@ -1,9 +1,8 @@
 import React from "react";
-import Header from "../component/Header/Header";
-import Title from "../component/Title/Title";
-import Blog from "../component/Blog/Blog";
+import { Header, Blog, Title } from "../component";
+
 import { useRecoilState } from "recoil";
-import { BlogHeaderColor } from "../recoil/HeaderColor";
+import { BlogHeaderColor } from "../recoil/headerColor";
 
 interface BlogTtpe {
   BlogImg: string;
