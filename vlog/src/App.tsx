@@ -1,13 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./Page/HomePage";
-import ProjectPage from "./Page/ProjectPage";
 import { GlobalStyle } from "./style/GlobalStyle";
-import AboutPage from "./Page/AboutPage";
-import BlogPage from "./Page/BlogPage";
-import BlogInPage from "./Page/BlogInPage";
-import BlogAddPage from "./Page/BlogAddPage";
-import LoginPage from "./Page/LoginPage";
-import SignupPage from "./Page/SignupPage";
+import {
+  HomePage,
+  ProjectPage,
+  AboutPage,
+  BlogPage,
+  BlogInPage,
+  BlogAddPage,
+  LoginPage,
+  SignupPage,
+} from "./Page";
 
 function App() {
   return (
