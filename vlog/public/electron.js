@@ -32,6 +32,30 @@ function createWindow() {
   mainWindow.focus();
 }
 
+const template = [
+  //메뉴
+  {
+    label: "File",
+    submenu: [
+      {
+        label: "Open",
+        click: function () {
+          //클릭하면 이동
+          shell.openExternal("https://www.electron.org/docs/api");
+        },
+      },
+      {
+        type: "separator", //구분선
+      },
+      {
+        role: "toggleDevTools", //개발자도구 열기
+      },
+    ],
+  },
+];
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
+
 app.on("ready", createWindow);
 
 app.on("window-all-closed", () => {
