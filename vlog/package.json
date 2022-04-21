@@ -3,7 +3,7 @@
     "src/types"
   ],
   "main": "public/main.js",
-  "homepage": "./",
+  "homepage": "/",
   "name": "vlog",
   "version": "0.1.0",
   "private": true,
@@ -41,6 +41,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "react-start": "set BROWSER=none && yarn start",
+    "electron": "ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .",
     "electron-start": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
     "electron-pack": "yarn build && electron-builder build -c.extraMetadata.main=build/main.js"
   },
