@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/About" element={<AboutPage />} />
-        <Route  
+        <Route
           path="/project"
           element={
             <ProjectPage
@@ -40,7 +40,7 @@ function App() {
         <Route path="/:id" element={<BlogInPage />} />
         <Route path="/blogadd" element={<BlogAddPage />} />
         <Route path="/Login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/register" element={<SignupPage />} />
       </Routes>
     </BrowserRouter>
   );

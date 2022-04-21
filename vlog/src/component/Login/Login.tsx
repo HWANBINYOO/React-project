@@ -25,7 +25,7 @@ const Login = () => {
 
   const onLogin = async () => {
     console.log(Email, PassWord);
-    const { data } = await axios.post("/blog/login", loginData);
+    const { data } = await axios.post("/login", loginData);
     console.log(data);
     toast.warning("로그인 되었습니다");
 

@@ -16,7 +16,10 @@ export default function Home() {
           <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
             <h2>Login</h2>
           </Link>
-          <Link to="/signup" style={{ textDecoration: "none", color: "black" }}>
+          <Link
+            to="/register"
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <h2>Signup</h2>
           </Link>
         </S.GoLogin>
