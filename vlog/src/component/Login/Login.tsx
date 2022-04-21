@@ -24,9 +24,10 @@ const Login = () => {
   ];
 
   const onLogin = async () => {
+    console.log(Email, PassWord);
     const { data } = await axios.post("/blog/login", loginData);
-    toast.warning("로그인 되었습니다");
     console.log(data);
+    toast.warning("로그인 되었습니다");
 
     localStorage.setItem("Blog_accessToken", data.data.accessToken);
     localStorage.setItem("Blog_refreshToken", data.data.refreshToken);

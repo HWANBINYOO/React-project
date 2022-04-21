@@ -16,6 +16,7 @@ const Signup: React.FC = () => {
 
   const onSignup = async () => {
     try {
+      console.log(Email, PassWord);
       if (Email === "") return alert("이메일이 입력되지 않았어요");
       else if (PassWord === "") return alert("패스워드가 입력되지 않았어요");
       const { data } = await axios.post("/blog/register", signupData);
@@ -35,7 +36,6 @@ const Signup: React.FC = () => {
         <S.SignupInput>
           <p>Email</p>
           <input
-            type="password"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email을 입력하세요"
           />
@@ -43,6 +43,7 @@ const Signup: React.FC = () => {
         <S.SignupInput>
           <p>PassWord</p>
           <input
+            type="password"
             onChange={(e) => setPassWord(e.target.value)}
             placeholder="PassWord을 입력하세요"
           />
