@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
+import { customAxios } from "../../Libs/CustomAxois";
 
 const BlogAdd = () => {
   const date = new Date();
@@ -34,7 +35,7 @@ const BlogAdd = () => {
 
   const onSubmit = async () => {
     try {
-      const { data } = await axios.post("/blog/send", BlogaddData);
+      const { data } = await customAxios.post("/blog/send", BlogaddData);
       console.log(data);
       navigate("/blog");
     } catch (a: any) {

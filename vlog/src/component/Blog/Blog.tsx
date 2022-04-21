@@ -4,6 +4,7 @@ import BlogItem from "../BlogItem/BlogItem";
 import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
+import { customAxios } from "../../Libs/CustomAxois";
 // import loadingImg from "/img/loading.gif";
 
 // const a = [
@@ -64,7 +65,7 @@ const Blog: React.FC<BlogType> = () => {
   useEffect(() => {
     async function getblog() {
       try {
-        setBlogs(await axios.get("/blog"));
+        setBlogs(await customAxios.get("/blog"));
       } catch (a: any) {
         console.log(a);
       }

@@ -2,6 +2,8 @@
   "typeRoots": [
     "src/types"
   ],
+  "main": "public/main.js",
+  "homepage": "/",
   "name": "vlog",
   "version": "0.1.0",
   "private": true,
@@ -14,7 +16,10 @@
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.3",
+    "asar": "^3.1.0",
     "axios": "^0.26.1",
+    "electron-is-dev": "^2.0.0",
+    "electron-packager": "^15.4.0",
     "history": "5",
     "react": "^18.0.0",
     "react-dom": "^17.0.2",
@@ -35,7 +40,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "react-start": "set BROWSER=none && yarn start",
+    "electron": "ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .",
+    "electron-start": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "electron-pack": "yarn build && electron-builder build -c.extraMetadata.main=build/main.js"
   },
   "browserslist": {
     "production": [
@@ -51,10 +60,11 @@
   },
   "devDependencies": {
     "@types/react-router": "^5.1.18",
-    "@types/styled-components": "^5.1.24"
-  },
-  "proxy": "http://10.120.74.59:8081",
-  "secure": false,
-  "strict": true,
-  "strictNullChecks": false
+    "@types/styled-components": "^5.1.24",
+    "concurrently": "^7.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^18.0.4",
+    "electron-builder": "^23.0.3",
+    "wait-on": "^6.0.1"
+  }
 }

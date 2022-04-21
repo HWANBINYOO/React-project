@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
 
 const Signup: React.FC = () => {
@@ -19,7 +20,7 @@ const Signup: React.FC = () => {
       console.log(Email, PassWord);
       if (Email === "") return alert("이메일이 입력되지 않았어요");
       else if (PassWord === "") return alert("패스워드가 입력되지 않았어요");
-      const { data } = await axios.post("/register", signupData);
+      const { data } = await customAxios.post("/register", signupData);
       console.log(data);
       navigate("/login");
     } catch (a: any) {
@@ -30,7 +31,7 @@ const Signup: React.FC = () => {
   return (
     <>
       <S.Login>
-        <Link to="/signup" style={{ textDecoration: "none", color: "black" }}>
+        <Link to="/register" style={{ textDecoration: "none", color: "black" }}>
           <S.LoginTitle>회원가입</S.LoginTitle>
         </Link>
         <S.SignupInput>
