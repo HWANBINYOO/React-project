@@ -21,12 +21,10 @@ const ProjectPage: React.FC<Homes> = ({
   Ido,
   imgSrc,
 }) => {
-  const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);
-  setHeaderColor("Orange");
   return (
     <>
       <Title />
-      <Header HeaderColor={HeaderColor} />
+      <Header HeaderColor={"Orange"} />
       <Project id={1} name={""} term={""} cost={0} Ido={""} imgSrc={""} />
     </>
   );

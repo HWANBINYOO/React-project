@@ -23,10 +23,6 @@ export const HelloPickture = styled.div`
 `;
 export const Img = styled.img`
   width: 100%;
-  /* cursor: grab; */
-  &:hover {
-    opacity: 0.9;
-  }
 `;
 
 export const GoLogin = styled.div`

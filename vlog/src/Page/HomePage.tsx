@@ -11,10 +11,7 @@ export default function HomePage() {
       <Title />
       {/* 만약 로그인이 됬다면 바로 about 페이지로 가게하기 */}
       {!isLogin() ? navigate("/about") : navigate("/")}
-      <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
-        <Home />
-      </Link>
-      {/* <Footer /> */}
+      <Home />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
 export const BlogHeaderColor = atom<string>({
-  key: "myblogHeaderColor",
+  key: "blogHeaderColor",
   default: "blue",
 });

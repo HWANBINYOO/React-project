@@ -13,12 +13,10 @@ interface BlogTtpe {
 }
 
 const BlogPage: React.FC<BlogTtpe> = ({ BlogImg, date, title, desc }) => {
-  const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);
-  setHeaderColor("red");
   return (
     <>
       <Title />
-      <Header HeaderColor={HeaderColor} />
+      <Header HeaderColor={"red"} />
       <Blog BlogImg={""} date={""} title={""} desc={""} id={0} />
     </>
   );

@@ -18,7 +18,7 @@ const Signup: React.FC = () => {
     try {
       if (Email === "") return alert("이메일이 입력되지 않았어요");
       else if (PassWord === "") return alert("패스워드가 입력되지 않았어요");
-      const { data } = await axios.post("/blog/login", signupData);
+      const { data } = await axios.post("/blog/register", signupData);
       console.log(data);
       navigate("/login");
     } catch (a: any) {

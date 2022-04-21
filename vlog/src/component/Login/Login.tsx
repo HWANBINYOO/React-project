@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as S from "./Styled";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [Email, setEmail] = useState<string>("");
@@ -24,6 +25,7 @@ const Login = () => {
 
   const onLogin = async () => {
     const { data } = await axios.post("/blog/login", loginData);
+    toast.warning("로그인 되었습니다");
     console.log(data);
 
     localStorage.setItem("Blog_accessToken", data.data.accessToken);
