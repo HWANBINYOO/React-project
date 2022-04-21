@@ -4,7 +4,7 @@ import axios from "axios";
 import { Header, BlogAdd, Title, BlogIn } from "../component";
 import { BlogType } from "../types";
 import { useRecoilState } from "recoil";
-import { BlogHeaderColor } from "../recoil/headerColor";
+import { BlogHeaderColor } from "../recoil/HeaderColorr";
 
 const BlogInPage: React.FC = () => {
   const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);

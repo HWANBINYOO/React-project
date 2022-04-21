@@ -1,7 +1,7 @@
 import React from "react";
 import { Header, About, Title, Logout } from "../component";
 import { useRecoilState } from "recoil";
-import { BlogHeaderColor } from "../recoil/headerColor";
+import { BlogHeaderColor } from "../recoil/HeaderColorr";
 
 export default function AboutPage() {
   const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);

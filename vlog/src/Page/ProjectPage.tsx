@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import Header from "../component/Header/Header";
 import Project from "../component/Project/Project";
 import Title from "../component/Title/Title";
-import { BlogHeaderColor } from "../recoil/headerColor";
+import { BlogHeaderColor } from "../recoil/HeaderColorr";
 interface Homes {
   id: number;
   name: string;
