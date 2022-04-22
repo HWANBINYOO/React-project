@@ -8,7 +8,7 @@ interface PublicType {
 }
 
 const PublicRoute = ({ restricted, children }: PublicType) => {
-  return isLogin() && restricted ? <Navigate to="/home" /> : children;
+  return isLogin() && restricted ? <Navigate to="/about" /> : children;
 };
 
 export default PublicRoute;

@@ -7,7 +7,7 @@ interface PrivateType {
 }
 
 const PrivateRoute = ({ children }: PrivateType) => {
-  return isLogin() ? children : <Navigate to="/signin" />;
+  return isLogin() ? children : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;
