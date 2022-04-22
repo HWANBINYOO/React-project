@@ -3,6 +3,8 @@ import { BlogType } from "../../types";
 import Footer from "../Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 interface BlogTypeProp {
   blogIn: BlogType;
 }
@@ -13,9 +15,11 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
     try {
       const { data } = await axios.post(`/blog/${deletId}`);
       console.log(data);
-      alert("삭제되었습니다!");
-      navigate("/blog");
-      window.location.reload();
+      toast.success("삭제되었습니다!");
+      useEffect(() => {
+        navigate("/blog");
+        window.location.reload();
+      }, []);
     } catch (a: any) {
       console.log(a);
     }

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { customAxios } from "../../Libs/CustomAxois";
+import { toast } from "react-toastify";
 
 const BlogAdd = () => {
   const date = new Date();
@@ -37,6 +38,7 @@ const BlogAdd = () => {
     try {
       const { data } = await customAxios.post("/blog/send", BlogaddData);
       console.log(data);
+      toast.success("추가됬습니다!");
       navigate("/blog");
     } catch (a: any) {
       console.log(a);
