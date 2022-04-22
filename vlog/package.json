@@ -2,7 +2,7 @@
   "typeRoots": [
     "src/types"
   ],
-  "main": "public/main.js",
+  "main": "public/Main.js",
   "homepage": "/",
   "name": "vlog",
   "version": "0.1.0",
@@ -44,7 +44,7 @@
     "react-start": "set BROWSER=none && yarn start",
     "electron": "ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .",
     "electron-start": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
-    "electron-pack": "yarn build && electron-builder build -c.extraMetadata.main=build/main.js"
+    "electron-pack": "yarn build && electron-builder build -c.extraMetadata.main=build/Main.js"
   },
   "browserslist": {
     "production": [
@@ -63,7 +63,7 @@
     "@types/styled-components": "^5.1.24",
     "concurrently": "^7.1.0",
     "cross-env": "^7.0.3",
-    "electron": "^18.0.4",
+    "electron": "^18.1.0",
     "electron-builder": "^23.0.3",
     "wait-on": "^6.0.1"
   }
