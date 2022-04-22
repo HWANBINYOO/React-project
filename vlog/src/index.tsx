@@ -2,9 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { RecoilRoot } from "recoil";
 import reportWebVitals from "./reportWebVitals";
-import { Slide, toast, ToastContainer } from "react-toastify";
 import { injectStyle } from "react-toastify/dist/inject-style";
 
 if (typeof window !== "undefined") {
@@ -13,14 +11,7 @@ if (typeof window !== "undefined") {
 
 ReactDOM.render(
   <React.StrictMode>
-    <RecoilRoot>
-      <ToastContainer
-        position={toast.POSITION.TOP_RIGHT}
-        transition={Slide}
-        autoClose={1500}
-      />
-      <App />
-    </RecoilRoot>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

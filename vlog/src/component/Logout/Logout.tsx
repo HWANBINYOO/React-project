@@ -9,10 +9,7 @@ const TryLogout = () => {
     localStorage.removeItem("Blog_accessToken");
     localStorage.removeItem("Blog_refreshToken");
     toast.success("로그아웃 되었습니다!");
-    useEffect(() => {
-      navigate("/");
-      window.location.reload();
-    }, []);
+    navigate("/");
   };
   return onLogout;
 };

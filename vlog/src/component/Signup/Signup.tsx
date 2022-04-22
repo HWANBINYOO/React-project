@@ -19,10 +19,9 @@ const Signup: React.FC = () => {
         email: Email,
         password: PassWord,
       });
+      toast.success("회원가입이 되었습니다!");
       console.log(data);
-      useEffect(() => {
-        navigate("/login");
-      }, []);
+      navigate("/login");
     } catch (e: any) {
       if (e.message === "Request failed with status code 500") {
         toast.warning("이미 존재하는 회원이에요!");

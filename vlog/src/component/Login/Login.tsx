@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { toast } from "react-toastify";
@@ -17,24 +17,19 @@ const Login = () => {
     setPassWord(e.currentTarget.value);
   };
 
-  const loginData = [
-    {
-      Email: Email,
-      Password: PassWord,
-    },
-  ];
-
   const onLogin = async () => {
     console.log(Email, PassWord);
-    const { data } = await customAxios.post("/login", loginData);
+    const { data } = await customAxios.post("/login", {
+      email: Email,
+      password: PassWord,
+    });
+
     console.log(data);
+    localStorage.setItem("Blog_accessToken", data.accessToken);
+    localStorage.setItem("Blog_refreshToken", data.refreshToken);
+
     toast.success("로그인 되었습니다!");
-
-    localStorage.setItem("Blog_accessToken", data.data.accessToken);
-    localStorage.setItem("Blog_refreshToken", data.data.refreshToken);
-
     navigate("/about");
-    window.location.reload();
   };
 
   return (
