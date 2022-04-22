@@ -28,7 +28,7 @@ const Login = () => {
     console.log(Email, PassWord);
     const { data } = await customAxios.post("/login", loginData);
     console.log(data);
-    toast.warning("로그인 되었습니다");
+    toast.success("로그인 되었습니다!");
 
     localStorage.setItem("Blog_accessToken", data.data.accessToken);
     localStorage.setItem("Blog_refreshToken", data.data.refreshToken);

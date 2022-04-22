@@ -23,7 +23,6 @@ export default function Home() {
             <h2>Signup</h2>
           </Link>
         </S.GoLogin>
-        {/* <Footer /> */}
       </S.Home>
     </>
   );

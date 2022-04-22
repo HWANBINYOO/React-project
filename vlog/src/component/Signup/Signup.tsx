@@ -1,30 +1,33 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
+import { toast } from "react-toastify";
 import * as S from "./Styled";
 
 const Signup: React.FC = () => {
   const [Email, setEmail] = useState("");
   const [PassWord, setPassWord] = useState("");
   const navigate = useNavigate();
-  const signupData = [
-    {
-      Email: Email,
-      Password: PassWord,
-    },
-  ];
 
   const onSignup = async () => {
     try {
-      console.log(Email, PassWord);
-      if (Email === "") return alert("이메일이 입력되지 않았어요");
-      else if (PassWord === "") return alert("패스워드가 입력되지 않았어요");
-      const { data } = await customAxios.post("/register", signupData);
+      if (Email === "") return toast.warning("이메일이 입력되지 않았어요!");
+      else if (PassWord === "")
+        return toast.warning("패스워드가 입력되지 않았어요!");
+      const { data } = await customAxios.post("/register", {
+        email: Email,
+        password: PassWord,
+      });
       console.log(data);
-      navigate("/login");
-    } catch (a: any) {
-      console.log(a);
+      useEffect(() => {
+        navigate("/login");
+      }, []);
+    } catch (e: any) {
+      if (e.message === "Request failed with status code 500") {
+        toast.warning("이미 존재하는 회원이에요!");
+      }
+      console.log(e.message);
     }
   };
 
