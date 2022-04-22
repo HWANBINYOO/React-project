@@ -4,10 +4,21 @@ import "./index.css";
 import App from "./App";
 import { RecoilRoot } from "recoil";
 import reportWebVitals from "./reportWebVitals";
+import { Slide, toast, ToastContainer } from "react-toastify";
+import { injectStyle } from "react-toastify/dist/inject-style";
+
+if (typeof window !== "undefined") {
+  injectStyle();
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
+      <ToastContainer
+        position={toast.POSITION.TOP_RIGHT}
+        transition={Slide}
+        autoClose={1500}
+      />
       <App />
     </RecoilRoot>
   </React.StrictMode>,
