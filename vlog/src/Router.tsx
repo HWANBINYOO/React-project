@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import PublicRoute from "./Libs/PublicRoute";
+import PrivateRoute from "./Libs/PrivateRoute";
 import {
   AboutPage,
   BlogAddPage,
@@ -14,8 +16,22 @@ import {
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/About" element={<AboutPage />} />
+      <Route
+        path="/"
+        element={
+          <PublicRoute restricted={true}>
+            <HomePage />
+          </PublicRoute>
+        }
+      />
+      <Route
+        path="/About"
+        element={
+          <PrivateRoute>
+            <AboutPage />
+          </PrivateRoute>
+        }
+      />
       <Route
         path="/project"
         element={
@@ -35,10 +51,38 @@ const Router = () => {
           <BlogPage BlogImg={""} date={""} title={""} desc={""} id={0} />
         }
       />
-      <Route path="/:id" element={<BlogInPage />} />
-      <Route path="/blogadd" element={<BlogAddPage />} />
-      <Route path="/Login" element={<LoginPage />} />
-      <Route path="/register" element={<SignupPage />} />
+      <Route
+        path="/:id"
+        element={
+          <PrivateRoute>
+            <BlogInPage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/blogadd"
+        element={
+          <PrivateRoute>
+            <BlogAddPage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Login"
+        element={
+          <PublicRoute restricted={true}>
+            <LoginPage />
+          </PublicRoute>
+        }
+      />
+      <Route
+        path="/register"
+        element={
+          <PublicRoute restricted={true}>
+            <SignupPage />
+          </PublicRoute>
+        }
+      />
     </Routes>
   );
 };
