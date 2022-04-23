@@ -11,8 +11,6 @@ export default function HomePage() {
   return (
     <>
       <Title />
-      {/* 만약 로그인이 됬다면 바로 about 페이지로 가게하기 */}
-
       <Home />
     </>
   );
