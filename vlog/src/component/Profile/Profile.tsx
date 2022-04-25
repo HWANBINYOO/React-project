@@ -7,7 +7,10 @@ const Profile = () => {
       <S.Profile>
         <S.ProfileImpormation>
           <S.ProfileImg></S.ProfileImg>
-          <S.UserName></S.UserName>
+          <S.User>
+            <S.UserBlogs>2개!!</S.UserBlogs>
+            <S.UserName>김성길!!!</S.UserName>
+          </S.User>
         </S.ProfileImpormation>
         <hr />
         <S.uploadBlogs></S.uploadBlogs>
