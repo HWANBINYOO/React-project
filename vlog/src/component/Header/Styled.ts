@@ -10,7 +10,7 @@ export const Header = styled.div`
 `;
 
 export const HeaderMenu = styled.span`
-  width: 12vw;
+  width: 150px;
   height: 3vh;
   display: flex;
   justify-content: center;
@@ -24,7 +24,6 @@ export const HeaderMenu = styled.span`
   // border-radius: 20%;
 
   &:hover {
-    // background-color: ${(props: any) => props.backgroundColor};
     background-color: ${(props: any) => props.ProfileColor};
   }
 `;

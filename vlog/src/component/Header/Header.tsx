@@ -13,7 +13,7 @@ export default function Header({ HeaderColor }: { HeaderColor: string }) {
           }}
         >
           About
-        </S.HeaderMenu>{" "}
+        </S.HeaderMenu>
       </Link>
 
       <Link to="/project" style={{ textDecoration: "none", color: "black" }}>
