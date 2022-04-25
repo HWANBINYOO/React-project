@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProjectItem = styled.div`
   width: 90%;
-  height: 450px;
+  height: 65vh;
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,7 @@ export const Projectdesc = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 55%;
+  width: 45%;
   /* height: 250px; */
   margin: auto 0;
 `;

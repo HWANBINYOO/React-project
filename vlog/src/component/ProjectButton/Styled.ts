@@ -11,7 +11,7 @@ export const ShowButoons = styled.div`
 `;
 
 export const Pbutton = styled.button`
-  width: 10vw;
+  width: 120px;
   height: 3vh;
   -webkit-appearance: none;
   -moz-appearance: none;

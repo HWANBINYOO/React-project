@@ -23,6 +23,5 @@ export const myProject = styled.div`
 `;
 
 export const Img = styled.img`
-  // background-color: ${(props: any) => props.backgroundColor};
   width: ${(props: any) => props.width};
 `;
