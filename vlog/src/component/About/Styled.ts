@@ -20,7 +20,7 @@ export const Intrudece = styled.div`
   gap: 30px;
   align-items: center;
   padding: 0 10vw;
-  margin: 5% 0 10% 0;
+  margin: 5% 0;
   text-align: center;
 
   p {
@@ -35,14 +35,13 @@ export const Img = styled.img`
 
 export const AboutContents = styled.div`
   width: 90vw;
-  padding: 0 5vw;
+  padding: 3rem 5vw;
   height: 2000px;
   display: flex;
-  /* flex-direction: column; */
+  flex-wrap: wrap;
   align-items: center;
   gap: 50px;
   justify-content: space-around;
-  flex-wrap: wrap;
 `;
 
 export const AboutContent = styled.div`
