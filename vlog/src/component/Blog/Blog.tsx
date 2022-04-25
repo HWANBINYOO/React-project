@@ -97,7 +97,6 @@ const Blog: React.FC<BlogType> = () => {
         ) : (
           <S.Img src={"/img/loading.gif"} />
         )}
-        {/* <Footer /> */}
       </S.Blog>
     </>
   );
