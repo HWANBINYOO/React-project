@@ -55,6 +55,6 @@ export const Button = styled.button<StyleProps>`
 
 export const Img = styled.img`
   position: fixed;
-  right: 27vw;
-  width: 50%;
+  right: 34%;
+  width: 500px;
 `;
