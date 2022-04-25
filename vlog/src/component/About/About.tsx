@@ -5,7 +5,7 @@ export default function About() {
   return (
     <>
       <S.About>
-        <S.Img style={{ width: "40%" }} src={"/img/About.webp"} />
+        <S.Img style={{ width: "400px" }} src={"/img/About.webp"} />
         <S.Intrudece>
           <p>유환빈</p>
           안녕하세요
