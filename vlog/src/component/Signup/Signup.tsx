@@ -8,6 +8,7 @@ import * as S from "./Styled";
 const Signup: React.FC = () => {
   const [Email, setEmail] = useState("");
   const [PassWord, setPassWord] = useState("");
+  const [Name, setName] = useState("");
   const navigate = useNavigate();
 
   const onSignup = async () => {
@@ -18,6 +19,7 @@ const Signup: React.FC = () => {
       const { data } = await customAxios.post("/register", {
         email: Email,
         password: PassWord,
+        name: Name,
       });
       toast.success("회원가입이 되었습니다!");
       console.log(data);
@@ -49,6 +51,14 @@ const Signup: React.FC = () => {
             type="password"
             onChange={(e) => setPassWord(e.target.value)}
             placeholder="PassWord을 입력하세요"
+          />
+        </S.SignupInput>
+        <S.SignupInput>
+          <p>PassWord</p>
+          <input
+            type="password"
+            onChange={(e) => setName(e.target.value)}
+            placeholder="이름을 입력하세요"
           />
         </S.SignupInput>
         <S.LoginButton
