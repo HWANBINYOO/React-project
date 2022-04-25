@@ -35,20 +35,24 @@ const Router = () => {
       <Route
         path="/project"
         element={
-          <ProjectPage
-            id={0}
-            name={""}
-            term={""}
-            cost={0}
-            Ido={""}
-            imgSrc={""}
-          />
+          <PrivateRoute>
+            <ProjectPage
+              id={0}
+              name={""}
+              term={""}
+              cost={0}
+              Ido={""}
+              imgSrc={""}
+            />
+          </PrivateRoute>
         }
       />
       <Route
         path="/blog"
         element={
-          <BlogPage BlogImg={""} date={""} title={""} desc={""} id={0} />
+          <PrivateRoute>
+            <BlogPage BlogImg={""} date={""} title={""} desc={""} id={0} />
+          </PrivateRoute>
         }
       />
       <Route
