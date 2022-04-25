@@ -11,7 +11,7 @@ export const Home = styled.div`
 `;
 
 export const HelloPickture = styled.div`
-  width: 85%;
+  width: 850px;
   /* height: 100%; */
   display: grid;
   gap: 10px;
