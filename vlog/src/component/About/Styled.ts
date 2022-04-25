@@ -8,15 +8,12 @@ export const About = styled.div`
   align-items: center;
   margin: 0 auto;
   overflow-y: scroll;
-  flex: 1;
   gap: 30px;
-  /* background-color: black; */
 `;
 
 export const Intrudece = styled.div`
   width: 55%;
   height: 300px;
-  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -32,26 +29,26 @@ export const Intrudece = styled.div`
 `;
 
 export const Img = styled.img`
-  // background-color: ${(props: any) => props.backgroundColor};
   width: ${(props: any) => props.width};
 `;
 
 export const AboutContents = styled.div`
-  width: 100%;
+  width: 90vw;
+  padding: 0 5vw;
   height: 1200px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
-  gap: 20px;
-  justify-content: center;
+  gap: 50px;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 export const AboutContent = styled.div`
-  width: 65%;
+  width: 600px;
   height: 200px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
 `;
 
 export const decs = styled.div`
@@ -59,6 +56,6 @@ export const decs = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  width: 80%;
+  width: 200px;
   margin: auto 0;
 `;
