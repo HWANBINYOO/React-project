@@ -57,6 +57,12 @@ export default function About() {
               <p>이건 그림이 멋져서.ㅎ</p>
             </S.decs>
           </S.AboutContent>
+          <S.AboutContent>
+            <S.Img style={{ width: "200px" }} src={"/img/8day.gif"} />
+            <S.decs>
+              <p>이것도</p>
+            </S.decs>
+          </S.AboutContent>
         </S.AboutContents>
         <Footer />
       </S.About>

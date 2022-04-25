@@ -8,6 +8,7 @@ export const About = styled.div`
   align-items: center;
   margin: 0 auto;
   overflow-y: scroll;
+  overflow-x: hidden;
   gap: 30px;
 `;
 
@@ -35,7 +36,7 @@ export const Img = styled.img`
 export const AboutContents = styled.div`
   width: 90vw;
   padding: 0 5vw;
-  height: 1200px;
+  height: 2000px;
   display: flex;
   /* flex-direction: column; */
   align-items: center;
