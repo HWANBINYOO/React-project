@@ -13,6 +13,7 @@ import ProjectButton from "./ProjectButton/ProjectButton";
 import ProjectItem from "./ProjectItem/ProjectItem";
 import Signup from "./Signup/Signup";
 import Title from "./Title/Title";
+import Profile from "./Profile/Profile";
 
 export {
   About,
@@ -30,4 +31,5 @@ export {
   ProjectItem,
   Signup,
   Title,
+  Profile,
 };
