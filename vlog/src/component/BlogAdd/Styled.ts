@@ -15,6 +15,7 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   height: 50vh;
+  margin-left: 6vw;
 `;
 
 export const InputBox = styled.div`
@@ -27,7 +28,7 @@ export const InputBox = styled.div`
 
   textarea {
     font-family: "GangwonEduSaeeum_OTFMediumA";
-    width: 90%;
+    width: 100%;
     height: 10vh;
     display: flex;
     align-items: center;
@@ -50,7 +51,7 @@ export const DescInputBox = styled.div`
   textarea {
     margin-top: 1rem;
     font-family: "GangwonEduSaeeum_OTFMediumA";
-    width: 90%;
+    width: 100%;
     height: 30vh;
     display: flex;
     align-items: center;
@@ -74,13 +75,13 @@ export const DescInputBox = styled.div`
 // `;
 
 export const Today = styled.span`
-  margin-left: 3rem;
+  margin-left: 6vw;
   padding: 1.5rem 0;
 `;
 
 export const Button = styled.button`
   font-family: "GangwonEduSaeeum_OTFMediumA";
-  margin-left: 3rem;
+  margin-left: 6vw;
   background-color: #ffc895;
   border-radius: 10px;
   font-size: 2rem;
