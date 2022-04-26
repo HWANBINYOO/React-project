@@ -6,8 +6,9 @@ const Profile = () => {
     <>
       <S.Profile>
         <S.ProfileImpormation>
-          <S.ProfileImg></S.ProfileImg>
+          <S.ProfileImg>0</S.ProfileImg>
           <S.User>
+            <S.UserId>kim</S.UserId>
             <S.UserBlogs>2개!!</S.UserBlogs>
             <S.UserName>김성길!!!</S.UserName>
           </S.User>
