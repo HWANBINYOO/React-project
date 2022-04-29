@@ -10,9 +10,9 @@ const Profile = () => {
             <img src={"/img/profile.png"} />
           </S.ProfileImg>
           <S.User>
-            <S.UserId>kim</S.UserId>
-            <S.UserBlogs>게시물 :2개</S.UserBlogs>
-            <S.UserName>유환빈!!!</S.UserName>
+            <S.UserId>hawnbin_0825</S.UserId>
+            <S.UserBlogs>게시물 2</S.UserBlogs>
+            <S.UserName>유환빈</S.UserName>
           </S.User>
         </S.ProfileImpormation>
         <S.Hr />

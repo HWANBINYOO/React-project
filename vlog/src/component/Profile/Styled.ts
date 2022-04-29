@@ -40,15 +40,15 @@ export const User = styled.div`
 `;
 
 export const UserId = styled.div`
-  font-size: 50px;
+  font-size: 45px;
 `;
 
 export const UserBlogs = styled.span`
-  font-size: 30px;
+  font-size: 35px;
 `;
 
 export const UserName = styled.span`
-  font-size: 20px;
+  font-size: 35px;
 `;
 
 export const uploadBlogs = styled.div`

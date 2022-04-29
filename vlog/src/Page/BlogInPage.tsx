@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Header, BlogAdd, Title, BlogIn } from "../component";
+import { Header, BlogAdd, Title, BlogIn, HeaderRIght } from "../component";
 import { BlogType } from "../types";
 import { useRecoilState } from "recoil";
 import { BlogHeaderColor } from "../recoil/HeaderColorr";
@@ -23,6 +23,7 @@ const BlogInPage: React.FC = () => {
   return (
     <>
       <Title />
+      <HeaderRIght />
       <Header HeaderColor={HeaderColor} />
       {blogIn ? <BlogIn blogIn={blogIn} /> : <div>로딩중</div>}
     </>
