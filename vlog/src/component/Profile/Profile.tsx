@@ -6,15 +6,27 @@ const Profile = () => {
     <>
       <S.Profile>
         <S.ProfileImpormation>
-          <S.ProfileImg>0</S.ProfileImg>
+          <S.ProfileImg>
+            <img src={"/img/profile.png"} />
+          </S.ProfileImg>
           <S.User>
             <S.UserId>kim</S.UserId>
-            <S.UserBlogs>2개!!</S.UserBlogs>
-            <S.UserName>김성길!!!</S.UserName>
+            <S.UserBlogs>게시물 :2개</S.UserBlogs>
+            <S.UserName>유환빈!!!</S.UserName>
           </S.User>
         </S.ProfileImpormation>
-        <hr />
-        <S.uploadBlogs></S.uploadBlogs>
+        <S.Hr />
+        <S.uploadBlogs>
+          <img src={"/img/8day.gif"} />
+          <img src={"/img/8day.gif"} />
+          <img src={"/img/8day.gif"} />
+          <img src={"/img/8day.gif"} />
+          <img src={"/img/8day.gif"} />
+          <img src={"/img/8day.gif"} />
+          <img src={"/img/8day.gif"} />
+          <img src={"/img/8day.gif"} />
+          <img src={"/img/8day.gif"} />
+        </S.uploadBlogs>
         <Footer />
       </S.Profile>
     </>
