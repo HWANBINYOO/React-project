@@ -14,15 +14,19 @@ const TryLogout = () => {
   return onLogout;
 };
 
-const Logout = () => {
+const HeaderRIght = () => {
+  const navigate = useNavigate();
   const onLogout = TryLogout();
   return (
     <>
-      <S.Logout>
+      <S.HeaderRIght>
+        <S.Profile onClick={() => navigate("/profile")}>
+          <img src={"/img/profile.png"} />
+        </S.Profile>
         <S.LogoutButton onClick={onLogout}>Logout</S.LogoutButton>
-      </S.Logout>
+      </S.HeaderRIght>
     </>
   );
 };
 
-export default Logout;
+export default HeaderRIght;

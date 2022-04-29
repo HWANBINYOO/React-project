@@ -8,6 +8,8 @@ export const ProfileImg = styled.img``;
 
 export const User = styled.div``;
 
+export const UserId = styled.div``;
+
 export const UserBlogs = styled.span``;
 
 export const UserName = styled.span``;

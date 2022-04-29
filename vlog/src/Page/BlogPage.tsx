@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Blog, Title, Logout } from "../component";
+import { Header, Blog, Title, HeaderRIght } from "../component";
 import { useRecoilState } from "recoil";
 import { BlogHeaderColor } from "../recoil/HeaderColorr";
 
@@ -15,7 +15,7 @@ const BlogPage: React.FC<BlogTtpe> = ({ BlogImg, date, title, desc }) => {
   return (
     <>
       <Title />
-      <Logout />
+      <HeaderRIght />
       <Header HeaderColor={"red"} />
       <Blog BlogImg={""} date={""} title={""} desc={""} id={0} />
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { Logout, Header, Project, Title } from "../component";
+import { HeaderRIght, Header, Project, Title } from "../component";
 import { BlogHeaderColor } from "../recoil/HeaderColorr";
 interface Homes {
   id: number;
@@ -22,7 +22,7 @@ const ProjectPage: React.FC<Homes> = ({
   return (
     <>
       <Title />
-      <Logout />
+      <HeaderRIght />
       <Header HeaderColor={"Orange"} />
       <Project id={1} name={""} term={""} cost={0} Ido={""} imgSrc={""} />
     </>

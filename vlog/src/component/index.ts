@@ -7,7 +7,7 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
-import Logout from "./Logout/Logout";
+import HeaderRIght from "./HeaderRIght/HeaderRIght";
 import Project from "./Project/Project";
 import ProjectButton from "./ProjectButton/ProjectButton";
 import ProjectItem from "./ProjectItem/ProjectItem";
@@ -25,7 +25,7 @@ export {
   Header,
   Home,
   Login,
-  Logout,
+  HeaderRIght,
   Project,
   ProjectButton,
   ProjectItem,
