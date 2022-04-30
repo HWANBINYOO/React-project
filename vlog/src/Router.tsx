@@ -12,6 +12,7 @@ import {
   ProjectPage,
   SignupPage,
   ProfilePage,
+  ProfileEditPage,
 } from "./Page";
 
 const Router = () => {
@@ -93,6 +94,14 @@ const Router = () => {
         element={
           // <PublicRoute restricted={true}>
           <ProfilePage />
+          // </PublicRoute>
+        }
+      />
+      <Route
+        path="/profileEdit"
+        element={
+          // <PublicRoute restricted={true}>
+          <ProfileEditPage />
           // </PublicRoute>
         }
       />

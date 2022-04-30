@@ -4,7 +4,7 @@ import { ProfileType } from "../../types";
 import Footer from "../Footer/Footer";
 import * as S from "./Styled";
 
-const Profile = () => {
+const ProfileEdit = () => {
   const [profile, SetProfile] = useState<ProfileType>();
   // {
   //   name: string;
@@ -41,4 +41,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfileEdit;

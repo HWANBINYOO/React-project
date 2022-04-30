@@ -14,6 +14,7 @@ import ProjectItem from "./ProjectItem/ProjectItem";
 import Signup from "./Signup/Signup";
 import Title from "./Title/Title";
 import Profile from "./Profile/Profile";
+import ProfileEdit from "./ProfileEdit/ProfileEdit";
 
 export {
   About,
@@ -32,4 +33,5 @@ export {
   Signup,
   Title,
   Profile,
+  ProfileEdit,
 };

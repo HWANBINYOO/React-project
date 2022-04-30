@@ -7,6 +7,7 @@ import LoginPage from "./LoginPage";
 import ProjectPage from "./ProjectPage";
 import SignupPage from "./SignupPage";
 import ProfilePage from "./Profile";
+import ProfileEditPage from "./ProfileEditPaget";
 
 export {
   AboutPage,
@@ -18,4 +19,5 @@ export {
   ProjectPage,
   SignupPage,
   ProfilePage,
+  ProfileEditPage,
 };
