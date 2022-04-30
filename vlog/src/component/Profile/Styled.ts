@@ -11,7 +11,7 @@ export const Profile = styled.div`
 `;
 
 export const ProfileImpormation = styled.div`
-  width: 50%;
+  width: 60%;
   height: 30vh;
   display: flex;
   justify-content: space-between;
@@ -26,20 +26,22 @@ export const ProfileImg = styled.div`
   justify-content: center;
   align-items: center;
   img {
-    width: 200px;
+    width: 230px;
   }
 `;
 
 export const User = styled.div`
   width: 40%;
-  height: 100%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  margin: auto 0;
 `;
 
 export const UserId = styled.div`
+  color: gray;
   font-size: 45px;
 `;
 
@@ -49,6 +51,7 @@ export const UserBlogs = styled.span`
 
 export const UserName = styled.span`
   font-size: 35px;
+  font-weight: bold;
 `;
 
 export const uploadBlogs = styled.div`
@@ -61,7 +64,7 @@ export const uploadBlogs = styled.div`
   gap: 50px;
   padding: 40px 0;
   img {
-    width: 400px;
+    width: 350px;
   }
 `;
 
