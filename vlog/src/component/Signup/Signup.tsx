@@ -54,7 +54,7 @@ const Signup: React.FC = () => {
           />
         </S.SignupInput>
         <S.SignupInput>
-          <p>PassWord</p>
+          <p>name</p>
           <input
             type="password"
             onChange={(e) => setName(e.target.value)}
