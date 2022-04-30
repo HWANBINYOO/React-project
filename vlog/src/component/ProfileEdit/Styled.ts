@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Profile = styled.div`
   width: 30%;
-  height: 85vh;
+  height: 80vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
