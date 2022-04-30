@@ -40,9 +40,23 @@ export const User = styled.div`
   margin: auto 0;
 `;
 
+export const EditGO = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 60px;
+`;
+
+export const GOEdit = styled.div`
+  font-size: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+`;
+
 export const UserId = styled.div`
   color: gray;
-  font-size: 45px;
+  font-size: 40px;
 `;
 
 export const UserBlogs = styled.span`

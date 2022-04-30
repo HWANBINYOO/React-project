@@ -98,7 +98,7 @@ const Router = () => {
         }
       />
       <Route
-        path="/profileEdit"
+        path="/profile/Edit"
         element={
           // <PublicRoute restricted={true}>
           <ProfileEditPage />

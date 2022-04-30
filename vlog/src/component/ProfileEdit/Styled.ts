@@ -1,41 +1,85 @@
 import styled from "styled-components";
 
 export const Profile = styled.div`
-  width: 100vw;
+  width: 30%;
   height: 85vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
   overflow-x: hidden;
+  padding: 0 15%;
+  border: 2px solid gray;
+  border-radius: 10px;
 `;
 
 export const ProfileImgEdit = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  padding: 30px 0;
+  button {
+    font-family: "GangwonEduSaeeum_OTFMediumA";
+    font-size: 50px;
+    background-color: white;
+    border: none;
+    color: black;
+    cursor: pointer;
+    transition: all ease 0.2s 0s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 `;
 
 export const ProfileImg = styled.div`
-  width: 60%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   img {
-    width: 230px;
+    transition: all ease 0.2s 0s;
+    width: 150px;
+    &:hover {
+      opacity: 0.5;
+    }
   }
 `;
 
-export const UserId = styled.div`
+export const EditI = styled.div`
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  font-size: 35px;
+  padding-right: 10%;
+  margin: 20px 0;
+`;
+
+export const EditInput = styled.input`
+  font-family: "GangwonEduSaeeum_OTFMediumA";
   color: gray;
-  font-size: 45px;
+  font-size: 35px;
+  border: none;
+  outline: none;
+  text-align: end;
 `;
 
-export const UserBlogs = styled.span`
-  font-size: 35px;
+export const ButtonS = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
 `;
-
-export const UserName = styled.span`
+export const Btn = styled.button`
+  font-family: "GangwonEduSaeeum_OTFMediumA";
+  background-color: ${(props: any) => props.color};
+  width: 170px;
+  height: 45px;
   font-size: 35px;
-  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-top: 10px;
 `;

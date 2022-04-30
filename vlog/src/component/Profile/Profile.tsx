@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { customAxios } from "../../Libs/CustomAxois";
 import { ProfileType } from "../../types";
 import Footer from "../Footer/Footer";
 import * as S from "./Styled";
 
 const Profile = () => {
+  const navigate = useNavigate();
   const [profile, SetProfile] = useState<ProfileType>();
   // {
   //   name: string;
@@ -30,9 +32,14 @@ const Profile = () => {
             <img src={"/img/profile.png"} />
           </S.ProfileImg>
           <S.User>
-            <S.UserName>유환빈</S.UserName>
+            <S.EditGO>
+              <S.UserName>유환빈</S.UserName>
+              <S.GOEdit onClick={() => navigate("/profile/Edit")}>
+                프로필 편집
+              </S.GOEdit>
+            </S.EditGO>
             <S.UserBlogs>게시물 2</S.UserBlogs>
-            <S.UserId>hwanbin_0825</S.UserId>
+            <S.UserId>dngh0825@gmail.com</S.UserId>
           </S.User>
         </S.ProfileImpormation>
         <S.Hr />
