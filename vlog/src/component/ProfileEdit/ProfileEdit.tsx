@@ -15,14 +15,10 @@ const ProfileEdit = () => {
   //   blogImgs: string;
   // }
   const [Name, setName] = useState("유환빈");
-  const [Email, setEmail] = useState("dngh0825@email");
   const [PassWord, setPassWord] = useState("penguin1234!");
 
   const onChangeName = (e: any) => {
     setName(e.target.value);
-  };
-  const onChangeEmail = (e: any) => {
-    setEmail(e.target.value);
   };
   const onChangePassWord = (e: any) => {
     setPassWord(e.target.value);
@@ -54,15 +50,6 @@ const ProfileEdit = () => {
             value={Name}
             placeholder={"Name"}
             onChange={onChangeName}
-          />
-        </S.EditI>
-        <S.EditI>
-          <span>Email :</span>
-          <S.EditInput
-            type="text"
-            value={Email}
-            placeholder={"Email"}
-            onChange={onChangeEmail}
           />
         </S.EditI>
         <S.EditI>
