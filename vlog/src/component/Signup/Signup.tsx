@@ -17,9 +17,9 @@ const Signup: React.FC = () => {
       else if (PassWord === "")
         return toast.warning("패스워드가 입력되지 않았어요!");
       const { data } = await customAxios.post("/register", {
+        name: Name,
         email: Email,
         password: PassWord,
-        name: Name,
       });
       toast.success("회원가입이 되었습니다!");
       console.log(data);

@@ -7,12 +7,10 @@ import * as S from "./Styled";
 
 const ProfileEdit = () => {
   const navigate = useNavigate();
-  const [profileEdit, SetProfileEdit] = useState<ProfileType>();
+  const [profileEdit, SetProfileEdit] = useState();
   // {
   //   name: string;
-  //   postNumber: number;
-  //   email: string;
-  //   blogImgs: string;
+  //   password: string;
   // }
   const [Name, setName] = useState("유환빈");
   const [PassWord, setPassWord] = useState("penguin1234!");
@@ -34,6 +32,18 @@ const ProfileEdit = () => {
     }
     Getprofile();
   }, []);
+
+  const onClick = async () => {
+    try {
+      await customAxios.post("/blog/profile", {
+        name: Name,
+        Password: PassWord,
+      });
+    } catch (a: any) {
+      console.log(a);
+    }
+  };
+
   return (
     <>
       <S.Profile>
@@ -65,7 +75,9 @@ const ProfileEdit = () => {
           <S.Btn onClick={() => navigate("/profile")} color={"#ffbeb7"}>
             취소
           </S.Btn>
-          <S.Btn color={"#c9bffc"}>확인</S.Btn>
+          <S.Btn onClick={onClick} color={"#c9bffc"}>
+            확인
+          </S.Btn>
         </S.ButtonS>
       </S.Profile>
     </>

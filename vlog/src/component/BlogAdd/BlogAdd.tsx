@@ -25,19 +25,15 @@ const BlogAdd = () => {
     console.log(e.target.value);
     setDesc(e.currentTarget.value);
   };
-  const BlogaddData = [
-    {
-      BlogImg: "",
-      date: `${year}년 ${month}월 ${day}일`,
-      title: title,
-      desc: desc,
-    },
-  ];
 
   const onSubmit = async () => {
     try {
-      const { data } = await customAxios.post("/blog/send", BlogaddData);
-      console.log(data);
+      await customAxios.post("/blog/send", {
+        BlogImg: "",
+        date: `${year}년 ${month}월 ${day}일`,
+        title: title,
+        desc: desc,
+      });
       toast.success("추가됬습니다!");
       navigate("/blog");
     } catch (a: any) {
