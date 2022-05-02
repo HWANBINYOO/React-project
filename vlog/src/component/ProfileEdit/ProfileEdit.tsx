@@ -7,7 +7,6 @@ import * as S from "./Styled";
 
 const ProfileEdit = () => {
   const navigate = useNavigate();
-  const [imgBase64, setImgBase64] = useState(""); // 파일 base64
   const [profileEdit, SetProfileEdit] = useState();
   // {
   //   name: string;
@@ -16,11 +15,8 @@ const ProfileEdit = () => {
   const [Name, setName] = useState("유환빈");
   const [PassWord, setPassWord] = useState("penguin1234!");
   const [imgurl, setImgurl] = useState("/img/profile.png");
-
-  const [file, setFile] = useState("");
-  const [previewURL, setPreviewURL] = useState("/img/profile.png");
-  const [preview, setPreview] = useState(null);
-  const fileRef = useRef();
+  const [imgBase64, setImgBase64] = useState(""); // 파일 base64
+  const [imgFile, setImgFile] = useState(null); //파일
 
   const onChangeName = (e: any) => {
     setName(e.target.value);
@@ -51,14 +47,20 @@ const ProfileEdit = () => {
     }
   };
 
-  const handleFileOnChange = (event: any) => {
-    let file = event.target.files[0];
+  const handleChangeFile = (event: any) => {
     let reader = new FileReader();
 
-    reader.onloadend = (e) => {
-      setFile(file);
+    reader.onloadend = () => {
+      // 2. 읽기가 완료되면 아래코드가 실행됩니다.
+      const base64 = reader.result;
+      if (base64) {
+        setImgBase64(base64.toString()); // 파일 base64 상태 업데이트
+      }
     };
-    if (file) reader.readAsDataURL(file);
+    if (event.target.files[0]) {
+      reader.readAsDataURL(event.target.files[0]); // 1. 파일을 읽어 버퍼에 저장합니다.
+      setImgFile(event.target.files[0]); // 파일 상태 업데이트
+    }
   };
 
   const onChangeImg = (e: any) => {};
@@ -68,16 +70,18 @@ const ProfileEdit = () => {
       <S.Profile>
         <S.ProfileImgEdit>
           <S.ProfileImg>
-            <img src={previewURL} />
+            {imgFile ? (
+              <img src={imgBase64} />
+            ) : (
+              <img src={"/img/profile.png"} />
+            )}
           </S.ProfileImg>
-          {/* <input
-            id="imgFile"
-            name="imgFile"
+          <input
+            id="change_img"
             type="file"
-            accept="image/*"
-            onChange={onChangeImg}
-          /> */}
-          <input id="file" type="file" onChange={handleFileOnChange} />
+            style={{ display: "none" }}
+            onChange={handleChangeFile}
+          />
           <label htmlFor="change_img">변경</label>
         </S.ProfileImgEdit>
         <S.EditI>

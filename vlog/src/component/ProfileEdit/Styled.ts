@@ -21,16 +21,20 @@ export const ProfileImgEdit = styled.div`
   font-size: 50px;
   padding: 30px 0;
   label {
+    position: relative;
+    top: -50px;
+    right: -50px;
     font-family: "GangwonEduSaeeum_OTFMediumA";
-    font-size: 50px;
+    font-size: 25px;
     background-color: white;
-    border: none;
+    border: 1px solid black;
+    border-radius: 50%;
     color: black;
     cursor: pointer;
-    transition: all ease 0.2s 0s;
-
+    transition: all ease 0.1s 0s;
+    padding: 7px;
     &:hover {
-      opacity: 0.5;
+      transform: scale(1.03);
     }
   }
 `;
@@ -40,11 +44,10 @@ export const ProfileImg = styled.div`
   justify-content: center;
   align-items: center;
   img {
+    border-radius: 50%;
     transition: all ease 0.2s 0s;
-    width: 150px;
-    &:hover {
-      opacity: 0.5;
-    }
+    width: 160px;
+    height: 160px;
   }
 `;
 
@@ -83,4 +86,8 @@ export const Btn = styled.button`
   border: 1px solid black;
   border-radius: 5px;
   padding-top: 10px;
+  transition: all ease 0.1s 0s;
+  &:hover {
+    transform: scale(1.01);
+  }
 `;
