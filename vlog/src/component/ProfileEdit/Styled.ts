@@ -19,7 +19,7 @@ export const ProfileImgEdit = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  padding: 30px 0;
+  padding: 50px 0 0 0;
   label {
     position: relative;
     top: -50px;
@@ -67,6 +67,10 @@ export const EditInput = styled.input`
   border: none;
   outline: none;
   text-align: end;
+
+  &:focus {
+    color: black;
+  }
 `;
 
 export const ButtonS = styled.div`
