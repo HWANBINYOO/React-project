@@ -16,7 +16,7 @@ const Signup: React.FC = () => {
       if (Email === "") return toast.warning("이메일이 입력되지 않았어요!");
       else if (PassWord === "")
         return toast.warning("패스워드가 입력되지 않았어요!");
-      const { data } = await customAxios.post("/register", {
+      const { data } = await customAxios.post("/user/register", {
         name: Name,
         email: Email,
         password: PassWord,
@@ -25,10 +25,14 @@ const Signup: React.FC = () => {
       console.log(data);
       navigate("/login");
     } catch (e: any) {
-      if (e.message === "Request failed with status code 500") {
-        toast.warning("이미 존재하는 회원이에요!");
+      if (e.message === "Request failed with status code 400") {
+        if (e.response) {
+          const { data } = e.response;
+          console.error("data : ", data);
+          console.error(data.message);
+          toast.warning(data.message);
+        }
       }
-      console.log(e.message);
     }
   };
 
@@ -41,6 +45,7 @@ const Signup: React.FC = () => {
         <S.SignupInput>
           <p>Email</p>
           <input
+            type="text"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email을 입력하세요"
           />
@@ -56,7 +61,7 @@ const Signup: React.FC = () => {
         <S.SignupInput>
           <p>name</p>
           <input
-            type="password"
+            type="text"
             onChange={(e) => setName(e.target.value)}
             placeholder="이름을 입력하세요"
           />

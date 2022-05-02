@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { customAxios } from "../../Libs/CustomAxois";
 import { ProfileType } from "../../types";
@@ -7,6 +7,7 @@ import * as S from "./Styled";
 
 const ProfileEdit = () => {
   const navigate = useNavigate();
+  const [imgBase64, setImgBase64] = useState(""); // 파일 base64
   const [profileEdit, SetProfileEdit] = useState();
   // {
   //   name: string;
@@ -14,6 +15,12 @@ const ProfileEdit = () => {
   // }
   const [Name, setName] = useState("유환빈");
   const [PassWord, setPassWord] = useState("penguin1234!");
+  const [imgurl, setImgurl] = useState("/img/profile.png");
+
+  const [file, setFile] = useState("");
+  const [previewURL, setPreviewURL] = useState("/img/profile.png");
+  const [preview, setPreview] = useState(null);
+  const fileRef = useRef();
 
   const onChangeName = (e: any) => {
     setName(e.target.value);
@@ -44,14 +51,34 @@ const ProfileEdit = () => {
     }
   };
 
+  const handleFileOnChange = (event: any) => {
+    let file = event.target.files[0];
+    let reader = new FileReader();
+
+    reader.onloadend = (e) => {
+      setFile(file);
+    };
+    if (file) reader.readAsDataURL(file);
+  };
+
+  const onChangeImg = (e: any) => {};
+
   return (
     <>
       <S.Profile>
         <S.ProfileImgEdit>
           <S.ProfileImg>
-            <img src={"/img/profile.png"} />
+            <img src={previewURL} />
           </S.ProfileImg>
-          <button>변경</button>
+          {/* <input
+            id="imgFile"
+            name="imgFile"
+            type="file"
+            accept="image/*"
+            onChange={onChangeImg}
+          /> */}
+          <input id="file" type="file" onChange={handleFileOnChange} />
+          <label htmlFor="change_img">변경</label>
         </S.ProfileImgEdit>
         <S.EditI>
           <span>name:</span>

@@ -7,6 +7,7 @@ export const Profile = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  overflow-y: hidden;
   padding: 0 15%;
   border: 2px solid gray;
   border-radius: 10px;
@@ -19,7 +20,7 @@ export const ProfileImgEdit = styled.div`
   align-items: center;
   font-size: 50px;
   padding: 30px 0;
-  button {
+  label {
     font-family: "GangwonEduSaeeum_OTFMediumA";
     font-size: 50px;
     background-color: white;
