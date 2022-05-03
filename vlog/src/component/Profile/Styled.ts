@@ -70,7 +70,7 @@ export const UserName = styled.span`
 
 export const uploadBlogs = styled.div`
   width: 80%;
-  height: 1500px;
+  height: 2000px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

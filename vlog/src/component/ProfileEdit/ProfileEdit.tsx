@@ -16,7 +16,7 @@ const ProfileEdit = () => {
   const [PassWord, setPassWord] = useState("penguin1234!");
   const [imgurl, setImgurl] = useState("/img/profile.png");
   const [imgBase64, setImgBase64] = useState(""); // 파일 base64
-  const [imgFile, setImgFile] = useState(null); //파일
+  const [imgFile, setImgFile] = useState(""); //파일
 
   const onChangeName = (e: any) => {
     setName(e.target.value);
@@ -36,17 +36,6 @@ const ProfileEdit = () => {
     Getprofile();
   }, []);
 
-  const onClick = async () => {
-    try {
-      await customAxios.post("/blog/profile", {
-        name: Name,
-        Password: PassWord,
-      });
-    } catch (a: any) {
-      console.log(a);
-    }
-  };
-
   const handleChangeFile = (event: any) => {
     let reader = new FileReader();
 
@@ -63,7 +52,25 @@ const ProfileEdit = () => {
     }
   };
 
-  const onChangeImg = (e: any) => {};
+  //수정사항 서버로보내기 (profile사진포함)
+  const onClick = async () => {
+    const formData = new FormData();
+    formData.append("file", imgFile);
+    // formData.append("name", Name);
+    // formData.append("passWord", PassWord);
+    try {
+      await customAxios.post("/user/upload", {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        data: {
+          formData,
+        },
+      });
+    } catch (a: any) {
+      console.log(a);
+    }
+  };
 
   return (
     <>
@@ -95,10 +102,13 @@ const ProfileEdit = () => {
         </S.EditI>
         <S.EditI>
           <span>PassWord :</span>
+          <S.EditInput type="text" placeholder={""} />
+        </S.EditI>
+        <S.EditI>
+          <span>New PassWord :</span>
           <S.EditInput
             type="text"
-            value={PassWord}
-            placeholder={"PassWord"}
+            placeholder={""}
             onChange={onChangePassWord}
           />
         </S.EditI>

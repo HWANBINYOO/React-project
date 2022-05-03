@@ -9,6 +9,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const [profile, SetProfile] = useState<ProfileType>();
   // {
+  //   profileimg:string;
   //   name: string;
   //   postNumber: number;
   //   email: string;
@@ -44,6 +45,7 @@ const Profile = () => {
         </S.ProfileImpormation>
         <S.Hr />
         <S.uploadBlogs>
+          <img src={"/img/8day.gif"} />
           <img src={"/img/8day.gif"} />
           <img src={"/img/8day.gif"} />
           <img src={"/img/8day.gif"} />
