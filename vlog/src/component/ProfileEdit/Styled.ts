@@ -55,7 +55,7 @@ export const EditI = styled.div`
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
-  font-size: 35px;
+  font-size: 30px;
   padding-right: 10%;
   margin: 20px 0;
 `;
@@ -63,7 +63,7 @@ export const EditI = styled.div`
 export const EditInput = styled.input`
   font-family: "GangwonEduSaeeum_OTFMediumA";
   color: gray;
-  font-size: 35px;
+  font-size: 30px;
   border: none;
   outline: none;
   text-align: end;

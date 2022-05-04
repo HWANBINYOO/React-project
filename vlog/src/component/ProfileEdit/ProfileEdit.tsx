@@ -16,7 +16,7 @@ const ProfileEdit = () => {
   const [PassWord, setPassWord] = useState("penguin1234!");
   const [imgurl, setImgurl] = useState("/img/profile.png");
   const [imgBase64, setImgBase64] = useState(""); // 파일 base64
-  const [imgFile, setImgFile] = useState(""); //파일
+  const [file, setFile] = useState(""); //파일
 
   const onChangeName = (e: any) => {
     setName(e.target.value);
@@ -37,6 +37,8 @@ const ProfileEdit = () => {
   }, []);
 
   const handleChangeFile = (event: any) => {
+    event.preventDefault();
+
     let reader = new FileReader();
 
     reader.onloadend = () => {
@@ -48,27 +50,32 @@ const ProfileEdit = () => {
     };
     if (event.target.files[0]) {
       reader.readAsDataURL(event.target.files[0]); // 1. 파일을 읽어 버퍼에 저장합니다.
-      setImgFile(event.target.files[0]); // 파일 상태 업데이트
+      setFile(event.target.files[0]); // 파일 상태 업데이트
     }
   };
 
   //수정사항 서버로보내기 (profile사진포함)
-  const onClick = async () => {
+  const onClick = async (event: any) => {
+    event.preventDefault();
     const formData = new FormData();
-    formData.append("file", imgFile);
-    // formData.append("name", Name);
-    // formData.append("passWord", PassWord);
+    //key , value
+    formData.append("image", file);
+    formData.append("name", Name);
+    formData.append("passWord", PassWord);
+
     try {
       await customAxios.post("/user/upload", {
+        data: formData,
         headers: {
           "Content-Type": "multipart/form-data",
         },
-        data: {
-          formData,
-        },
       });
-    } catch (a: any) {
-      console.log(a);
+    } catch (e: any) {
+      console.log(e);
+      if (e.response) {
+        const { data } = e.response;
+        console.error("data : ", data);
+      }
     }
   };
 
@@ -77,19 +84,23 @@ const ProfileEdit = () => {
       <S.Profile>
         <S.ProfileImgEdit>
           <S.ProfileImg>
-            {imgFile ? (
-              <img src={imgBase64} />
-            ) : (
-              <img src={"/img/profile.png"} />
-            )}
+            {file ? <img src={imgBase64} /> : <img src={"/img/profile.png"} />}
           </S.ProfileImg>
-          <input
-            id="change_img"
-            type="file"
-            style={{ display: "none" }}
-            onChange={handleChangeFile}
-          />
-          <label htmlFor="change_img">변경</label>
+          <form
+            name="photo"
+            method="post"
+            encType="multipart/form-data"
+            onSubmit={onClick}
+          >
+            <input
+              id="change_img"
+              type="file"
+              style={{ display: "none" }}
+              onChange={handleChangeFile}
+            />
+            <label htmlFor="change_img">변경</label>
+            <button type="submit">제출하기</button>
+          </form>
         </S.ProfileImgEdit>
         <S.EditI>
           <span>name:</span>
