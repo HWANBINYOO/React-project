@@ -8,17 +8,28 @@ import * as S from "./Styled";
 const Profile = () => {
   const navigate = useNavigate();
   const [profile, SetProfile] = useState<ProfileType>();
+  const [profileImg, SetProfileImg] = useState<string>();
+  const [Imgurl, setImgurl] = useState<string[]>();
+  const [UserName, setUserName] = useState<string>();
+  const [UserEmail, setUserEmail] = useState<string>();
+  const [UserBoardNumber, setUserBoardNumber] = useState<string>();
   // {
-  //   profileimg:string;
-  //   name: string;
-  //   postNumber: number;
-  //   email: string;
-  //   blogImgs: string;
-  // }
+  //프로필 이미지 추가해야됨
+  //   "user_id": number,
+  //   "user_name": string,
+  //   "user_email": string,
+  //   “board_number” : number,
+  //   “board_img” : string
+  //   }
   useEffect(() => {
     async function Getprofile() {
       try {
-        SetProfile(await customAxios.get("/blog/profile"));
+        const { data } = await customAxios.get("/blog/profile");
+        SetProfileImg(data.user.profileImg);
+        setUserName(data.user_name);
+        setImgurl(data.board_img);
+        setUserEmail(data.user_email);
+        setUserBoardNumber(data.board_number);
       } catch (a: any) {
         console.log(a);
       }
@@ -30,21 +41,34 @@ const Profile = () => {
       <S.Profile>
         <S.ProfileImpormation>
           <S.ProfileImg>
-            <img src={"/img/profile.png"} />
+            {profileImg ? (
+              <img src={profileImg} />
+            ) : (
+              <img src={"/img/profile.png"} />
+            )}
           </S.ProfileImg>
           <S.User>
             <S.EditGO>
               <S.UserName>유환빈</S.UserName>
+              {/* <S.UserName>{UserName}</S.UserName> */}
+              <S.UserName></S.UserName>
               <S.GOEdit onClick={() => navigate("/profile/Edit")}>
                 프로필 편집
               </S.GOEdit>
             </S.EditGO>
             <S.UserBlogs>게시물 2</S.UserBlogs>
-            <S.UserId>dngh0825@gmail.com</S.UserId>
+            {/* <S.UserBlogs>{UserBoardNumber}</S.UserBlogs> */}
+            <S.UserEmail>dngh0825@gmail.com</S.UserEmail>
+            {/* <S.UserId>{UserBoardNumber}</S.UserId> */}
           </S.User>
         </S.ProfileImpormation>
         <S.Hr />
         <S.uploadBlogs>
+          {/* {Imgurl ? (
+            Imgurl.map((item) => <img src={item} />)
+          ) : (
+            <img src={"/img/loading.gif"} />
+          )} */}
           <img src={"/img/8day.gif"} />
           <img src={"/img/8day.gif"} />
           <img src={"/img/8day.gif"} />

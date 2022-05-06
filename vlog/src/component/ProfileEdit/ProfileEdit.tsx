@@ -8,10 +8,6 @@ import * as S from "./Styled";
 const ProfileEdit = () => {
   const navigate = useNavigate();
   const [profileEdit, SetProfileEdit] = useState();
-  // {
-  //   name: string;
-  //   password: string;
-  // }
   const [Name, setName] = useState("유환빈");
   const [PassWord, setPassWord] = useState("penguin1234!");
   const [imgurl, setImgurl] = useState("/img/profile.png");
@@ -28,7 +24,9 @@ const ProfileEdit = () => {
   useEffect(() => {
     async function Getprofile() {
       try {
-        SetProfileEdit(await customAxios.get("/blog/profile/Edit"));
+        const { data } = await customAxios.get("/blog/profile/edite");
+        setName(data.user_name);
+        setPassWord(data.passWord);
       } catch (a: any) {
         console.log(a);
       }

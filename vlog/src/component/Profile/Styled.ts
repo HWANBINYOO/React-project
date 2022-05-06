@@ -54,7 +54,7 @@ export const GOEdit = styled.div`
   cursor: pointer;
 `;
 
-export const UserId = styled.div`
+export const UserEmail = styled.div`
   color: gray;
   font-size: 40px;
 `;
