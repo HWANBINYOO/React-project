@@ -111,13 +111,13 @@ const ProfileEdit = () => {
         </S.EditI>
         <S.EditI>
           <span>PassWord :</span>
-          <S.EditInput type="text" placeholder={""} />
+          <S.EditInputPW type="password" placeholder={"pwd"} />
         </S.EditI>
         <S.EditI>
           <span>New PassWord :</span>
-          <S.EditInput
-            type="text"
-            placeholder={""}
+          <S.EditInputPW
+            type="password"
+            placeholder={"pwd"}
             onChange={onChangePassWord}
           />
         </S.EditI>

@@ -71,6 +71,27 @@ export const EditInput = styled.input`
   &:focus {
     color: black;
   }
+  .passWord {
+    font-family: "Spoqa Han Sans";
+    &::placeholder {
+      font-family: "GangwonEduSaeeum_OTFMediumA";
+    }
+  }
+`;
+export const EditInputPW = styled.input`
+  color: gray;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  text-align: end;
+  padding: 5px 0;
+
+  &:focus {
+    color: black;
+  }
+  &::placeholder {
+    font-family: "GangwonEduSaeeum_OTFMediumA";
+  }
 `;
 
 export const ButtonS = styled.div`
