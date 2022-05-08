@@ -97,7 +97,7 @@ const ProfileEdit = () => {
               onChange={handleChangeFile}
             />
             <label htmlFor="change_img">변경</label>
-            <button type="submit">제출하기</button>
+            {/* <button type="submit">제출하기</button> */}
           </form>
         </S.ProfileImgEdit>
         <S.EditI>
