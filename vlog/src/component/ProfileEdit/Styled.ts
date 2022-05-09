@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Profile = styled.div`
-  width: 30%;
+  width: 40%;
   height: 80vh;
   margin: 0 auto;
   display: flex;
@@ -52,12 +52,15 @@ export const ProfileImg = styled.div`
 `;
 
 export const EditI = styled.div`
+  width: 100%;
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
   font-size: 30px;
-  padding-right: 10%;
   margin: 20px 0;
+  span {
+    width: 45%;
+  }
 `;
 
 export const EditInput = styled.input`
@@ -67,6 +70,8 @@ export const EditInput = styled.input`
   border: none;
   outline: none;
   text-align: end;
+  padding-right: 10%;
+  width: 55%;
 
   &:focus {
     color: black;
@@ -84,7 +89,8 @@ export const EditInputPW = styled.input`
   border: none;
   outline: none;
   text-align: end;
-  padding: 5px 0;
+  padding: 5px 10% 5px 0;
+  width: 55%;
 
   &:focus {
     color: black;

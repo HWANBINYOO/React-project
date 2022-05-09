@@ -58,8 +58,8 @@ const ProfileEdit = () => {
     const formData = new FormData();
     //key , value
     formData.append("image", file);
-    formData.append("name", Name);
-    formData.append("passWord", PassWord);
+    // formData.append("name", Name);
+    // formData.append("passWord", PassWord);
 
     try {
       await customAxios.post("/user/upload", {
