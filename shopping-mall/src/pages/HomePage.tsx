@@ -1,4 +1,8 @@
-// import { Header, About, Title, HeaderRIght } from "../component";
+import { Header } from "../component";
 export default function HomePage() {
-  return <></>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
