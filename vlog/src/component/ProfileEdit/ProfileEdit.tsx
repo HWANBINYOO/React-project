@@ -10,7 +10,6 @@ const ProfileEdit = () => {
   const [profileEdit, SetProfileEdit] = useState();
   const [Name, setName] = useState("유환빈");
   const [PassWord, setPassWord] = useState("penguin1234!");
-  const [imgurl, setImgurl] = useState("/img/profile.png");
   const [imgBase64, setImgBase64] = useState(""); // 파일 base64
   const [file, setFile] = useState(""); //파일
 
@@ -55,15 +54,14 @@ const ProfileEdit = () => {
   //수정사항 서버로보내기 (profile사진포함)
   const onClick = async (event: any) => {
     event.preventDefault();
-    const formData = new FormData();
+    let formData = new FormData();
     //key , value
-    formData.append("image", file);
+    formData.append("file", file);
     // formData.append("name", Name);
     // formData.append("passWord", PassWord);
-
     try {
       await customAxios.post("/user/upload", {
-        data: formData,
+        formData,
         headers: {
           "Content-Type": "multipart/form-data",
         },
