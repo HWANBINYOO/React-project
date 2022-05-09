@@ -1,11 +1,11 @@
 import * as S from "./Styled";
 
-const Signup = () => {
+const SignUp = () => {
   return (
     <>
-      <S.Signup></S.Signup>
+      <S.SignUp></S.SignUp>
     </>
   );
 };
 
-export default Signup;
+export default SignUp;

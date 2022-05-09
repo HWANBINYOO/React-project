@@ -1,5 +1,4 @@
 // import { Header, About, Title, HeaderRIght } from "../component";
-
-export default function SignUpPage() {
+export default function HomePage() {
   return <></>;
 }

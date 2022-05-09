@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const Signup = styled.div``;
+export const SignUp = styled.div``;

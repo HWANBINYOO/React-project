@@ -1,4 +1,4 @@
-import * as S from "./SignIn";
+import * as S from "./Styled";
 
 const SignIn = () => {
   return (
