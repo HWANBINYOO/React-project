@@ -5,7 +5,7 @@ const Profile = () => {
     <>
       <S.Postionner>
         <S.MyImformation>
-          <S.ProfileImg />
+          <S.ProfileImg src={"/img/profile.png"} />
           <S.MyPrivacy>
             <S.MyPrivacyTop>
               <S.PrivacyLeft>name : 정재훈</S.PrivacyLeft>
