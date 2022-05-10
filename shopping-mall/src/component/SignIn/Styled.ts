@@ -28,7 +28,7 @@ export const SigninBox = styled.div`
   justify-content: center;
   gap: 55px;
   background-color: #faf5e3;
-  /* opacity: 0.5; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
 export const inputBox = styled.div`
@@ -41,17 +41,25 @@ export const inputBox = styled.div`
   align-items: center;
   padding-left: 20px;
   background-color: white;
+
   input {
+    transition: all ease 0.3s 0s;
+    font-family: "Inika", serif;
     border: none;
     outline: none;
     font-size: 1.8rem;
+    color: #a9978b;
     &::-webkit-input-placeholder {
       color: #a9978b;
     }
   }
+  input:focus {
+    color: #fcda46;
+  }
 `;
 
 export const Btn = styled.button`
+  font-family: "Inika", serif;
   width: 40%;
   height: 15%;
   font-size: 2rem;
@@ -59,4 +67,8 @@ export const Btn = styled.button`
   background-color: #755139;
   color: #f2edd7;
   border: none;
+  transition: all ease 0.3s 0s;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 `;
