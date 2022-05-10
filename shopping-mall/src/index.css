@@ -5,6 +5,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'EarlyFontDiary';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 @import url('https://fonts.googleapis.com/css2?family=Inika&display=swap');
 html,
 body,
@@ -91,7 +97,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "GangwonEduSaeeum_OTFMediumA";
+  font-family: "EarlyFontDiary";
 }
 input:focus,
 select:focus,
@@ -101,7 +107,7 @@ button:focus {
 }
 
 body {
-  background-color: #FFFDF6;
+  background-color: #F6EFE7;
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;

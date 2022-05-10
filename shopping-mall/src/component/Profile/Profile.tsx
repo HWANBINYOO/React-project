@@ -12,10 +12,10 @@ const Profile = () => {
               <S.EditBtn>프로필 수정</S.EditBtn>
             </S.MyPrivacyTop>
             <S.MyPrivacyMiddle>
-              <S.PrivacyLeft>1000,000,000</S.PrivacyLeft>
+              <S.PrivacyLeft>money : 100,000,000</S.PrivacyLeft>
               <S.EditBtn>충전</S.EditBtn>
             </S.MyPrivacyMiddle>
-            <S.Email>woocom424@gmail.com</S.Email>
+            <S.Email>email : woocom424@gmail.com</S.Email>
           </S.MyPrivacy>
         </S.MyImformation>
 

@@ -9,7 +9,7 @@ export const Postionner = styled.div`
   align-items: center;
 `;
 export const MyImformation = styled.div`
-  width: 50%;
+  width: 60%;
   height: 40vh;
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@ export const MyPrivacy = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
+  gap: 30px;
 `;
 export const MyPrivacyTop = styled.div`
   width: 100%;
@@ -38,12 +38,13 @@ export const MyPrivacyMiddle = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 `;
 export const PrivacyLeft = styled.div`
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;
 export const EditBtn = styled.button`
+  font-family: "EarlyFontDiary";
   width: 140px;
   height: 40px;
   border: none;
@@ -53,7 +54,7 @@ export const EditBtn = styled.button`
   text-align: center;
 `;
 export const Email = styled.div`
-  font-size: 1.5 rem;
+  font-size: 1rem;
 `;
 
 export const MyLists = styled.div`
@@ -74,6 +75,7 @@ export const ListTitle = styled.div`
 export const Mysale = styled.div`
   width: 300px;
   height: 400px;
+  padding: 15px 0 0 0;
   border-radius: 10px;
   border: 2px solid black;
   display: flex;
@@ -83,7 +85,8 @@ export const Mysale = styled.div`
   gap: 20px;
 `;
 export const Sale = styled.div`
-  width: 260px;
+  width: 250px;
+  height: 70px;
   display: flex;
   padding: 10px 5px;
   border: 1px solid black;
@@ -91,31 +94,33 @@ export const Sale = styled.div`
 `;
 
 export const SaleImg = styled.div`
-  width: 50px;
+  width: 70px;
 `;
 export const SaleImformation = styled.div`
-  width: 230px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 5px;
 `;
 export const ImTop = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 1.3;
+  font-size: 1rem;
 `;
 
 export const SaleName = styled.div`
   font-size: 1rem;
 `;
 export const DelectBtn = styled.button`
-  font-size: 1rem;
+  font-size: 0.5rem;
+  border: none;
 `;
 
 export const ActionMoney = styled.div`
-  font-size: 1rem;
+  font-size: 0.5rem;
 `;
 export const EmdDate = styled.div`
-  font-size: 1rem;
+  font-size: 0.5rem;
 `;

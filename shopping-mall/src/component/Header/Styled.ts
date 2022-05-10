@@ -29,7 +29,7 @@ export const HeaderBottom = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #755139;
+  background-color: #024959;
 `;
 
 export const Mainlogo = styled.div`
@@ -75,5 +75,6 @@ export const HeaderLogos = styled.div`
 `;
 
 export const ProfileImg = styled.img`
+  width: 30px;
   height: 60%;
 `;
