@@ -1,5 +1,9 @@
-// import { Header, About, Title, HeaderRIght } from "../component";
+import { SignUp } from "../component";
 
 export default function SignUpPage() {
-  return <></>;
+  return (
+    <>
+      <SignUp />
+    </>
+  );
 }

@@ -33,7 +33,7 @@ export const SigninBox = styled.div`
 
 export const inputBox = styled.div`
   width: 70%;
-  height: 15%;
+  height: 7vh;
   border: 3px solid #755139;
   border-radius: 10px;
   display: flex;
@@ -61,7 +61,7 @@ export const inputBox = styled.div`
 export const Btn = styled.button`
   font-family: "Inika", serif;
   width: 40%;
-  height: 15%;
+  height: 7vh;
   font-size: 2rem;
   border-radius: 10px;
   background-color: #755139;
