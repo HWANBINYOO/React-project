@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "SuncheonB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inika&display=swap');
 html,
 body,
 div,
@@ -79,7 +87,7 @@ time,
 mark,
 audio,
 video {
-  font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
+  font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif","Inika";
   margin: 0;
   padding: 0;
   border: 0;
@@ -93,7 +101,7 @@ button:focus {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #FFFDF6;
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;

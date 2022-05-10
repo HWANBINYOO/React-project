@@ -14,7 +14,10 @@ const Header = () => {
             <S.Input />
             <S.SearchImg src={"/img/search.png"} />
           </S.InputBox>
-          <S.ProfileImg src={"/img/profile.png"} />
+          <S.HeaderLogos>
+            <S.ProfileImg src={"/img/profile.png"} />
+            <S.ProfileImg src={"/img/new.png"} />
+          </S.HeaderLogos>
         </S.HeaderBottom>
       </S.Header>
     </>
