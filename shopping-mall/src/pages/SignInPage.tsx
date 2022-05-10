@@ -1,5 +1,9 @@
-// import { Header, About, Title, HeaderRIght } from "../component";
+import { SignIn } from "../component";
 
 export default function SignInPage() {
-  return <></>;
+  return (
+    <>
+      <SignIn />
+    </>
+  );
 }
