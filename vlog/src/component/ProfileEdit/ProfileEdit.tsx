@@ -3,29 +3,25 @@ import { useNavigate } from "react-router";
 import { customAxios } from "../../Libs/CustomAxois";
 import { ProfileType } from "../../types";
 import Footer from "../Footer/Footer";
+import { toast } from "react-toastify";
 import * as S from "./Styled";
 
 const ProfileEdit = () => {
   const navigate = useNavigate();
   const [profileEdit, SetProfileEdit] = useState();
   const [Name, setName] = useState("유환빈");
-  const [PassWord, setPassWord] = useState("penguin1234!");
+  const [PassWord, setPassWord] = useState("");
+  const [ChangePassWord, setChangePassWord] = useState("");
+  const [PassWordAgain, setPassWordAgain] = useState("");
   const [imgBase64, setImgBase64] = useState(""); // 파일 base64
   const [file, setFile] = useState(""); //파일
-
-  const onChangeName = (e: any) => {
-    setName(e.target.value);
-  };
-  const onChangePassWord = (e: any) => {
-    setPassWord(e.target.value);
-  };
-
+  let PAWWWORD: string;
   useEffect(() => {
     async function Getprofile() {
       try {
         const { data } = await customAxios.get("/blog/profile/edite");
         setName(data.user_name);
-        setPassWord(data.passWord);
+        const PAWWWORD = data.passWord;
       } catch (a: any) {
         console.log(a);
       }
@@ -35,7 +31,6 @@ const ProfileEdit = () => {
 
   const handleChangeFile = (event: any) => {
     event.preventDefault();
-
     let reader = new FileReader();
 
     reader.onloadend = () => {
@@ -53,19 +48,31 @@ const ProfileEdit = () => {
 
   //수정사항 서버로보내기 (profile사진포함)
   const onClick = async (event: any) => {
+    if (PAWWWORD === PassWord) {
+      return toast.warning("패스워드가 일치하지 않아요!");
+    } else if (PassWordAgain === ChangePassWord)
+      return toast.warning("새로운패스워드가 일치하지 않아요!");
+    console.log(file);
+
     event.preventDefault();
     let formData = new FormData();
     //key , value
-    formData.append("file", file);
-    // formData.append("name", Name);
-    // formData.append("passWord", PassWord);
+    formData.append("files", file);
+    let EditData = {
+      name: Name,
+      PassWord: PassWord,
+    };
+    formData.append(
+      "EditData",
+      new Blob([JSON.stringify(EditData)], { type: "application/json" })
+    );
     try {
-      await customAxios.post("/user/upload", {
-        formData,
+      await customAxios.post("/board/write", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+      console.log(file);
     } catch (e: any) {
       console.log(e);
       if (e.response) {
@@ -83,7 +90,7 @@ const ProfileEdit = () => {
             {file ? <img src={imgBase64} /> : <img src={"/img/profile.png"} />}
           </S.ProfileImg>
           <form
-            name="photo"
+            name="files"
             method="post"
             encType="multipart/form-data"
             onSubmit={onClick}
@@ -104,19 +111,33 @@ const ProfileEdit = () => {
             type="text"
             value={Name}
             placeholder={"Name"}
-            onChange={onChangeName}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
           />
         </S.EditI>
         <S.EditI>
-          <span>PassWord :</span>
-          <S.EditInputPW type="password" placeholder={"pwd"} />
-        </S.EditI>
-        <S.EditI>
-          <span>New PassWord :</span>
+          <span>현재 비밀번호 :</span>
           <S.EditInputPW
             type="password"
             placeholder={"pwd"}
-            onChange={onChangePassWord}
+            onChange={(e) => setPassWord(e.target.value)}
+          />
+        </S.EditI>
+        <S.EditI>
+          <span>새로운 비밀번호 :</span>
+          <S.EditInputPW
+            type="password"
+            placeholder={"pwd"}
+            onChange={(e) => setChangePassWord(e.target.value)}
+          />
+        </S.EditI>
+        <S.EditI>
+          <span>새로운 비밀번호 재입력 :</span>
+          <S.EditInputPW
+            type="password"
+            placeholder={"pwd"}
+            onChange={(e) => setPassWordAgain(e.target.value)}
           />
         </S.EditI>
         <S.ButtonS>

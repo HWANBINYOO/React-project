@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Header({ HeaderColor }: { HeaderColor: string }) {
   return (
     <S.Header>
-      <Link to="/About" style={{ textDecoration: "none", color: "black" }}>
+      {/* <Link to="/About" style={{ textDecoration: "none", color: "black" }}>
         <S.HeaderMenu
           style={{
             backgroundColor: `${
@@ -14,9 +14,9 @@ export default function Header({ HeaderColor }: { HeaderColor: string }) {
         >
           About
         </S.HeaderMenu>
-      </Link>
+      </Link> */}
 
-      <Link to="/project" style={{ textDecoration: "none", color: "black" }}>
+      {/* <Link to="/project" style={{ textDecoration: "none", color: "black" }}>
         <S.HeaderMenu
           style={{
             backgroundColor: `${
@@ -26,7 +26,7 @@ export default function Header({ HeaderColor }: { HeaderColor: string }) {
         >
           Project
         </S.HeaderMenu>
-      </Link>
+      </Link> */}
 
       <Link to="/blog" style={{ textDecoration: "none", color: "black" }}>
         <S.HeaderMenu
