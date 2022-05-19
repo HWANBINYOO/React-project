@@ -92,6 +92,7 @@ const Blog: React.FC<BlogType> = () => {
               desc={item.desc}
               date={item.date}
               id={item.id}
+              // profileImg={item.img}
             />
           ))
         ) : (

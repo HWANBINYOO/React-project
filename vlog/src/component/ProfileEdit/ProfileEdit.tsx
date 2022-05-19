@@ -48,9 +48,9 @@ const ProfileEdit = () => {
 
   //수정사항 서버로보내기 (profile사진포함)
   const onClick = async (event: any) => {
-    if (PAWWWORD === PassWord) {
+    if (PAWWWORD !== PassWord) {
       return toast.warning("패스워드가 일치하지 않아요!");
-    } else if (PassWordAgain === ChangePassWord)
+    } else if (PassWordAgain !== ChangePassWord)
       return toast.warning("새로운패스워드가 일치하지 않아요!");
     console.log(file);
 
