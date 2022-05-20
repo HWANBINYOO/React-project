@@ -64,6 +64,16 @@ export const DescInputBox = styled.div`
   }
 `;
 
+export const BlogImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    transition: all ease 0.2s 0s;
+    width: 100px;
+    height: 100px;
+  }
+`;
 // export const Input = styled.input`
 //   font-family: "GangwonEduSaeeum_OTFMediumA";
 
@@ -73,6 +83,30 @@ export const DescInputBox = styled.div`
 //   width: 90%;
 //   height: 80%;
 // `;
+export const BlogAddImgWapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100px;
+  margin-left: 6vw;
+  label {
+    position: relative;
+    top: -50px;
+    right: -350px;
+    font-family: "GangwonEduSaeeum_OTFMediumA";
+    font-size: 25px;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    transition: all ease 0.1s 0s;
+    padding: 22px 20px 22px 20px;
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+`;
 
 export const Today = styled.span`
   margin-left: 6vw;
