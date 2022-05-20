@@ -8,13 +8,12 @@ import * as S from "./Styled";
 const Profile = () => {
   const navigate = useNavigate();
   const [profile, SetProfile] = useState<ProfileType>();
-  const [profileImg, SetProfileImg] = useState<string>();
+  const [profileImg, setProfileImg] = useState<string>();
   const [Imgurl, setImgurl] = useState<string[]>();
   const [UserName, setUserName] = useState<string>();
   const [UserEmail, setUserEmail] = useState<string>();
   const [UserBoardNumber, setUserBoardNumber] = useState<string>();
   // {
-  //프로필 이미지 추가해야됨
   //   "user_id": number,
   //   "user_name": string,
   //   "user_email": string,
@@ -25,11 +24,11 @@ const Profile = () => {
     async function Getprofile() {
       try {
         const { data } = await customAxios.get("/blog/profile");
-        SetProfileImg(data.user.profileImg);
+        setProfileImg(data.user.profileImg);
         setUserName(data.user_name);
-        setImgurl(data.board_img);
         setUserEmail(data.user_email);
         setUserBoardNumber(data.board_number);
+        setImgurl(data.board_img);
       } catch (a: any) {
         console.log(a);
       }

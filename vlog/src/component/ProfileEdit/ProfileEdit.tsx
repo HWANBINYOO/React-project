@@ -48,10 +48,17 @@ const ProfileEdit = () => {
 
   //수정사항 서버로보내기 (profile사진포함)
   const onClick = async (event: any) => {
-    if (PAWWWORD !== PassWord) {
-      return toast.warning("패스워드가 일치하지 않아요!");
-    } else if (PassWordAgain !== ChangePassWord)
-      return toast.warning("새로운패스워드가 일치하지 않아요!");
+    if (PassWord !== "") {
+      if (PAWWWORD !== PassWord) {
+        return toast.warning("패스워드가 일치하지 않아요!");
+      } else if (ChangePassWord === "") {
+        return toast.warning("새로운패스워드를 입력하지 않았어요!");
+      } else if (PassWordAgain === "") {
+        return toast.warning("새로운패스워드재입력를 입력하지 않았어요!");
+      } else if (PassWordAgain !== ChangePassWord) {
+        return toast.warning("새로운패스워드가 일치하지 않아요!");
+      }
+    }
     console.log(file);
 
     event.preventDefault();
