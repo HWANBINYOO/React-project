@@ -14,7 +14,13 @@ const BlogItem: React.FC<BlogType> = ({ BlogImg, date, title, desc, id }) => {
         <S.TextBox>
           <S.Title>{title}</S.Title>
           <S.desc>{desc}</S.desc>
-          <S.date>{date}</S.date>
+          <S.ItemBottom>
+            <S.BottomLeft>
+              {/* <S.MemberImg>{img}</S.MemberImg>
+            <S.MemberId>{name}</S.MemberId> */}
+            </S.BottomLeft>
+            <S.date>{date}</S.date>
+          </S.ItemBottom>
         </S.TextBox>
       </S.BlogItem>
     </>

@@ -24,7 +24,6 @@ export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
-  /* border: 1px black solid; */
   text-align: center;
 `;
 
@@ -39,7 +38,6 @@ export const Title = styled.span`
   height: 30px;
   font-size: 1.3rem;
   font-weight: bold;
-  /* border: 1px black solid; */
   text-align: center;
   text-align: center;
 
@@ -62,14 +60,34 @@ export const desc = styled.div`
   -webkit-box-orient: vertical;
 `;
 
-export const date = styled.div`
+export const ItemBottom = styled.div`
   width: 100%;
   height: 4vh;
-  font-size: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  color: gray;
+`;
+
+export const BottomLeft = styled.div`
+  display: flex;
+`;
+
+export const MemberImg = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 1rem;
+  justify-content: center;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+`;
+
+export const MemberId = styled.div`
+  font-size: 1.5rem;
+`;
+
+export const date = styled.div`
   color: gray;
   /* border: 1px black solid; */
 `;

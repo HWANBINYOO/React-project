@@ -15,13 +15,13 @@ const ProfileEdit = () => {
   const [PassWordAgain, setPassWordAgain] = useState("");
   const [imgBase64, setImgBase64] = useState(""); // 파일 base64
   const [file, setFile] = useState(""); //파일
-  let PAWWWORD: string;
+  const [userId, setUserId] = useState();
   useEffect(() => {
     async function Getprofile() {
       try {
         const { data } = await customAxios.get("/blog/profile/edite");
         setName(data.user_name);
-        const PAWWWORD = data.passWord;
+        setFile(data.img_url);
       } catch (a: any) {
         console.log(a);
       }
@@ -48,33 +48,28 @@ const ProfileEdit = () => {
 
   //수정사항 서버로보내기 (profile사진포함)
   const onClick = async (event: any) => {
-    if (PassWord !== "") {
-      if (PAWWWORD !== PassWord) {
-        return toast.warning("패스워드가 일치하지 않아요!");
-      } else if (ChangePassWord === "") {
-        return toast.warning("새로운패스워드를 입력하지 않았어요!");
-      } else if (PassWordAgain === "") {
-        return toast.warning("새로운패스워드재입력를 입력하지 않았어요!");
-      } else if (PassWordAgain !== ChangePassWord) {
-        return toast.warning("새로운패스워드가 일치하지 않아요!");
-      }
+    if (ChangePassWord === "") {
+      return toast.warning("새로운패스워드를 입력하지 않았어요!");
+    } else if (PassWordAgain === "") {
+      return toast.warning("새로운패스워드재입력를 입력하지 않았어요!");
+    } else if (PassWordAgain !== ChangePassWord) {
+      return toast.warning("새로운패스워드가 일치하지 않아요!");
     }
-    console.log(file);
-
     event.preventDefault();
     let formData = new FormData();
     //key , value
-    formData.append("files", file);
+    formData.append("file", file);
     let EditData = {
       name: Name,
-      PassWord: PassWord,
+      password: PassWord,
+      //newPassWord: PassWordAgain,
     };
     formData.append(
-      "EditData",
+      "profiledata",
       new Blob([JSON.stringify(EditData)], { type: "application/json" })
     );
     try {
-      await customAxios.post("/board/write", formData, {
+      await customAxios.put("/1/update", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
