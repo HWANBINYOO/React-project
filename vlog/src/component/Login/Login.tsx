@@ -19,17 +19,22 @@ const Login = () => {
 
   const onLogin = async () => {
     console.log(Email, PassWord);
-    const { data } = await customAxios.post("/login", {
-      email: Email,
-      password: PassWord,
-    });
+    try {
+      const { data } = await customAxios.post("/login", {
+        email: Email,
+        password: PassWord,
+      });
 
-    console.log(data);
-    localStorage.setItem("Blog_accessToken", data.accessToken);
-    localStorage.setItem("Blog_refreshToken", data.refreshToken);
+      console.log(data);
+      localStorage.setItem("Blog_accessToken", data.accessToken);
+      localStorage.setItem("Blog_refreshToken", data.refreshToken);
 
-    toast.success("로그인 되었습니다!");
-    navigate("/about");
+      toast.success("로그인 되었습니다!");
+      navigate("/about");
+    } catch (e: any) {
+      const { data } = e.response;
+      console.error(data.message);
+    }
   };
 
   return (

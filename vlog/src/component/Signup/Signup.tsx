@@ -28,9 +28,8 @@ const Signup: React.FC = () => {
       if (e.message === "Request failed with status code 400") {
         if (e.response) {
           const { data } = e.response;
-          console.error("data : ", data);
           console.error(data.message);
-          toast.warning(data.message);
+          console.error("data : ", data);
         }
       }
     }

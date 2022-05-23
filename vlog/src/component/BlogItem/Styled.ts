@@ -6,7 +6,7 @@ export const BlogItem = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px gray solid;
-  margin: 2rem auto;
+  margin: 2rem 5rem;
   border-radius: 5px;
   justify-content: space-between;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

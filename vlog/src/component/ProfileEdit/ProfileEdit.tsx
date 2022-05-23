@@ -48,32 +48,34 @@ const ProfileEdit = () => {
 
   //수정사항 서버로보내기 (profile사진포함)
   const onClick = async (event: any) => {
-    if (ChangePassWord === "") {
-      return toast.warning("새로운패스워드를 입력하지 않았어요!");
-    } else if (PassWordAgain === "") {
-      return toast.warning("새로운패스워드재입력를 입력하지 않았어요!");
-    } else if (PassWordAgain !== ChangePassWord) {
-      return toast.warning("새로운패스워드가 일치하지 않아요!");
-    }
+    // if (ChangePassWord === "") {
+    //   return toast.warning("새로운패스워드를 입력하지 않았어요!");
+    // } else if (PassWordAgain === "") {
+    //   return toast.warning("새로운패스워드재입력를 입력하지 않았어요!");
+    // } else if (PassWordAgain !== ChangePassWord) {
+    //   return toast.warning("새로운패스워드가 일치하지 않아요!");
+    // }
     event.preventDefault();
     let formData = new FormData();
     //key , value
     formData.append("file", file);
     let EditData = {
-      name: Name,
-      password: PassWord,
-      //newPassWord: PassWordAgain,
+      name: "김성길",
+      password: "1234",
+      newPassword: "12345",
     };
-    formData.append(
-      "profiledata",
-      new Blob([JSON.stringify(EditData)], { type: "application/json" })
-    );
+    // formData.append(
+    //   "data",
+    //   new Blob([JSON.stringify(EditData)], { type: "application/json" })
+    // );
     try {
-      await customAxios.put("/1/update", formData, {
+      const res = await customAxios.post("/1/update", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+      toast.success(res);
+      navigate("/profile");
       console.log(file);
     } catch (e: any) {
       console.log(e);
