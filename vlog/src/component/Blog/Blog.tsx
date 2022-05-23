@@ -83,21 +83,23 @@ const Blog: React.FC<BlogType> = () => {
           </Link>
           <S.Button color="#fb7a74">x</S.Button>
         </S.BlogButtonBox>
-        {Blogs ? (
-          Blogs.map((item) => (
-            <BlogItem
-              key={item.id}
-              BlogImg={item.BlogImg}
-              title={item.title}
-              desc={item.desc}
-              date={item.date}
-              id={item.id}
-              // profileImg={item.img}
-            />
-          ))
-        ) : (
-          <S.Img src={"/img/loading.gif"} />
-        )}
+        <S.BLogWarpper>
+          {Blogs ? (
+            Blogs.map((item) => (
+              <BlogItem
+                key={item.id}
+                BlogImg={item.BlogImg}
+                title={item.title}
+                desc={item.desc}
+                date={item.date}
+                id={item.id}
+                // profileImg={item.img}
+              />
+            ))
+          ) : (
+            <S.Img src={"/img/loading.gif"} />
+          )}
+        </S.BLogWarpper>
       </S.Blog>
     </>
   );

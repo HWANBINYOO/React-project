@@ -8,8 +8,7 @@ export const Blog = styled.div`
   width: 100vw;
   height: 80vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   overflow-y: scroll;
 `;
 export const BlogButtonBox = styled.div`
@@ -52,4 +51,13 @@ export const Img = styled.img`
   position: fixed;
   right: 34%;
   width: 500px;
+`;
+
+export const BLogWarpper = styled.div`
+  margin: 0 auto;
+  width: 80%;
+  height: 2000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 `;
