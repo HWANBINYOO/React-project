@@ -64,8 +64,8 @@ export const ItemBottom = styled.div`
   width: 100%;
   height: 4vh;
   display: flex;
-  justify-content: space-around;
-  padding-left: 1rem;
+  justify-content: space-between;
+  align-items: center;
   color: gray;
 `;
 
@@ -89,5 +89,4 @@ export const MemberId = styled.div`
 
 export const date = styled.div`
   color: gray;
-  /* border: 1px black solid; */
 `;

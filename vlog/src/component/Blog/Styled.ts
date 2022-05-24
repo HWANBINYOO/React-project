@@ -10,6 +10,20 @@ export const Blog = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 12px; /* 스크롤바의 너비 */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 20%; /* 스크롤바의 길이 */
+    background: #ff9d95; /* 스크롤바의 색상 */
+
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #ffedd9; /*스크롤바 뒷 배경 색상*/
+  }
 `;
 export const BlogButtonBox = styled.div`
   width: max-content;

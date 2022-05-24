@@ -20,7 +20,8 @@ const ProfileEdit = () => {
   useEffect(() => {
     async function Getprofile() {
       try {
-        const { data } = await customAxios.get("/blog/profile/edite");
+        const { data } = await customAxios.get("/user/1");
+        console.log(data);
         setName(data.user_name);
         setFile(data.img_url);
       } catch (a: any) {

@@ -14,7 +14,7 @@ export default function About() {
           <br />
           react 값넘기는거랑 Ts 타입주는거 연습하기 위해서 만들어봤어요
           <br />
-          자격증은 컴활2급있고 산업기사 딸려고요
+          자격증은 컴활2급있고 산업기사 딸려고요 (4월16일)
         </S.Intrudece>
         <S.AboutContents>
           <S.AboutContent>
@@ -31,7 +31,6 @@ export default function About() {
               <p>제가 좋아하는 음식</p>
               <p>초밥</p>
               <p>그중에서 연어초밥을가장 좋아해요</p>
-              <p>가성비는 않좋아요..</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
@@ -54,13 +53,13 @@ export default function About() {
           <S.AboutContent>
             <S.Img style={{ width: "200px" }} src={"/img/car.webp"} />
             <S.decs>
-              <p>이건 그림이 멋져서.ㅎ</p>
+              <p>차</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
             <S.Img style={{ width: "200px" }} src={"/img/8day.gif"} />
             <S.decs>
-              <p>이것도</p>
+              <p>기린</p>
             </S.decs>
           </S.AboutContent>
         </S.AboutContents>

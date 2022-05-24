@@ -10,6 +10,20 @@ export const About = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   gap: 30px;
+
+  &::-webkit-scrollbar {
+    width: 12px; /* 스크롤바의 너비 */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 20%; /* 스크롤바의 길이 */
+    background: #c8abc5; /* 스크롤바의 색상 */
+
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #e4d4e2; /*스크롤바 뒷 배경 색상*/
+  }
 `;
 
 export const Intrudece = styled.div`

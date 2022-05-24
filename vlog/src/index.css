@@ -105,10 +105,23 @@ textarea:focus,
 button:focus {
   outline: none;
 }
-
 body {
   background-color: #ffffff;
 }
+body::-webkit-scrollbar {
+  width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #217af4; /* 스크롤바의 색상 */
+  
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+}
+
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }
@@ -120,4 +133,5 @@ button {
 html {
   overflow: hidden;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
