@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./style/GlobalStyle";
 import { RecoilRoot } from "recoil";
 import { Slide, toast, ToastContainer } from "react-toastify";
@@ -6,7 +6,7 @@ import Router from "./Router";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <RecoilRoot>
         <GlobalStyle />
         <ToastContainer
@@ -16,7 +16,7 @@ function App() {
         />
         <Router />
       </RecoilRoot>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

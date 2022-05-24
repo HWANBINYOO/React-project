@@ -3,12 +3,9 @@ import styled from "styled-components";
 export const BlogAdd = styled.div`
   width: 100vw;
   height: 80vh;
-  /* border: 1px black solid; */
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* overflow-y: scroll; */
 `;
 
 export const Box = styled.div`
@@ -74,15 +71,6 @@ export const BlogImg = styled.div`
     height: 100px;
   }
 `;
-// export const Input = styled.input`
-//   font-family: "GangwonEduSaeeum_OTFMediumA";
-
-//   background-color: transparent;
-//   border: none;
-//   outline: none;
-//   width: 90%;
-//   height: 80%;
-// `;
 export const BlogAddImgWapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -92,18 +80,19 @@ export const BlogAddImgWapper = styled.div`
   margin-left: 6vw;
   label {
     position: relative;
-    top: -50px;
-    right: -350px;
+    top: -30px;
+    right: -120px;
     font-family: "GangwonEduSaeeum_OTFMediumA";
-    font-size: 25px;
-    background-color: white;
-    border: 1px solid black;
+    font-size: 20px;
+    border: none;
     color: black;
     cursor: pointer;
-    transition: all ease 0.1s 0s;
-    padding: 22px 20px 22px 20px;
+    transition: all ease 0.3s 0s;
+    padding: 14px 20px 14px 20px;
+    border-radius: 10px;
+    background-color: #e2e7f2;
     &:hover {
-      transform: scale(1.03);
+      background-color: #c4cfe4;
     }
   }
 `;

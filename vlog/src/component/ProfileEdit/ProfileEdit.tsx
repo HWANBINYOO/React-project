@@ -60,8 +60,8 @@ const ProfileEdit = () => {
     let formData = new FormData();
     formData.append("file", file);
     formData.append("name", "재");
-    formData.append("password", "1234");
-    formData.append("newPassword", "12345");
+    formData.append("password", "12345");
+    formData.append("newPassword", "123456");
     try {
       await axios({
         method: "patch",

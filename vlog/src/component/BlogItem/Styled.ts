@@ -64,7 +64,7 @@ export const ItemBottom = styled.div`
   width: 100%;
   height: 4vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-left: 1rem;
   color: gray;
 `;
