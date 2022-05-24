@@ -5,6 +5,7 @@ import { ProfileType } from "../../types";
 import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import * as S from "./Styled";
+import axios from "axios";
 
 const ProfileEdit = () => {
   const navigate = useNavigate();
@@ -48,40 +49,41 @@ const ProfileEdit = () => {
 
   //수정사항 서버로보내기 (profile사진포함)
   const onClick = async (event: any) => {
-    // if (ChangePassWord === "") {
-    //   return toast.warning("새로운패스워드를 입력하지 않았어요!");
-    // } else if (PassWordAgain === "") {
-    //   return toast.warning("새로운패스워드재입력를 입력하지 않았어요!");
-    // } else if (PassWordAgain !== ChangePassWord) {
-    //   return toast.warning("새로운패스워드가 일치하지 않아요!");
-    // }
+    if (ChangePassWord === "") {
+      return toast.warning("새로운패스워드를 입력하지 않았어요!");
+    } else if (PassWordAgain === "") {
+      return toast.warning("새로운패스워드재입력를 입력하지 않았어요!");
+    } else if (PassWordAgain !== ChangePassWord) {
+      return toast.warning("새로운패스워드가 일치하지 않아요!");
+    }
     event.preventDefault();
     let formData = new FormData();
-    //key , value
     formData.append("file", file);
-    let EditData = {
-      name: "김성길",
-      password: "1234",
-      newPassword: "12345",
-    };
-    // formData.append(
-    //   "data",
-    //   new Blob([JSON.stringify(EditData)], { type: "application/json" })
-    // );
+    formData.append("name", "재");
+    formData.append("password", "1234");
+    formData.append("newPassword", "12345");
     try {
-      const res = await customAxios.post("/1/update", formData, {
+      await axios({
+        method: "patch",
+        url: "http://10.120.74.59:3000/1/update",
+        data: formData,
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      toast.success(res);
+      // const res = await customAxios.patch("/1/update", formData, {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      // });
+      toast.success("수정되었습니다!");
       navigate("/profile");
-      console.log(file);
     } catch (e: any) {
       console.log(e);
       if (e.response) {
         const { data } = e.response;
         console.error("data : ", data);
+        toast.error(data.message);
       }
     }
   };
@@ -93,12 +95,7 @@ const ProfileEdit = () => {
           <S.ProfileImg>
             {file ? <img src={imgBase64} /> : <img src={"/img/profile.png"} />}
           </S.ProfileImg>
-          <form
-            name="files"
-            method="post"
-            encType="multipart/form-data"
-            onSubmit={onClick}
-          >
+          <form name="files" method="patch" onSubmit={onClick}>
             <input
               id="change_img"
               type="file"
@@ -109,7 +106,7 @@ const ProfileEdit = () => {
             {/* <button type="submit">제출하기</button> */}
           </form>
         </S.ProfileImgEdit>
-        <S.EditI>
+        <S.EditI method="patch">
           <span>name:</span>
           <S.EditInput
             type="text"
@@ -120,7 +117,7 @@ const ProfileEdit = () => {
             }}
           />
         </S.EditI>
-        <S.EditI>
+        <S.EditI method="patch">
           <span>현재 비밀번호 :</span>
           <S.EditInputPW
             type="password"
@@ -128,7 +125,7 @@ const ProfileEdit = () => {
             onChange={(e) => setPassWord(e.target.value)}
           />
         </S.EditI>
-        <S.EditI>
+        <S.EditI method="patch">
           <span>새로운 비밀번호 :</span>
           <S.EditInputPW
             type="password"
@@ -136,7 +133,7 @@ const ProfileEdit = () => {
             onChange={(e) => setChangePassWord(e.target.value)}
           />
         </S.EditI>
-        <S.EditI>
+        <S.EditI method="patch">
           <span>새로운 비밀번호 재입력 :</span>
           <S.EditInputPW
             type="password"

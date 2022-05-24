@@ -51,7 +51,7 @@ export const ProfileImg = styled.div`
   }
 `;
 
-export const EditI = styled.div`
+export const EditI = styled.form`
   width: 100%;
   border-bottom: 1px solid black;
   display: flex;
