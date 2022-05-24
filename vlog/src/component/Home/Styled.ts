@@ -32,8 +32,12 @@ export const GoLogin = styled.div`
   h2 {
     font-size: 2rem;
     transition: all ease 0.2s 0s;
+    line-height: 0.8;
+    background-image: linear-gradient(transparent 60%, #e2b9ff 40%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
   }
   h2:hover {
-    color: gray;
+    background-size: 100% 100%;
   }
 `;
