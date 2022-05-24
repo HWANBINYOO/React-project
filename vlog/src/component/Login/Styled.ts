@@ -12,6 +12,10 @@ export const Login = styled.div`
 
 export const LoginTitle = styled.span`
   font-size: 5.5rem;
+  line-height: 0.8;
+  background-image: linear-gradient(transparent 60%, #e2b9ff 40%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 `;
 
 export const LoginInput = styled.div`
@@ -45,16 +49,16 @@ export const LoginInput = styled.div`
 
 export const LoginButton = styled.button`
   font-family: "SuncheonB";
-  width: 30%;
+  width: 15%;
   height: 5vh;
   border-radius: 10px;
   border: none;
   font-size: 1rem;
-  background-color: #c8abc5;
+  background-color: #e2b9ff;
   transition: all ease 0.2s 0s;
-  /* font-weight: bold; */
+  font-weight: bold;
 
   &:hover {
-    opacity: 0.8;
+    background-color: #daa7ff;
   }
 `;
