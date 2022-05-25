@@ -1,17 +1,14 @@
 export interface BlogType {
-  // BlogImg: string;
-  date: string;
   title: string;
+  date: string;
   desc: string;
-  id: number;
   name: string;
 }
 
-export interface BlogTypeH {
-  BlogImg: string;
-  date: string;
+export interface BlogTypeAdID {
   title: string;
+  date: string;
   desc: string;
+  name: string;
   id: number;
-  HeaderColor: string;
 }

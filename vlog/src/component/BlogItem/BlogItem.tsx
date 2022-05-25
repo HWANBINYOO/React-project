@@ -4,27 +4,27 @@ import { BlogType } from "../../types";
 import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
 
-const BlogItem: React.FC<BlogType> = ({ name, date, title, desc, id }) => {
+// const BlogItem: React.FC<BlogType> = ({ name, date, title, desc,  }) => {
+const BlogItem: React.FC<BlogType> = ({ name, date, title, desc }) => {
   const navigate = useNavigate();
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
   const handleonClick = () => {
-    navigate(`/${id}`);
+    navigate(`/${name}`);
   };
-  useEffect(() => {
-    async function getblog() {
-      try {
-        // setBlogImg(await customAxios.get(`blog/${id}`));
-        // setProfileImg(await customAxios.get(`profile/${id}`));
-        setBlogImg(`http://10.120.74.59:3000/blogImg/${id}`);
-        setProfileImg(`http://10.120.74.59:3000/profileImg/${id}`);
-      } catch (a: any) {
-        console.log(a);
-      }
-    }
-
-    getblog();
-  }, []);
+  // useEffect(() => {
+  //   async function getblog() {
+  //     try {
+  //       // setBlogImg(await customAxios.get(`blog/${id}`));
+  //       // setProfileImg(await customAxios.get(`profile/${id}`));
+  //       setBlogImg(`http://10.120.74.59:3000/${name}/${Blogid}/blogImg`);
+  //       setProfileImg(`http://10.120.74.59:3000/user/${user_id}`);
+  //     } catch (a: any) {
+  //       console.log(a);
+  //     }
+  //   }
+  //   getblog();
+  // }, []);
   return (
     <>
       <S.BlogItem onClick={handleonClick}>
