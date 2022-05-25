@@ -23,11 +23,6 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
       console.log(a);
     }
   };
-
-  // const goBack = () => {
-  //   history.push("/blog");
-  // };
-
   return (
     <>
       <S.BlogIn>

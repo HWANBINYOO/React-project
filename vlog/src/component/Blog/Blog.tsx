@@ -94,12 +94,10 @@ const Blog: React.FC<BlogType> = () => {
             Blogs.sort(date_descending).map((item, index) => (
               <BlogItem
                 key={index}
-                // BlogImg={item.BlogImg}
                 title={item.title}
                 desc={item.desc}
                 date={item.date}
-                // id={index}
-                // blog={index}
+                // blogId={item.blogId}
                 name={item.name}
               />
             ))
