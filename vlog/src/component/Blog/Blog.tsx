@@ -57,10 +57,19 @@ const a = [
     desc: "오늘은 Blog페이지에 페이지 추가하기를 넣었다. 수정하기랑 삭제하기 기능도 넣으면 좋을것 같다. ",
     date: "2022년4월6일",
   },
+  // {
+  //   id: 7,
+  //   BlogImg: "/img/10day.gif",
+  //   title: "[React] 블로그만들기 10일차 BlogIn 페이지추가하기",
+  //   desc: "오늘은 Blog페이지에 페이지 추가하기를 넣었다. 수정하기랑 삭제하기 기능도 넣으면 좋을것 같다. ",
+  //   date: "2022년4월6일",
+  //   name: "유환빈",
+  //   profileImg: "asdf",
+  // },
 ];
 
 const Blog: React.FC<BlogType> = () => {
-  const [Blogs, setBlogs] = useState<BlogType[]>(a);
+  const [Blogs, setBlogs] = useState<BlogType[]>();
   //useEffet 훅에서 async 사용하기
   // useEffect(() => {
   //   async function getblog() {
@@ -88,12 +97,12 @@ const Blog: React.FC<BlogType> = () => {
             Blogs.map((item) => (
               <BlogItem
                 key={item.id}
-                BlogImg={item.BlogImg}
+                // BlogImg={item.BlogImg}
                 title={item.title}
                 desc={item.desc}
                 date={item.date}
                 id={item.id}
-                // profileImg={item.img}
+                name={item.name}
               />
             ))
           ) : (
