@@ -48,22 +48,30 @@ const BlogAdd = () => {
     event.preventDefault();
     let formData = new FormData();
     formData.append("files", file);
-    let BlogAddData = {
-      BlogImg: file,
-      date: `${year}년 ${month}월 ${day}일`,
-      title: title,
-      desc: desc,
-    };
-    formData.append(
-      "EditData",
-      new Blob([JSON.stringify(BlogAddData)], { type: "application/json" })
-    );
+    // let BlogAddData = {
+    //   BlogImg: file,
+    //   date: `${year}년 ${month}월 ${day}일`,
+    //   title: title,
+    //   desc: desc,
+    // };
+    formData.append("date", `${year}년 ${month}월 ${day}일`);
+    formData.append("title", title);
+    formData.append("desc", desc);
+
     try {
-      await customAxios.post("/board/write", formData, {
+      await axios({
+        method: "post",
+        url: "http://10.120.74.59:3000/board/write",
+        data: formData,
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+      // await customAxios.post("/board/write", formData, {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      // });
       toast.success("추가됬습니다!");
       navigate("/blog");
     } catch (e: any) {
