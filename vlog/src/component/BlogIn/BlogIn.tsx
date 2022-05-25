@@ -8,7 +8,6 @@ import { useEffect } from "react";
 interface BlogTypeProp {
   blogIn: BlogType;
 }
-
 const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const navigate = useNavigate();
   const onBloginRemove = async (deletId: number) => {
@@ -42,7 +41,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
 
           <S.Button
             onClick={() => {
-              onBloginRemove(blogIn.id);
+              // onBloginRemove(blogIn.id);
             }}
             style={{ backgroundColor: "#fb7a74" }}
           >
@@ -51,7 +50,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         </S.BlogButtonBox>
         <S.Title>{blogIn.title}</S.Title>
         <S.TextBox>
-          <S.Img src={blogIn.BlogImg} />
+          {/* <S.Img src={blogIn.} /> */}
           <S.desc>{blogIn.desc}</S.desc>
           <S.date>{blogIn.date}</S.date>
         </S.TextBox>

@@ -16,14 +16,15 @@ const ProfileEdit = () => {
   const [PassWordAgain, setPassWordAgain] = useState("");
   const [imgBase64, setImgBase64] = useState(""); // 파일 base64
   const [file, setFile] = useState(""); //파일
-  const [userId, setUserId] = useState();
   useEffect(() => {
     async function Getprofile() {
       try {
-        const { data } = await customAxios.get("/user/1");
-        console.log(data);
+        const { data } = await customAxios.get("/blog/profile/edit");
+        let user_id = data.user_id;
+        setFile(`http://10.120.74.59:3000/${user_id}/user_image`);
+
+        setName(data.name);
         setName(data.user_name);
-        setFile(data.img_url);
       } catch (a: any) {
         console.log(a);
       }
@@ -61,7 +62,7 @@ const ProfileEdit = () => {
     let formData = new FormData();
     formData.append("file", file);
     formData.append("name", "재");
-    formData.append("password", "12345");
+    formData.append("password", "1234");
     formData.append("newPassword", "123456");
     try {
       await axios({
@@ -94,7 +95,15 @@ const ProfileEdit = () => {
       <S.Profile>
         <S.ProfileImgEdit>
           <S.ProfileImg>
-            {file ? <img src={imgBase64} /> : <img src={"/img/profile.png"} />}
+            {file ? (
+              imgBase64 ? (
+                <img src={imgBase64} />
+              ) : (
+                <img src={file} />
+              )
+            ) : (
+              <img src={"/img/profile.png"} />
+            )}
           </S.ProfileImg>
           <form name="files" method="patch" onSubmit={onClick}>
             <input

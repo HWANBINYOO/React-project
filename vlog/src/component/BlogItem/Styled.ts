@@ -78,13 +78,16 @@ export const MemberImg = styled.div`
   align-items: center;
   justify-content: center;
   img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
   }
 `;
 
 export const MemberId = styled.div`
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
 `;
 
 export const date = styled.div`
