@@ -10,7 +10,7 @@ const Header = () => {
           <S.Mainlogo src={"/img/Wear.png"} />
           <S.HeaderRight>
             <S.HeaderLogos>
-              <S.ProfileImg src={"/img/menu.png"} />
+              {/* <S.ProfileImg src={"/img/menu.png"} ></S.ProfileImg> */}
               <S.ProfileImg src={"/img/searchIcon.png"} />
               <S.ProfileImg src={"/img/basket.png"} />
             </S.HeaderLogos>

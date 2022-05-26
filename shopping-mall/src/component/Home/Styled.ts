@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-type ColorProps = {
-  color?: string;
-};
 type BackColorProps = {
   backColor: string;
 };
 type DisplayProps = {
   Imgdisplay?: string;
+};
+type ContentFontColorProps = {
+  Imgdisplay: string;
+  color: string;
+  hoverColor: string;
 };
 
 export const HomeWapper = styled.div`
@@ -23,10 +25,19 @@ export const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${(props: any) =>
+    props.Imgdisplay === "block" ? props.hoverColor : props.color};
   background-color: ${(props: BackColorProps) => props.backColor};
-  color: ${(props: ColorProps) => (props.color ? props.color : "white")};
+`;
+
+export const Span = styled.span`
+  z-index: 50;
+  font-size: 1.6rem;
   font-weight: bold;
-  font-size: 1.5rem;
+  position: relative;
+
+  top: ${(props: DisplayProps) =>
+    props.Imgdisplay === "block" ? "150px" : "0px"};
 `;
 
 export const Img = styled.img`

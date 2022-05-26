@@ -1,6 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { HomePage, SignInPage, SignUpPage, ProfilePage } from "./pages";
+import {
+  HomePage,
+  SignInPage,
+  SignUpPage,
+  ProfilePage,
+  KindPage,
+} from "./pages";
 
 const Router = () => {
   return (
@@ -9,6 +15,7 @@ const Router = () => {
       <Route path="/SignIn" element={<SignInPage />} />
       <Route path="/SignUp" element={<SignUpPage />} />
       <Route path="/Profile" element={<ProfilePage />} />
+      <Route path="/Kind/:name" element={<KindPage />} />
     </Routes>
   );
 };

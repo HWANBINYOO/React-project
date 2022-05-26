@@ -44,7 +44,7 @@ export const Mainlogo = styled.img`
 `;
 
 export const HeaderLogos = styled.div`
-  width: 200px;
+  width: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;

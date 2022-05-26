@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
-import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
 
 const SignIn = () => {
@@ -12,14 +12,17 @@ const SignIn = () => {
   const onLogin = async () => {
     try {
       console.log(Email, PassWord);
-      const { data } = await axios.post("/login", {
+      const { data } = await customAxios.post("/login", {
         email: Email,
         password: PassWord,
       });
 
       console.log(data);
-      localStorage.setItem("wear_accessToken", data.accessToken);
-      localStorage.setItem("wear_refreshToken", data.refreshToken);
+      const { accessToken } = data;
+      // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
+      customAxios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${accessToken}`;
 
       navigate("/about");
     } catch (e: any) {

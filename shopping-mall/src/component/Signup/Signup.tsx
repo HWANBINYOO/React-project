@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/alt-text */
-import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
