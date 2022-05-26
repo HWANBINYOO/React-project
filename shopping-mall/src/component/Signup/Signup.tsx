@@ -1,13 +1,14 @@
+/* eslint-disable jsx-a11y/alt-text */
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
 
 const Signup = () => {
   const [Email, setEmail] = useState("");
   const [PassWord, setPassWord] = useState("");
   const [PassWordCheck, setPassWordCheck] = useState("");
-  const [Name, setName] = useState("");
   const navigate = useNavigate();
 
   const onSignup = async () => {
@@ -17,8 +18,7 @@ const Signup = () => {
         return console.log("패스워드가 입력되지 않았어요!");
       else if (PassWord !== PassWordCheck)
         return console.log("패스워드가 일치하지 않아요");
-      const { data } = await axios.post("/user/register", {
-        name: Name,
+      const { data } = await customAxios.post("/user/register", {
         email: Email,
         password: PassWord,
       });
@@ -67,10 +67,15 @@ const Signup = () => {
               />
             </S.inputBox>
           </S.ContentWapper>
-          <S.Btn onClick={() => onSignup()}>로그인</S.Btn>
+          <S.Btn onClick={() => onSignup()}>회원가입</S.Btn>
           <S.Decs>
             <S.Id>이미 계정을 갖고 계시다구요?</S.Id>
-            <S.GoSignUp>여기서 가입</S.GoSignUp>
+            <Link
+              to="/signIn"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <S.GoSignUp>여기서 가입</S.GoSignUp>
+            </Link>
           </S.Decs>
         </S.SigninBox>
       </S.Positioner>

@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 
 const SignIn = () => {
@@ -9,17 +10,33 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const onLogin = async () => {
-    console.log(Email, PassWord);
-    const { data } = await axios.post("/login", {
-      email: Email,
-      password: PassWord,
-    });
+    try {
+      console.log(Email, PassWord);
+      const { data } = await axios.post("/login", {
+        email: Email,
+        password: PassWord,
+      });
 
-    console.log(data);
-    localStorage.setItem("Blog_accessToken", data.accessToken);
-    localStorage.setItem("Blog_refreshToken", data.refreshToken);
+      console.log(data);
+      localStorage.setItem("wear_accessToken", data.accessToken);
+      localStorage.setItem("wear_refreshToken", data.refreshToken);
 
-    navigate("/about");
+      navigate("/about");
+    } catch (e: any) {
+      if (e.message === "Request failed with status code 400") {
+        if (e.response) {
+          const { data } = e.response;
+          console.error("data : ", data);
+          console.error(data.message);
+        }
+      } else if (e.message === "Request failed with status code 404") {
+        if (e.response) {
+          const { data } = e.response;
+          console.error("data : ", data);
+          console.error(data.message);
+        }
+      }
+    }
   };
 
   return (
@@ -51,7 +68,12 @@ const SignIn = () => {
           <S.Btn onClick={() => onLogin()}>로그인</S.Btn>
           <S.Decs>
             <S.Id>ID 가 없으세요?</S.Id>
-            <S.GoSignUp>여기서 가입</S.GoSignUp>
+            <Link
+              to="/signUp"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <S.GoSignUp>여기서 가입</S.GoSignUp>
+            </Link>
           </S.Decs>
         </S.SigninBox>
       </S.Positioner>

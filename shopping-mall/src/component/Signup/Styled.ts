@@ -48,7 +48,7 @@ export const ContentWapper = styled.div`
   }
 
   .underbar {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid gray;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
   }
