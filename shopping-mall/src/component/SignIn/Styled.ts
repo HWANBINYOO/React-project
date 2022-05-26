@@ -1,40 +1,69 @@
 import styled from "styled-components";
 
 export const Positioner = styled.div`
-  width: 100vw;
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/img/back.png");
+  background-size: cover;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 60px;
 `;
 
-export const Title = styled.h1`
-  font-family: "Inika", serif;
-  font-size: 5rem;
-  font-weight: 100;
-  color: #755139;
+export const TitleWapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 130px;
+
+  img {
+    width: 120px;
+  }
+`;
+
+export const Title = styled.div`
+  font-size: 2rem;
+  color: gray;
+`;
+
+export const ContentWapper = styled.div`
+  height: 100px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 auto;
+
+  span {
+    cursor: pointer;
+    text-decoration: underline;
+    color: gray;
+  }
 `;
 
 export const SigninBox = styled.div`
-  width: 600px;
-  height: 480px;
-  border: 1px solid #755139;
-  border-radius: 30px;
+  width: 900px;
+  height: 600px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 55px;
-  background-color: #faf5e3;
+  gap: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
 export const inputBox = styled.div`
-  width: 70%;
+  width: 100%;
   height: 7vh;
-  border: 3px solid #755139;
   border-radius: 10px;
   display: flex;
   justify-content: flex-start;
@@ -43,32 +72,51 @@ export const inputBox = styled.div`
   background-color: white;
 
   input {
+    font-family: "EarlyFontDiary";
+
     transition: all ease 0.3s 0s;
-    font-family: "Inika", serif;
     border: none;
     outline: none;
-    font-size: 1.8rem;
-    color: #a9978b;
+    font-size: 1.5rem;
+    color: gray;
     &::-webkit-input-placeholder {
-      color: #a9978b;
+      color: gray;
     }
   }
   input:focus {
-    color: #fcda46;
+    color: black;
   }
 `;
 
 export const Btn = styled.button`
-  font-family: "Inika", serif;
-  width: 40%;
-  height: 7vh;
+  font-family: "EarlyFontDiary";
+  width: 200px;
+  height: 60px;
   font-size: 2rem;
   border-radius: 10px;
-  background-color: #755139;
-  color: #f2edd7;
+  background-color: black;
+  color: white;
   border: none;
   transition: all ease 0.3s 0s;
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
+`;
+
+export const Decs = styled.div`
+  width: 350px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const Id = styled.div`
+  font-size: 1rem;
+`;
+
+export const GoSignUp = styled.div`
+  color: gray;
+  font-size: 1rem;
+  text-decoration: underline;
 `;

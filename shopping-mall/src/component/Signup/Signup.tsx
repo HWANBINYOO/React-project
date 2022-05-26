@@ -6,7 +6,7 @@ import * as S from "./Styled";
 const Signup = () => {
   const [Email, setEmail] = useState("");
   const [PassWord, setPassWord] = useState("");
-  const [PassWord2, setPassWord2] = useState("");
+  const [PassWordCheck, setPassWordCheck] = useState("");
   const [Name, setName] = useState("");
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const Signup = () => {
       if (Email === "") return console.log("이메일이 입력되지 않았어요!");
       else if (PassWord === "")
         return console.log("패스워드가 입력되지 않았어요!");
-      else if (PassWord !== PassWord2)
+      else if (PassWord !== PassWordCheck)
         return console.log("패스워드가 일치하지 않아요");
       const { data } = await axios.post("/user/register", {
         name: Name,
@@ -38,42 +38,40 @@ const Signup = () => {
   return (
     <>
       <S.Positioner>
-        <S.Title>Search</S.Title>
         <S.SigninBox>
-          <S.inputBox>
-            <input
-              placeholder="name"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </S.inputBox>
-          <S.EmailWapper>
-            <S.EmailinputBox>
+          <S.TitleWapper>
+            <img src={"/img/Wear.png"} />
+            <S.Title>회원가입</S.Title>
+          </S.TitleWapper>
+          <S.ContentWapper>
+            <S.inputBox>
               <input
-                placeholder="email"
+                placeholder="ID/Email"
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </S.EmailinputBox>
-            <button>check</button>
-          </S.EmailWapper>
-          <S.inputBox>
-            <input
-              placeholder="password"
-              onChange={(e) => setPassWord(e.target.value)}
-            />
-          </S.inputBox>
-          <S.inputBox>
-            <input
-              placeholder="password"
-              onChange={(e) => setPassWord2(e.target.value)}
-            />
-          </S.inputBox>
-          <S.Btn
-            onClick={() => {
-              onSignup();
-            }}
-          >
-            Sign in
-          </S.Btn>
+            </S.inputBox>
+          </S.ContentWapper>
+          <S.ContentWapper>
+            <S.inputBox className="underbar">
+              <input
+                type="password"
+                placeholder="Password"
+                onChange={(e) => setPassWord(e.target.value)}
+              />
+            </S.inputBox>
+            <S.inputBox className="topbar">
+              <input
+                type="password"
+                placeholder="Password check"
+                onChange={(e) => setPassWordCheck(e.target.value)}
+              />
+            </S.inputBox>
+          </S.ContentWapper>
+          <S.Btn onClick={() => onSignup()}>로그인</S.Btn>
+          <S.Decs>
+            <S.Id>이미 계정을 갖고 계시다구요?</S.Id>
+            <S.GoSignUp>여기서 가입</S.GoSignUp>
+          </S.Decs>
         </S.SigninBox>
       </S.Positioner>
     </>

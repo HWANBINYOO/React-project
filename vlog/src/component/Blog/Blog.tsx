@@ -60,7 +60,6 @@ const a = [
 ];
 
 const Blog: React.FC<BlogType> = () => {
-  // const [Blogs, setBlogs] = useState<BlogType[]>(a);
   const [Blogs, setBlogs] = useState<BlogType[]>(a);
   //useEffet 훅에서 async 사용하기
   // useEffect(() => {
@@ -97,8 +96,8 @@ const Blog: React.FC<BlogType> = () => {
                 title={item.title}
                 desc={item.desc}
                 date={item.date}
-                // blogId={item.blogId}
                 name={item.name}
+                // blogId={item.blogId}
               />
             ))
           ) : (

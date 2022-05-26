@@ -20,6 +20,9 @@ const Profile = () => {
   //   “board_number” : number,
   //   “board_img” : string
   //   }
+
+  const goBlogIn = () => {};
+
   useEffect(() => {
     async function Getprofile() {
       try {
@@ -68,7 +71,7 @@ const Profile = () => {
           ) : (
             <img src={"/img/loading.gif"} />
           )} */}
-          <img src={"/img/8day.gif"} />
+          <img src={"/img/8day.gif"} onClick={goBlogIn} />
           <img src={"/img/8day.gif"} />
           <img src={"/img/8day.gif"} />
           <img src={"/img/8day.gif"} />

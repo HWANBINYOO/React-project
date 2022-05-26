@@ -21,24 +21,38 @@ const SignIn = () => {
 
     navigate("/about");
   };
-  const onChangeEmail = (e: any) => {
-    setEmail(e.currentTarget.value);
-  };
-  const onChangePassWord = (e: any) => {
-    setPassWord(e.currentTarget.value);
-  };
+
   return (
     <>
       <S.Positioner>
-        <S.Title>Search</S.Title>
         <S.SigninBox>
-          <S.inputBox>
-            <input placeholder="email" onChange={onChangeEmail} />
-          </S.inputBox>
-          <S.inputBox>
-            <input placeholder="password" onChange={onChangePassWord} />
-          </S.inputBox>
-          <S.Btn onClick={() => onLogin()}>Sign in</S.Btn>
+          <S.TitleWapper>
+            <img src={"/img/Wear.png"} />
+            <S.Title>로그인</S.Title>
+          </S.TitleWapper>
+          <S.ContentWapper>
+            <S.inputBox>
+              <input
+                placeholder="ID/Email"
+                onChange={(e) => setEmail(e.currentTarget.value)}
+              />
+            </S.inputBox>
+            <span>id 가 기억나지 않으세요?</span>
+          </S.ContentWapper>
+          <S.ContentWapper>
+            <S.inputBox>
+              <input
+                placeholder="Password"
+                onChange={(e) => setPassWord(e.currentTarget.value)}
+              />
+            </S.inputBox>
+            <span>비밀번호를 잊으셨나요?</span>
+          </S.ContentWapper>
+          <S.Btn onClick={() => onLogin()}>로그인</S.Btn>
+          <S.Decs>
+            <S.Id>ID 가 없으세요?</S.Id>
+            <S.GoSignUp>여기서 가입</S.GoSignUp>
+          </S.Decs>
         </S.SigninBox>
       </S.Positioner>
     </>
