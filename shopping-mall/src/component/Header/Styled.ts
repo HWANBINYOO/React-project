@@ -39,7 +39,7 @@ export const CircleImg = styled.img`
   height: 40%;
 `;
 export const Mainlogo = styled.img`
-  padding-left: 12vw;
+  padding-left: 19vw;
   height: 30%;
 `;
 
