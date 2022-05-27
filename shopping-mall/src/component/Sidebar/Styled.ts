@@ -3,14 +3,17 @@ import styled from "styled-components";
 type FontProps = {
   fontSize: string;
 };
+type ImgUrl = {
+  url: string;
+};
 
 export const SidebarWapper = styled.div`
-  /* position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  background: url(${(props) => props.url});
-  background-size: cover; */
-
+  background: url(${(props: ImgUrl) => props.url});
+  background-size: cover;
+  /* background-color: rgba(255, 255, 255, 0.4); */
   width: 350px;
   height: 100vh;
   display: flex;
@@ -18,8 +21,15 @@ export const SidebarWapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 30px;
-  border: 1px solid black;
+`;
+
+export const White = styled.div`
   padding-top: 50px;
+  height: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 100;
 `;
 
 export const SmallMenu = styled.div`
@@ -32,4 +42,5 @@ export const SmallMenu = styled.div`
   font-weight: bold;
   margin-left: 50px;
   cursor: pointer;
+  transition: all ease 0.2s 0s;
 `;
