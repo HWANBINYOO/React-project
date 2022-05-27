@@ -9,12 +9,12 @@ type ImgUrl = {
 
 export const SidebarWapper = styled.div`
   position: relative;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   background: url(${(props: ImgUrl) => props.url});
   background-size: cover;
-  /* background-color: rgba(255, 255, 255, 0.4); */
-  width: 350px;
+  min-width: 150px;
+  width: 20vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const SidebarWapper = styled.div`
 
 export const White = styled.div`
   padding-top: 50px;
-  height: 100%;
+  width: 100%;
   height: 100%;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.4);
@@ -42,5 +42,5 @@ export const SmallMenu = styled.div`
   font-weight: bold;
   margin-left: 50px;
   cursor: pointer;
-  transition: all ease 0.2s 0s;
+  transition: all ease 0.3s 0s;
 `;

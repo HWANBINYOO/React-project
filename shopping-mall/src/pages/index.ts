@@ -2,6 +2,6 @@ import HomePage from "./HomePage";
 import SignInPage from "./SignInPage";
 import SignUpPage from "./SignUpPage";
 import ProfilePage from "./ProfilePage";
-import KindPage from "./KindPage";
+import KindPage from "./KindPage/KindPage";
 
 export { HomePage, SignInPage, SignUpPage, ProfilePage, KindPage };

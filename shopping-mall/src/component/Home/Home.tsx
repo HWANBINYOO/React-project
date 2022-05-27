@@ -40,7 +40,7 @@ const Home = () => {
           onClick={() => onclick("PantsShorts")}
         >
           <S.Span Imgdisplay={imghover2}>Pants Shorts</S.Span>
-          <S.Img src={"/img/Pants.png"} Imgdisplay={imghover2} />
+          <S.Img src={"/img/PantsShorts.png"} Imgdisplay={imghover2} />
         </S.Content>
         <S.Content
           onMouseEnter={() => setimgHover3("block")}

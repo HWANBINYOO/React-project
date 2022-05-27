@@ -6,11 +6,11 @@ type BackColorProps = {
 type DisplayProps = {
   Imgdisplay?: string;
 };
-type ContentFontColorProps = {
-  Imgdisplay: string;
-  color: string;
-  hoverColor: string;
-};
+// type ContentFontColorProps = {
+//   Imgdisplay: string;
+//   color: string;
+//   hoverColor: string;
+// };
 
 export const HomeWapper = styled.div`
   width: 100vw;
