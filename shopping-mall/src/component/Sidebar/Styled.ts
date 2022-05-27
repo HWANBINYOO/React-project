@@ -5,6 +5,12 @@ type FontProps = {
 };
 
 export const SidebarWapper = styled.div`
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  background: url(${(props) => props.url});
+  background-size: cover; */
+
   width: 350px;
   height: 100vh;
   display: flex;
@@ -16,17 +22,6 @@ export const SidebarWapper = styled.div`
   padding-top: 50px;
 `;
 
-export const MainTitle = styled.div`
-  width: 300px;
-  height: 100px;
-  font-size: 5rem;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  font-weight: bold;
-  margin-left: 50px;
-`;
-
 export const SmallMenu = styled.div`
   width: 300px;
   height: 100px;
@@ -36,4 +31,5 @@ export const SmallMenu = styled.div`
   align-items: center;
   font-weight: bold;
   margin-left: 50px;
+  cursor: pointer;
 `;

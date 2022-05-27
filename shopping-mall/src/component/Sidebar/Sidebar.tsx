@@ -1,25 +1,59 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as S from "./Styled";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [Title, setTitle] = useState("Denim");
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    setTitle(location.pathname.substr(6));
+    console.log(location.pathname.substr(6));
+  }, [location.pathname]);
+
+  const onclick = (name: string) => {
+    navigate(`/kind/${name}`);
+  };
+
   return (
     <>
+      {/* <S.SidebarWapper url={asdfasdf}> */}
       <S.SidebarWapper>
-        <S.SmallMenu fontSize={Title === "Denim" ? "1.5rem" : "5rem"}>
+        <S.SmallMenu
+          fontSize={Title === "Denim" ? "5rem" : "1.5rem"}
+          onClick={() => onclick("Denim")}
+        >
           Denim
         </S.SmallMenu>
-        <S.SmallMenu fontSize={Title === "Denim" ? "1.5rem" : "5rem"}>
-          Raw Denim
+        <S.SmallMenu
+          fontSize={Title === "PantsShorts" ? "2.5rem" : "1.5rem"}
+          onClick={() => onclick("PantsShorts")}
+        >
+          Pants Shorts
         </S.SmallMenu>
-        <S.SmallMenu fontSize={Title === "Denim" ? "1.5rem" : "5rem"}>
-          Selvedge Denim
+        <S.SmallMenu
+          fontSize={Title === "Dresses" ? "3.5rem" : "1.55rem"}
+          onClick={() => onclick("Dresses")}
+        >
+          Dresses
         </S.SmallMenu>
-        <S.SmallMenu fontSize={Title === "Denim" ? "1.5rem" : "5rem"}>
-          Washing Jean
+        <S.SmallMenu
+          fontSize={Title === "Sweatshirts" ? "3rem" : "1.5rem"}
+          onClick={() => onclick("Sweatshirts")}
+        >
+          Sweatshirts
         </S.SmallMenu>
-        <S.SmallMenu fontSize={Title === "Denim" ? "1.5rem" : "5rem"}>
-          Damaged Jean
+        <S.SmallMenu
+          fontSize={Title === "Shoes" ? "4rem" : "1.5rem"}
+          onClick={() => onclick("Shoes")}
+        >
+          Shoes
+        </S.SmallMenu>
+        <S.SmallMenu
+          fontSize={Title === "Shirts" ? "5rem" : "1.5rem"}
+          onClick={() => onclick("Shirts")}
+        >
+          Shirts
         </S.SmallMenu>
       </S.SidebarWapper>
     </>
