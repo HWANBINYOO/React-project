@@ -21,10 +21,17 @@ const Signup: React.FC = () => {
         email: Email,
         password: PassWord,
       });
+
       toast.success("회원가입이 되었습니다!");
       console.log(data);
       navigate("/login");
     } catch (e: any) {
+      console.log(e);
+      if (e.response) {
+        const { data } = e.response;
+        console.error(data.message);
+        console.error("data : ", data);
+      }
       if (e.message === "Request failed with status code 400") {
         if (e.response) {
           const { data } = e.response;

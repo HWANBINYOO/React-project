@@ -4,8 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { toast } from "react-toastify";
 import { customAxios } from "../../Libs/CustomAxois";
+import Cookies from "universal-cookie";
 
 const Login = () => {
+  const cookies = new Cookies();
   const [Email, setEmail] = useState<string>("");
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
@@ -20,14 +22,24 @@ const Login = () => {
   const onLogin = async () => {
     console.log(Email, PassWord);
     try {
-      const { data } = await customAxios.post("/login", {
+      const { data } = await customAxios.post("user/login", {
         email: Email,
         password: PassWord,
       });
+      const { accessToken } = data;
+      const { refreshToken } = data;
+      customAxios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${accessToken}`;
+
+      // cookies.set("cookie", refreshToken, {
+      //   path: "/",
+      //   expires: Math.floor(Date.now() / 1000) + 60 * 60,
+      // });
 
       console.log(data);
-      localStorage.setItem("Blog_accessToken", data.accessToken);
-      localStorage.setItem("Blog_refreshToken", data.refreshToken);
+      // localStorage.setItem("Blog_accessToken", data.accessToken);
+      // localStorage.setItem("Blog_refreshToken", data.refreshToken);
 
       toast.success("로그인 되었습니다!");
       navigate("/about");
