@@ -8,6 +8,7 @@ const SignIn = () => {
   const [Email, setEmail] = useState<string>("");
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
+  const JWT_EXPIRY_TIME = 3 * 3600 * 1000;
 
   const onLogin = async () => {
     try {
@@ -18,11 +19,7 @@ const SignIn = () => {
       });
 
       console.log(data);
-      const { accessToken } = data;
-      // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
-      customAxios.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${accessToken}`;
+      onLoginSuccess(data.accessToken);
 
       navigate("/about");
     } catch (e: any) {
@@ -40,6 +37,26 @@ const SignIn = () => {
         }
       }
     }
+  };
+
+  const onSilentRefresh = (accessToken: undefined) => {
+    try {
+      customAxios.post("/silent-refresh", accessToken);
+    } catch (e: any) {
+      const { data } = e.response;
+      console.error("data : ", data);
+    }
+  };
+
+  // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
+  const onLoginSuccess = (accessToken: undefined) => {
+    // accessToken 설정
+    customAxios.defaults.headers.common[
+      "Authorization"
+    ] = `Bearer ${accessToken}`;
+
+    // accessToken 만료하기 1분 전에 로그인 연장
+    setTimeout(onSilentRefresh, JWT_EXPIRY_TIME - 60000);
   };
 
   return (
