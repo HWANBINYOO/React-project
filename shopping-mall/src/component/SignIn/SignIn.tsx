@@ -3,12 +3,16 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
+import { Cookies } from "react-cookie";
+import { setCookie } from "../../Libs/Cookies";
 
 const SignIn = () => {
   const [Email, setEmail] = useState<string>("");
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
   const JWT_EXPIRY_TIME = 3 * 3600 * 1000;
+  let ACCESS_TOKEN;
+  let REFRESH_TOKEN;
 
   const onLogin = async () => {
     try {
@@ -19,7 +23,23 @@ const SignIn = () => {
       });
 
       console.log(data);
-      onLoginSuccess(data.accessToken);
+      ACCESS_TOKEN = data.accessToken;
+      REFRESH_TOKEN = data.refreshToken;
+      onLoginSuccess(ACCESS_TOKEN);
+      //로그아웃하면 쿠키 삭제
+      //cookies.remove('refresh_token');
+
+      //토큰 쿠키에 저장
+      setCookie("refreshToken", REFRESH_TOKEN, {
+        path: "/refreshToken",
+        secure: true,
+        sameSite: "none",
+      });
+      setCookie("accessToken", ACCESS_TOKEN, {
+        path: "/accessToken",
+        secure: true,
+        sameSite: "none",
+      });
 
       navigate("/about");
     } catch (e: any) {
@@ -38,10 +58,11 @@ const SignIn = () => {
       }
     }
   };
-
-  const onSilentRefresh = (accessToken: undefined) => {
+  // accessToken 토큰 재발급 요청
+  const onSilentRefresh = async (accessToken: undefined) => {
     try {
-      customAxios.post("/silent-refresh", accessToken);
+      const { data } = await customAxios.post("/silent-refresh", accessToken);
+      ACCESS_TOKEN = data.accessToken;
     } catch (e: any) {
       const { data } = e.response;
       console.error("data : ", data);
