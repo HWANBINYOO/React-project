@@ -8,7 +8,8 @@ import { customAxios } from "../../Libs/CustomAxois";
 const KindContent = () => {
   const [Kinds, setKinds] = useState<KindType>();
   const location = useLocation();
-
+  const [open, setopen] = useState<boolean>(false);
+  const [SearchBoxWidth, setSearchBoxWidth] = useState<number>(60);
   useEffect(() => {
     async function getKind() {
       try {
@@ -19,10 +20,30 @@ const KindContent = () => {
     }
     getKind();
   }, [location.pathname]);
+
+  const SearchClick = () => {
+    if (!open) {
+      setSearchBoxWidth(400);
+    } else {
+      setSearchBoxWidth(60);
+    }
+    setTimeout(function () {
+      setopen(!open);
+    }, 70);
+  };
   return (
     <>
       <S.KindWapper>
-        <S.KindHeader>d</S.KindHeader>
+        <S.KindHeader>
+          <S.SearchBarWapper SearchWidth={SearchBoxWidth}>
+            <S.KindInput
+              Inputdisplay={open}
+              type="text"
+              placeholder="어떤 상품을 찾으신가요?"
+            />
+            <S.SearBarimg onClick={SearchClick} src={"/img/searchIcon.png"} />
+          </S.SearchBarWapper>
+        </S.KindHeader>
 
         <S.KindContents>
           {/* {Kinds ? (
