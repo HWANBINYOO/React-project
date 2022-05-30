@@ -2,29 +2,40 @@ import * as S from "./Styled";
 
 const KindIn = () => {
   return (
-
     <S.KindInWapper>
-        <S.Header>
-            <S.MainLogo></S.MainLogo>
-            <S.InputBox>
-                <S.SearchInput />
-                <S.SearchIcon></S.SearchIcon>
-            </S.InputBox>
-        </S.Header> 
-        <S.Contents>
-            <S.LeftContent></S.LeftContent>
-            <S.KindInImg></S.KindInImg>
-            <S.KindRight>
-                <S.KindDecs>
-                    <S.KindTitle></S.KindTitle>
-                    <S.KindSize></S.KindSize>
-                </S.KindDecs>
-                <S.Kind></S.Kind>
-            </S.KindDecs>
-        </S.Contents>
-
-  </S.KindInWapper>;
-      )
+      <S.Header>
+        <S.MainLogo></S.MainLogo>
+        <S.InputBox>
+          <S.SearchInput />
+          <S.SearchIcon></S.SearchIcon>
+        </S.InputBox>
+      </S.Header>
+      <S.Contents>
+        <S.LeftContent></S.LeftContent>
+        <S.KindInImg></S.KindInImg>
+        <S.KindRight>
+          <S.KindDecs>
+            <S.KindTitle></S.KindTitle>
+            <S.KindSize></S.KindSize>
+          </S.KindDecs>
+          <S.Kind></S.Kind>
+        </S.KindRight>
+        <S.KindCost>
+          <S.KindTop></S.KindTop>
+          <hr />
+          <S.KindCostBottom>
+            <S.KindChoose>옵션선택</S.KindChoose>
+            <S.KindOption></S.KindOption>
+          </S.KindCostBottom>
+        </S.KindCost>
+        <S.Buttons>
+          <S.LeftBtn>찜하기</S.LeftBtn>
+          <S.CenterBtn>장바구니</S.CenterBtn>
+          <S.RightBtn>구매하기</S.RightBtn>
+        </S.Buttons>
+      </S.Contents>
+    </S.KindInWapper>
+  );
 };
 
 export default KindIn;
