@@ -5,5 +5,6 @@ import Profile from "./Profile/Profile";
 import Home from "./Home/Home";
 import Sidebar from "./Sidebar/Sidebar";
 import KindContent from "./KindContent/KindContent";
+import KindIn from "./KindIn/KindIn";
 
-export { SignIn, SignUp, Header, Profile, Home, Sidebar, KindContent };
+export { SignIn, SignUp, Header, Profile, Home, Sidebar, KindContent, KindIn };

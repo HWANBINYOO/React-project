@@ -20,7 +20,7 @@ export const KindWapper = styled.div`
 
 export const KindHeader = styled.div`
   width: 100%;
-  height: 100px;
+  height: 90px;
   background-color: black;
   display: flex;
   justify-content: flex-end;
