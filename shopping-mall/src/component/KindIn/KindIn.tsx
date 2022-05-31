@@ -4,10 +4,11 @@ const KindIn = () => {
   return (
     <S.KindInWapper>
       <S.Header>
-        <S.MainLogo></S.MainLogo>
+        <S.RIghtWapper></S.RIghtWapper>
+        <S.MainLogo src={"/img/Wear.png"} />
         <S.InputBox>
-          <S.SearchInput />
-          <S.SearchIcon></S.SearchIcon>
+          <S.SearchInput placeholder="어떤 상품을 찾으신가요?" />
+          <S.SearchIcon src={"/img/searchIcon.png"} />
         </S.InputBox>
       </S.Header>
       <S.Contents>

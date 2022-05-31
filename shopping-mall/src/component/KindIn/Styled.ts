@@ -5,11 +5,41 @@ export const KindInWapper = styled.div`
   height: 100%;
 `;
 
-export const Header = styled.div``;
-export const MainLogo = styled.img``;
-export const InputBox = styled.div``;
-export const SearchInput = styled.input``;
-export const SearchIcon = styled.img``;
+export const Header = styled.div`
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d9d9d9;
+`;
+
+export const RIghtWapper = styled.div`
+  width: 20%;
+`;
+export const MainLogo = styled.img`
+  height: 30%;
+`;
+export const InputBox = styled.div`
+  width: 400px;
+  height: 45%;
+  margin-right: 30px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+`;
+export const SearchInput = styled.input`
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  width: 80%;
+`;
+export const SearchIcon = styled.img`
+  width: 25px;
+`;
 
 export const Contents = styled.div``;
 export const LeftContent = styled.div``;

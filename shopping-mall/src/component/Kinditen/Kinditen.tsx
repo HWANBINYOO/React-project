@@ -1,9 +1,17 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 
 const Kinditem = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const onclick = (id: number) => {
+    console.log(location.pathname);
+
+    navigate(`${location.pathname}/${id}`);
+  };
   return (
     <>
-      <S.KinditemWapper>
+      <S.KinditemWapper onClick={() => onclick(1)}>
         <S.Img />
         <S.ContentBox>
           <S.Wear>Wear</S.Wear>

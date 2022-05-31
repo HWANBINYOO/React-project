@@ -21,8 +21,9 @@ const Home = () => {
         <S.Content
           backColor="#2E437B"
           color="white"
-          hoverColor="white"
-          Imgdisplay={imghover1}
+          onchangeColor="white"
+          hover="white"
+          imgDisplay={imghover1}
           onMouseEnter={() => setimgHover1("block")}
           onMouseLeave={() => setimgHover1("none")}
           onClick={() => onclick("Denim")}
@@ -33,10 +34,10 @@ const Home = () => {
         <S.Content
           onMouseEnter={() => setimgHover2("block")}
           onMouseLeave={() => setimgHover2("none")}
-          backColor="#273F55"
+          imgDisplay={imghover2}
           color="white"
-          Imgdisplay={imghover2}
-          hoverColor="black"
+          hover="black"
+          backColor={"#273F55"}
           onClick={() => onclick("PantsShorts")}
         >
           <S.Span Imgdisplay={imghover2}>Pants Shorts</S.Span>
@@ -47,8 +48,9 @@ const Home = () => {
           onMouseLeave={() => setimgHover3("none")}
           backColor="#A3A3A3"
           color="white"
-          hoverColor="black"
-          Imgdisplay={imghover3}
+          onchangeColor="black"
+          hover="black"
+          imgDisplay={imghover3}
           onClick={() => onclick("Dresses")}
         >
           <S.Span Imgdisplay={imghover3}>Dresses</S.Span>
@@ -60,7 +62,8 @@ const Home = () => {
           backColor="#F5F5F5"
           color="black"
           hoverColor="black"
-          Imgdisplay={imghover4}
+          hover="black"
+          ImgDisplay={imghover4}
           onClick={() => onclick("Sweatshirts")}
         >
           <S.Span Imgdisplay={imghover4}>Sweatshirts</S.Span>
@@ -71,8 +74,9 @@ const Home = () => {
           onMouseLeave={() => setimgHover5("none")}
           backColor="#AA111B"
           color="white"
-          hoverColor="black"
-          Imgdisplay={imghover5}
+          onchangeColor="black"
+          hover="black"
+          imgDisplay={imghover5}
           onClick={() => onclick("Shoes")}
         >
           <S.Span Imgdisplay={imghover5}>Shoes</S.Span>
@@ -83,8 +87,9 @@ const Home = () => {
           onMouseLeave={() => setimgHover6("none")}
           backColor="#221F32"
           color="white"
-          hoverColor="black"
-          Imgdisplay={imghover6}
+          onchangeColor="black"
+          hover="black"
+          imgDisplay={imghover6}
           onClick={() => onclick("Shirts")}
         >
           <S.Span Imgdisplay={imghover6}>Tops & Shirts</S.Span>
