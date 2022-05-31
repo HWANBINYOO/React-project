@@ -41,17 +41,62 @@ export const SearchIcon = styled.img`
   width: 25px;
 `;
 
-export const Contents = styled.div``;
-export const LeftContent = styled.div``;
+export const Contents = styled.div`
+  background-color: gray;
+  height: calc(100vh - 100px);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+export const LeftContent = styled.div`
+  width: 35%;
+  height: 100%;
+  background-color: darkgray;
+`;
+export const KindInImgWapper = styled.div`
+  width: 35%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+`;
 
-export const KindInImg = styled.img``;
+export const KindInImg = styled.img`
+  width: 100%;
+  /* height: 90%; */
+`;
 
-export const KindRight = styled.div``;
+export const KindRight = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
-export const KindDecs = styled.div``;
-export const KindTitle = styled.div``;
-export const KindSize = styled.div``;
-export const Kind = styled.div``;
+export const KindDecs = styled.div`
+  width: 70%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+export const KindTitle = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2rem;
+`;
+export const KindSize = styled.div`
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  font-size: 1.2rem;
+`;
 
 export const KindCost = styled.div``;
 export const KindTop = styled.div``;
