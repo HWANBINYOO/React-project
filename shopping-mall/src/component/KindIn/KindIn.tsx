@@ -1,6 +1,10 @@
+import { useState } from "react";
 import * as S from "./Styled";
 
 const KindIn = () => {
+  const [SelectedColor, setSelectedColor] = useState("");
+  const [SelectedSize, setSelectedSize] = useState("");
+
   return (
     <S.KindInWapper>
       <S.Header>
@@ -28,11 +32,34 @@ const KindIn = () => {
             </S.KindSize>
           </S.KindDecs>
           <S.KindCost>
-            <S.KindTop></S.KindTop>
+            <S.KindTop>34,200원</S.KindTop>
             <hr />
             <S.KindCostBottom>
               <S.KindChoose>옵션선택</S.KindChoose>
-              <S.KindOption></S.KindOption>
+              <S.KindOption>
+                <select
+                  onChange={(e) => setSelectedColor(e.target.value)}
+                  className="SelectTop"
+                >
+                  <option value="">색상</option>
+                  <option value="학생">학생</option>
+                  <option value="회사원">회사원</option>
+                  <option value="기타">기타</option>
+                </select>
+
+                <select
+                  onChange={(e) => setSelectedSize(e.target.value)}
+                  className="SelectBottom"
+                >
+                  <option value="">사이즈</option>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="2XL">2XL</option>
+                </select>
+              </S.KindOption>
             </S.KindCostBottom>
           </S.KindCost>
           <S.Buttons>

@@ -98,11 +98,45 @@ export const KindSize = styled.div`
   font-size: 1.2rem;
 `;
 
-export const KindCost = styled.div``;
-export const KindTop = styled.div``;
-export const KindCostBottom = styled.div``;
-export const KindChoose = styled.div``;
-export const KindOption = styled.div``;
+export const KindCost = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+export const KindTop = styled.div`
+  font-size: 2rem;
+`;
+export const KindCostBottom = styled.div`
+  width: 80%;
+`;
+export const KindChoose = styled.div`
+  font-size: 1rem;
+`;
+
+export const KindOption = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+
+  select {
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    font-size: 1rem;
+    padding-left: 10px;
+  }
+
+  .SelectTop {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .SelectBottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+`;
 
 export const Buttons = styled.div``;
 export const LeftBtn = styled.button``;
