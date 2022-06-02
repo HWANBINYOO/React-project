@@ -6,5 +6,16 @@ import Home from "./Home/Home";
 import Sidebar from "./Sidebar/Sidebar";
 import KindContent from "./KindContent/KindContent";
 import KindIn from "./KindIn/KindIn";
+import Order from "./Order/Order";
 
-export { SignIn, SignUp, Header, Profile, Home, Sidebar, KindContent, KindIn };
+export {
+  SignIn,
+  SignUp,
+  Header,
+  Profile,
+  Home,
+  Sidebar,
+  KindContent,
+  KindIn,
+  Order,
+};

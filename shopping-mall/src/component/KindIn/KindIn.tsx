@@ -4,6 +4,7 @@ import * as S from "./Styled";
 const KindIn = () => {
   const [SelectedColor, setSelectedColor] = useState("");
   const [SelectedSize, setSelectedSize] = useState("");
+  const [HeaderInput, setHeaderInput] = useState("");
 
   return (
     <S.KindInWapper>
@@ -11,7 +12,11 @@ const KindIn = () => {
         <S.RIghtWapper></S.RIghtWapper>
         <S.MainLogo src={"/img/Wear.png"} />
         <S.InputBox>
-          <S.SearchInput placeholder="어떤 상품을 찾으신가요?" />
+          <S.SearchInput
+            placeholder="어떤 상품을 찾으신가요?"
+            onChange={(e) => setHeaderInput(e.target.value)}
+            value={HeaderInput}
+          />
           <S.SearchIcon src={"/img/searchIcon.png"} />
         </S.InputBox>
       </S.Header>

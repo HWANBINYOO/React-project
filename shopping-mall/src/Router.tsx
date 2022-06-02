@@ -7,6 +7,7 @@ import {
   ProfilePage,
   KindPage,
   KindInPage,
+  OrderPage,
 } from "./pages";
 
 const Router = () => {
@@ -18,6 +19,7 @@ const Router = () => {
       <Route path="/Profile" element={<ProfilePage />} />
       <Route path="/Kind/:name" element={<KindPage />} />
       <Route path="/Kind/:name/:id" element={<KindInPage />} />
+      <Route path="/Pur/:name/:id" element={<OrderPage />} />
     </Routes>
   );
 };
