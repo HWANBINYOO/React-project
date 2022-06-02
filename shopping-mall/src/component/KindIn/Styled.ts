@@ -49,12 +49,12 @@ export const Contents = styled.div`
   justify-content: space-between;
 `;
 export const LeftContent = styled.div`
-  width: 35%;
+  width: 25%;
   height: 100%;
   background-color: darkgray;
 `;
 export const KindInImgWapper = styled.div`
-  width: 35%;
+  width: 30%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -64,23 +64,24 @@ export const KindInImgWapper = styled.div`
 
 export const KindInImg = styled.img`
   width: 100%;
-  /* height: 90%; */
 `;
 
 export const KindRight = styled.div`
-  width: 50%;
+  width: 45%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white;
 `;
 
 export const KindDecs = styled.div`
   width: 70%;
-  height: 30%;
+  height: 20%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
 `;
 export const KindTitle = styled.div`
@@ -90,42 +91,59 @@ export const KindTitle = styled.div`
   font-size: 2rem;
 `;
 export const KindSize = styled.div`
-  width: 85%;
+  width: 90%;
+  height: 90%;
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
-
-  font-size: 1.2rem;
-`;
-
-export const KindCost = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-`;
-export const KindTop = styled.div`
-  font-size: 2rem;
-`;
-export const KindCostBottom = styled.div`
-  width: 80%;
-`;
-export const KindChoose = styled.div`
+  align-items: flex-start;
+  padding-left: 3vw;
+  color: gray;
   font-size: 1rem;
 `;
 
-export const KindOption = styled.div`
-  width: 80%;
+export const KindCost = styled.div`
+  width: 70%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+export const hr = styled.hr`
+  width: 100%;
+  height: 2px;
+  border: none;
+  background-color: black;
+`;
+export const KindTop = styled.div`
+  font-size: 2rem;
+  color: red;
+`;
+export const KindCostBottom = styled.div`
+  width: 100%;
+  height: 60%;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+`;
+export const KindChoose = styled.div`
+  font-size: 1rem;
+  color: gray;
+`;
+
+export const KindOption = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   select {
-    width: 100%;
+    width: 80%;
     height: 40px;
     background-color: white;
     font-size: 1rem;
     padding-left: 10px;
+    color: gray;
   }
 
   .SelectTop {
@@ -138,7 +156,21 @@ export const KindOption = styled.div`
   }
 `;
 
-export const Buttons = styled.div``;
-export const LeftBtn = styled.button``;
-export const CenterBtn = styled.button``;
-export const RightBtn = styled.button``;
+export const Buttons = styled.div`
+  width: 80%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+`;
+export const Btn = styled.button`
+  font-family: "EarlyFontDiary";
+  width: 30%;
+  height: 40%;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 1rem;
+`;
