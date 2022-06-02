@@ -53,22 +53,27 @@ export const Sidebar = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: white;
 `;
 
 export const RightWapper = styled.div`
   width: 80%;
-  height: 1000px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   overflow-y: scroll;
+  padding-top: 50px;
 `;
 
 export const OrderProduct = styled.div`
-  width: 100%;
+  width: 90%;
+  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
 `;
 
 export const OrderTitle = styled.div`
@@ -86,30 +91,46 @@ export const OrderBox = styled.div`
 `;
 
 export const OrderCompany = styled.div`
-  font-size: 0.8rem;
+  padding-left: 20px;
+  height: 45px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  background-color: #e6eaed;
 `;
 
 export const OrderBottomBox = styled.div`
-  width: 100%;
-  height: 50px;
+  width: calc(100% -20px);
+  height: 70px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-end;
+  padding: 0 10px;
+  border: 1px solid black;
+  background-color: #f9f9fa;
 `;
 
 export const OrderTop = styled.div`
+  width: 30%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: 100%;
 `;
 
 export const OrderImg = styled.img`
   width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 10px;
 `;
 
 export const OrderDecs = styled.div`
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 `;
 
 export const OrderCost = styled.div`
-  font-size: 0.5rem;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
 `;
