@@ -37,6 +37,18 @@ const Order = () => {
               </S.OrderBottomBox>
             </S.OrderBox>
           </S.OrderProduct>
+          <S.MiddleContent>
+            <S.MiddleLeft>
+              <S.CouponBox>
+                <h3>쿠폰</h3>
+                <S.HaveCouponBox>
+                  <S.HaveCouponLeft>보유쿠폰 : 0개</S.HaveCouponLeft>
+                  <S.SelecBtn>쿠폰 선택</S.SelecBtn>
+                </S.HaveCouponBox>
+              </S.CouponBox>
+            </S.MiddleLeft>
+            {/* <S.MiddleRight></S.MiddleRight> */}
+          </S.MiddleContent>
         </S.RightWapper>
       </S.Contents>
     </S.Position>

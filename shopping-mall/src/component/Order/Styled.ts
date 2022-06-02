@@ -49,11 +49,12 @@ export const Contents = styled.div`
 `;
 
 export const Sidebar = styled.div`
-  width: 25%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: white;
+  background-color: darkgray;
 `;
 
 export const RightWapper = styled.div`
@@ -120,8 +121,8 @@ export const OrderTop = styled.div`
 `;
 
 export const OrderImg = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 1px solid black;
   border-radius: 10px;
 `;
@@ -133,4 +134,58 @@ export const OrderDecs = styled.div`
 export const OrderCost = styled.div`
   font-size: 0.7rem;
   margin-bottom: 10px;
+`;
+
+export const MiddleContent = styled.div`
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const MiddleLeft = styled.div`
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5% 0 5% 5%;
+`;
+
+export const CouponBox = styled.div`
+  width: 85%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  h3 {
+    font-family: "EarlyFontDiary";
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+`;
+
+export const HaveCouponBox = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-left: 10px;
+  display: flex;
+  gap: 20px;
+`;
+
+export const HaveCouponLeft = styled.div`
+  width: 80%;
+  border-bottom: 1px solid black;
+  text-align: start;
+  font-size: 1rem;
+`;
+
+export const SelecBtn = styled.button`
+  width: 100px;
+  height: 40px;
+  border: 1px solid #b0caf6;
+  background-color: white;
+  color: #b0caf6;
+  text-align: bottom;
+  border-radius: 5px;
 `;
