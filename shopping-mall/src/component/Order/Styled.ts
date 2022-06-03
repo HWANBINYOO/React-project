@@ -42,7 +42,6 @@ export const SearchIcon = styled.img`
 `;
 
 export const Contents = styled.div`
-  background-color: gray;
   height: calc(100vh - 100px);
   width: 100%;
   display: flex;
@@ -97,7 +96,6 @@ export const OrderCompany = styled.div`
   font-size: 1rem;
   display: flex;
   align-items: center;
-  border: 1px solid black;
   background-color: #e6eaed;
 `;
 
@@ -108,7 +106,6 @@ export const OrderBottomBox = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   padding: 0 10px;
-  border: 1px solid black;
   background-color: #f9f9fa;
 `;
 
@@ -138,18 +135,20 @@ export const OrderCost = styled.div`
 
 export const MiddleContent = styled.div`
   width: 90%;
+  height: 450px;
   display: flex;
   justify-content: space-between;
 `;
 
 export const MiddleLeft = styled.div`
   width: 40%;
-  height: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 5% 0 5% 5%;
+  padding-left: 5%;
+  margin: auto 0;
 `;
 
 export const CouponBox = styled.div`
@@ -217,16 +216,17 @@ export const ReservesInputBox = styled.input`
 `;
 
 export const BottomDecs = styled.div`
-  margin: 10px 0 0 20px;
+  margin: -40px 0 0 20px;
   font-size: 0.5rem;
 `;
 
 export const MiddleRight = styled.div`
-  width: 20%;
-  height: 280px;
+  margin: auto 0;
+  width: 22%;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
+  justify-content: space-between;
 `;
 
 export const PayTItle = styled.div`
@@ -239,10 +239,36 @@ export const PayTop = styled.div`
   flex-direction: column;
 `;
 
+export const Hr = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: black;
+`;
+
+export const CostBox = styled.div`
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const CostBoxLeft = styled.div`
+  font-size: 1rem;
+  color: gray;
+`;
+
+export const CostBoxRight = styled.div`
+  font-size: 1rem;
+  color: black;
+`;
+
 export const PayAdd = styled.div`
   width: 100%;
+  height: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const PayAddS = styled.div`
@@ -252,21 +278,35 @@ export const PayAddS = styled.div`
 `;
 
 export const PayP = styled.div`
-  font-size: 1.5rem;
-  color: red;
+  font-size: 1.2rem;
+  color: #ff4d4d;
 `;
 
 export const PayCost = styled.div`
   font-size: 1rem;
-  color: red;
+  color: #ff4d4d;
 `;
 
 export const PayPBlue = styled.div`
-  font-size: 1.5rem;
-  color: blue;
+  font-size: 1.2rem;
+  color: #5d95f3;
 `;
 
 export const PayCostBlue = styled.div`
   font-size: 1rem;
-  color: blue;
+  color: #5d95f3;
+`;
+
+export const PayBtn = styled.button`
+  font-family: "EarlyFontDiary";
+
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: #ff8d8d;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

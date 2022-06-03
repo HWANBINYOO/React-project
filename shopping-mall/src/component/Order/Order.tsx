@@ -65,17 +65,36 @@ const Order = () => {
             </S.MiddleLeft>
             <S.MiddleRight>
               <S.PayTItle>결재금액</S.PayTItle>
-              <S.PayTop></S.PayTop>
+              <S.PayTop>
+                <S.CostBox>
+                  <S.CostBoxLeft>상품금액</S.CostBoxLeft>
+                  <S.CostBoxRight>39,000원</S.CostBoxRight>
+                </S.CostBox>
+                <S.CostBox>
+                  <S.CostBoxLeft>할인금액</S.CostBoxLeft>
+                  <S.CostBoxRight>14,100원</S.CostBoxRight>
+                </S.CostBox>
+                <S.CostBox>
+                  <S.CostBoxLeft>쿠폰사용</S.CostBoxLeft>
+                  <S.CostBoxRight>0원</S.CostBoxRight>
+                </S.CostBox>
+                <S.CostBox>
+                  <S.CostBoxLeft>상품금액</S.CostBoxLeft>
+                  <S.CostBoxRight>0원</S.CostBoxRight>
+                </S.CostBox>
+              </S.PayTop>
+              <S.Hr />
               <S.PayAdd>
                 <S.PayAddS>
                   <S.PayP>총 결재금액</S.PayP>
                   <S.PayCost>24,900원</S.PayCost>
                 </S.PayAddS>
                 <S.PayAddS>
-                  <S.PayPBlue>예상 결제금액</S.PayPBlue>
+                  <S.PayPBlue>예상 적립금</S.PayPBlue>
                   <S.PayCostBlue>249원</S.PayCostBlue>
                 </S.PayAddS>
               </S.PayAdd>
+              <S.PayBtn>결재하기</S.PayBtn>
             </S.MiddleRight>
           </S.MiddleContent>
         </S.RightWapper>
