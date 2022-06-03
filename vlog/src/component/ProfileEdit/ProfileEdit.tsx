@@ -21,10 +21,15 @@ const ProfileEdit = () => {
       try {
         const respone = await customAxios.get("user_name");
         const respone2 = await customAxios.get("user_image");
+        console.log(respone.data.user_name);
+        console.log(respone2.data.user_image);
+
         setName(respone.data.user_name);
         setFile(respone2.data.user_image);
-      } catch (a: any) {
-        console.log(a);
+      } catch (e: any) {
+        const { data } = e.response;
+        console.error(data.message);
+        console.error("data : ", data);
       }
     }
     Getprofile();

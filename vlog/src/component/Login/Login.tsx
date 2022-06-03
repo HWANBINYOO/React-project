@@ -12,8 +12,8 @@ const Login = () => {
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
   const JWT_EXPIRY_TIME = 3 * 3600 * 1000;
-  let ACCESS_TOKEN: any;
-  let REFRESH_TOKEN: any;
+  const [ACCESS_TOKEN, setACCESS_TOKEN] = useState("");
+  const [REFRESH_TOKEN, setREFRESH_TOKEN] = useState("");
 
   const onChangeEmail = (e: any) => {
     setEmail(e.currentTarget.value);
@@ -29,20 +29,18 @@ const Login = () => {
         email: Email,
         password: PassWord,
       });
-      ACCESS_TOKEN = data.accessToken;
-      REFRESH_TOKEN = data.refreshToken;
+      setACCESS_TOKEN(data.accessToken);
+      setREFRESH_TOKEN(data.refreshToken);
+      console.log(ACCESS_TOKEN);
+      console.log(REFRESH_TOKEN);
 
-      customAxios.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${ACCESS_TOKEN}`;
-      customAxios.defaults.headers.common[
-        "RefreshToken"
-      ] = `Bearer ${REFRESH_TOKEN}`;
+      customAxios.defaults.headers.common["Authorization"] = ACCESS_TOKEN;
+      customAxios.defaults.headers.common["RefreshToken"] = REFRESH_TOKEN;
       setTimeout(onSilentRefresh, JWT_EXPIRY_TIME - 60000);
 
       console.log(data);
-      localStorage.setItem("Blog_accessToken", data.accessToken);
-      localStorage.setItem("Blog_refreshToken", data.refreshToken);
+      localStorage.setItem("Blog_accessToken", ACCESS_TOKEN);
+      localStorage.setItem("Blog_refreshToken", REFRESH_TOKEN);
 
       toast.success("로그인 되었습니다!");
       navigate("/about");
@@ -59,7 +57,7 @@ const Login = () => {
         accessToken: ACCESS_TOKEN,
         refreshToken: REFRESH_TOKEN,
       });
-      ACCESS_TOKEN = data.accessToken;
+      setREFRESH_TOKEN(data.accessToken);
       setTimeout(onSilentRefresh, JWT_EXPIRY_TIME - 60000);
     } catch (e: any) {
       const { data } = e.response;
