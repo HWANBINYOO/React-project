@@ -10,9 +10,9 @@ const Profile = () => {
   const [profile, SetProfile] = useState<ProfileType>();
   const [profileImg, setProfileImg] = useState<string>();
   const [Imgurl, setImgurl] = useState<string[]>();
-  const [UserName, setUserName] = useState<string>();
-  const [UserEmail, setUserEmail] = useState<string>();
-  const [UserBoardNumber, setUserBoardNumber] = useState<string>();
+  const [UserName, setUserName] = useState<string>("환빈");
+  const [UserEmail, setUserEmail] = useState<string>("dngh0825@gmail.com");
+  const [UserBoardNumber, setUserBoardNumber] = useState<number>(2);
   // {
   //   "user_id": number,
   //   "user_name": string,
@@ -51,17 +51,15 @@ const Profile = () => {
           </S.ProfileImg>
           <S.User>
             <S.EditGO>
-              <S.UserName>유환빈</S.UserName>
+              <S.UserName>{UserName}</S.UserName>
               {/* <S.UserName>{UserName}</S.UserName> */}
               <S.UserName></S.UserName>
               <S.GOEdit onClick={() => navigate("/profile/Edit")}>
                 프로필 편집
               </S.GOEdit>
             </S.EditGO>
-            <S.UserBlogs>게시물 2</S.UserBlogs>
-            {/* <S.UserBlogs>{UserBoardNumber}</S.UserBlogs> */}
-            <S.UserEmail>dngh0825@gmail.com</S.UserEmail>
-            {/* <S.UserId>{UserBoardNumber}</S.UserId> */}
+            <S.UserBlogs>{`게시글 수:${UserBoardNumber}`}</S.UserBlogs>
+            <S.UserEmail>{UserEmail}</S.UserEmail>
           </S.User>
         </S.ProfileImpormation>
         <S.Hr />

@@ -19,12 +19,10 @@ const ProfileEdit = () => {
   useEffect(() => {
     async function Getprofile() {
       try {
-        const { data } = await customAxios.get("/blog/profile/edit");
-        let user_id = data.user_id;
-        setFile(`http://10.120.74.59:3000/${user_id}/user_image`);
-
-        setName(data.name);
-        setName(data.user_name);
+        const respone = await customAxios.get("user_name");
+        const respone2 = await customAxios.get("user_image");
+        setName(respone.data.user_name);
+        setFile(respone2.data.user_image);
       } catch (a: any) {
         console.log(a);
       }
@@ -61,23 +59,23 @@ const ProfileEdit = () => {
     event.preventDefault();
     let formData = new FormData();
     formData.append("file", file);
-    formData.append("name", "재");
-    formData.append("password", "1234");
-    formData.append("newPassword", "123456");
+    formData.append("name", Name);
+    formData.append("password", PassWord);
+    formData.append("newPassword", ChangePassWord);
     try {
-      await axios({
-        method: "patch",
-        url: "http://10.120.74.59:3000/1/update",
-        data: formData,
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      // const res = await customAxios.patch("/1/update", formData, {
+      // await axios({
+      //   method: "patch",
+      //   url: "http://10.120.74.59:3000/1/update",
+      //   data: formData,
       //   headers: {
       //     "Content-Type": "multipart/form-data",
       //   },
       // });
+      await customAxios.patch("update", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       toast.success("수정되었습니다!");
       navigate("/profile");
     } catch (e: any) {

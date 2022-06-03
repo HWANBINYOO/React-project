@@ -12,6 +12,8 @@ const Login = () => {
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
   const JWT_EXPIRY_TIME = 3 * 3600 * 1000;
+  let ACCESS_TOKEN: any;
+  let REFRESH_TOKEN: any;
 
   const onChangeEmail = (e: any) => {
     setEmail(e.currentTarget.value);
@@ -27,7 +29,17 @@ const Login = () => {
         email: Email,
         password: PassWord,
       });
-      onLoginSuccess(data.accessToken);
+      ACCESS_TOKEN = data.accessToken;
+      REFRESH_TOKEN = data.refreshToken;
+
+      customAxios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${ACCESS_TOKEN}`;
+      customAxios.defaults.headers.common[
+        "RefreshToken"
+      ] = `Bearer ${REFRESH_TOKEN}`;
+      setTimeout(onSilentRefresh, JWT_EXPIRY_TIME - 60000);
+
       console.log(data);
       localStorage.setItem("Blog_accessToken", data.accessToken);
       localStorage.setItem("Blog_refreshToken", data.refreshToken);
@@ -41,25 +53,19 @@ const Login = () => {
     }
   };
 
-  const onSilentRefresh = (accessToken: undefined) => {
+  const onSilentRefresh = async () => {
     try {
-      customAxios.post("/silent-refresh", accessToken);
+      const { data } = await customAxios.post("/silent-refresh", {
+        accessToken: ACCESS_TOKEN,
+        refreshToken: REFRESH_TOKEN,
+      });
+      ACCESS_TOKEN = data.accessToken;
+      setTimeout(onSilentRefresh, JWT_EXPIRY_TIME - 60000);
     } catch (e: any) {
       const { data } = e.response;
       console.error(data.message);
       toast.error("다시 확인해주세요");
     }
-  };
-
-  // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
-  const onLoginSuccess = (accessToken: undefined) => {
-    // accessToken 설정
-    customAxios.defaults.headers.common[
-      "Authorization"
-    ] = `Bearer ${accessToken}`;
-
-    // accessToken 만료하기 1분 전에 로그인 연장
-    setTimeout(onSilentRefresh, JWT_EXPIRY_TIME - 60000);
   };
 
   return (

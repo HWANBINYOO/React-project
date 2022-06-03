@@ -60,19 +60,19 @@ const a = [
 ];
 
 const Blog: React.FC<BlogType> = () => {
-  const [Blogs, setBlogs] = useState<BlogType[]>(a);
-  //useEffet 훅에서 async 사용하기
-  // useEffect(() => {
-  //   async function getblog() {
-  //     try {
-  //       setBlogs(await customAxios.get("/blog"));
-  //     } catch (a: any) {
-  //       console.log(a);
-  //     }
-  //   }
+  const [Blogs, setBlogs] = useState<BlogType[]>();
+  // useEffet 훅에서 async 사용하기
+  useEffect(() => {
+    async function getblog() {
+      try {
+        setBlogs(await customAxios.get("/blog"));
+      } catch (a: any) {
+        console.log(a);
+      }
+    }
 
-  //   getblog();
-  // }, []);
+    getblog();
+  }, []);
   function date_descending(a: any, b: any) {
     let dateA = new Date(a["date"]).getTime();
     let dateB = new Date(b["date"]).getTime();

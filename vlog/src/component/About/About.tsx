@@ -38,7 +38,6 @@ export default function About() {
             <S.decs>
               <p>음악감상이 취미</p>
               <p>주로 팝송을 들어요</p>
-              <p>근데 공부할때밖에 안들어요</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
@@ -47,7 +46,6 @@ export default function About() {
               <p>치아노치기가 취미</p>
               <p>주로 클래식곡 쳐요</p>
               <p>리스트 사랑의꿈까지 칠줄알아요</p>
-              <p>지금은 잘 안해요..</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
