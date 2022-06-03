@@ -18,8 +18,10 @@ const Order = () => {
           <S.SearchIcon src={"/img/searchIcon.png"} />
         </S.InputBox>
       </S.Header>
+
       <S.Contents>
         <S.Sidebar></S.Sidebar>
+
         <S.RightWapper>
           <S.OrderProduct>
             <S.OrderTitle>주문하기</S.OrderTitle>
@@ -46,8 +48,35 @@ const Order = () => {
                   <S.SelecBtn>쿠폰 선택</S.SelecBtn>
                 </S.HaveCouponBox>
               </S.CouponBox>
+              <S.CouponBox>
+                <h3>적립금</h3>
+                <h4>보유 적입금 311원</h4>
+                <S.HaveCouponBox>
+                  <S.ReservesInputBox placeholder="0" />
+                  <S.SelecBtn>모두 사용</S.SelecBtn>
+                </S.HaveCouponBox>
+              </S.CouponBox>
+              <S.BottomDecs>
+                <p>
+                  (최소)1,000원 ~ (최대)상품 가격의 10%까지 사용 가능합니다.
+                </p>
+                <p>적립금은 10원 단위로 사용 가능합니다.</p>
+              </S.BottomDecs>
             </S.MiddleLeft>
-            {/* <S.MiddleRight></S.MiddleRight> */}
+            <S.MiddleRight>
+              <S.PayTItle>결재금액</S.PayTItle>
+              <S.PayTop></S.PayTop>
+              <S.PayAdd>
+                <S.PayAddS>
+                  <S.PayP>총 결재금액</S.PayP>
+                  <S.PayCost>24,900원</S.PayCost>
+                </S.PayAddS>
+                <S.PayAddS>
+                  <S.PayPBlue>예상 결제금액</S.PayPBlue>
+                  <S.PayCostBlue>249원</S.PayCostBlue>
+                </S.PayAddS>
+              </S.PayAdd>
+            </S.MiddleRight>
           </S.MiddleContent>
         </S.RightWapper>
       </S.Contents>
