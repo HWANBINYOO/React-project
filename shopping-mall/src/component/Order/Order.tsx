@@ -97,6 +97,21 @@ const Order = () => {
               <S.PayBtn>결재하기</S.PayBtn>
             </S.MiddleRight>
           </S.MiddleContent>
+          <S.ShoppingAddress>
+            <S.TopTItle>배송지 정보</S.TopTItle>
+            <S.AddressContent>
+              <span>이름</span>
+              <S.AdreesInput />
+            </S.AddressContent>
+            <S.AddressContent>
+              <span>연락처</span>
+              <S.AdreesInput />
+            </S.AddressContent>
+            <S.AddressContent>
+              <span>우편번호</span>
+              <S.AdreesInput />
+            </S.AddressContent>
+          </S.ShoppingAddress>
         </S.RightWapper>
       </S.Contents>
     </S.Position>

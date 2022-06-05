@@ -58,7 +58,7 @@ export const Sidebar = styled.div`
 
 export const RightWapper = styled.div`
   width: 80%;
-  height: 100%;
+  height: 1500px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -309,4 +309,41 @@ export const PayBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const ShoppingAddress = styled.div`
+  width: 55%;
+  height: 500px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const TopTItle = styled.p`
+  font-size: 1.5rem;
+`;
+
+export const AddressContent = styled.div`
+  width: 50%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  border: 1px solid black;
+  margin-left: 50px;
+
+  span {
+    font-size: 1rem;
+  }
+`;
+
+export const AdreesInput = styled.input`
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: transparent;
+  padding-left: 5px;
+  outline: none;
+  border: 1px solid gray;
 `;
