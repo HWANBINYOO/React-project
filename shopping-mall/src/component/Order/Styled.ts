@@ -324,26 +324,43 @@ export const TopTItle = styled.p`
 `;
 
 export const AddressContent = styled.div`
-  width: 50%;
+  width: 35%;
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 50px;
+  justify-content: flex-start;
+  gap: 10px;
   border: 1px solid black;
   margin-left: 50px;
 
   span {
+    width: 90px;
     font-size: 1rem;
   }
 `;
 
 export const AdreesInput = styled.input`
   height: 25px;
-  width: 200px;
+  width: 60%;
   border-radius: 5px;
   background-color: transparent;
   padding-left: 5px;
   outline: none;
   border: 1px solid gray;
+`;
+
+export const LongAdressContent = styled.div`
+  width: 70%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  border: 1px solid black;
+  margin-left: 50px;
+
+  span {
+    width: 90px;
+    font-size: 1rem;
+  }
 `;

@@ -111,6 +111,18 @@ const Order = () => {
               <span>우편번호</span>
               <S.AdreesInput />
             </S.AddressContent>
+            <S.LongAdressContent>
+              <span>주소</span>
+              <S.AdreesInput />
+            </S.LongAdressContent>
+            <S.LongAdressContent>
+              <span></span>
+              <S.AdreesInput />
+            </S.LongAdressContent>
+            <S.LongAdressContent>
+              <span>배송요청사항</span>
+              <S.AdreesInput />
+            </S.LongAdressContent>
           </S.ShoppingAddress>
         </S.RightWapper>
       </S.Contents>
