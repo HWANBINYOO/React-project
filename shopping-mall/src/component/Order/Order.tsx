@@ -7,7 +7,7 @@ const Order = () => {
   return (
     <S.Position>
       <S.Header>
-        <S.RIghtWapper></S.RIghtWapper>
+        <S.RIghtWapperr></S.RIghtWapperr>
         <S.MainLogo src={"/img/Wear.png"} />
         <S.InputBox>
           <S.SearchInput
@@ -124,6 +124,23 @@ const Order = () => {
               <S.AdreesInput />
             </S.LongAdressContent>
           </S.ShoppingAddress>
+          <S.PaymentWapper>
+            <S.PayMentTitle>결재방법</S.PayMentTitle>
+            <S.PayMentInputs>
+              <input type="radio" />
+              카드결재
+              <input type="radio" />
+              가상계좌
+              <input type="radio" />
+              네이버페이
+              <input type="radio" />
+              카카오페이
+              <input type="radio" />
+              페이코
+              <input type="radio" />
+              핸드폰 결제
+            </S.PayMentInputs>
+          </S.PaymentWapper>
         </S.RightWapper>
       </S.Contents>
     </S.Position>
