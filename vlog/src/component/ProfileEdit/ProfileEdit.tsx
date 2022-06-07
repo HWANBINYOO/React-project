@@ -76,6 +76,8 @@ const ProfileEdit = () => {
       //     "Content-Type": "multipart/form-data",
       //   },
       // });
+      console.log(localStorage.getItem("Blog_accessToken"));
+
       await customAxios.patch("update", formData, {
         headers: {
           "Content-Type": "multipart/form-data",

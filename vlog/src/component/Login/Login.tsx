@@ -29,18 +29,18 @@ const Login = () => {
         email: Email,
         password: PassWord,
       });
+
       setACCESS_TOKEN(data.accessToken);
       setREFRESH_TOKEN(data.refreshToken);
-      console.log(ACCESS_TOKEN);
-      console.log(REFRESH_TOKEN);
 
-      customAxios.defaults.headers.common["Authorization"] = ACCESS_TOKEN;
-      customAxios.defaults.headers.common["RefreshToken"] = REFRESH_TOKEN;
-      setTimeout(onSilentRefresh, JWT_EXPIRY_TIME - 60000);
+      customAxios.defaults.headers.common[
+        "Authorization"
+      ] = `${data.accessToken}`;
+      customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
 
-      console.log(data);
-      localStorage.setItem("Blog_accessToken", ACCESS_TOKEN);
-      localStorage.setItem("Blog_refreshToken", REFRESH_TOKEN);
+      localStorage.setItem("Blog_accessToken", data.accessToken);
+      localStorage.setItem("Blog_refreshToken", data.refreshToken);
+      console.log(localStorage.getItem("Blog_accessToken"));
 
       toast.success("로그인 되었습니다!");
       navigate("/about");
