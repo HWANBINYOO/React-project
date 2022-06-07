@@ -54,6 +54,7 @@ const ProfileEdit = () => {
 
   //수정사항 서버로보내기 (profile사진포함)
   const onClick = async (event: any) => {
+    event.preventDefault();
     if (ChangePassWord === "") {
       return toast.warning("새로운패스워드를 입력하지 않았어요!");
     } else if (PassWordAgain === "") {
@@ -61,23 +62,12 @@ const ProfileEdit = () => {
     } else if (PassWordAgain !== ChangePassWord) {
       return toast.warning("새로운패스워드가 일치하지 않아요!");
     }
-    event.preventDefault();
     let formData = new FormData();
     formData.append("file", file);
     formData.append("name", Name);
     formData.append("password", PassWord);
     formData.append("newPassword", ChangePassWord);
     try {
-      // await axios({
-      //   method: "patch",
-      //   url: "http://10.120.74.59:3000/1/update",
-      //   data: formData,
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // });
-      console.log(localStorage.getItem("Blog_accessToken"));
-
       await customAxios.patch("update", formData, {
         headers: {
           "Content-Type": "multipart/form-data",

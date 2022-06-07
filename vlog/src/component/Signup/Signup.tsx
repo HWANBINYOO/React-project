@@ -36,6 +36,7 @@ const Signup: React.FC = () => {
         if (e.response) {
           const { data } = e.response;
           console.error(data.message);
+          toast.warning(data.message);
           console.error("data : ", data);
         }
       }

@@ -47,26 +47,17 @@ const BlogAdd = () => {
   const onSubmit = async (event: any) => {
     event.preventDefault();
     let formData = new FormData();
-    formData.append("files", file);
+    formData.append("file", file);
     formData.append("title", title);
     formData.append("content", desc);
     formData.append("date", `${year}-${month}-${day}`);
-
     try {
-      // await axios({
-      //   method: "post",
-      //   url: "http://10.120.74.59:3000/board/write",
-      //   data: formData,
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // });
       await customAxios.post("/board/write", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      toast.success("추가됬습니다!");
+      toast.success("추가됐습니다!");
       navigate("/blog");
     } catch (e: any) {
       console.log(e);
