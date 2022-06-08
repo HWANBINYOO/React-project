@@ -53,8 +53,27 @@ export const Sidebar = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 30px;
+`;
+
+export const MenuWapper = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   background-color: white;
-  background-color: darkgray;
+  gap: 3px;
+`;
+
+export const MainMenu = styled.p`
+  font-size: 1.5rem;
+`;
+
+export const Submenu = styled.p`
+  margin-left: 15px;
+  font-size: 1rem;
 `;
 
 export const RightWapper = styled.div`

@@ -1,9 +1,55 @@
 import { useState } from "react";
 import * as S from "./Styled";
 
+const a = [
+  {
+    MainMenu: "상의",
+    name0: "반팔티",
+    name1: "셔츠/난방",
+    name2: "긴팔티",
+    name3: "맨투맨",
+    name4: "후드티/아노락",
+    name5: "후드집업",
+    name6: "니트/스웨터",
+    name7: "민소매/나시",
+    name8: "트레이닝상의",
+  },
+  {
+    MainMenu: "아우터",
+    name0: "코트",
+    name1: "정퍼",
+    name2: "자켓",
+    name3: "무스탕",
+    name4: "가디건",
+    name5: "항공점퍼/불루종",
+    name6: "패딩/다운",
+    name7: "수트",
+  },
+  {
+    MainMenu: "하의",
+    name0: "청바지",
+    name1: "슬랙스",
+    name2: "면바지",
+    name3: "트레이닝하의",
+    name4: "반바지",
+    name5: "조거팬츠",
+  },
+  {
+    MainMenu: "신발",
+    name0: "슬립온",
+    name1: "스니커즈",
+    name2: "운동화",
+    name3: "워커",
+    name4: "부츠",
+    name5: "로퍼",
+    name6: "구두",
+  },
+];
+
 const Order = () => {
   const [HeaderInput, setHeaderInput] = useState("");
   const [X, setX] = useState("카드결재");
+  const [side, setSide] = useState(a);
 
   const onClickRadioInput = (e: any) => {
     setX(e.target.value);
@@ -25,7 +71,22 @@ const Order = () => {
       </S.Header>
 
       <S.Contents>
-        <S.Sidebar></S.Sidebar>
+        <S.Sidebar>
+          {side.map((item, index) => (
+            <S.MenuWapper key={index}>
+              <S.MainMenu>{item.MainMenu}</S.MainMenu>
+              <S.Submenu>{item.name0}</S.Submenu>
+              <S.Submenu>{item.name1}</S.Submenu>
+              <S.Submenu>{item.name2}</S.Submenu>
+              <S.Submenu>{item.name3}</S.Submenu>
+              <S.Submenu>{item.name4}</S.Submenu>
+              <S.Submenu>{item.name5}</S.Submenu>
+              <S.Submenu>{item.name6}</S.Submenu>
+              <S.Submenu>{item.name7}</S.Submenu>
+              <S.Submenu>{item.name8}</S.Submenu>
+            </S.MenuWapper>
+          ))}
+        </S.Sidebar>
 
         <S.RightWapper>
           <S.OrderProduct>
