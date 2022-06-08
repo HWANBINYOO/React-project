@@ -12,6 +12,8 @@ const KindIn = () => {
     navigate("/");
   };
 
+  const onButtonClick = (name: string) => {};
+
   return (
     <S.KindInWapper>
       <S.Header>
@@ -27,7 +29,16 @@ const KindIn = () => {
         </S.InputBox>
       </S.Header>
       <S.Contents>
-        <S.LeftContent></S.LeftContent>
+        <S.LeftContent>
+          <S.SuggestWapper>
+            <S.SuggestTitle>상의</S.SuggestTitle>
+            <S.SuggestImg />
+          </S.SuggestWapper>
+          <S.SuggestWapper>
+            <S.SuggestTitle>아우터</S.SuggestTitle>
+            <S.SuggestImg />
+          </S.SuggestWapper>
+        </S.LeftContent>
         <S.KindInImgWapper>
           <S.KindInImg src={"/img/bluepants.png"} />
         </S.KindInImgWapper>
@@ -54,8 +65,8 @@ const KindIn = () => {
                   className="SelectTop"
                 >
                   <option value="">색상</option>
-                  <option value="학생">학생</option>
-                  <option value="회사원">회사원</option>
+                  <option value="학생">갈색</option>
+                  <option value="회사원">회색</option>
                   <option value="기타">기타</option>
                 </select>
 
@@ -77,7 +88,13 @@ const KindIn = () => {
           <S.Buttons>
             <S.Btn>찜하기</S.Btn>
             <S.Btn>장바구니</S.Btn>
-            <S.Btn>구매하기</S.Btn>
+            <S.Btn
+              onClick={() => {
+                onButtonClick("pur");
+              }}
+            >
+              구매하기
+            </S.Btn>
           </S.Buttons>
         </S.KindRight>
       </S.Contents>

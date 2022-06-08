@@ -43,7 +43,6 @@ export const SearchIcon = styled.img`
 `;
 
 export const Contents = styled.div`
-  background-color: gray;
   height: calc(100vh - 100px);
   width: 100%;
   display: flex;
@@ -52,7 +51,24 @@ export const Contents = styled.div`
 export const LeftContent = styled.div`
   width: 25%;
   height: 100%;
-  background-color: darkgray;
+  margin-top: 100px;
+`;
+
+export const SuggestWapper = styled.div`
+  margin: 0 auto;
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const SuggestTitle = styled.p`
+  font-size: 2rem;
+`;
+
+export const SuggestImg = styled.img`
+  width: 100%;
 `;
 export const KindInImgWapper = styled.div`
   width: 30%;
@@ -60,7 +76,6 @@ export const KindInImgWapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aliceblue;
 `;
 
 export const KindInImg = styled.img`
@@ -74,7 +89,6 @@ export const KindRight = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
 `;
 
 export const KindDecs = styled.div`

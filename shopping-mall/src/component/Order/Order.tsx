@@ -64,7 +64,7 @@ const Order = () => {
 
   const onClickcoupon = async () => {
     try {
-      const { data } = await customAxios.get("/cp", {
+      const { data } = await customAxios.get("/cp/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: "53e64f1b8519d907df3ff91e6f47ba7a4a248647",
