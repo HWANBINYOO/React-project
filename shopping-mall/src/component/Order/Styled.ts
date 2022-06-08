@@ -76,6 +76,7 @@ export const OrderProduct = styled.div`
   align-items: flex-start;
   justify-content: center;
   gap: 20px;
+  padding-top: 50px;
 `;
 
 export const OrderTitle = styled.div`

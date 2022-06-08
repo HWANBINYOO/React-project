@@ -3,7 +3,7 @@ import * as S from "./Styled";
 
 const Order = () => {
   const [HeaderInput, setHeaderInput] = useState("");
-  const [X, setX] = useState("0");
+  const [X, setX] = useState("카드결재");
 
   const onClickRadioInput = (e: any) => {
     setX(e.target.value);
@@ -136,9 +136,9 @@ const Order = () => {
                 <label>
                   <input
                     type="radio"
-                    value={"0"}
+                    value={"카드결재"}
                     onChange={onClickRadioInput}
-                    checked={X === "0"}
+                    checked={X === "카드결재"}
                   />
                   카드결재
                 </label>
@@ -147,9 +147,9 @@ const Order = () => {
                 <label>
                   <input
                     type="radio"
-                    value={"1"}
+                    value={"가상계좌"}
                     onChange={onClickRadioInput}
-                    checked={X === "1"}
+                    checked={X === "가상계좌"}
                   />
                   가상계좌
                 </label>
@@ -158,9 +158,9 @@ const Order = () => {
                 <label>
                   <input
                     type="radio"
-                    value={"2"}
+                    value={"네이버페이"}
                     onChange={onClickRadioInput}
-                    checked={X === "2"}
+                    checked={X === "네이버페이"}
                   />
                   네이버페이
                 </label>
@@ -169,9 +169,9 @@ const Order = () => {
                 <label>
                   <input
                     type="radio"
-                    value={"3"}
+                    value={"카카오페이"}
                     onChange={onClickRadioInput}
-                    checked={X === "3"}
+                    checked={X === "카카오페이"}
                   />
                   카카오페이
                 </label>
@@ -180,9 +180,9 @@ const Order = () => {
                 <label>
                   <input
                     type="radio"
-                    value={"4"}
+                    value={"페이코"}
                     onChange={onClickRadioInput}
-                    checked={X === "4"}
+                    checked={X === "페이코"}
                   />
                   페이코
                 </label>
@@ -191,9 +191,9 @@ const Order = () => {
                 <label>
                   <input
                     type="radio"
-                    value={"5"}
+                    value={"핸드폰결재"}
                     onChange={onClickRadioInput}
-                    checked={X === "5"}
+                    checked={X === "핸드폰결재"}
                   />
                   핸드폰결재
                 </label>
