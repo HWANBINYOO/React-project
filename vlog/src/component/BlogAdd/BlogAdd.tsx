@@ -64,6 +64,7 @@ const BlogAdd = () => {
       if (e.response) {
         const { data } = e.response;
         console.error("data : ", data);
+        toast.warning(data.message);
       }
     }
   };
@@ -89,7 +90,7 @@ const BlogAdd = () => {
         </S.Box>
         <S.BlogAddImgWapper>
           <S.BlogImg>
-            {file ? <img src={imgBase64} /> : <img src={"/img/2977.jpg"} />}
+            {file ? <img src={imgBase64} /> : <img src={"/img/white.png"} />}
           </S.BlogImg>
           <form
             name="files"

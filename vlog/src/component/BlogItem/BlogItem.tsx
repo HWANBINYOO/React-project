@@ -5,7 +5,14 @@ import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
 
 // const BlogItem: React.FC<BlogType> = ({ name, date, title, desc, blogId }) => {
-const BlogItem: React.FC<BlogType> = ({ name, date, title, desc }) => {
+const BlogItem: React.FC<BlogType> = ({
+  user_name,
+  date,
+  title,
+  desc,
+  board_id,
+  user_id,
+}) => {
   const navigate = useNavigate();
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
@@ -16,8 +23,8 @@ const BlogItem: React.FC<BlogType> = ({ name, date, title, desc }) => {
     async function getblog() {
       try {
         const { data } = await customAxios.get("/blog/item");
-        // setBlogImg(`http://10.120.74.59:3000/${name}/${blogId}/blogImg`);
-        // setProfileImg(`http://10.120.74.59:3000/user/${user_id}`);
+        setBlogImg(`http://10.120.74.59:3000/board_id/${board_id}`);
+        setProfileImg(`http://10.120.74.59:3000/user_image/${user_id}`);
       } catch (a: any) {
         console.log(a);
       }
@@ -36,7 +43,7 @@ const BlogItem: React.FC<BlogType> = ({ name, date, title, desc }) => {
               <S.MemberImg>
                 <img src={profileImg} />
               </S.MemberImg>
-              <S.MemberId>{name}</S.MemberId>
+              <S.MemberId>{user_name}</S.MemberId>
             </S.BottomLeft>
             <S.date>{date}</S.date>
           </S.ItemBottom>

@@ -47,15 +47,15 @@ const a = [
   {
     title: "[React] 블로그만들기 1일차  Home/About 페이지만듬",
     desc: "오늘 블로그프로젝트를 시작했다 아직 ts interface로  타입주는게 미숙하고 컴포넌트 간의 값전달하는것이 좀 여려워서 프로젝트를 하기로했다. 지금은 잘 못하지만 프로젝트 끝날떄 되면 아마 ts장인이 되어있을거다.",
-    date: "2022-3-6",
+    date: "2022-3-26",
     name: "유환빈",
   },
   // {
+  //   board_id: 2,
+  //   user_name: "유환빈",
   //   title: "[React] 블로그만들기 10일차 BlogIn 페이지추가하기",
   //   desc: "오늘은 Blog페이지에 페이지 추가하기를 넣었다. 수정하기랑 삭제하기 기능도 넣으면 좋을것 같다. ",
   //   date: "2022년4월6일",
-  //   name: "유환빈",
-  //   blogId: 2,
   // },
 ];
 
@@ -93,11 +93,12 @@ const Blog: React.FC<BlogType> = () => {
             Blogs.sort(date_descending).map((item, index) => (
               <BlogItem
                 key={index}
+                board_id={item.board_id}
+                user_id={item.user_id}
+                user_name={item.user_name}
                 title={item.title}
                 desc={item.desc}
                 date={item.date}
-                name={item.name}
-                // blogId={item.blogId}
               />
             ))
           ) : (

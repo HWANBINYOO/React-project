@@ -41,9 +41,12 @@ const Login = () => {
       localStorage.setItem("Blog_accessToken", data.accessToken);
       localStorage.setItem("Blog_refreshToken", data.refreshToken);
       console.log(ACCESS_TOKEN);
+      console.log(REFRESH_TOKEN);
+      console.log(localStorage.getItem("Blog_accessToken"));
+      console.log(localStorage.getItem("Blog_refreshToken"));
 
       toast.success("로그인 되었습니다!");
-      navigate("/about");
+      navigate("/blog");
     } catch (e: any) {
       const { data } = e.response;
       console.error(data.message);
