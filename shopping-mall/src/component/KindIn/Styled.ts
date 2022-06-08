@@ -19,6 +19,7 @@ export const RIghtWapper = styled.div`
 `;
 export const MainLogo = styled.img`
   height: 30%;
+  cursor: pointer;
 `;
 export const InputBox = styled.div`
   width: 400px;

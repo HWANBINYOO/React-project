@@ -1,16 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 
 const KindIn = () => {
   const [SelectedColor, setSelectedColor] = useState("");
   const [SelectedSize, setSelectedSize] = useState("");
   const [HeaderInput, setHeaderInput] = useState("");
+  const navigate = useNavigate();
+
+  const onHome = () => {
+    navigate("/");
+  };
 
   return (
     <S.KindInWapper>
       <S.Header>
         <S.RIghtWapper></S.RIghtWapper>
-        <S.MainLogo src={"/img/Wear.png"} />
+        <S.MainLogo src={"/img/Wear.png"} onClick={onHome} />
         <S.InputBox>
           <S.SearchInput
             placeholder="어떤 상품을 찾으신가요?"

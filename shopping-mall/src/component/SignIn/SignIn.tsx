@@ -28,6 +28,10 @@ const SignIn = () => {
       onLoginSuccess(ACCESS_TOKEN);
       //로그아웃하면 쿠키 삭제
       //cookies.remove('refresh_token');
+      customAxios.defaults.headers.common[
+        "Authorization"
+      ] = `${data.accessToken}`;
+      customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
 
       //토큰 쿠키에 저장
       setCookie("refreshToken", REFRESH_TOKEN, {

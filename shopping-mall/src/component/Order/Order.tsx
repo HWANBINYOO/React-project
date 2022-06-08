@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
 
 const a = [
@@ -50,16 +52,39 @@ const Order = () => {
   const [HeaderInput, setHeaderInput] = useState("");
   const [X, setX] = useState("카드결재");
   const [side, setSide] = useState(a);
+  const navigate = useNavigate();
 
   const onClickRadioInput = (e: any) => {
     setX(e.target.value);
+  };
+
+  const onHome = () => {
+    navigate("/");
+  };
+
+  const onClickcoupon = async () => {
+    try {
+      const { data } = await customAxios.get("/cp", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "53e64f1b8519d907df3ff91e6f47ba7a4a248647",
+          RefreshToken:
+            "1f86b9fd0f323fa33fa321c02a762a47142bbb9b24939b6aca32c0cf8617d0aa",
+        },
+      });
+      console.log(data);
+    } catch (e: any) {
+      const { data } = e.response;
+      console.error(data.message);
+      console.error("data : ", data);
+    }
   };
 
   return (
     <S.Position>
       <S.Header>
         <S.RIghtWapperr></S.RIghtWapperr>
-        <S.MainLogo src={"/img/Wear.png"} />
+        <S.MainLogo src={"/img/Wear.png"} onClick={onHome} />
         <S.InputBox>
           <S.SearchInput
             placeholder="어떤 상품을 찾으신가요?"
@@ -111,7 +136,7 @@ const Order = () => {
                 <h3>쿠폰</h3>
                 <S.HaveCouponBox>
                   <S.HaveCouponLeft>보유쿠폰 : 0개</S.HaveCouponLeft>
-                  <S.SelecBtn>쿠폰 선택</S.SelecBtn>
+                  <S.SelecBtn onClick={onClickcoupon}>쿠폰 선택</S.SelecBtn>
                 </S.HaveCouponBox>
               </S.CouponBox>
               <S.CouponBox>
