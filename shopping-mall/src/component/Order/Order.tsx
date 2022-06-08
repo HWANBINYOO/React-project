@@ -3,6 +3,11 @@ import * as S from "./Styled";
 
 const Order = () => {
   const [HeaderInput, setHeaderInput] = useState("");
+  const [X, setX] = useState("0");
+
+  const onClickRadioInput = (e: any) => {
+    setX(e.target.value);
+  };
 
   return (
     <S.Position>
@@ -127,18 +132,72 @@ const Order = () => {
           <S.PaymentWapper>
             <S.PayMentTitle>결재방법</S.PayMentTitle>
             <S.PayMentInputs>
-              <input type="radio" />
-              카드결재
-              <input type="radio" />
-              가상계좌
-              <input type="radio" />
-              네이버페이
-              <input type="radio" />
-              카카오페이
-              <input type="radio" />
-              페이코
-              <input type="radio" />
-              핸드폰 결제
+              <S.PayInput>
+                <label>
+                  <input
+                    type="radio"
+                    value={"0"}
+                    onChange={onClickRadioInput}
+                    checked={X === "0"}
+                  />
+                  카드결재
+                </label>
+              </S.PayInput>
+              <S.PayInput>
+                <label>
+                  <input
+                    type="radio"
+                    value={"1"}
+                    onChange={onClickRadioInput}
+                    checked={X === "1"}
+                  />
+                  가상계좌
+                </label>
+              </S.PayInput>
+              <S.PayInput>
+                <label>
+                  <input
+                    type="radio"
+                    value={"2"}
+                    onChange={onClickRadioInput}
+                    checked={X === "2"}
+                  />
+                  네이버페이
+                </label>
+              </S.PayInput>
+              <S.PayInput>
+                <label>
+                  <input
+                    type="radio"
+                    value={"3"}
+                    onChange={onClickRadioInput}
+                    checked={X === "3"}
+                  />
+                  카카오페이
+                </label>
+              </S.PayInput>
+              <S.PayInput>
+                <label>
+                  <input
+                    type="radio"
+                    value={"4"}
+                    onChange={onClickRadioInput}
+                    checked={X === "4"}
+                  />
+                  페이코
+                </label>
+              </S.PayInput>
+              <S.PayInput>
+                <label>
+                  <input
+                    type="radio"
+                    value={"5"}
+                    onChange={onClickRadioInput}
+                    checked={X === "5"}
+                  />
+                  핸드폰결재
+                </label>
+              </S.PayInput>
             </S.PayMentInputs>
           </S.PaymentWapper>
         </S.RightWapper>

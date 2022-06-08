@@ -65,7 +65,7 @@ export const RightWapper = styled.div`
   align-items: flex-start;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding-top: 50px;
+  gap: 50px;
 `;
 
 export const OrderProduct = styled.div`
@@ -316,7 +316,6 @@ export const PayBtn = styled.button`
 export const ShoppingAddress = styled.div`
   width: 55%;
   height: 550px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
 `;
@@ -332,7 +331,6 @@ export const AddressContent = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  border: 1px solid black;
   margin-left: 50px;
 
   span {
@@ -358,7 +356,6 @@ export const LongAdressContent = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  border: 1px solid black;
   margin-left: 50px;
 
   span {
@@ -369,17 +366,12 @@ export const LongAdressContent = styled.div`
 
 export const PaymentWapper = styled.div`
   width: 55%;
-  height: 300px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  input {
-    width: max-content;
-  }
-  span {
-    width: max-content;
-  }
+  margin-bottom: 50px;
+  gap: 20px;
 `;
 
 export const PayMentTitle = styled.p`
@@ -387,9 +379,16 @@ export const PayMentTitle = styled.p`
 `;
 
 export const PayMentInputs = styled.div`
-  width: 35%;
+  width: 65%;
+  height: 100px;
   margin-left: 10px;
   display: flex;
+  align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+`;
+
+export const PayInput = styled.div`
+  width: 120px;
+  display: flex;
 `;
