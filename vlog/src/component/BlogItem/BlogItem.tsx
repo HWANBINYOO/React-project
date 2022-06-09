@@ -17,17 +17,21 @@ const BlogItem: React.FC<BlogType> = ({
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
   const handleonClick = () => {
-    navigate(`blog/${user_id}/${board_id}`);
+    navigate(`board/${board_id}`);
   };
   useEffect(() => {
     async function getblog() {
       try {
-        const response = await customAxios.get(`/board_image/${board_id}`);
-        setBlogImg(response.data);
-        console.log(response);
+        setBlogImg(await await customAxios.get(`/board_image/${board_id}`));
+        console.log(blogImg);
+
+        // (response.data);
+        // console.log(response);
         // setProfileImg(await customAxios.get(`/user_image/${user_id}`));
-      } catch (a: any) {
-        console.log(a);
+      } catch (e: any) {
+        const { data } = e.response;
+        console.error(data.message);
+        console.error("data : ", data);
       }
     }
     getblog();

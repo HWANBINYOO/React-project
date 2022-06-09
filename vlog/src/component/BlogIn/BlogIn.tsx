@@ -12,11 +12,11 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const navigate = useNavigate();
   const onBloginRemove = async (deletId: number) => {
     try {
-      const { data } = await axios.post(`/blog/${deletId}`);
+      const { data } = await axios.post(`/board/${deletId}`);
       console.log(data);
       toast.success("삭제되었습니다!");
       useEffect(() => {
-        navigate("/blog");
+        navigate("/board");
         window.location.reload();
       }, []);
     } catch (a: any) {

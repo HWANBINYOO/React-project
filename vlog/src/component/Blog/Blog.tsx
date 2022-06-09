@@ -71,19 +71,10 @@ const a = [
     date: "2022-3-26",
     user_name: "유환빈",
   },
-  // {
-  //   board_id: 2,
-  //   user_id:1,
-  //   user_name: "유환빈",
-  //   title: "[React] 블로그만들기 10일차 BlogIn 페이지추가하기",
-  //   desc: "오늘은 Blog페이지에 페이지 추가하기를 넣었다. 수정하기랑 삭제하기 기능도 넣으면 좋을것 같다. ",
-  //   date: "2022년4월6일",
-  // },
 ];
 
 const Blog: React.FC<BlogType> = () => {
   const [Blogs, setBlogs] = useState<BlogType[]>();
-
   // useEffet 훅에서 async 사용하기
   useEffect(() => {
     async function getblog() {

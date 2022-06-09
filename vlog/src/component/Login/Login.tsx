@@ -40,6 +40,7 @@ const Login = () => {
 
       localStorage.setItem("Blog_accessToken", data.accessToken);
       localStorage.setItem("Blog_refreshToken", data.refreshToken);
+
       console.log(ACCESS_TOKEN);
       console.log(REFRESH_TOKEN);
       console.log(localStorage.getItem("Blog_accessToken"));
