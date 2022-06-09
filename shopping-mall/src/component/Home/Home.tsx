@@ -23,13 +23,12 @@ const Home = () => {
           color="white"
           Imgdisplay={imghover1}
           hoverColor="white"
-          hover="white"
           onMouseEnter={() => setimgHover1("block")}
           onMouseLeave={() => setimgHover1("none")}
           onClick={() => onclick("Denim")}
+          imgurl={"/img/Denim.png"}
         >
           <S.Span Imgdisplay={imghover1}>Denim</S.Span>
-          <S.Img src={"/img/Denim.png"} Imgdisplay={imghover1} />
         </S.Content>
         <S.Content
           onMouseEnter={() => setimgHover2("block")}
@@ -39,9 +38,9 @@ const Home = () => {
           color="white"
           backColor={"#273F55"}
           onClick={() => onclick("PantsShorts")}
+          imgurl={"/img/PantsShorts.png"}
         >
           <S.Span Imgdisplay={imghover2}>Pants Shorts</S.Span>
-          <S.Img src={"/img/PantsShorts.png"} Imgdisplay={imghover2} />
         </S.Content>
         <S.Content
           onMouseEnter={() => setimgHover3("block")}
@@ -51,9 +50,9 @@ const Home = () => {
           hoverColor="black"
           Imgdisplay={imghover3}
           onClick={() => onclick("Dresses")}
+          imgurl={"/img/Dresses.png"}
         >
           <S.Span Imgdisplay={imghover3}>Dresses</S.Span>
-          <S.Img src={"/img/Dresses.png"} Imgdisplay={imghover3} />
         </S.Content>
         <S.Content
           onMouseEnter={() => setimgHover4("block")}
@@ -63,9 +62,9 @@ const Home = () => {
           hoverColor="black"
           Imgdisplay={imghover4}
           onClick={() => onclick("Sweatshirts")}
+          imgurl={"/img/Sweatshirts.png"}
         >
           <S.Span Imgdisplay={imghover4}>Sweatshirts</S.Span>
-          <S.Img src={"/img/Sweatshirts.png"} Imgdisplay={imghover4} />
         </S.Content>
         <S.Content
           onMouseEnter={() => setimgHover5("block")}
@@ -75,9 +74,9 @@ const Home = () => {
           hoverColor="black"
           Imgdisplay={imghover5}
           onClick={() => onclick("Shoes")}
+          imgurl={"/img/Shoes.png"}
         >
           <S.Span Imgdisplay={imghover5}>Shoes</S.Span>
-          <S.Img src={"/img/Shoes.png"} Imgdisplay={imghover5} />
         </S.Content>
         <S.Content
           onMouseEnter={() => setimgHover6("block")}
@@ -87,9 +86,9 @@ const Home = () => {
           hoverColor="black"
           Imgdisplay={imghover6}
           onClick={() => onclick("Shirts")}
+          imgurl={"/img/Shirts.png"}
         >
           <S.Span Imgdisplay={imghover6}>Tops & Shirts</S.Span>
-          <S.Img src={"/img/Shirts.png"} Imgdisplay={imghover6} />
         </S.Content>
       </S.HomeWapper>
     </>
