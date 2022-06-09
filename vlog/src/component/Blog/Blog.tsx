@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import BlogItem from "../BlogItem/BlogItem";
 import * as S from "./Styled";
-import { BlogType, BlogTypeAdID } from "../../types";
+import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
 // import loadingImg from "/img/loading.gif";
@@ -65,11 +65,11 @@ const a = [
   {
     board_id: 1,
     user_id: 1,
-    user_name: "유환빈",
     title: "[React] 블로그만들기 1일차  Home/About 페이지만듬",
     content:
       "오늘 블로그프로젝트를 시작했다 아직 ts interface로  타입주는게 미숙하고 컴포넌트 간의 값전달하는것이 좀 여려워서 프로젝트를 하기로했다. 지금은 잘 못하지만 프로젝트 끝날떄 되면 아마 ts장인이 되어있을거다.",
     date: "2022-3-26",
+    user_name: "유환빈",
   },
   // {
   //   board_id: 2,
@@ -83,24 +83,22 @@ const a = [
 
 const Blog: React.FC<BlogType> = () => {
   const [Blogs, setBlogs] = useState<BlogType[]>();
+
   // useEffet 훅에서 async 사용하기
   useEffect(() => {
     async function getblog() {
       try {
-        // setBlogs(await customAxios.get("/board"));
-        const { data } = await customAxios.get("/board");
-        console.log(data);
-        console.log(data.blogs);
-        setBlogs(data);
-        console.log(Blogs);
+        const response = await customAxios.get("/board");
+
+        setBlogs(response.data.blogs);
       } catch (e: any) {
-        // const { data } = e.response;
-        // console.error(data.message);
-        // console.error("data : ", data);
+        console.log(e);
       }
     }
     getblog();
   }, []);
+  console.log(Blogs);
+
   function date_descending(a: any, b: any) {
     let dateA = new Date(a["date"]).getTime();
     let dateB = new Date(b["date"]).getTime();
@@ -117,7 +115,7 @@ const Blog: React.FC<BlogType> = () => {
           <S.Button color="#fb7a74">x</S.Button>
         </S.BlogButtonBox>
         <S.BLogWarpper>
-          {/* {Blogs ? (
+          {Blogs ? (
             Blogs.sort(date_descending).map((item, index) => (
               <BlogItem
                 key={index}
@@ -131,7 +129,7 @@ const Blog: React.FC<BlogType> = () => {
             ))
           ) : (
             <S.Img src={"/img/loading.gif"} />
-          )} */}
+          )}
         </S.BLogWarpper>
       </S.Blog>
     </>

@@ -22,9 +22,10 @@ const BlogItem: React.FC<BlogType> = ({
   useEffect(() => {
     async function getblog() {
       try {
-        const { data } = await customAxios.get("/blog/item");
-        // setBlogImg(`http://10.120.74.59:3000/board_id/${board_id}`);
-        // setProfileImg(`http://10.120.74.59:3000/user_image/${user_id}`);
+        const response = await customAxios.get(`/board_image/${board_id}`);
+        setBlogImg(response.data);
+        console.log(response);
+        // setProfileImg(await customAxios.get(`/user_image/${user_id}`));
       } catch (a: any) {
         console.log(a);
       }

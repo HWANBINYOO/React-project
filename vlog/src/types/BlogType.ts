@@ -6,11 +6,3 @@ export interface BlogType {
   board_id: number;
   user_id: number;
 }
-
-export interface BlogTypeAdID {
-  title: string;
-  date: string;
-  desc: string;
-  name: string;
-  id: number;
-}
