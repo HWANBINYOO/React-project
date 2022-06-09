@@ -7,6 +7,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import KindContent from "./KindContent/KindContent";
 import KindIn from "./KindIn/KindIn";
 import Order from "./Order/Order";
+import Shopping from "./Shopping/Shopping";
 
 export {
   SignIn,
@@ -18,4 +19,5 @@ export {
   KindContent,
   KindIn,
   Order,
+  Shopping,
 };

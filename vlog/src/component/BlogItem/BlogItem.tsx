@@ -9,7 +9,7 @@ const BlogItem: React.FC<BlogType> = ({
   user_name,
   date,
   title,
-  desc,
+  content,
   board_id,
   user_id,
 }) => {
@@ -17,14 +17,14 @@ const BlogItem: React.FC<BlogType> = ({
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
   const handleonClick = () => {
-    navigate(`/${name}`);
+    navigate(`blog/${user_id}/${board_id}`);
   };
   useEffect(() => {
     async function getblog() {
       try {
         const { data } = await customAxios.get("/blog/item");
-        setBlogImg(`http://10.120.74.59:3000/board_id/${board_id}`);
-        setProfileImg(`http://10.120.74.59:3000/user_image/${user_id}`);
+        // setBlogImg(`http://10.120.74.59:3000/board_id/${board_id}`);
+        // setProfileImg(`http://10.120.74.59:3000/user_image/${user_id}`);
       } catch (a: any) {
         console.log(a);
       }
@@ -37,7 +37,7 @@ const BlogItem: React.FC<BlogType> = ({
         <S.Img src={blogImg} />
         <S.TextBox>
           <S.Title>{title}</S.Title>
-          <S.desc>{desc}</S.desc>
+          <S.desc>{content}</S.desc>
           <S.ItemBottom>
             <S.BottomLeft>
               <S.MemberImg>

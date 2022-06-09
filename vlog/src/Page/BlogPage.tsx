@@ -10,7 +10,14 @@ const BlogPage: React.FC<BlogType> = () => {
       <Title />
       <HeaderRIght />
       <Header HeaderColor={"red"} />
-      <Blog name={""} date={""} title={""} desc={""} />
+      <Blog
+        title={""}
+        date={""}
+        content={""}
+        user_name={""}
+        board_id={0}
+        user_id={0}
+      />
     </>
   );
 };

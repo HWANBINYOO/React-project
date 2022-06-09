@@ -46,7 +46,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         <S.Title>{blogIn.title}</S.Title>
         <S.TextBox>
           {/* <S.Img src={blogIn.} /> */}
-          <S.desc>{blogIn.desc}</S.desc>
+          <S.desc>{blogIn.content}</S.desc>
           <S.date>{blogIn.date}</S.date>
         </S.TextBox>
         <Footer />

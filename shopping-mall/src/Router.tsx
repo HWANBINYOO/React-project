@@ -8,6 +8,7 @@ import {
   KindPage,
   KindInPage,
   OrderPage,
+  ShoppingPage,
 } from "./pages";
 
 const Router = () => {
@@ -17,6 +18,7 @@ const Router = () => {
       <Route path="/SignIn" element={<SignInPage />} />
       <Route path="/SignUp" element={<SignUpPage />} />
       <Route path="/Profile" element={<ProfilePage />} />
+      <Route path="/Shopping" element={<ShoppingPage />} />
       <Route path="/Kind/:name" element={<KindPage />} />
       <Route path="/Kind/:name/:id" element={<KindInPage />} />
       <Route path="/Pur/:name/:id" element={<OrderPage />} />

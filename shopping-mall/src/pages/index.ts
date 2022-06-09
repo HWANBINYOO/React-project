@@ -5,6 +5,7 @@ import ProfilePage from "./ProfilePage";
 import KindPage from "./KindPage/KindPage";
 import KindInPage from "./KindInPage/KindInPage";
 import OrderPage from "./OrderPage";
+import ShoppingPage from "./ShoppingPage";
 
 export {
   HomePage,
@@ -14,4 +15,5 @@ export {
   KindPage,
   KindInPage,
   OrderPage,
+  ShoppingPage,
 };

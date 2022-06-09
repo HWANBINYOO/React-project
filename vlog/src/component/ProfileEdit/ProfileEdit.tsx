@@ -68,7 +68,7 @@ const ProfileEdit = () => {
     formData.append("password", PassWord);
     formData.append("newPassword", ChangePassWord);
     try {
-      await customAxios.patch("update", formData, {
+      await customAxios.patch("/user/update", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

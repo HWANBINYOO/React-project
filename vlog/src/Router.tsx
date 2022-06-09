@@ -53,7 +53,14 @@ const Router = () => {
         path="/blog"
         element={
           // <PrivateRoute>
-          <BlogPage date={""} title={""} desc={""} name={""} />
+          <BlogPage
+            title={""}
+            date={""}
+            content={""}
+            user_name={""}
+            board_id={0}
+            user_id={0}
+          />
           // </PrivateRoute>
         }
       />
