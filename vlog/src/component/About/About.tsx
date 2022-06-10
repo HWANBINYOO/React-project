@@ -1,44 +1,30 @@
 import * as S from "./Styled";
 import Footer from "../Footer/Footer";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function About() {
-  const useScrollFadeIn = () => {
-    const dom = useRef();
+  const [position, setPosition] = useState(0);
 
-    const handleScroll = useCallback(([entry]) => {
-      const { current } = dom;
-
-      if (entry.isIntersecting) {
-        // 원하는 이벤트를 추가 할 것
-      }
-    }, []);
-
-    useEffect(() => {
-      let observer: any;
-      const { current } = dom;
-
-      if (current) {
-        observer = new IntersectionObserver(handleScroll, { threshold: 0.7 });
-        observer.observe(current);
-
-        return () => observer && observer.disconnect();
-      }
-    }, [handleScroll]);
-
-    return {
-      ref: dom,
+  function onScroll() {
+    console.log(window.scroll);
+    setPosition(window.scrollY);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
     };
-  };
-
-  const animatedItem = useScrollFadeIn();
+  }, []);
 
   return (
     <>
       <S.About>
-        <S.Img style={{ width: "400px" }} src={"/img/About.webp"} />
+        <S.Img
+          style={{ width: "400px", transform: `translateX(${position}px)` }}
+          src={"/img/About.webp"}
+        />
         <S.Intrudece>
-          <p>유환빈</p>
+          <p style={{ transform: `translateX(${position}px)` }}>유환빈</p>
           안녕하세요
           <br />
           지금 Ts 공부하고 있어요
@@ -48,7 +34,6 @@ export default function About() {
           자격증은 컴활2급있고 산업기사 딸려고요 (3월26일)
         </S.Intrudece>
         <S.AboutContents>
-          <Form {...animatedItem} />
           <S.AboutContent>
             <S.Img style={{ width: "200px" }} src={"/img/2977.jpg"} />
             <S.decs>
