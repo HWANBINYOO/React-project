@@ -17,7 +17,6 @@ export const HomeWapper = styled.div`
 `;
 
 export const Content = styled.div<ContentFontColorProps>`
-  position: relative;
   height: 100%;
   width: 16.6666666667vw;
   display: flex;

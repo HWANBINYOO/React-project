@@ -32,8 +32,12 @@ const Shopping = () => {
             <S.DistinWapper>
               <S.DistinTop />
               <S.DistinBottom>
-                <S.CheckBox type="checkbox" />
-                <S.DistImg />
+                <S.CheckBox>
+                  <S.CheckBoxInput type="checkbox" />
+                </S.CheckBox>
+                <S.ImgWapper>
+                  <S.DistImg />
+                </S.ImgWapper>
                 <S.DIstDesc>
                   <S.DescTop>NMX 고컬기획 세미와이드 트임슬랙스</S.DescTop>
                   <S.DescBottom>BEIGE, M / 1개</S.DescBottom>

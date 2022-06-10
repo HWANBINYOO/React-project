@@ -101,19 +101,30 @@ export const DistinBottom = styled.div`
   justify-content: space-between;
 `;
 
-export const CheckBox = styled.input`
+export const CheckBox = styled.div`
   height: 100%;
   width: 12%;
   display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
-export const DistImg = styled.img`
+export const CheckBoxInput = styled.input`
+  width: 40%;
+  height: 40%;
+`;
+
+export const ImgWapper = styled.div`
   height: 100%;
   width: 8%;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const DistImg = styled.img`
+  width: 50%;
+  height: 50%;
 `;
 
 export const DIstDesc = styled.div`

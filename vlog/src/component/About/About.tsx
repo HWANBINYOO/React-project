@@ -1,7 +1,38 @@
 import * as S from "./Styled";
 import Footer from "../Footer/Footer";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function About() {
+  const useScrollFadeIn = () => {
+    const dom = useRef();
+
+    const handleScroll = useCallback(([entry]) => {
+      const { current } = dom;
+
+      if (entry.isIntersecting) {
+        // 원하는 이벤트를 추가 할 것
+      }
+    }, []);
+
+    useEffect(() => {
+      let observer: any;
+      const { current } = dom;
+
+      if (current) {
+        observer = new IntersectionObserver(handleScroll, { threshold: 0.7 });
+        observer.observe(current);
+
+        return () => observer && observer.disconnect();
+      }
+    }, [handleScroll]);
+
+    return {
+      ref: dom,
+    };
+  };
+
+  const animatedItem = useScrollFadeIn();
+
   return (
     <>
       <S.About>
@@ -14,9 +45,10 @@ export default function About() {
           <br />
           react 값넘기는거랑 Ts 타입주는거 연습하기 위해서 만들어봤어요
           <br />
-          자격증은 컴활2급있고 산업기사 딸려고요 (4월16일)
+          자격증은 컴활2급있고 산업기사 딸려고요 (3월26일)
         </S.Intrudece>
         <S.AboutContents>
+          <Form {...animatedItem} />
           <S.AboutContent>
             <S.Img style={{ width: "200px" }} src={"/img/2977.jpg"} />
             <S.decs>
@@ -60,6 +92,15 @@ export default function About() {
               <p>기린</p>
             </S.decs>
           </S.AboutContent>
+          <S.Intrudece>
+            <p>김성길</p>
+            서버
+            <br />
+            자전거맨
+            <br />
+            스프링
+            <br />
+          </S.Intrudece>
         </S.AboutContents>
         <Footer />
       </S.About>
