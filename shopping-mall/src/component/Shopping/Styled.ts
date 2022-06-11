@@ -85,7 +85,6 @@ export const DistinWapper = styled.div`
   height: 150px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
 `;
 
 export const DistinTop = styled.div`
@@ -103,15 +102,15 @@ export const DistinBottom = styled.div`
 
 export const CheckBox = styled.div`
   height: 100%;
-  width: 12%;
+  width: 6%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 `;
 
 export const CheckBoxInput = styled.input`
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 50%;
 `;
 
 export const ImgWapper = styled.div`
@@ -123,8 +122,8 @@ export const ImgWapper = styled.div`
 `;
 
 export const DistImg = styled.img`
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
 `;
 
 export const DIstDesc = styled.div`
@@ -133,19 +132,39 @@ export const DIstDesc = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-evenly;
 `;
 
 export const DescTop = styled.p`
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;
 export const DescBottom = styled.p`
-  font-size: 0.5rem;
+  font-size: 0.8rem;
 `;
 
 export const DistCost = styled.div`
-  height: 100%;
+  height: 80%;
   width: 20%;
+  display: flex;
   align-items: flex-end;
-  padding-bottom: 15px;
+  color: #ff5252;
+`;
+
+export const BtnWapper = styled.div`
+  width: 90%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  padding-right: 10%;
+  align-items: center;
+`;
+
+export const PayBtn = styled.div`
+  width: 30%;
+  height: 60px;
+  background-color: #afb8bf;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

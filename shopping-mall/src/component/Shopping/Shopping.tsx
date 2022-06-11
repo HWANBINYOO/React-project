@@ -45,7 +45,44 @@ const Shopping = () => {
                 <S.DistCost>10000</S.DistCost>
               </S.DistinBottom>
             </S.DistinWapper>
+
+            <S.DistinWapper>
+              <S.DistinTop />
+              <S.DistinBottom>
+                <S.CheckBox>
+                  <S.CheckBoxInput type="checkbox" />
+                </S.CheckBox>
+                <S.ImgWapper>
+                  <S.DistImg />
+                </S.ImgWapper>
+                <S.DIstDesc>
+                  <S.DescTop>NMX 고컬기획 세미와이드 트임슬랙스</S.DescTop>
+                  <S.DescBottom>BEIGE, M / 1개</S.DescBottom>
+                </S.DIstDesc>
+                <S.DistCost>10000</S.DistCost>
+              </S.DistinBottom>
+            </S.DistinWapper>
+
+            <S.DistinWapper>
+              <S.DistinTop />
+              <S.DistinBottom>
+                <S.CheckBox>
+                  <S.CheckBoxInput type="checkbox" />
+                </S.CheckBox>
+                <S.ImgWapper>
+                  <S.DistImg />
+                </S.ImgWapper>
+                <S.DIstDesc>
+                  <S.DescTop>NMX 고컬기획 세미와이드 트임슬랙스</S.DescTop>
+                  <S.DescBottom>BEIGE, M / 1개</S.DescBottom>
+                </S.DIstDesc>
+                <S.DistCost>10000</S.DistCost>
+              </S.DistinBottom>
+            </S.DistinWapper>
           </S.MiddleContent>
+          <S.BtnWapper>
+            <S.PayBtn>주문하기</S.PayBtn>
+          </S.BtnWapper>
         </S.RightWapper>
       </S.Contents>
     </S.Position>
