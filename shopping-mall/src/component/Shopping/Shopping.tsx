@@ -28,6 +28,10 @@ const Shopping = () => {
         <S.LeftWapper></S.LeftWapper>
         <S.RightWapper>
           <S.ShoppingTitle>장바구니</S.ShoppingTitle>
+          <S.TopCheckBox>
+            <S.CheckBoxInput type="checkbox" />
+            <h2>삭제</h2>
+          </S.TopCheckBox>
           <S.MiddleContent>
             <S.DistinWapper>
               <S.DistinTop />

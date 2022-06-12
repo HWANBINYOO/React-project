@@ -74,6 +74,15 @@ export const ShoppingTitle = styled.p`
   font-size: 2rem;
 `;
 
+export const TopCheckBox = styled.div`
+  width: 30%;
+  display: flex;
+
+  h2 {
+    border: 1px solid black;
+  }
+`;
+
 export const MiddleContent = styled.div`
   width: 80%;
   display: flex;
