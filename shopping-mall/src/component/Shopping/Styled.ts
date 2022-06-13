@@ -57,6 +57,13 @@ export const LeftWapper = styled.div`
   gap: 30px;
 `;
 
+export const MainMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
 export const RightWapper = styled.div`
   width: 85%;
   height: 92vh;
@@ -75,8 +82,12 @@ export const ShoppingTitle = styled.p`
 `;
 
 export const TopCheckBox = styled.div`
-  width: 30%;
+  width: 20%;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  border: 1px solid black;
 
   h2 {
     border: 1px solid black;
@@ -118,8 +129,8 @@ export const CheckBox = styled.div`
 `;
 
 export const CheckBoxInput = styled.input`
-  width: 50%;
-  height: 50%;
+  width: 20%;
+  height: 100%;
 `;
 
 export const ImgWapper = styled.div`

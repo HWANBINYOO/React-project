@@ -25,7 +25,12 @@ const Shopping = () => {
         </S.InputBox>
       </S.Header>
       <S.Contents>
-        <S.LeftWapper></S.LeftWapper>
+        <S.LeftWapper>
+          <S.MainMenu></S.MainMenu>
+          <S.MainMenu></S.MainMenu>
+          <S.MainMenu></S.MainMenu>
+          <S.MainMenu></S.MainMenu>
+        </S.LeftWapper>
         <S.RightWapper>
           <S.ShoppingTitle>장바구니</S.ShoppingTitle>
           <S.TopCheckBox>
