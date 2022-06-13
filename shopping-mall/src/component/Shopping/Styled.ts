@@ -101,6 +101,7 @@ export const TopCheckBox = styled.div`
 
   h2 {
     border: 1px solid black;
+    border-radius: 5px;
   }
 `;
 

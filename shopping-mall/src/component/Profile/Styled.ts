@@ -1,126 +1,83 @@
 import styled from "styled-components";
 
+type btnType = {
+  backColor: string;
+};
+
 export const Postionner = styled.div`
-  height: 80vh;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: url("/img/back.png");
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ContentWapper = styled.div`
+  width: 80%;
+  height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 5px;
 `;
-export const MyImformation = styled.div`
-  width: 60%;
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-`;
+
 export const ProfileImg = styled.img`
-  width: 250px;
-  height: 80%;
+  width: 220px;
 `;
-export const MyPrivacy = styled.div`
-  width: 50%;
+
+export const InputsWapper = styled.div`
+  width: 80%;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const InputBox = styled.div`
+  width: 47%;
+  height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  gap: 30px;
+  gap: 10px;
 `;
-export const MyPrivacyTop = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+export const InutTitle = styled.p`
+  font-size: 2rem;
 `;
-export const MyPrivacyMiddle = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-export const PrivacyLeft = styled.div`
+
+export const Input = styled.input`
+  width: 90%;
+  height: 50%;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
   font-size: 1.5rem;
 `;
-export const EditBtn = styled.button`
-  font-family: "EarlyFontDiary";
-  width: 140px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  background-color: #f2edd7;
-  color: #755139;
-  text-align: center;
-`;
-export const Email = styled.div`
-  font-size: 1rem;
-`;
 
-export const MyLists = styled.div`
-  width: 70%;
-  height: 40vh;
+export const BtnWapper = styled.div`
+  width: 30%;
+  height: 100px;
   display: flex;
   justify-content: space-between;
-`;
-export const MyList = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-`;
-export const ListTitle = styled.div`
-  font-size: 1rem;
-`;
-export const Mysale = styled.div`
-  width: 300px;
-  height: 400px;
-  padding: 15px 0 0 0;
-  border-radius: 10px;
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
-`;
-export const Sale = styled.div`
-  width: 250px;
-  height: 70px;
-  display: flex;
-  padding: 10px 5px;
-  border: 1px solid black;
-  border-radius: 10px;
 `;
 
-export const SaleImg = styled.div`
-  width: 70px;
-`;
-export const SaleImformation = styled.div`
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
-`;
-export const ImTop = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1rem;
-`;
-
-export const SaleName = styled.div`
-  font-size: 1rem;
-`;
-export const DelectBtn = styled.button`
-  font-size: 0.5rem;
-  border: none;
-`;
-
-export const ActionMoney = styled.div`
-  font-size: 0.5rem;
-`;
-export const EmdDate = styled.div`
-  font-size: 0.5rem;
+export const Btn = styled.button<btnType>`
+  font-family: "EarlyFontDiary";
+  width: 150px;
+  height: 60px;
+  border-radius: 5px;
+  border: 1px solid #707070;
+  font-size: 2rem;
+  background-color: ${(props) => props.backColor};
 `;
