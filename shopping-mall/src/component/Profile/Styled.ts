@@ -27,10 +27,30 @@ export const ContentWapper = styled.div`
   justify-content: space-around;
   background-color: white;
   border-radius: 5px;
+
+  label {
+    font-family: "EarlyFontDiary";
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -70px;
+    right: -100px;
+    border: 1px solid black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    img {
+      width: 50px;
+    }
+  }
 `;
 
-export const ProfileImg = styled.img`
-  width: 220px;
+export const ProfileImg = styled.div`
+  img {
+    width: 220px;
+  }
 `;
 
 export const InputsWapper = styled.div`
@@ -62,6 +82,7 @@ export const Input = styled.input`
   border: 1px solid black;
   border-radius: 5px;
   font-size: 1.5rem;
+  padding-left: 10px;
 `;
 
 export const BtnWapper = styled.div`
