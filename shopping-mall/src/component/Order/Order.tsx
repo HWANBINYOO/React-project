@@ -201,6 +201,7 @@ const Order = () => {
             <S.AddressContent>
               <span>우편번호</span>
               <S.AdreesInput />
+              <S.AddressSearsh>주소검색</S.AddressSearsh>
             </S.AddressContent>
             <S.LongAdressContent>
               <span>주소</span>

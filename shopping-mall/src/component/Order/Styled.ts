@@ -74,6 +74,7 @@ export const MainMenu = styled.p`
 export const Submenu = styled.p`
   margin-left: 15px;
   font-size: 1rem;
+  color: gray;
 `;
 
 export const RightWapper = styled.div`
@@ -345,6 +346,7 @@ export const TopTItle = styled.p`
 `;
 
 export const AddressContent = styled.div`
+  position: relative;
   width: 35%;
   height: 40px;
   display: flex;
@@ -359,6 +361,18 @@ export const AddressContent = styled.div`
   }
 `;
 
+export const AddressSearsh = styled.button`
+  position: absolute;
+  left: 300px;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #b0caf6;
+  background-color: white;
+  color: #b0caf6;
+  text-align: bottom;
+  border-radius: 5px;
+  font-size: 1rem;
+`;
 export const AdreesInput = styled.input`
   height: 25px;
   width: 60%;
