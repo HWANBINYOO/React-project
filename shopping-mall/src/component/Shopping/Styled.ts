@@ -57,11 +57,23 @@ export const LeftWapper = styled.div`
   gap: 30px;
 `;
 
-export const MainMenu = styled.div`
+export const MenuWapper = styled.div`
+  width: 50%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  gap: 30px;
+`;
+export const MainMenu = styled.div`
+  color: #4385f4;
+  font-size: 1.5rem;
+`;
+
+export const Submenu = styled.div`
+  margin-left: 15px;
+  font-size: 1rem;
 `;
 
 export const RightWapper = styled.div`
@@ -73,7 +85,6 @@ export const RightWapper = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   gap: 50px;
-  background-color: whitesmoke;
 `;
 
 export const ShoppingTitle = styled.p`
@@ -87,7 +98,6 @@ export const TopCheckBox = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  border: 1px solid black;
 
   h2 {
     border: 1px solid black;
@@ -129,7 +139,7 @@ export const CheckBox = styled.div`
 `;
 
 export const CheckBoxInput = styled.input`
-  width: 20%;
+  width: 40%;
   height: 100%;
 `;
 
@@ -180,11 +190,13 @@ export const BtnWapper = styled.div`
 `;
 
 export const PayBtn = styled.div`
-  width: 30%;
-  height: 60px;
+  width: 25%;
+  height: 50px;
   background-color: #afb8bf;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
 `;
