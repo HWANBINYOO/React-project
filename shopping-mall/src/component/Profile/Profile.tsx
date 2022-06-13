@@ -118,8 +118,12 @@ const Profile = () => {
             </S.InputBox>
           </S.InputsWapper>
           <S.BtnWapper>
-            <S.Btn backColor="white">취소</S.Btn>
-            <S.Btn backColor="#6284D9">수정</S.Btn>
+            <S.Btn backColor="white" onClick={(e) => navigate("/")}>
+              취소
+            </S.Btn>
+            <S.Btn backColor="#6284D9" onClick={onClick}>
+              수정
+            </S.Btn>
           </S.BtnWapper>
         </S.ContentWapper>
       </S.Postionner>
