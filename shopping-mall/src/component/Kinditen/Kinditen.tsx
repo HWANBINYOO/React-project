@@ -1,7 +1,8 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { KindType } from "../../types";
 import * as S from "./Styled";
 
-const Kinditem = () => {
+const Kinditem: React.FC<KindType> = ({ title, decs }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const onclick = (id: number) => {
