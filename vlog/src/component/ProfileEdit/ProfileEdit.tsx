@@ -19,11 +19,9 @@ const ProfileEdit = () => {
   useEffect(() => {
     async function Getprofile() {
       try {
-        const reader = new FileReader();
         const respone = await customAxios.get("user_name");
-        setFile(await customAxios.get("user_image"));
-        console.log(await customAxios.get("user_image"));
-        console.log(respone.data);
+        const { data } = await customAxios.get("user_image");
+        setFile(data);
 
         setName(respone.data.name);
       } catch (e: any) {

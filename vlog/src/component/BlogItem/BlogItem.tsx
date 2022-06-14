@@ -22,12 +22,17 @@ const BlogItem: React.FC<BlogType> = ({
   useEffect(() => {
     async function getblog() {
       try {
-        setBlogImg(await await customAxios.get(`/board_image/${board_id}`));
-        console.log(blogImg);
+        const respone = await customAxios.get(`/board_image/${board_id}`);
+        setBlogImg(respone.data);
+        const respone2 = await customAxios.get(`/user_image/${user_id}`);
+        setProfileImg(respone2.data);
+        console.log(respone2);
+
+        console.log(respone2.data);
 
         // (response.data);
+
         // console.log(response);
-        // setProfileImg(await customAxios.get(`/user_image/${user_id}`));
       } catch (e: any) {
         const { data } = e.response;
         console.error(data.message);

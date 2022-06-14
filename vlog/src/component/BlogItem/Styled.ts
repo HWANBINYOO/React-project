@@ -29,8 +29,8 @@ export const TextBox = styled.div`
 
 export const Img = styled.img`
   width: 100%;
+  max-height: 330px;
   border-radius: 5px;
-  /* height: 50%; */
 `;
 
 export const Title = styled.span`
@@ -49,7 +49,6 @@ export const Title = styled.span`
 
 export const desc = styled.div`
   width: 100%;
-  /* height: 40px; */
   font-size: 0.8rem;
   /* border: 1px black solid; */
   overflow: hidden;
@@ -71,6 +70,7 @@ export const ItemBottom = styled.div`
 
 export const BottomLeft = styled.div`
   display: flex;
+  gap: 10px;
 `;
 
 export const MemberImg = styled.div`
@@ -78,8 +78,7 @@ export const MemberImg = styled.div`
   align-items: center;
   justify-content: center;
   img {
-    width: 30px;
-    height: 30px;
+    width: 20px;
     border-radius: 50%;
   }
 `;
