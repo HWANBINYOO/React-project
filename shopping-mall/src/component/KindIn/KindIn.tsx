@@ -86,7 +86,6 @@ const KindIn = () => {
             </S.KindCostBottom>
           </S.KindCost>
           <S.Buttons>
-            <S.Btn>찜하기</S.Btn>
             <S.Btn>장바구니</S.Btn>
             <S.Btn
               onClick={() => {

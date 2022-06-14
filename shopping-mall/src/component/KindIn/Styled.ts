@@ -175,7 +175,8 @@ export const Buttons = styled.div`
   width: 80%;
   height: 20%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 50px;
   align-items: center;
   margin: 0 auto;
 `;
