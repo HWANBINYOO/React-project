@@ -8,7 +8,7 @@ export const BlogItem = styled.div`
   border: 1px gray solid;
   margin: 2rem 2rem;
   border-radius: 5px;
-  justify-content: space-between;
+  justify-content: flex-start;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
   transition: all ease 0.25s 0s;
@@ -20,16 +20,18 @@ export const BlogItem = styled.div`
 
 export const TextBox = styled.div`
   width: 90%;
+  height: 100%;
   /* height: 50%; */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 0 1rem;
   text-align: center;
 `;
 
 export const Img = styled.img`
   width: 100%;
-  max-height: 330px;
+  max-height: 310px;
   border-radius: 5px;
 `;
 
@@ -39,8 +41,7 @@ export const Title = styled.span`
   font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
-  text-align: center;
-
+  margin-top: 20px;
   //글자수가많으면 ...으로 처리한다
   overflow: hidden;
   text-overflow: ellipsis;
