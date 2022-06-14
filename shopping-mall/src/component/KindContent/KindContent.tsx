@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable eqeqeq */
 import Kinditem from "../Kinditen/Kinditen";
 import { useLocation } from "react-router-dom";
 import { KindType } from "../../types";
@@ -59,6 +61,15 @@ const KindContent = () => {
               onChange={(e) => {
                 setSearchTerm(e.target.value);
               }}
+              {...Kinds.filter((val) => {
+                if (searchTerm == "") {
+                  return val;
+                } else if (
+                  val.title.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return val;
+                }
+              })}
             />
             <S.SearBarimg onClick={SearchClick} src={"/img/searchIcon.png"} />
           </S.SearchBarWapper>
