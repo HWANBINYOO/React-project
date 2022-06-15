@@ -30,8 +30,8 @@ export const TextBox = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 100%;
-  max-height: 310px;
+  height: 310px;
+  object-fit: cover;
   border-radius: 5px;
 `;
 
