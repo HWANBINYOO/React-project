@@ -50,7 +50,7 @@ const Router = () => {
         }
       />
       <Route
-        path="/blog"
+        path="/board"
         element={
           // <PrivateRoute>
           <BlogPage
@@ -65,7 +65,7 @@ const Router = () => {
         }
       />
       <Route
-        path="/:id"
+        path="board/:id"
         element={
           // <PrivateRoute>
           <BlogInPage />
@@ -73,7 +73,7 @@ const Router = () => {
         }
       />
       <Route
-        path="/blogadd"
+        path="/boardadd"
         element={
           // <PrivateRoute>
           <BlogAddPage />

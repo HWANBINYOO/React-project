@@ -1,30 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import { Header, BlogAdd, Title, BlogIn, HeaderRIght } from "../component";
 import { BlogType } from "../types";
-import { useRecoilState } from "recoil";
-import { BlogHeaderColor } from "../recoil/HeaderColorr";
+import { customAxios } from "../Libs/CustomAxois";
 
 const BlogInPage: React.FC = () => {
-  const [HeaderColor, setHeaderColor] = useRecoilState(BlogHeaderColor);
-  setHeaderColor("red");
   const param = useParams();
   console.log(param);
   const [blogIn, setBlogIn] = useState<BlogType>();
-  //   const BlogImg ;
+  // const BlogImg;
+
   useEffect(() => {
-    axios.get(`/blog/${param.id}`).then((res) => {
-      setBlogIn(res.data);
-      console.log(blogIn);
-      console.log(res.data);
-    });
+    async function getblogIn() {
+      try {
+        const response = await customAxios.get(`/board/${param.id}`);
+        console.log(param.id);
+        console.log(response.data);
+        setBlogIn(response.data);
+        console.log(blogIn);
+      } catch (e: any) {
+        const { data } = e.response;
+        console.error("data : ", data);
+      }
+    }
+    getblogIn();
   }, []);
+  console.log(blogIn);
   return (
     <>
       <Title />
       <HeaderRIght />
-      <Header HeaderColor={HeaderColor} />
+      <Header HeaderColor={"red"} />
       {blogIn ? <BlogIn blogIn={blogIn} /> : <div>로딩중</div>}
     </>
   );

@@ -17,7 +17,7 @@ const BlogItem: React.FC<BlogType> = ({
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
   const handleonClick = () => {
-    navigate(`board/${board_id}`);
+    navigate(`${board_id}`);
   };
   useEffect(() => {
     async function getblog() {

@@ -20,6 +20,7 @@ const ProfileEdit = () => {
     async function Getprofile() {
       try {
         const respone = await customAxios.get("user_name");
+        setName(respone.data);
         const { data } = await customAxios.get("user_image");
         setFile(data);
 

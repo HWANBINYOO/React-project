@@ -100,7 +100,7 @@ const Blog: React.FC<BlogType> = () => {
     <>
       <S.Blog>
         <S.BlogButtonBox>
-          <Link to="/blogadd">
+          <Link to="/boardadd">
             <S.Button color="#aeddff">+</S.Button>
           </Link>
           <S.Button color="#fb7a74">x</S.Button>

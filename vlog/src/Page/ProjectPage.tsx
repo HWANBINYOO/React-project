@@ -1,7 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { HeaderRIght, Header, Project, Title } from "../component";
-import { BlogHeaderColor } from "../recoil/HeaderColorr";
 interface Homes {
   id: number;
   name: string;

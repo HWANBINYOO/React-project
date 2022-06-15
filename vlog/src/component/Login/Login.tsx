@@ -47,7 +47,7 @@ const Login = () => {
       console.log(localStorage.getItem("Blog_refreshToken"));
 
       toast.success("로그인 되었습니다!");
-      navigate("/blog");
+      navigate("/board");
     } catch (e: any) {
       const { data } = e.response;
       console.error(data.message);

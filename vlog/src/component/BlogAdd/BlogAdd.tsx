@@ -58,7 +58,7 @@ const BlogAdd = () => {
         },
       });
       toast.success("추가됐습니다!");
-      navigate("/blog");
+      navigate("/board");
     } catch (e: any) {
       console.log(e);
       if (e.response) {

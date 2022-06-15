@@ -16,7 +16,7 @@ export default function Header({ HeaderColor }: { HeaderColor: string }) {
         </S.HeaderMenu>
       </Link> */}
 
-      <Link to="/blog" style={{ textDecoration: "none", color: "black" }}>
+      <Link to="/board" style={{ textDecoration: "none", color: "black" }}>
         <S.HeaderMenu
           style={{
             backgroundColor: `${HeaderColor === "red" ? "#ff9d95" : "white"}`,
