@@ -9,6 +9,7 @@ export const BlogIn = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
+  overflow-x: hidden;
   gap: 20px;
 `;
 
@@ -24,7 +25,7 @@ export const TextBox = styled.div`
 
 export const Title = styled.span`
   width: 80%;
-  height: 50px;
+  height: 30px;
   font-size: 3rem;
   font-weight: bold;
   /* border: 1px black solid; */
@@ -34,7 +35,7 @@ export const Title = styled.span`
 `;
 
 export const Img = styled.img`
-  width: 88%;
+  width: 40%;
   border-radius: 5px;
   /* height: 50%; */
   margin: 0 auto;
@@ -50,33 +51,29 @@ export const desc = styled.div`
 `;
 
 export const date = styled.div`
-  width: 100%;
-  height: 7vh;
-  font-size: 01rem;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding-left: 1rem;
+  font-size: 1.5rem;
   color: gray;
-  /* border: 1px black solid; */
 `;
 
 export const BlogButtonBox = styled.div`
   width: max-content;
   height: max-content;
-
   position: fixed;
-  left: 670px;
-  top: 550px;
+  right: 10vw;
+  top: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px black solid; */
   border-radius: 10%;
   z-index: 100;
   gap: 1px;
   transition: all ease 0.25s 0s;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   &:hover {
     background-color: #d3d3d3;
@@ -94,4 +91,18 @@ export const Button = styled.button`
   /* border: 1px black solid; */
   border: none;
   font-size: 0.3rem;
+`;
+
+export const Name = styled.div`
+  font-size: 1.5rem;
+  color: gray;
+`;
+
+export const NameDate = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding-right: 20rem;
 `;

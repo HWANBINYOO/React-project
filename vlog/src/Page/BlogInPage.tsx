@@ -6,7 +6,6 @@ import { customAxios } from "../Libs/CustomAxois";
 
 const BlogInPage: React.FC = () => {
   const param = useParams();
-  console.log(param);
   const [blogIn, setBlogIn] = useState<BlogType>();
   // const BlogImg;
 
@@ -14,10 +13,8 @@ const BlogInPage: React.FC = () => {
     async function getblogIn() {
       try {
         const response = await customAxios.get(`/board/${param.id}`);
-        console.log(param.id);
-        console.log(response.data);
         setBlogIn(response.data);
-        console.log(blogIn);
+        console.log(response.data);
       } catch (e: any) {
         const { data } = e.response;
         console.error("data : ", data);
@@ -25,7 +22,7 @@ const BlogInPage: React.FC = () => {
     }
     getblogIn();
   }, []);
-  console.log(blogIn);
+
   return (
     <>
       <Title />

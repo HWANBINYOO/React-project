@@ -4,12 +4,31 @@ import Footer from "../Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { customAxios } from "../../Libs/CustomAxois";
 interface BlogTypeProp {
   blogIn: BlogType;
 }
 const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const navigate = useNavigate();
+  const [Blogrl, setBlogurl] = useState();
+
+  useEffect(() => {
+    async function GetBlogImg() {
+      try {
+        const respone = await customAxios.get(
+          `/board_image/${blogIn.board_id}`
+        );
+        console.log(respone);
+
+        setBlogurl(respone.data);
+      } catch (a: any) {
+        console.log(a);
+      }
+    }
+    GetBlogImg();
+  }, []);
+
   const onBloginRemove = async (deletId: number) => {
     try {
       const { data } = await axios.post(`/board/${deletId}`);
@@ -36,7 +55,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
 
           <S.Button
             onClick={() => {
-              // onBloginRemove(blogIn.id);
+              onBloginRemove(blogIn.board_id);
             }}
             style={{ backgroundColor: "#fb7a74" }}
           >
@@ -44,10 +63,14 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           </S.Button>
         </S.BlogButtonBox>
         <S.Title>{blogIn.title}</S.Title>
+        <S.NameDate>
+          <S.Name>
+            {blogIn.user_name} · {blogIn.date}{" "}
+          </S.Name>
+        </S.NameDate>
         <S.TextBox>
-          {/* <S.Img src={blogIn.} /> */}
+          <S.Img src={Blogrl} />
           <S.desc>{blogIn.content}</S.desc>
-          <S.date>{blogIn.date}</S.date>
         </S.TextBox>
         <Footer />
       </S.BlogIn>
