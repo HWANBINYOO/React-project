@@ -11,6 +11,7 @@ const ProfileEdit = () => {
   const navigate = useNavigate();
   const [profileEdit, SetProfileEdit] = useState();
   const [Name, setName] = useState("유환빈");
+  const [userId, setUserId] = useState();
   const [PassWord, setPassWord] = useState("");
   const [ChangePassWord, setChangePassWord] = useState("");
   const [PassWordAgain, setPassWordAgain] = useState("");
@@ -20,10 +21,7 @@ const ProfileEdit = () => {
     async function Getprofile() {
       try {
         const respone = await customAxios.get("user_name");
-        setName(respone.data);
-        const { data } = await customAxios.get("user_image");
-        setFile(data);
-
+        setUserId(respone.data.user_id);
         setName(respone.data.name);
       } catch (e: any) {
         const { data } = e.response;
@@ -73,7 +71,7 @@ const ProfileEdit = () => {
         },
       });
       toast.success("수정되었습니다!");
-      navigate("/profile");
+      navigate(`/profile/${userId}`);
     } catch (e: any) {
       console.log(e);
       if (e.response) {
@@ -146,7 +144,10 @@ const ProfileEdit = () => {
           />
         </S.EditI>
         <S.ButtonS>
-          <S.Btn onClick={() => navigate("/profile")} color={"#ffbeb7"}>
+          <S.Btn
+            onClick={() => navigate(`/profile/${userId}`)}
+            color={"#ffbeb7"}
+          >
             취소
           </S.Btn>
           <S.Btn onClick={onClick} color={"#c9bffc"}>

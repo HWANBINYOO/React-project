@@ -97,7 +97,7 @@ const Router = () => {
         }
       />
       <Route
-        path="/profile"
+        path="/profile/:user_id"
         element={
           // <PublicRoute restricted={true}>
           <ProfilePage />

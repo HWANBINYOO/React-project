@@ -68,7 +68,6 @@ export const BlogImg = styled.div`
   img {
     transition: all ease 0.2s 0s;
     width: 100px;
-    height: 100px;
     border: 1px solid black;
   }
 `;

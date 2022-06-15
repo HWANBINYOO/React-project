@@ -27,6 +27,7 @@ export const ProfileImg = styled.div`
   align-items: center;
   img {
     width: 230px;
+    border-radius: 50%;
   }
 `;
 
@@ -69,17 +70,15 @@ export const UserName = styled.span`
 `;
 
 export const uploadBlogs = styled.div`
+  margin: 0 auto;
+  gap: 50px;
+  padding: 40px 0;
+  margin: 0 auto;
   width: 80%;
   height: 2000px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-  gap: 50px;
-  padding: 40px 0;
-  img {
-    width: 350px;
-  }
+  justify-content: flex-start;
 `;
 
 export const Hr = styled.hr`
