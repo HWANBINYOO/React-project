@@ -19,8 +19,6 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         const respone = await customAxios.get(
           `/board_image/${blogIn.board_id}`
         );
-        console.log(respone);
-
         setBlogurl(respone.data);
       } catch (a: any) {
         console.log(a);
@@ -29,38 +27,16 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
     GetBlogImg();
   }, []);
 
-  const onBloginRemove = async (deletId: number) => {
-    try {
-      const { data } = await axios.post(`/board/${deletId}`);
-      console.log(data);
-      toast.success("삭제되었습니다!");
-      useEffect(() => {
-        navigate("/board");
-        window.location.reload();
-      }, []);
-    } catch (a: any) {
-      console.log(a);
-    }
-  };
   return (
     <>
       <S.BlogIn>
         <S.BlogButtonBox>
           <Link
-            to="/blogadd"
+            to="/boardadd"
             style={{ textDecoration: "none", color: "black" }}
           >
             <S.Button style={{ backgroundColor: "#aeddff" }}>+</S.Button>
           </Link>
-
-          <S.Button
-            onClick={() => {
-              onBloginRemove(blogIn.board_id);
-            }}
-            style={{ backgroundColor: "#fb7a74" }}
-          >
-            x
-          </S.Button>
         </S.BlogButtonBox>
         <S.Title>{blogIn.title}</S.Title>
         <S.NameDate>

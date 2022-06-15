@@ -80,7 +80,6 @@ const Blog: React.FC<BlogType> = () => {
     async function getblog() {
       try {
         const response = await customAxios.get("/board");
-
         setBlogs(response.data.blogs);
       } catch (e: any) {
         console.log(e);
@@ -103,7 +102,6 @@ const Blog: React.FC<BlogType> = () => {
           <Link to="/boardadd">
             <S.Button color="#aeddff">+</S.Button>
           </Link>
-          <S.Button color="#fb7a74">x</S.Button>
         </S.BlogButtonBox>
         <S.BLogWarpper>
           {Blogs ? (

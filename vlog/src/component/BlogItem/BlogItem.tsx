@@ -26,13 +26,6 @@ const BlogItem: React.FC<BlogType> = ({
         setBlogImg(respone.data);
         const respone2 = await customAxios.get(`/user_image/${user_id}`);
         setProfileImg(respone2.data);
-        console.log(respone2);
-
-        console.log(respone2.data);
-
-        // (response.data);
-
-        // console.log(response);
       } catch (e: any) {
         const { data } = e.response;
         console.error(data.message);
