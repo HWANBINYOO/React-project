@@ -74,7 +74,7 @@ export const uploadBlogs = styled.div`
   gap: 50px;
   padding: 40px 0;
   margin: 0 auto;
-  width: 80%;
+  width: 85%;
   height: 2000px;
   display: flex;
   flex-wrap: wrap;
@@ -82,6 +82,6 @@ export const uploadBlogs = styled.div`
 `;
 
 export const Hr = styled.hr`
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
 `;
