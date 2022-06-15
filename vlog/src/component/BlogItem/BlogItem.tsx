@@ -34,7 +34,7 @@ const BlogItem: React.FC<BlogType> = ({
   }, []);
   return (
     <>
-      <S.BlogItem onClick={(e) => navigate(`${board_id}`)}>
+      <S.BlogItem onClick={(e) => navigate(`/board/${board_id}`)}>
         <S.Img src={blogImg} />
         <S.TextBox>
           <S.Title>{title}</S.Title>
@@ -43,7 +43,7 @@ const BlogItem: React.FC<BlogType> = ({
             <S.BottomLeft>
               <S.MemberImg>
                 <img
-                  onClick={(e) => navigate(`profile/${board_id}`)}
+                  onClick={(e) => navigate(`/profile/${board_id}`)}
                   src={profileImg}
                 />
               </S.MemberImg>
