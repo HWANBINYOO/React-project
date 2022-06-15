@@ -16,9 +16,7 @@ const BlogItem: React.FC<BlogType> = ({
   const navigate = useNavigate();
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
-  const handleonClick = () => {
-    navigate(`${board_id}`);
-  };
+
   useEffect(() => {
     async function getblog() {
       try {
@@ -36,7 +34,7 @@ const BlogItem: React.FC<BlogType> = ({
   }, []);
   return (
     <>
-      <S.BlogItem onClick={handleonClick}>
+      <S.BlogItem onClick={(e) => navigate(`${board_id}`)}>
         <S.Img src={blogImg} />
         <S.TextBox>
           <S.Title>{title}</S.Title>
@@ -44,7 +42,10 @@ const BlogItem: React.FC<BlogType> = ({
           <S.ItemBottom>
             <S.BottomLeft>
               <S.MemberImg>
-                <img src={profileImg} />
+                <img
+                  onClick={(e) => navigate(`boards/${board_id}`)}
+                  src={profileImg}
+                />
               </S.MemberImg>
               <S.MemberId>{user_name}</S.MemberId>
             </S.BottomLeft>
