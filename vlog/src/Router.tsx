@@ -21,95 +21,95 @@ const Router = () => {
       <Route
         path="/"
         element={
-          // <PublicRoute restricted={true}>
-          <HomePage />
-          // </PublicRoute>
+          <PublicRoute restricted={true}>
+            <HomePage />
+          </PublicRoute>
         }
       />
       <Route
         path="/About"
         element={
-          // <PrivateRoute>
-          <AboutPage />
-          // </PrivateRoute>
+          <PrivateRoute>
+            <AboutPage />
+          </PrivateRoute>
         }
       />
       <Route
         path="/project"
         element={
-          // <PrivateRoute>
-          <ProjectPage
-            id={0}
-            name={""}
-            term={""}
-            cost={0}
-            Ido={""}
-            imgSrc={""}
-          />
-          // </PrivateRoute>
+          <PrivateRoute>
+            <ProjectPage
+              id={0}
+              name={""}
+              term={""}
+              cost={0}
+              Ido={""}
+              imgSrc={""}
+            />
+          </PrivateRoute>
         }
       />
       <Route
         path="/board"
         element={
-          // <PrivateRoute>
-          <BlogPage
-            title={""}
-            date={""}
-            content={""}
-            user_name={""}
-            board_id={0}
-            user_id={0}
-          />
-          // </PrivateRoute>
+          <PrivateRoute>
+            <BlogPage
+              title={""}
+              date={""}
+              content={""}
+              user_name={""}
+              board_id={0}
+              user_id={0}
+            />
+          </PrivateRoute>
         }
       />
       <Route
         path="board/:id"
         element={
-          // <PrivateRoute>
-          <BlogInPage />
-          // </PrivateRoute>
+          <PrivateRoute>
+            <BlogInPage />
+          </PrivateRoute>
         }
       />
       <Route
         path="/boardadd"
         element={
-          // <PrivateRoute>
-          <BlogAddPage />
-          // </PrivateRoute>
+          <PrivateRoute>
+            <BlogAddPage />
+          </PrivateRoute>
         }
       />
       <Route
         path="/Login"
         element={
-          // <PublicRoute restricted={true}>
-          <LoginPage />
-          // </PublicRoute>
+          <PublicRoute restricted={true}>
+            <LoginPage />
+          </PublicRoute>
         }
       />
       <Route
         path="/register"
         element={
-          // <PublicRoute restricted={true}>
-          <SignupPage />
-          // </PublicRoute>
+          <PublicRoute restricted={true}>
+            <SignupPage />
+          </PublicRoute>
         }
       />
       <Route
         path="/profile/:user_id"
         element={
-          // <PublicRoute restricted={true}>
-          <ProfilePage />
-          // </PublicRoute>
+          <PrivateRoute>
+            <ProfilePage />
+          </PrivateRoute>
         }
       />
       <Route
         path="/profile/Edit"
         element={
-          // <PublicRoute restricted={true}>
-          <ProfileEditPage />
-          // </PublicRoute>
+          <PrivateRoute>
+            <ProfileEditPage />
+          </PrivateRoute>
         }
       />
     </Routes>

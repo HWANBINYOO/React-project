@@ -12,9 +12,9 @@ const Profile = () => {
   const [profileImg, setProfileImg] = useState<string>();
   const [Imgurl, setImgurl] = useState();
   const [userId, setUserId] = useState();
-  const [UserName, setUserName] = useState<string>("환빈");
-  const [UserEmail, setUserEmail] = useState<string>("dngh0825@gmail.com");
-  const [UserBoardNumber, setUserBoardNumber] = useState<number>(2);
+  const [UserName, setUserName] = useState<string>();
+  const [UserEmail, setUserEmail] = useState<string>();
+  const [UserBoardNumber, setUserBoardNumber] = useState<number>(0);
   const param = useParams();
   const [Blogs, setBlogs] = useState<BlogType[]>();
 

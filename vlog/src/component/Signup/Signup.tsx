@@ -12,8 +12,13 @@ const Signup: React.FC = () => {
   const navigate = useNavigate();
 
   const onSignup = async () => {
+    const emailRegex =
+      /([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     try {
       if (Email === "") return toast.warning("이메일이 입력되지 않았어요!");
+      // else if (!emailRegex.test(Email)) {
+      //   return toast.warning("이메일 형식이 잘못됬어요!");
+      // }
       else if (PassWord === "")
         return toast.warning("패스워드가 입력되지 않았어요!");
       const { data } = await customAxios.post("/user/register", {
@@ -80,6 +85,9 @@ const Signup: React.FC = () => {
         >
           Signup
         </S.LoginButton>
+        <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
+          <p>로그인하러가기</p>
+        </Link>
       </S.Login>
     </>
   );

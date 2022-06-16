@@ -27,6 +27,8 @@ export const ProfileImg = styled.div`
   align-items: center;
   img {
     width: 230px;
+    height: 230px;
+    object-fit: cover;
     border-radius: 50%;
   }
 `;

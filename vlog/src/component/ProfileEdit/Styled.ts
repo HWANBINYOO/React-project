@@ -48,6 +48,7 @@ export const ProfileImg = styled.div`
     transition: all ease 0.2s 0s;
     width: 160px;
     height: 160px;
+    object-fit: cover;
   }
 `;
 

@@ -81,6 +81,7 @@ const Blog: React.FC<BlogType> = () => {
       try {
         const response = await customAxios.get("/board");
         setBlogs(response.data.blogs);
+        console.log(response.data.blogs);
       } catch (e: any) {
         console.log(e);
       }
@@ -89,11 +90,15 @@ const Blog: React.FC<BlogType> = () => {
   }, []);
   console.log(Blogs);
 
-  function date_descending(a: any, b: any) {
-    let dateA = new Date(a["date"]).getTime();
-    let dateB = new Date(b["date"]).getTime();
-    return dateA < dateB ? 1 : -1;
+  function sortObject(a: any, b: any) {
+    return a.board_id - b.board_id;
   }
+
+  // function date_descending(a: any, b: any) {
+  //   let dateA = new Date(a["date"]).getTime();
+  //   let dateB = new Date(b["date"]).getTime();
+  //   return dateA < dateB ? 1 : -1;
+  // }
 
   return (
     <>
@@ -105,7 +110,7 @@ const Blog: React.FC<BlogType> = () => {
         </S.BlogButtonBox>
         <S.BLogWarpper>
           {Blogs ? (
-            Blogs.sort(date_descending).map((item, index) => (
+            Blogs.sort(sortObject).map((item, index) => (
               <BlogItem
                 key={index}
                 board_id={item.board_id}

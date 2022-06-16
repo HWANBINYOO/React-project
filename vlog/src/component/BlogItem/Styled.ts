@@ -8,7 +8,7 @@ export const BlogItem = styled.div`
   border: 1px gray solid;
   margin: 2rem 2rem;
   border-radius: 5px;
-  justify-content: flex-start;
+  justify-content: space-between;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
   transition: all ease 0.25s 0s;
@@ -20,8 +20,7 @@ export const BlogItem = styled.div`
 
 export const TextBox = styled.div`
   width: 90%;
-  height: 100%;
-  /* height: 50%; */
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,7 +29,8 @@ export const TextBox = styled.div`
 `;
 
 export const Img = styled.img`
-  height: 310px;
+  width: 100%;
+  min-height: 310px;
   object-fit: cover;
   border-radius: 5px;
 `;
@@ -51,7 +51,6 @@ export const Title = styled.span`
 export const desc = styled.div`
   width: 100%;
   font-size: 0.8rem;
-  /* border: 1px black solid; */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
@@ -80,6 +79,8 @@ export const MemberImg = styled.div`
   justify-content: center;
   img {
     width: 20px;
+    height: 20px;
+    object-fit: cover;
     border-radius: 50%;
   }
 `;

@@ -46,7 +46,7 @@ const Login = () => {
     } catch (e: any) {
       const { data } = e.response;
       console.error(data.message);
-      toast.error("다시 확인해주세요");
+      toast.error(data.message);
     }
   };
 
@@ -84,6 +84,9 @@ const Login = () => {
           />
         </S.LoginInput>
         <S.LoginButton onClick={() => onLogin()}>Login</S.LoginButton>
+        <Link to="/register" style={{ textDecoration: "none", color: "black" }}>
+          <p>회원가입하거가기</p>
+        </Link>
       </S.Login>
     </>
   );
