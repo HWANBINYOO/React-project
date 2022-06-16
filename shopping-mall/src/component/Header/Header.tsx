@@ -1,7 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import * as S from "./Styled";
 
 const Header = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(["rememberText"]);
+
+  const TryLogout = () => {
+    const navigate = useNavigate();
+    const onLogout = () => {
+      removeCookie();
+      localStorage.removeItem("Blog_accessToken");
+      localStorage.removeItem("Blog_refreshToken");
+      navigate("/");
+    };
+    return onLogout;
+  };
   return (
     <>
       <S.Header>
@@ -14,12 +27,22 @@ const Header = () => {
               <S.ProfileImg src={"/img/searchIcon.png"} />
               <S.ProfileImg src={"/img/basket.png"} />
             </S.HeaderLogos>
-            <Link
-              to="/signIn"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <S.LoginButton>로그인/가입</S.LoginButton>
-            </Link>
+
+            {cookies("accessToken") ? (
+              <Link
+                to="/signIn"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <S.LoginButton>로그인/가입</S.LoginButton>
+              </Link>
+            ) : (
+              <Link
+                to="/signIn"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <S.LoginButton onClick={TryLogout}>로그아웃</S.LoginButton>
+              </Link>
+            )}
           </S.HeaderRight>
         </S.HeaderBottom>
       </S.Header>

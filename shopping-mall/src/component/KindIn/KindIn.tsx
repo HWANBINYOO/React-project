@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import * as S from "./Styled";
 
 const KindIn = () => {
@@ -7,6 +7,7 @@ const KindIn = () => {
   const [SelectedSize, setSelectedSize] = useState("");
   const [HeaderInput, setHeaderInput] = useState("");
   const navigate = useNavigate();
+  const param = useParams();
 
   const onHome = () => {
     navigate("/");

@@ -17,20 +17,17 @@ const Signup = () => {
         return console.log("패스워드가 입력되지 않았어요!");
       else if (PassWord !== PassWordCheck)
         return console.log("패스워드가 일치하지 않아요");
-      const { data } = await customAxios.post("/user/register", {
+      const { data } = await customAxios.post("user/", {
         email: Email,
         password: PassWord,
       });
-      console.log("회원가입이 되었습니다!");
       console.log(data);
-      navigate("/login");
+      navigate("/signIn");
     } catch (e: any) {
-      if (e.message === "Request failed with status code 400") {
-        if (e.response) {
-          const { data } = e.response;
-          console.error("data : ", data);
-          console.error(data.message);
-        }
+      if (e.response) {
+        const { data } = e.response;
+        console.error("data : ", data);
+        // console.error(data.message);
       }
     }
   };

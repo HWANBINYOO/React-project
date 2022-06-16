@@ -3,8 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
-import { Cookies } from "react-cookie";
-import { setCookie } from "../../Libs/Cookies";
+import { useCookies } from "react-cookie";
 
 const SignIn = () => {
   const [Email, setEmail] = useState<string>("");
@@ -12,19 +11,20 @@ const SignIn = () => {
   const navigate = useNavigate();
   const JWT_EXPIRY_TIME = 3 * 3600 * 1000;
   let ACCESS_TOKEN;
-  let REFRESH_TOKEN;
+  // let REFRESH_TOKEN;
+  const [cookies, setCookie, removeCookie] = useCookies(["accessToken"]);
 
   const onLogin = async () => {
     try {
       console.log(Email, PassWord);
-      const { data } = await customAxios.post("/login", {
+      const { data } = await customAxios.post("/login/", {
         email: Email,
         password: PassWord,
       });
 
       console.log(data);
       ACCESS_TOKEN = data.accessToken;
-      REFRESH_TOKEN = data.refreshToken;
+      // REFRESH_TOKEN = data.refreshToken;
       onLoginSuccess(ACCESS_TOKEN);
       //로그아웃하면 쿠키 삭제
       //cookies.remove('refresh_token');
@@ -34,18 +34,17 @@ const SignIn = () => {
       customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
 
       //토큰 쿠키에 저장
-      setCookie("refreshToken", REFRESH_TOKEN, {
-        path: "/refreshToken",
-        secure: true,
-        sameSite: "none",
-      });
+      // setCookie("refreshToken", REFRESH_TOKEN, {
+      //   path: "/refreshToken",
+      //   secure: true,
+      //   sameSite: "none",
+      // });
       setCookie("accessToken", ACCESS_TOKEN, {
         path: "/accessToken",
         secure: true,
         sameSite: "none",
       });
-
-      navigate("/about");
+      navigate("/");
     } catch (e: any) {
       if (e.message === "Request failed with status code 400") {
         if (e.response) {
