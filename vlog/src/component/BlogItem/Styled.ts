@@ -82,6 +82,7 @@ export const MemberImg = styled.div`
     height: 20px;
     object-fit: cover;
     border-radius: 50%;
+    border: none;
   }
 `;
 

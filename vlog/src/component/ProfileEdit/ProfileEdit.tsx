@@ -22,6 +22,7 @@ const ProfileEdit = () => {
     async function Getprofile() {
       try {
         const respone = await customAxios.get("user_name");
+        // console.log(respone);
         setName(respone.data.name);
         setUserId(respone.data.user_id);
         const respone2 = await customAxios.get(
