@@ -43,6 +43,22 @@ export const Intrudece = styled.div`
   }
 `;
 
+export const Intrudece2 = styled.div`
+  width: 85%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  text-align: center;
+  padding: 50px 0;
+
+  p {
+    text-decoration: none;
+    font-size: 2rem;
+  }
+`;
+
 export const Img = styled.img`
   width: ${(props: any) => props.width};
 `;
@@ -50,7 +66,7 @@ export const Img = styled.img`
 export const AboutContents = styled.div`
   width: 90vw;
   padding: 3rem 5vw;
-  height: 2000px;
+  height: 2500px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

@@ -16,12 +16,17 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const [DelectDisplay, setDelectDisplay] = useState(false);
   const [boardId, setboardId] = useState(blogIn.board_id);
   const [userId, setUserId] = useState(blogIn.user_id);
+  const [profileImg, setProfileImg] = useState<string>();
+
   useEffect(() => {
     async function GetBlogImg() {
       try {
         const respone = await customAxios.get(
           `/board_image/${blogIn.board_id}`
         );
+        const respone3 = await customAxios.get(`/user_image/${blogIn.user_id}`);
+        setProfileImg(respone3.data);
+
         setBlogurl(respone.data);
         const respone2 = await customAxios.get(`/user_name`);
         console.log(respone2);
@@ -74,13 +79,17 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         <S.Title>{blogIn.title}</S.Title>
         <S.NameDate>
           <S.Name>
-            {blogIn.user_name} · {blogIn.date}{" "}
+            {blogIn.user_name} · {blogIn.date}
           </S.Name>
         </S.NameDate>
         <S.TextBox>
           <S.Img src={Blogrl} />
           <S.desc>{blogIn.content}</S.desc>
         </S.TextBox>
+        <S.ProfileWapper>
+          <S.ProfileImg src={profileImg} />
+          <S.ProfileName>{blogIn.user_name}</S.ProfileName>
+        </S.ProfileWapper>
         <Footer />
       </S.BlogIn>
     </>

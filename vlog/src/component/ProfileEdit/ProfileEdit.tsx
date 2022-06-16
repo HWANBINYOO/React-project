@@ -17,14 +17,17 @@ const ProfileEdit = () => {
   const [PassWordAgain, setPassWordAgain] = useState("");
   const [imgBase64, setImgBase64] = useState(""); // 파일 base64
   const [file, setFile] = useState(""); //파일
+
   useEffect(() => {
     async function Getprofile() {
       try {
         const respone = await customAxios.get("user_name");
         setName(respone.data.name);
+        setUserId(respone.data.user_id);
         const respone2 = await customAxios.get(
           `user_image/${respone.data.user_id}`
         );
+        console.log(respone2);
         setFile(respone2.data);
       } catch (e: any) {
         const { data } = e.response;

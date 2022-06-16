@@ -106,3 +106,27 @@ export const NameDate = styled.div`
   gap: 0px;
   padding-right: 20rem;
 `;
+
+export const ProfileWapper = styled.div`
+  width: 30%;
+  height: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 20px 50px;
+  gap: 50px;
+  border-bottom: 1px solid gray;
+  /* border-top: 1px solid gray; */
+`;
+
+export const ProfileImg = styled.img`
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+`;
+
+export const ProfileName = styled.span`
+  font-size: 2rem;
+`;

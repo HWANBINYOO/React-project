@@ -77,15 +77,11 @@ export default function About() {
               <p>기린</p>
             </S.decs>
           </S.AboutContent>
-          <S.Intrudece>
-            <p>김성길</p>
-            서버
-            <br />
-            자전거맨
-            <br />
-            스프링
-            <br />
-          </S.Intrudece>
+          <S.Intrudece2>
+            <p>김성길 서버</p>
+            <p>자전거맨</p>
+          </S.Intrudece2>
+          <S.Img style={{ width: "600px" }} src={"/img/bikeman.jpg"} />
         </S.AboutContents>
         <Footer />
       </S.About>
