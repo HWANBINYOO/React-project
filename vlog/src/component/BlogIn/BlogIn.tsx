@@ -15,6 +15,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const [Blogrl, setBlogurl] = useState();
   const [DelectDisplay, setDelectDisplay] = useState(false);
   const [boardId, setboardId] = useState(blogIn.board_id);
+  const [userId, setUserId] = useState(blogIn.user_id);
   useEffect(() => {
     async function GetBlogImg() {
       try {
@@ -24,8 +25,9 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         setBlogurl(respone.data);
         const respone2 = await customAxios.get(`/user_name`);
         console.log(respone2);
-        if (respone2.data.user_id === localStorage.getItem("Authorization")) {
+        if (respone2.data.user_id === blogIn.user_id) {
           setDelectDisplay(true);
+          console.log(DelectDisplay);
         } else {
           setDelectDisplay(false);
         }
@@ -38,9 +40,10 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
 
   const DelectBlog = async () => {
     try {
-      const response = await customAxios.get(`/delect/${boardId}`);
+      const response = await customAxios.delete(`/delete/${boardId}`);
       console.log(response);
       toast.success(response.data);
+      navigate(-1);
     } catch (e: any) {
       const { data } = e.response;
       console.error("data : ", data);

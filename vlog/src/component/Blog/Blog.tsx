@@ -74,7 +74,7 @@ const a = [
 ];
 
 const Blog: React.FC<BlogType> = () => {
-  const [Blogs, setBlogs] = useState<BlogType[]>(a);
+  const [Blogs, setBlogs] = useState<BlogType[]>();
   // useEffet 훅에서 async 사용하기
   useEffect(() => {
     async function getblog() {
@@ -91,9 +91,8 @@ const Blog: React.FC<BlogType> = () => {
   console.log(Blogs);
 
   function sortObject(a: any, b: any) {
-    return a.board_id - b.board_id;
+    return b.board_id - a.board_id;
   }
-
   // function date_descending(a: any, b: any) {
   //   let dateA = new Date(a["date"]).getTime();
   //   let dateB = new Date(b["date"]).getTime();
