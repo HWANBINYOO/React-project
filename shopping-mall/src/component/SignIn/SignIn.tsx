@@ -12,7 +12,7 @@ const SignIn = () => {
   const JWT_EXPIRY_TIME = 3 * 3600 * 1000;
   let ACCESS_TOKEN;
   // let REFRESH_TOKEN;
-  const [cookies, setCookie, removeCookie] = useCookies(["accessToken"]);
+  const [cookies, setCookie] = useCookies(["AccessToken"]);
 
   const onLogin = async () => {
     try {
@@ -39,7 +39,7 @@ const SignIn = () => {
       //   secure: true,
       //   sameSite: "none",
       // });
-      setCookie("accessToken", ACCESS_TOKEN, {
+      setCookie("AccessToken", ACCESS_TOKEN, {
         path: "/accessToken",
         secure: true,
         sameSite: "none",

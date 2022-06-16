@@ -3,14 +3,13 @@ import { useCookies } from "react-cookie";
 import * as S from "./Styled";
 
 const Header = () => {
-  const [cookies, setCookie, removeCookie] = useCookies(["rememberText"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["AccessToken"]);
 
   const TryLogout = () => {
     const navigate = useNavigate();
     const onLogout = () => {
-      removeCookie();
-      localStorage.removeItem("Blog_accessToken");
-      localStorage.removeItem("Blog_refreshToken");
+      removeCookie("AccessToken");
+
       navigate("/");
     };
     return onLogout;
@@ -28,7 +27,7 @@ const Header = () => {
               <S.ProfileImg src={"/img/basket.png"} />
             </S.HeaderLogos>
 
-            {cookies("accessToken") ? (
+            {cookies.AccessToken ? (
               <Link
                 to="/signIn"
                 style={{ textDecoration: "none", color: "black" }}
