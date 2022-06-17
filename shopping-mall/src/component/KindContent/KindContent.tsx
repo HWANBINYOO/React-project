@@ -1,7 +1,7 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable eqeqeq */
 import Kinditem from "../Kinditen/Kinditen";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { KindType } from "../../types";
 import * as S from "./Styled";
 import { useEffect, useState } from "react";
@@ -23,20 +23,24 @@ const a = [
 const KindContent = () => {
   const [Kinds, setKinds] = useState<KindType[]>(a);
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const param = useParams();
 
-  const location = useLocation();
+  console.log(param.name);
   const [open, setopen] = useState<boolean>(false);
   const [SearchBoxWidth, setSearchBoxWidth] = useState<number>(60);
   useEffect(() => {
     async function getKind() {
       try {
-        setKinds(await customAxios.get(`kind/${location.pathname.substr(6)}`));
+        const { data } = await customAxios.get(`kind/${param.name}`);
+        console.log(data);
+        setKinds(data);
       } catch (e: any) {
-        console.log(e);
+        const { data } = e.response;
+        console.error(data.message);
       }
     }
     getKind();
-  }, [location.pathname]);
+  }, [param.name]);
 
   const SearchClick = () => {
     if (!open) {
