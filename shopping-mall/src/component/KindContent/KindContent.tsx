@@ -80,20 +80,18 @@ const KindContent = () => {
         </S.KindHeader>
 
         <S.KindContents>
-          {/* {Kinds ? ( */}
-          {Kinds.map((item, index) => (
-            <Kinditem
-              key={index}
-              title={item.title}
-              decs={item.decs}
-              img={item.img}
-            />
-          ))}
-
-          {/* ) : (
+          {Kinds ? (
+            Kinds.map((item, index) => (
+              <Kinditem
+                key={index}
+                title={item.title}
+                decs={item.decs}
+                img={item.img}
+              />
+            ))
+          ) : (
             <h2>loading ...</h2>
-          )} */}
-          {/* <Kinditem /> */}
+          )}
         </S.KindContents>
       </S.KindWapper>
     </>
