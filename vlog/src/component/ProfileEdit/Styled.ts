@@ -9,7 +9,6 @@ export const Profile = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   padding: 0 15%;
-  border: 2px solid gray;
   border-radius: 10px;
 `;
 
@@ -121,5 +120,49 @@ export const Btn = styled.button`
   transition: all ease 0.1s 0s;
   &:hover {
     transform: scale(1.01);
+  }
+`;
+
+export const Modal = styled.div`
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.3s 0;
+  background-color: rgba(255, 255, 255, 0.5);
+`;
+
+export const ModalContainal = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  width: 680px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #424242;
+  border: 0px solid black;
+  border-radius: 15px;
+  transition: all ease-in-out 0.3s 0;
+
+  img {
+    width: 70%;
+    height: 60%;
+    border: 0px solid black;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  button {
+    font-family: "GangwonEduSaeeum_OTFMediumA";
+    font-size: 30px;
+    width: 250px;
+    height: 60px;
+    border-radius: 10px;
   }
 `;
