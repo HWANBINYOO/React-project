@@ -92,21 +92,12 @@ const ProfileEdit = () => {
     } else if (PassWordAgain !== ChangePassWord) {
       return toast.warning("새로운패스워드가 일치하지 않아요!");
     }
-    let formData = new FormData();
     try {
-      await customAxios.patch(
-        "/user/update",
-        {
-          name: Name,
-          PassWord: PassWord,
-        },
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      toast.success("수정되었습니다!");
+      await customAxios.patch("/user/update", {
+        name: Name,
+        password: PassWord,
+        newPassword: ChangePassWord,
+      });
       navigate(`/profile/${userId}`);
     } catch (e: any) {
       console.log(e);
@@ -122,9 +113,7 @@ const ProfileEdit = () => {
     <>
       <S.Profile>
         {modalDisplay ? (
-          <S.Modal
-          // style={{ backgroundColor: modalDisplay ? "#d3d3d3" : "white", }}
-          >
+          <S.Modal>
             <S.ModalContainal>
               {imgurl ? (
                 imgBase64 ? (

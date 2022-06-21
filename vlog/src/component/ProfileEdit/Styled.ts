@@ -146,12 +146,15 @@ export const ModalContainal = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: #424242;
+  background-color: black;
   border: 0px solid black;
   border-radius: 15px;
   transition: all ease-in-out 0.3s 0;
-
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   img {
+    background-color: white;
     width: 70%;
     height: 60%;
     border: 0px solid black;
@@ -164,5 +167,6 @@ export const ModalContainal = styled.div`
     width: 250px;
     height: 60px;
     border-radius: 10px;
+    background-color: white;
   }
 `;

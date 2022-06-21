@@ -43,7 +43,7 @@ const BlogItem: React.FC<BlogType> = ({
             <S.BottomLeft>
               <S.MemberImg>
                 <img
-                  onClick={(e) => navigate(`/profile/${board_id}`)}
+                  onClick={(e) => navigate(`/profile/${user_id}`)}
                   src={profileImg}
                 />
               </S.MemberImg>
