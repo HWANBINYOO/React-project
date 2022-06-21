@@ -86,7 +86,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           <S.Img src={Blogrl} />
           <S.desc>{blogIn.content}</S.desc>
         </S.TextBox>
-        <S.ProfileWapper>
+        <S.ProfileWapper onClick={(e) => navigate(`/profile/${userId}`)}>
           <S.ProfileImg src={profileImg} />
           <S.ProfileName>{blogIn.user_name}</S.ProfileName>
         </S.ProfileWapper>

@@ -17,6 +17,7 @@ const Profile = () => {
   const [UserBoardNumber, setUserBoardNumber] = useState<number>(0);
   const param = useParams();
   const [Blogs, setBlogs] = useState<BlogType[]>();
+  const [my, setmy] = useState(false);
 
   // {
   //   "user_id": number,
@@ -29,13 +30,15 @@ const Profile = () => {
     async function Getprofile() {
       try {
         console.log(param);
-
         const { data } = await customAxios.get(
           `/user_profile/${param.user_id}`
         );
         console.log(data);
         const response = await customAxios.get(`/boards/${param.user_id}`);
-
+        const respone2 = await customAxios.get("user_name");
+        if (respone2.data.user_id == param.user_id) {
+          setmy(true);
+        }
         setUserBoardNumber(data.board_number);
         setUserEmail(data.email);
         setProfileImg(data.url);
@@ -72,9 +75,11 @@ const Profile = () => {
             <S.EditGO>
               <S.UserName>{UserName}</S.UserName>
               <S.UserName></S.UserName>
-              <S.GOEdit onClick={() => navigate("/profile/Edit")}>
-                프로필 편집
-              </S.GOEdit>
+              {my ? (
+                <S.GOEdit onClick={() => navigate("/profile/Edit")}>
+                  프로필 편집
+                </S.GOEdit>
+              ) : null}
             </S.EditGO>
             <S.UserBlogs>{`게시글 수:${UserBoardNumber}`}</S.UserBlogs>
             <S.UserEmail>{UserEmail}</S.UserEmail>
