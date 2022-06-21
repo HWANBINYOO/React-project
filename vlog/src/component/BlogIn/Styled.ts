@@ -117,7 +117,7 @@ export const ProfileWapper = styled.div`
   padding: 20px 50px;
   gap: 50px;
   border-bottom: 1px solid gray;
-  /* border-top: 1px solid gray; */
+  cursor: pointer;
 `;
 
 export const ProfileImg = styled.img`

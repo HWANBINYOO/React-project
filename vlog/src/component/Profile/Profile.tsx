@@ -19,13 +19,6 @@ const Profile = () => {
   const [Blogs, setBlogs] = useState<BlogType[]>();
   const [my, setmy] = useState(false);
 
-  // {
-  //   "user_id": number,
-  //   "user_name": string,
-  //   "user_email": string,
-  //   “board_number” : number,
-  //   }
-
   useEffect(() => {
     async function Getprofile() {
       try {
@@ -36,6 +29,8 @@ const Profile = () => {
         console.log(data);
         const response = await customAxios.get(`/boards/${param.user_id}`);
         const respone2 = await customAxios.get("user_name");
+        console.log(respone2);
+
         if (respone2.data.user_id == param.user_id) {
           setmy(true);
         }

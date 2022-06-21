@@ -17,11 +17,14 @@ const TryLogout = () => {
 
 const HeaderRIght = () => {
   const [userId, setUserid] = useState("");
+  const [profileImg, setprofileImg] = useState("");
   useEffect(() => {
     async function Getprofile() {
       try {
         const respone = await customAxios.get("user_name");
         setUserid(respone.data.user_id);
+        setprofileImg(respone.data.url);
+        console.log(respone);
       } catch (e: any) {
         const { data } = e.response;
         console.error(data.message);
@@ -37,7 +40,11 @@ const HeaderRIght = () => {
     <>
       <S.HeaderRIght>
         <S.Profile onClick={() => navigate(`/profile/${userId}`)}>
-          <img src={"/img/profile.png"} />
+          {profileImg ? (
+            <img src={profileImg} />
+          ) : (
+            <img src={"/img/profile.png"} />
+          )}
         </S.Profile>
         <S.LogoutButton onClick={onLogout}>Logout</S.LogoutButton>
       </S.HeaderRIght>

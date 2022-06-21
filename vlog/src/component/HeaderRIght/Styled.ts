@@ -17,6 +17,7 @@ export const Profile = styled.div`
   img {
     width: 30px;
     cursor: pointer;
+    border-radius: 50%;
   }
 `;
 

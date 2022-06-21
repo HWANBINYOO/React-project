@@ -41,11 +41,12 @@ const BlogItem: React.FC<BlogType> = ({
           <S.desc>{content}</S.desc>
           <S.ItemBottom>
             <S.BottomLeft>
-              <S.MemberImg>
-                <img
-                  onClick={(e) => navigate(`/profile/${user_id}`)}
-                  src={profileImg}
-                />
+              <S.MemberImg onClick={(e) => navigate(`/profile/${user_id}`)}>
+                {profileImg ? (
+                  <img src={profileImg} />
+                ) : (
+                  <img src={"/img/profile.png"} />
+                )}
               </S.MemberImg>
               <S.MemberId>{user_name}</S.MemberId>
             </S.BottomLeft>
