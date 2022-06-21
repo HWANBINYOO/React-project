@@ -16,10 +16,13 @@ const BlogItem: React.FC<BlogType> = ({
   const navigate = useNavigate();
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
+  const [myprofileImg, setmyProfileImg] = useState<string>();
 
   useEffect(() => {
     async function getblog() {
       try {
+        const respone3 = await customAxios.get("user_name");
+        setmyProfileImg(respone3.data.url);
         const respone = await customAxios.get(`/board_image/${board_id}`);
         setBlogImg(respone.data);
         const respone2 = await customAxios.get(`/user_image/${user_id}`);
@@ -44,6 +47,8 @@ const BlogItem: React.FC<BlogType> = ({
               <S.MemberImg onClick={(e) => navigate(`/profile/${user_id}`)}>
                 {profileImg ? (
                   <img src={profileImg} />
+                ) : myprofileImg ? (
+                  <img src={myprofileImg} />
                 ) : (
                   <img src={"/img/profile.png"} />
                 )}
