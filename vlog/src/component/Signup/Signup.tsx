@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { customAxios } from "../../utils/Libs/CustomAxois";
 import { toast } from "react-toastify";
 import * as S from "./Styled";
+import { SignupRequest } from "../../Api/member";
 
 const Signup: React.FC = () => {
   const [Email, setEmail] = useState("");
@@ -14,38 +15,16 @@ const Signup: React.FC = () => {
   const onSignup = async () => {
     const emailRegex =
       /([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-    try {
-      if (Email === "") return toast.warning("이메일이 입력되지 않았어요!");
-      // else if (!emailRegex.test(Email)) {
-      //   return toast.warning("이메일 형식이 잘못됬어요!");
-      // }
-      else if (PassWord === "")
-        return toast.warning("패스워드가 입력되지 않았어요!");
-      const { data } = await customAxios.post("/user/register", {
-        name: Name,
-        email: Email,
-        password: PassWord,
-      });
+    if (Email === "") return toast.warning("이메일이 입력되지 않았어요!");
+    // else if (!emailRegex.test(Email)) {
+    //   return toast.warning("이메일 형식이 잘못됬어요!");
+    // }
+    else if (PassWord === "")
+      return toast.warning("패스워드가 입력되지 않았어요!");
 
-      toast.success("회원가입이 되었습니다!");
-      console.log(data);
-      navigate("/login");
-    } catch (e: any) {
-      console.log(e);
-      if (e.response) {
-        const { data } = e.response;
-        console.error(data.message);
-        console.error("data : ", data);
-      }
-      if (e.message === "Request failed with status code 400") {
-        if (e.response) {
-          const { data } = e.response;
-          console.error(data.message);
-          toast.warning(data.message);
-          console.error("data : ", data);
-        }
-      }
-    }
+    const { data }: any = await SignupRequest(Name, Email, PassWord);
+    toast.success("회원가입이 되었습니다!");
+    navigate("/login");
   };
 
   return (

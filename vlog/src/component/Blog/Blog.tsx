@@ -81,14 +81,12 @@ const Blog: React.FC<BlogType> = () => {
       try {
         const response = await customAxios.get("/board");
         setBlogs(response.data.blogs);
-        console.log(response.data.blogs);
       } catch (e: any) {
         console.log(e);
       }
     }
     getblog();
   }, []);
-  console.log(Blogs);
 
   function sortObject(a: any, b: any) {
     return b.board_id - a.board_id;

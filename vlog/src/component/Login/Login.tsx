@@ -5,6 +5,7 @@ import * as S from "./Styled";
 import { toast } from "react-toastify";
 import { customAxios } from "../../utils/Libs/CustomAxois";
 import Cookies from "universal-cookie";
+import { LoginRequest } from "../../Api/member";
 
 const Login = () => {
   const cookies = new Cookies();
@@ -13,25 +14,18 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onLogin = async () => {
-    try {
-      const { data } = await customAxios.post("user/login", {
-        email: Email,
-        password: PassWord,
-      });
-
-      customAxios.defaults.headers.common["Authorization"] = data.accessToken;
-      customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
-
-      localStorage.setItem("Blog_accessToken", data.accessToken);
-      localStorage.setItem("Blog_refreshToken", data.refreshToken);
-
-      toast.success("로그인 되었습니다!");
-      navigate("/board");
-    } catch (e: any) {
-      const { data } = e.response;
-      console.error(data.message);
-      toast.error(data.message);
+    if (Email === "") {
+      return toast.warning("이메일을 입력해주세요!!");
+    } else if (PassWord === "") {
+      return toast.warning("비밀번호를 입력해주세요!");
     }
+    const { data }: any = await LoginRequest(Email, PassWord);
+
+    localStorage.setItem("Blog_accessToken", data.accessToken);
+    localStorage.setItem("Blog_refreshToken", data.refreshToken);
+
+    toast.success("로그인 되었습니다!");
+    navigate("/board");
   };
 
   return (
