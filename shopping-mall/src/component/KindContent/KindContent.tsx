@@ -7,21 +7,8 @@ import * as S from "./Styled";
 import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
 
-const a = [
-  {
-    img: "asdf",
-    decs: "string",
-    title: "string",
-  },
-  {
-    img: "asdf",
-    decs: "string",
-    title: "string",
-  },
-];
-
 const KindContent = () => {
-  const [Kinds, setKinds] = useState<KindType[]>(a);
+  const [Kinds, setKinds] = useState<KindType[]>();
   const [searchTerm, setSearchTerm] = useState<string>("");
   const param = useParams();
 
@@ -65,7 +52,7 @@ const KindContent = () => {
               onChange={(e) => {
                 setSearchTerm(e.target.value);
               }}
-              {...Kinds.filter((val) => {
+              {...Kinds?.filter((val) => {
                 if (searchTerm == "") {
                   return val;
                 } else if (
@@ -85,8 +72,8 @@ const KindContent = () => {
               <Kinditem
                 key={index}
                 title={item.title}
-                decs={item.decs}
-                img={item.img}
+                prise={item.prise}
+                imgurl={item.imgurl}
               />
             ))
           ) : (

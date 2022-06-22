@@ -17,7 +17,6 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* <S.SidebarWapper url={asdfasdf}> */}
       <S.SidebarWapper url={`/img/${Title}.png`}>
         <S.White>
           <S.SmallMenu
@@ -51,10 +50,10 @@ const Sidebar = () => {
             Shoes
           </S.SmallMenu>
           <S.SmallMenu
-            fontSize={Title === "Shirts" ? "4rem" : "1.5rem"}
-            onClick={() => onclick("Shirts")}
+            fontSize={Title === "TopsShirts" ? "2.5rem" : "1.5rem"}
+            onClick={() => onclick("TopsShirts")}
           >
-            Shirts
+            TopsShirts
           </S.SmallMenu>
         </S.White>
       </S.SidebarWapper>

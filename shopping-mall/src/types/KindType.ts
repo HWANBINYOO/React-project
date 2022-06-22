@@ -1,5 +1,5 @@
 export interface KindType {
-  img: string;
-  decs: string;
+  imgurl: string;
+  prise: string;
   title: string;
 }

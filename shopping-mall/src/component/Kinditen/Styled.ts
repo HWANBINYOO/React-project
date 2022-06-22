@@ -5,12 +5,16 @@ export const KinditemWapper = styled.div`
   height: 350px;
   display: flex;
   flex-direction: column;
-  padding: 50px 40px;
+  margin: 50px 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 export const Img = styled.img`
   width: 200px;
   height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 export const ContentBox = styled.div`
@@ -19,15 +23,21 @@ export const ContentBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border: 1px solid black;
+  border: 1px solid gray;
+  padding: 5px 0;
+  gap: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;
 
 export const Wear = styled.div`
-  font-size: 0.5rem;
+  font-size: 1rem;
 `;
 
 export const Decs = styled.div`
-  font-size: 0.7rem;
+  font-size: 1rem;
+  width: 90%;
+
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

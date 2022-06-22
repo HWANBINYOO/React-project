@@ -85,7 +85,7 @@ const Home = () => {
           color="white"
           hoverColor="black"
           Imgdisplay={imghover6}
-          onClick={() => onclick("Shirts")}
+          onClick={() => onclick("TopsShirts")}
           imgurl={"/img/Shirts.png"}
         >
           <S.Span Imgdisplay={imghover6}>Tops & Shirts</S.Span>
