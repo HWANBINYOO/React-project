@@ -7,27 +7,33 @@ import { customAxios } from "../../utils/Libs/CustomAxois";
 import Cookies from "universal-cookie";
 import { LoginRequest } from "../../Api/member";
 
-const Login = () => {
+const TryLogin = () => {
   const cookies = new Cookies();
   const [Email, setEmail] = useState<string>("");
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
 
-  const onLogin = async () => {
-    if (Email === "") {
-      return toast.warning("이메일을 입력해주세요!!");
-    } else if (PassWord === "") {
-      return toast.warning("비밀번호를 입력해주세요!");
-    }
-    const { data }: any = await LoginRequest(Email, PassWord);
+  const onLogin = () => {
+    const onLogin = async () => {
+      if (Email === "") {
+        return toast.warning("이메일을 입력해주세요!!");
+      } else if (PassWord === "") {
+        return toast.warning("비밀번호를 입력해주세요!");
+      }
+      const { data }: any = await LoginRequest(Email, PassWord);
 
-    localStorage.setItem("Blog_accessToken", data.accessToken);
-    localStorage.setItem("Blog_refreshToken", data.refreshToken);
+      localStorage.setItem("Blog_accessToken", data.accessToken);
+      localStorage.setItem("Blog_refreshToken", data.refreshToken);
 
-    toast.success("로그인 되었습니다!");
-    navigate("/board");
+      toast.success("로그인 되었습니다!");
+      navigate("/board");
+    };
   };
+  return { Email, PassWord, setEmail, setPassWord, onLogin };
+};
 
+const Login = () => {
+  const { Email, PassWord, setEmail, setPassWord, onLogin } = TryLogin();
   return (
     <>
       <S.Login>

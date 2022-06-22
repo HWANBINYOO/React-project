@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 export const LoginRequest = async (email: string, password: string) => {
   try {
-    const { data } = await customAxios.post("user/login", {
+    const { data } = await customAxios.post(MemberController.signin(), {
       email: email,
       password: password,
     });
@@ -25,11 +25,12 @@ export const SignupRequest = async (
   password: string
 ) => {
   try {
-    const { data } = await customAxios.post("/user/register", {
+    const { data } = await customAxios.post(MemberController.signup(), {
       name: name,
       email: email,
       password: password,
     });
+    return { data };
   } catch (e: any) {
     console.log(e);
     if (e.response) {
@@ -39,3 +40,5 @@ export const SignupRequest = async (
     }
   }
 };
+
+export const ProfileReqeuset = async () => {};

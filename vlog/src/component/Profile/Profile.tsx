@@ -26,7 +26,6 @@ const Profile = () => {
         const { data } = await customAxios.get(
           `/user_profile/${param.user_id}`
         );
-        console.log(data);
         const response = await customAxios.get(`/boards/${param.user_id}`);
         const respone2 = await customAxios.get("user_name");
         console.log(respone2);

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import * as S from "./Styled";
 import { SignupRequest } from "../../Api/member";
 
-const Signup: React.FC = () => {
+const TrySignup = () => {
   const [Email, setEmail] = useState("");
   const [PassWord, setPassWord] = useState("");
   const [Name, setName] = useState("");
@@ -26,7 +26,11 @@ const Signup: React.FC = () => {
     toast.success("회원가입이 되었습니다!");
     navigate("/login");
   };
-
+  return { Name, Email, PassWord, setName, setEmail, setPassWord, onSignup };
+};
+const Signup: React.FC = () => {
+  const { Name, Email, PassWord, setEmail, setPassWord, setName, onSignup } =
+    TrySignup();
   return (
     <>
       <S.Login>
