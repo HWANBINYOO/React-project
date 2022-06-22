@@ -16,8 +16,10 @@ export const Profile = styled.div`
   height: 30px;
   img {
     width: 30px;
+    height: 30px;
     cursor: pointer;
     border-radius: 50%;
+    object-fit: cover;
   }
 `;
 

@@ -11,6 +11,7 @@ const TryLogout = () => {
     localStorage.removeItem("Blog_refreshToken");
     toast.success("로그아웃 되었습니다!");
     navigate("/");
+    location.reload();
   };
   return onLogout;
 };
