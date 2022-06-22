@@ -31,10 +31,12 @@ export const ContentBox = styled.div`
 `;
 
 export const Wear = styled.div`
+  margin-left: 5px;
   font-size: 1rem;
 `;
 
 export const Decs = styled.div`
+  margin-left: 5px;
   font-size: 1rem;
   width: 90%;
 
