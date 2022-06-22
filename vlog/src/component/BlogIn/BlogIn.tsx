@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
-import { customAxios } from "../../Libs/CustomAxois";
+import { customAxios } from "../../utils/Libs/CustomAxois";
 interface BlogTypeProp {
   blogIn: BlogType;
 }

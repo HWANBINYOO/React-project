@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { useEffect, useState } from "react";
-import { customAxios } from "../../Libs/CustomAxois";
+import { customAxios } from "../../utils/Libs/CustomAxois";
 
 // const BlogItem: React.FC<BlogType> = ({ name, date, title, desc, blogId }) => {
 const BlogItem: React.FC<BlogType> = ({

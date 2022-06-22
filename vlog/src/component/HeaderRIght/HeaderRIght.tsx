@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as S from "./Styled";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { customAxios } from "../../Libs/CustomAxois";
+import { customAxios } from "../../utils/Libs/CustomAxois";
 
 const TryLogout = () => {
   const navigate = useNavigate();

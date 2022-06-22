@@ -4,7 +4,7 @@ import BlogItem from "../BlogItem/BlogItem";
 import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
-import { customAxios } from "../../Libs/CustomAxois";
+import { customAxios } from "../../utils/Libs/CustomAxois";
 // import loadingImg from "/img/loading.gif";
 
 const a = [

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
-import { customAxios } from "../../Libs/CustomAxois";
+import { customAxios } from "../../utils/Libs/CustomAxois";
 import { ProfileType } from "../../types";
 import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
