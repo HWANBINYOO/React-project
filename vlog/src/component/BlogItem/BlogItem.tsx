@@ -4,8 +4,8 @@ import { BlogType } from "../../types";
 import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
 import { myProfileImgReqeuset } from "../../Api/member";
+import { boardImgReqeuset } from "../../Api/board";
 
-// const BlogItem: React.FC<BlogType> = ({ name, date, title, desc, blogId }) => {
 const BlogItem: React.FC<BlogType> = ({
   user_name,
   date,
@@ -17,19 +17,27 @@ const BlogItem: React.FC<BlogType> = ({
   const navigate = useNavigate();
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
+  // const [userId, setuserId] = useState(user_id);
+
+  // useEffect(() => {
+  //   async function getblog2() {
+  //     const { data } = await customAxios.get("user_name");
+  //     setuserId(data.user_id);
+  //   }
+  //   getblog2();
+  // }, []);
 
   useEffect(() => {
     async function getblog() {
-      const { data } = await customAxios.get("user_name");
+      const res: any = await boardImgReqeuset(board_id);
+      setBlogImg(res.data);
 
-      const respone = await customAxios.get(`/board_image/${board_id}`);
-      setBlogImg(respone.data);
-
-      const res = await myProfileImgReqeuset(data.user_id);
-      setProfileImg(res?.data);
+      const res2: any = await myProfileImgReqeuset(user_id);
+      setProfileImg(res2.data);
       getblog();
     }
   }, []);
+
   return (
     <>
       <S.BlogItem onClick={(e: any) => navigate(`/board/${board_id}`)}>

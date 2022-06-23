@@ -5,6 +5,8 @@ import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
 import { boardController } from "../../Libs/url";
+import { boards } from "../../Api/board";
+import { AnyTypeAnnotation } from "@babel/types";
 
 // const a = [
 //   {
@@ -74,13 +76,15 @@ import { boardController } from "../../Libs/url";
 
 const Blog: React.FC<BlogType> = () => {
   const [Blogs, setBlogs] = useState<BlogType[]>();
+
   useEffect(() => {
     async function getblog() {
-      const { data } = await customAxios.get(boardController.boards());
+      const { data }: any = await boards();
       setBlogs(data.blogs);
     }
     getblog();
   }, []);
+
   function sortObject(a: any, b: any) {
     return b.board_id - a.board_id;
   }

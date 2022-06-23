@@ -25,7 +25,6 @@ const HeaderRIght = () => {
         const respone = await customAxios.get("user_name");
         setUserid(respone.data.user_id);
         setprofileImg(respone.data.url);
-        console.log(respone);
       } catch (e: any) {
         const { data } = e.response;
         console.error(data.message);

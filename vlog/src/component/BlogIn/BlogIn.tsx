@@ -11,7 +11,6 @@ import { boardImgReqeuset, deleteboardReqeuset } from "../../Api/board";
 interface BlogTypeProp {
   blogIn: BlogType;
 }
-
 const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const navigate = useNavigate();
   const [Blogrl, setBlogurl] = useState();
@@ -23,8 +22,8 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
     async function GetBlogImg() {
       const res: any = await boardImgReqeuset(blogIn.board_id);
       setBlogurl(res.data);
-      const res2 = await myProfileImgReqeuset(blogIn.user_id);
-      setProfileImg(res?.data);
+      const res2: any = await myProfileImgReqeuset(blogIn.user_id);
+      setProfileImg(res2.data);
       const respone2 = await customAxios.get(`/user_name`);
 
       console.log(respone2);

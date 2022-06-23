@@ -13,6 +13,17 @@ export const myboardsReqeuset = async (user_id: number | string) => {
   }
 };
 
+export const boards = async () => {
+  try {
+    const { data } = await customAxios.get(boardController.boards());
+    return { data };
+  } catch (e: any) {
+    const { data } = e.response;
+    console.error(data.message);
+    console.error("data : ", data);
+  }
+};
+
 export const boardImgReqeuset = async (board_id: number | string) => {
   try {
     const { data } = await customAxios.get(boardController.boardImg(board_id));
