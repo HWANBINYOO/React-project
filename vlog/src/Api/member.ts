@@ -62,13 +62,19 @@ export const myProfileImgReqeuset = async (user_id: string) => {
   }
 };
 
-export const profileimgUpdateReqeuset = async () => {
+export const profileimgUpdateReqeuset = async (file: any) => {
+  let formData = new FormData();
+  formData.append("file", file);
   try {
-    await customAxios.patch(MemberController.updateProfileimg(), {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    await customAxios.patch(
+      MemberController.updateProfileimg(),
+      { formData },
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
   } catch (e: any) {
     const { data } = e.response;
     console.error(data.message);

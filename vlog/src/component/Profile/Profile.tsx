@@ -18,11 +18,11 @@ const Profile = () => {
 
   useEffect(() => {
     async function Getprofile() {
+      const res = await profileReqeuset(param.user_id ?? "");
+      const res2 = await myboardsReqeuset(param.user_id ?? "");
       const { data } = await customAxios.get("user_name");
       if (data.user_id == param.user_id) setmy(true);
-      const res = await profileReqeuset(data.user_id);
       SetProfile(res?.data);
-      const res2 = await myboardsReqeuset(data.user_id);
       setBlogs(res2?.data.blogs);
     }
 

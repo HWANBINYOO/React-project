@@ -20,7 +20,7 @@ const ProfileEdit = () => {
   const [ChangePassWord, setChangePassWord] = useState("");
   const [PassWordAgain, setPassWordAgain] = useState("");
   const [imgBase64, setImgBase64] = useState(""); // 파일 base64
-  const [file, setFile] = useState(""); //파일
+  const [file, setFile] = useState(); //파일
   const [imgurl, setimgurl] = useState(""); //url
   const [modalDisplay, setmodalDisplay] = useState(false);
 
@@ -40,12 +40,9 @@ const ProfileEdit = () => {
     Getprofile();
   }, []);
 
-  useEffect(() => {}, []);
-
   const handleChangeFile = (event: any) => {
     event.preventDefault();
     let reader = new FileReader();
-
     reader.onloadend = () => {
       // 2. 읽기가 완료되면 아래코드가 실행됩니다.
       const base64 = reader.result;
@@ -64,7 +61,7 @@ const ProfileEdit = () => {
   //수정사항 서버로보내기 (profile사진포함)
   const onClickImg = async (event: any) => {
     event.preventDefault();
-    profileimgUpdateReqeuset();
+    profileimgUpdateReqeuset(file);
     setmodalDisplay(false);
     toast.success("수정되었습니다!");
   };
