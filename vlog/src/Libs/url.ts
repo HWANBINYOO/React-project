@@ -9,16 +9,16 @@ export const MemberController = {
   },
 
   // 프로필창 정보 조회
-  profile: (user_id: string) => {
+  profile: (user_id: number) => {
     return `/user_profile/${user_id}`;
   },
   // 내 게시글 조회
-  myBoards: (user_id: string) => {
+  myBoards: (user_id: number) => {
     return `/boards/${user_id}`;
   },
 
   // 내 프로필 이미지
-  profileImg: (user_id: string) => {
+  profileImg: (user_id: number) => {
     return `user_image/${user_id}`;
   },
 
@@ -38,11 +38,11 @@ export const boardController = {
   boards: () => {
     return `board`;
   },
-  //게시글 추가
+
   addBoard: () => {
     return `/board/write`;
   },
-  //게시글 삭제
+
   deleteBoard: (board_Id: string) => {
     return `/delete/${board_Id}`;
   },

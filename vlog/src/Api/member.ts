@@ -1,4 +1,4 @@
-import { MemberController } from "../utils/Libs/urls";
+import { MemberController } from "../Libs/url";
 import { customAxios } from "../Libs/CustomAxois";
 import { toast } from "react-toastify";
 
@@ -38,7 +38,7 @@ export const signupRequest = async (
   }
 };
 
-export const profileReqeuset = async (user_id: string) => {
+export const profileReqeuset = async (user_id: number) => {
   try {
     const { data } = await customAxios.get(MemberController.profile(user_id));
     return { data };
@@ -49,7 +49,7 @@ export const profileReqeuset = async (user_id: string) => {
   }
 };
 
-export const myProfileImgReqeuset = async (user_id: string) => {
+export const myProfileImgReqeuset = async (user_id: number) => {
   try {
     const { data } = await customAxios.get(
       MemberController.profileImg(user_id)

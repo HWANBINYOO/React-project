@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
+import { myProfileImgReqeuset } from "../../Api/member";
 interface BlogTypeProp {
   blogIn: BlogType;
 }
@@ -24,6 +25,8 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         const respone = await customAxios.get(
           `/board_image/${blogIn.board_id}`
         );
+
+        const { data }: any = await myProfileImgReqeuset(blogIn.user_id);
         const respone3 = await customAxios.get(`/user_image/${blogIn.user_id}`);
         setProfileImg(respone3.data);
 

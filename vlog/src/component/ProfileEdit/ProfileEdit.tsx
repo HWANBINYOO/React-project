@@ -1,11 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { customAxios } from "../../Libs/CustomAxois";
-import { ProfileType } from "../../types";
-import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import * as S from "./Styled";
-import axios from "axios";
 import {
   myProfileImgReqeuset,
   profileimgUpdateReqeuset,
