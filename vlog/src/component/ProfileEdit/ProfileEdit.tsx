@@ -20,7 +20,7 @@ const ProfileEdit = () => {
   const [ChangePassWord, setChangePassWord] = useState("");
   const [PassWordAgain, setPassWordAgain] = useState("");
   const [imgBase64, setImgBase64] = useState(""); // 파일 base64
-  const [file, setFile] = useState(); //파일
+  const [file, setFile] = useState(""); //파일
   const [imgurl, setimgurl] = useState(""); //url
   const [modalDisplay, setmodalDisplay] = useState(false);
 
@@ -61,9 +61,8 @@ const ProfileEdit = () => {
   //수정사항 서버로보내기 (profile사진포함)
   const onClickImg = async (event: any) => {
     event.preventDefault();
-    profileimgUpdateReqeuset(file);
+    await profileimgUpdateReqeuset(file);
     setmodalDisplay(false);
-    toast.success("수정되었습니다!");
   };
 
   const onClick = async (event: any) => {

@@ -62,23 +62,21 @@ export const myProfileImgReqeuset = async (user_id: string) => {
   }
 };
 
-export const profileimgUpdateReqeuset = async (file: any) => {
+export const profileimgUpdateReqeuset = async (file: string) => {
   let formData = new FormData();
   formData.append("file", file);
   try {
-    await customAxios.patch(
-      MemberController.updateProfileimg(),
-      { formData },
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
+    await customAxios.patch(MemberController.updateProfileimg(), formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    toast.success("수정되었습니다!");
   } catch (e: any) {
     const { data } = e.response;
     console.error(data.message);
     console.error("data : ", data);
+    toast.error(data.message);
   }
 };
 
