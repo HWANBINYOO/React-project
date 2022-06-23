@@ -20,6 +20,7 @@ const Profile = () => {
     async function Getprofile() {
       const res = await profileReqeuset(param.user_id ?? "");
       const res2 = await myboardsReqeuset(param.user_id ?? "");
+      console.log(res2);
       const { data } = await customAxios.get("user_name");
       if (data.user_id == param.user_id) setmy(true);
       SetProfile(res?.data);
@@ -29,11 +30,10 @@ const Profile = () => {
     Getprofile();
   }, []);
 
-  function date_descending(a: any, b: any) {
-    let dateA = new Date(a["date"]).getTime();
-    let dateB = new Date(b["date"]).getTime();
-    return dateA < dateB ? 1 : -1;
+  function sortObject(a: any, b: any) {
+    return b.board_id - a.board_id;
   }
+
   return (
     <>
       <S.Profile>
@@ -62,7 +62,7 @@ const Profile = () => {
         <S.Hr />
         <S.uploadBlogs>
           {Blogs ? (
-            Blogs.sort(date_descending).map((item, index) => (
+            Blogs.sort(sortObject).map((item, index) => (
               <BlogItem
                 key={index}
                 board_id={item.board_id}

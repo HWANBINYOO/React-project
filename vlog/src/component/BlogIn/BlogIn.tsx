@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
 import { myProfileImgReqeuset } from "../../Api/member";
+import { boardImgReqeuset, deleteboardReqeuset } from "../../Api/board";
 interface BlogTypeProp {
   blogIn: BlogType;
 }
@@ -15,47 +16,32 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const navigate = useNavigate();
   const [Blogrl, setBlogurl] = useState();
   const [DelectDisplay, setDelectDisplay] = useState(false);
-  const [boardId, setboardId] = useState(blogIn.board_id);
   const [userId, setUserId] = useState(blogIn.user_id);
   const [profileImg, setProfileImg] = useState<string>();
 
   useEffect(() => {
     async function GetBlogImg() {
-      try {
-        const respone = await customAxios.get(
-          `/board_image/${blogIn.board_id}`
-        );
+      const res: any = await boardImgReqeuset(blogIn.board_id);
+      setBlogurl(res.data);
+      const res2 = await myProfileImgReqeuset(blogIn.user_id);
+      setProfileImg(res?.data);
+      const respone2 = await customAxios.get(`/user_name`);
 
-        const { data }: any = await myProfileImgReqeuset(blogIn.user_id);
-        const respone3 = await customAxios.get(`/user_image/${blogIn.user_id}`);
-        setProfileImg(respone3.data);
-
-        setBlogurl(respone.data);
-        const respone2 = await customAxios.get(`/user_name`);
-        console.log(respone2);
-        if (respone2.data.user_id === blogIn.user_id) {
-          setDelectDisplay(true);
-          console.log(DelectDisplay);
-        } else {
-          setDelectDisplay(false);
-        }
-      } catch (a: any) {
-        console.log(a);
+      console.log(respone2);
+      if (respone2.data.user_id === blogIn.user_id) {
+        setDelectDisplay(true);
+        console.log(DelectDisplay);
+      } else {
+        setDelectDisplay(false);
       }
     }
     GetBlogImg();
   }, []);
 
   const DelectBlog = async () => {
-    try {
-      const response = await customAxios.delete(`/delete/${boardId}`);
-      console.log(response);
-      toast.success(response.data);
-      navigate(-1);
-    } catch (e: any) {
-      const { data } = e.response;
-      console.error("data : ", data);
-    }
+    const { data }: any = await deleteboardReqeuset(blogIn.user_id);
+    toast.success(data);
+    navigate(-1);
   };
 
   return (

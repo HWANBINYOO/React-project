@@ -11,7 +11,7 @@ import {
 
 const ProfileEdit = () => {
   const navigate = useNavigate();
-  const [Name, setName] = useState("유환빈");
+  const [Name, setName] = useState("");
   const [userId, setUserId] = useState("");
   const [PassWord, setPassWord] = useState("");
   const [ChangePassWord, setChangePassWord] = useState("");
@@ -21,18 +21,13 @@ const ProfileEdit = () => {
   const [imgurl, setimgurl] = useState(""); //url
   const [modalDisplay, setmodalDisplay] = useState(false);
 
-  const MyProfileImgReqeuset = async () => {
-    return await myProfileImgReqeuset(userId);
-  };
-
   useEffect(() => {
     async function Getprofile() {
       const { data } = await customAxios.get("user_name");
       setName(data.name);
       setUserId(data.user_id);
-      MyProfileImgReqeuset().then(async (res) => {
-        (await res?.data) && setimgurl(res?.data);
-      });
+      const res = await myProfileImgReqeuset(data.user_id);
+      setimgurl(res?.data);
     }
     Getprofile();
   }, []);

@@ -38,7 +38,7 @@ export const signupRequest = async (
   }
 };
 
-export const profileReqeuset = async (user_id: number) => {
+export const profileReqeuset = async (user_id: number | string) => {
   try {
     const { data } = await customAxios.get(MemberController.profile(user_id));
     return { data };
@@ -49,7 +49,7 @@ export const profileReqeuset = async (user_id: number) => {
   }
 };
 
-export const myProfileImgReqeuset = async (user_id: number) => {
+export const myProfileImgReqeuset = async (user_id: number | string) => {
   try {
     const { data } = await customAxios.get(
       MemberController.profileImg(user_id)
