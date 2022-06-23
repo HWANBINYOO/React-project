@@ -1,6 +1,8 @@
+import { response } from "express";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { myboardsReqeuset, profileReqeuset } from "../../Api/member";
+import { myboardsReqeuset } from "../../Api/board";
+import { profileReqeuset } from "../../Api/member";
 import { customAxios } from "../../Libs/CustomAxois";
 import { BlogType, ProfileType } from "../../types";
 import BlogItem from "../BlogItem/BlogItem";
@@ -14,28 +16,16 @@ const Profile = () => {
   const [my, setmy] = useState(false);
   const param = useParams();
 
-  //pramsId 가 undefined 나 null 일때 예외처리
-  const userId = param.user_id ?? "";
-
-  const ProfileReqeuset = async () => {
-    return await profileReqeuset(userId);
-  };
-
-  const MyboardsReqeuset = async () => {
-    return await myboardsReqeuset(userId);
-  };
-
   useEffect(() => {
     async function Getprofile() {
-      ProfileReqeuset().then(async (res) => {
-        (await res?.data) && SetProfile(res?.data);
-      });
-      MyboardsReqeuset().then(async (res) => {
-        (await res?.data) && setBlogs(res?.data.blogs);
-      });
       const { data } = await customAxios.get("user_name");
       if (data.user_id == param.user_id) setmy(true);
+      const res = await profileReqeuset(data.user_id);
+      SetProfile(res?.data);
+      const res2 = await myboardsReqeuset(data.user_id);
+      setBlogs(res2?.data.blogs);
     }
+
     Getprofile();
   }, []);
 

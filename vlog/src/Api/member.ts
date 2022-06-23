@@ -49,9 +49,11 @@ export const profileReqeuset = async (user_id: string) => {
   }
 };
 
-export const myboardsReqeuset = async (user_id: string) => {
+export const myProfileImgReqeuset = async (user_id: string) => {
   try {
-    const { data } = await customAxios.get(MemberController.myBoards(user_id));
+    const { data } = await customAxios.get(
+      MemberController.profileImg(user_id)
+    );
     return { data };
   } catch (e: any) {
     const { data } = e.response;
@@ -60,12 +62,31 @@ export const myboardsReqeuset = async (user_id: string) => {
   }
 };
 
-export const myProfileImgReqeuset = async (user_id: string) => {
+export const profileimgUpdateReqeuset = async () => {
   try {
-    const { data } = await customAxios.get(
-      MemberController.profileImg(user_id)
-    );
-    return { data };
+    await customAxios.patch(MemberController.updateProfileimg(), {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  } catch (e: any) {
+    const { data } = e.response;
+    console.error(data.message);
+    console.error("data : ", data);
+  }
+};
+
+export const profileUpdageReqeuset = async (
+  name: string,
+  password: string,
+  newPassword: string
+) => {
+  try {
+    await customAxios.patch(MemberController.updateProfile(), {
+      name: name,
+      password: password,
+      newPassword: newPassword,
+    });
   } catch (e: any) {
     const { data } = e.response;
     console.error(data.message);

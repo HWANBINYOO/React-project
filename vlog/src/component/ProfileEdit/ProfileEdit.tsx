@@ -6,7 +6,11 @@ import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import * as S from "./Styled";
 import axios from "axios";
-import { myProfileImgReqeuset } from "../../Api/member";
+import {
+  myProfileImgReqeuset,
+  profileimgUpdateReqeuset,
+  profileUpdageReqeuset,
+} from "../../Api/member";
 
 const ProfileEdit = () => {
   const navigate = useNavigate();
@@ -60,24 +64,9 @@ const ProfileEdit = () => {
   //수정사항 서버로보내기 (profile사진포함)
   const onClickImg = async (event: any) => {
     event.preventDefault();
-    let formData = new FormData();
-    formData.append("file", file);
-    try {
-      await customAxios.patch("/user/update/image", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      setmodalDisplay(false);
-      toast.success("수정되었습니다!");
-    } catch (e: any) {
-      console.log(e);
-      if (e.response) {
-        const { data } = e.response;
-        console.error("data : ", data);
-        toast.error(data.message);
-      }
-    }
+    profileimgUpdateReqeuset();
+    setmodalDisplay(false);
+    toast.success("수정되었습니다!");
   };
 
   const onClick = async (event: any) => {
@@ -89,21 +78,7 @@ const ProfileEdit = () => {
     } else if (PassWordAgain !== ChangePassWord) {
       return toast.warning("새로운패스워드가 일치하지 않아요!");
     }
-    try {
-      await customAxios.patch("/user/update", {
-        name: Name,
-        password: PassWord,
-        newPassword: ChangePassWord,
-      });
-      navigate(`/profile/${userId}`);
-    } catch (e: any) {
-      console.log(e);
-      if (e.response) {
-        const { data } = e.response;
-        console.error("data : ", data);
-        toast.error(data.message);
-      }
-    }
+    profileUpdageReqeuset(Name, PassWord, ChangePassWord);
   };
 
   return (
@@ -144,7 +119,6 @@ const ProfileEdit = () => {
               onChange={handleChangeFile}
             />
             <label htmlFor="change_img">선택</label>
-            {/* <button type="submit"> 변경하기</button> */}
           </form>
         </S.ProfileImgEdit>
         <S.EditI method="patch">
