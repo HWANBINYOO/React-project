@@ -5,7 +5,7 @@ import * as S from "./Styled";
 import { toast } from "react-toastify";
 import { customAxios } from "../../Libs/CustomAxois";
 import { MemberController } from "../../Libs/url";
-import { LoginRequest } from "../../Api/member";
+import { loginRequest } from "../../Api/member";
 
 const Login = () => {
   const [Email, setEmail] = useState<string>("");
@@ -18,7 +18,7 @@ const Login = () => {
     } else if (PassWord === "") {
       return toast.warning("비밀번호를 입력해주세요!");
     }
-    const { data }: any = await LoginRequest(Email, PassWord);
+    const { data }: any = await loginRequest(Email, PassWord);
 
     localStorage.setItem("Blog_accessToken", data.accessToken);
     localStorage.setItem("Blog_refreshToken", data.refreshToken);

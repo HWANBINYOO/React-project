@@ -1,7 +1,7 @@
 export interface ProfileType {
-  profileimg: string;
-  name: string;
-  postNumber: number;
+  board_number: string;
   email: string;
-  blogImgs: string;
+  url: string;
+  name: string;
+  user_id: number;
 }

@@ -1,9 +1,8 @@
 import { MemberController } from "../utils/Libs/urls";
-import { LoginType } from "../types";
 import { customAxios } from "../Libs/CustomAxois";
 import { toast } from "react-toastify";
 
-export const LoginRequest = async (email: string, password: string) => {
+export const loginRequest = async (email: string, password: string) => {
   try {
     const { data } = await customAxios.post(MemberController.signin(), {
       email: email,
@@ -20,7 +19,7 @@ export const LoginRequest = async (email: string, password: string) => {
   }
 };
 
-export const SignupRequest = async (
+export const signupRequest = async (
   name: string,
   email: string,
   password: string
@@ -33,13 +32,43 @@ export const SignupRequest = async (
     });
     return { data };
   } catch (e: any) {
-    console.log(e);
-    if (e.response) {
-      const { data } = e.response;
-      console.error(data.message);
-      console.error("data : ", data);
-    }
+    const { data } = e.response;
+    console.error(data.message);
+    console.error("data : ", data);
   }
 };
 
-export const ProfileReqeuset = async () => {};
+export const profileReqeuset = async (user_id: string) => {
+  try {
+    const { data } = await customAxios.get(MemberController.profile(user_id));
+    return { data };
+  } catch (e: any) {
+    const { data } = e.response;
+    console.error(data.message);
+    console.error("data : ", data);
+  }
+};
+
+export const myboardsReqeuset = async (user_id: string) => {
+  try {
+    const { data } = await customAxios.get(MemberController.myBoards(user_id));
+    return { data };
+  } catch (e: any) {
+    const { data } = e.response;
+    console.error(data.message);
+    console.error("data : ", data);
+  }
+};
+
+export const myProfileImgReqeuset = async (user_id: string) => {
+  try {
+    const { data } = await customAxios.get(
+      MemberController.profileImg(user_id)
+    );
+    return { data };
+  } catch (e: any) {
+    const { data } = e.response;
+    console.error(data.message);
+    console.error("data : ", data);
+  }
+};

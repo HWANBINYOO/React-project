@@ -5,6 +5,7 @@ import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
+import { boardController } from "../../Libs/url";
 // import loadingImg from "/img/loading.gif";
 
 const a = [
@@ -79,8 +80,8 @@ const Blog: React.FC<BlogType> = () => {
   useEffect(() => {
     async function getblog() {
       try {
-        const response = await customAxios.get("/board");
-        setBlogs(response.data.blogs);
+        const { data } = await customAxios.get(boardController.boards());
+        setBlogs(data.blogs);
       } catch (e: any) {
         console.log(e);
       }

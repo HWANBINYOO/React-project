@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
 import { toast } from "react-toastify";
 import * as S from "./Styled";
+import { signupRequest } from "../../Api/member";
 
 const Signup: React.FC = () => {
   const [Email, setEmail] = useState("");
@@ -20,20 +21,12 @@ const Signup: React.FC = () => {
     // }
     else if (PassWord === "")
       return toast.warning("패스워드가 입력되지 않았어요!");
-    try {
-      const { data } = await customAxios.post("user/resistor", {
-        name: Name,
-        email: Email,
-        password: PassWord,
-      });
-      toast.success("회원가입이 되었습니다!");
-      navigate("/login");
-      return { data };
-    } catch (e: any) {
-      const { data } = e.response;
-      console.error(data.message);
-      console.error("data : ", data);
-    }
+
+    const { data }: any = await signupRequest(Name, Email, PassWord);
+
+    toast.success("회원가입이 되었습니다!");
+    navigate("/login");
+    return { data };
   };
 
   return (

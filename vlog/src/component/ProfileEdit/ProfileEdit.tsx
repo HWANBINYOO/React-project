@@ -6,12 +6,12 @@ import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import * as S from "./Styled";
 import axios from "axios";
+import { myProfileImgReqeuset } from "../../Api/member";
 
 const ProfileEdit = () => {
   const navigate = useNavigate();
-  const [profileEdit, SetProfileEdit] = useState();
   const [Name, setName] = useState("유환빈");
-  const [userId, setUserId] = useState();
+  const [userId, setUserId] = useState("");
   const [PassWord, setPassWord] = useState("");
   const [ChangePassWord, setChangePassWord] = useState("");
   const [PassWordAgain, setPassWordAgain] = useState("");
@@ -20,26 +20,23 @@ const ProfileEdit = () => {
   const [imgurl, setimgurl] = useState(""); //url
   const [modalDisplay, setmodalDisplay] = useState(false);
 
+  const MyProfileImgReqeuset = async () => {
+    return await myProfileImgReqeuset(userId);
+  };
+
   useEffect(() => {
     async function Getprofile() {
-      try {
-        const respone = await customAxios.get("user_name");
-        // console.log(respone);
-        setName(respone.data.name);
-        setUserId(respone.data.user_id);
-        const respone2 = await customAxios.get(
-          `user_image/${respone.data.user_id}`
-        );
-        console.log(respone2);
-        setimgurl(respone2.data);
-      } catch (e: any) {
-        const { data } = e.response;
-        console.error(data.message);
-        console.error("data : ", data);
-      }
+      const { data } = await customAxios.get("user_name");
+      setName(data.name);
+      setUserId(data.user_id);
+      MyProfileImgReqeuset().then(async (res) => {
+        (await res?.data) && setimgurl(res?.data);
+      });
     }
     Getprofile();
   }, []);
+
+  useEffect(() => {}, []);
 
   const handleChangeFile = (event: any) => {
     event.preventDefault();

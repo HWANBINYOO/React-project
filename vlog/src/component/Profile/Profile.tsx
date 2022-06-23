@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import { myboardsReqeuset, profileReqeuset } from "../../Api/member";
 import { customAxios } from "../../Libs/CustomAxois";
 import { BlogType, ProfileType } from "../../types";
 import BlogItem from "../BlogItem/BlogItem";
@@ -9,42 +10,31 @@ import * as S from "./Styled";
 const Profile = () => {
   const navigate = useNavigate();
   const [profile, SetProfile] = useState<ProfileType>();
-  const [profileImg, setProfileImg] = useState<string>();
-  const [Imgurl, setImgurl] = useState();
-  const [userId, setUserId] = useState();
-  const [UserName, setUserName] = useState<string>();
-  const [UserEmail, setUserEmail] = useState<string>();
-  const [UserBoardNumber, setUserBoardNumber] = useState<number>(0);
-  const param = useParams();
   const [Blogs, setBlogs] = useState<BlogType[]>();
   const [my, setmy] = useState(false);
+  const param = useParams();
+
+  //pramsId 가 undefined 나 null 일때 예외처리
+  const userId = param.user_id ?? "";
+
+  const ProfileReqeuset = async () => {
+    return await profileReqeuset(userId);
+  };
+
+  const MyboardsReqeuset = async () => {
+    return await myboardsReqeuset(userId);
+  };
 
   useEffect(() => {
     async function Getprofile() {
-      try {
-        console.log(param);
-        const { data } = await customAxios.get(
-          `/user_profile/${param.user_id}`
-        );
-        const response = await customAxios.get(`/boards/${param.user_id}`);
-        const respone2 = await customAxios.get("user_name");
-        console.log(respone2);
-
-        if (respone2.data.user_id == param.user_id) {
-          setmy(true);
-        }
-        setUserBoardNumber(data.board_number);
-        setUserEmail(data.email);
-        setProfileImg(data.url);
-        setUserName(data.name);
-        setUserId(data.user_id);
-        console.log(response);
-
-        setBlogs(response.data.blogs);
-      } catch (e: any) {
-        const { data } = e.response;
-        console.error("data : ", data);
-      }
+      ProfileReqeuset().then(async (res) => {
+        (await res?.data) && SetProfile(res?.data);
+      });
+      MyboardsReqeuset().then(async (res) => {
+        (await res?.data) && setBlogs(res?.data.blogs);
+      });
+      const { data } = await customAxios.get("user_name");
+      if (data.user_id == param.user_id) setmy(true);
     }
     Getprofile();
   }, []);
@@ -59,15 +49,15 @@ const Profile = () => {
       <S.Profile>
         <S.ProfileImpormation>
           <S.ProfileImg>
-            {profileImg ? (
-              <img src={profileImg} />
+            {profile?.url ? (
+              <img src={profile?.url} />
             ) : (
               <img src={"/img/profile.png"} />
             )}
           </S.ProfileImg>
           <S.User>
             <S.EditGO>
-              <S.UserName>{UserName}</S.UserName>
+              <S.UserName>{profile?.name}</S.UserName>
               <S.UserName></S.UserName>
               {my ? (
                 <S.GOEdit onClick={() => navigate("/profile/Edit")}>
@@ -75,8 +65,8 @@ const Profile = () => {
                 </S.GOEdit>
               ) : null}
             </S.EditGO>
-            <S.UserBlogs>{`게시글 수:${UserBoardNumber}`}</S.UserBlogs>
-            <S.UserEmail>{UserEmail}</S.UserEmail>
+            <S.UserBlogs>{`게시글 수:${profile?.board_number}`}</S.UserBlogs>
+            <S.UserEmail>{profile?.email}</S.UserEmail>
           </S.User>
         </S.ProfileImpormation>
         <S.Hr />

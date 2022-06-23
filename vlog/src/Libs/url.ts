@@ -38,11 +38,11 @@ export const boardController = {
   boards: () => {
     return `board`;
   },
-
+  //게시글 추가
   addBoard: () => {
     return `/board/write`;
   },
-
+  //게시글 삭제
   deleteBoard: (board_Id: string) => {
     return `/delete/${board_Id}`;
   },
