@@ -26,10 +26,8 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
       setProfileImg(res2.data);
       const respone2 = await customAxios.get(`/user_name`);
 
-      console.log(respone2);
       if (respone2.data.user_id === blogIn.user_id) {
         setDelectDisplay(true);
-        console.log(DelectDisplay);
       } else {
         setDelectDisplay(false);
       }
@@ -38,7 +36,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   }, []);
 
   const DelectBlog = async () => {
-    const { data }: any = await deleteboardReqeuset(blogIn.user_id);
+    const { data }: any = await deleteboardReqeuset(blogIn.board_id);
     toast.success(data);
     navigate(-1);
   };

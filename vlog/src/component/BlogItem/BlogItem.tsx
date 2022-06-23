@@ -3,9 +3,10 @@ import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
-import { myProfileImgReqeuset } from "../../Api/member";
 import { boardImgReqeuset } from "../../Api/board";
+import { myProfileImgReqeuset } from "../../Api/member";
 
+// const BlogItem: React.FC<BlogType> = ({ name, date, title, desc, blogId }) => {
 const BlogItem: React.FC<BlogType> = ({
   user_name,
   date,
@@ -17,39 +18,32 @@ const BlogItem: React.FC<BlogType> = ({
   const navigate = useNavigate();
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
-  // const [userId, setuserId] = useState(user_id);
-
-  // useEffect(() => {
-  //   async function getblog2() {
-  //     const { data } = await customAxios.get("user_name");
-  //     setuserId(data.user_id);
-  //   }
-  //   getblog2();
-  // }, []);
 
   useEffect(() => {
     async function getblog() {
-      const res: any = await boardImgReqeuset(board_id);
-      setBlogImg(res.data);
-
-      const res2: any = await myProfileImgReqeuset(user_id);
-      setProfileImg(res2.data);
-      getblog();
+      try {
+        const respone: any = await boardImgReqeuset(board_id);
+        setBlogImg(respone.data);
+        const respone2: any = await myProfileImgReqeuset(user_id);
+        setProfileImg(respone2.data);
+      } catch (e: any) {
+        const { data } = e.response;
+        console.error(data.message);
+        console.error("data : ", data);
+      }
     }
+    getblog();
   }, []);
-
   return (
     <>
-      <S.BlogItem onClick={(e: any) => navigate(`/board/${board_id}`)}>
+      <S.BlogItem onClick={(e) => navigate(`/board/${board_id}`)}>
         <S.Img src={blogImg} />
         <S.TextBox>
           <S.Title>{title}</S.Title>
           <S.desc>{content}</S.desc>
           <S.ItemBottom>
             <S.BottomLeft>
-              <S.MemberImg
-                onClick={(e: any) => navigate(`/profile/${user_id}`)}
-              >
+              <S.MemberImg onClick={(e) => navigate(`/profile/${user_id}`)}>
                 {profileImg ? (
                   <img src={profileImg} />
                 ) : (

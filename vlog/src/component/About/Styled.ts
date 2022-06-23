@@ -26,32 +26,21 @@ export const About = styled.div`
   }
 `;
 
+export const IntrudeceWapper = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
 export const Intrudece = styled.div`
-  width: 55%;
+  width: 50%;
   height: 300px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: center;
-  padding: 0 10vw;
+  justify-content: flex-end;
   margin: 5% 0;
   text-align: center;
-
-  p {
-    text-decoration: none;
-    font-size: 2rem;
-  }
-`;
-
-export const Intrudece2 = styled.div`
-  width: 85%;
-  height: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  text-align: center;
-  padding: 50px 0;
 
   p {
     text-decoration: none;

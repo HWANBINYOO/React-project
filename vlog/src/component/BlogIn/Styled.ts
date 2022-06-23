@@ -104,7 +104,7 @@ export const NameDate = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0px;
-  padding-right: 20rem;
+  padding-right: 29vw;
 `;
 
 export const ProfileWapper = styled.div`

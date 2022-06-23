@@ -29,9 +29,9 @@ const Router = () => {
       <Route
         path="/About"
         element={
-          <PrivateRoute>
-            <AboutPage />
-          </PrivateRoute>
+          // <PrivateRoute>
+          <AboutPage />
+          // </PrivateRoute>
         }
       />
       <Route

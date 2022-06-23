@@ -79,11 +79,12 @@ const Blog: React.FC<BlogType> = () => {
 
   useEffect(() => {
     async function getblog() {
-      const { data }: any = await boards();
-      setBlogs(data.blogs);
+      const res = await boards();
+      setBlogs(res?.data.blogs);
     }
     getblog();
   }, []);
+  console.log(Blogs);
 
   function sortObject(a: any, b: any) {
     return b.board_id - a.board_id;
