@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { customAxios } from "../../utils/Libs/CustomAxois";
+import { customAxios } from "../../Libs/CustomAxois";
 import { BlogType, ProfileType } from "../../types";
 import BlogItem from "../BlogItem/BlogItem";
 import Footer from "../Footer/Footer";

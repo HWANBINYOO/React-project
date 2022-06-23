@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
-import { customAxios } from "../../utils/Libs/CustomAxois";
+import { customAxios } from "../../Libs/CustomAxois";
 import { ProfileType } from "../../types";
 import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
@@ -156,7 +156,7 @@ const ProfileEdit = () => {
             type="text"
             value={Name}
             placeholder={"Name"}
-            onChange={(e) => {
+            onChange={(e: any) => {
               setName(e.target.value);
             }}
           />
@@ -166,7 +166,7 @@ const ProfileEdit = () => {
           <S.EditInputPW
             type="password"
             placeholder={"pwd"}
-            onChange={(e) => setPassWord(e.target.value)}
+            onChange={(e: any) => setPassWord(e.target.value)}
           />
         </S.EditI>
         <S.EditI method="patch">
@@ -174,7 +174,7 @@ const ProfileEdit = () => {
           <S.EditInputPW
             type="password"
             placeholder={"pwd"}
-            onChange={(e) => setChangePassWord(e.target.value)}
+            onChange={(e: any) => setChangePassWord(e.target.value)}
           />
         </S.EditI>
         <S.EditI method="patch">
@@ -182,7 +182,7 @@ const ProfileEdit = () => {
           <S.EditInputPW
             type="password"
             placeholder={"pwd"}
-            onChange={(e) => setPassWordAgain(e.target.value)}
+            onChange={(e: any) => setPassWordAgain(e.target.value)}
           />
         </S.EditI>
         <S.ButtonS>

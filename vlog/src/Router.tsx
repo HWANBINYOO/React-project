@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import PublicRoute from "./utils/Libs/PublicRoute";
-import PrivateRoute from "./utils/Libs/PrivateRoute";
+import PublicRoute from "./Libs/PublicRoute";
+import PrivateRoute from "./Libs/PrivateRoute";
 import {
   AboutPage,
   BlogAddPage,

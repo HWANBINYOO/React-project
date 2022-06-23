@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Header, BlogAdd, Title, BlogIn, HeaderRIght } from "../component";
 import { BlogType } from "../types";
-import { customAxios } from "../utils/Libs/CustomAxois";
+import { customAxios } from "../Libs/CustomAxois";
 
 const BlogInPage: React.FC = () => {
   const param = useParams();

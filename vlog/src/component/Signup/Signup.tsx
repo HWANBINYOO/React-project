@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { customAxios } from "../../utils/Libs/CustomAxois";
+import { customAxios } from "../../Libs/CustomAxois";
 import { toast } from "react-toastify";
 import * as S from "./Styled";
-import { SignupRequest } from "../../Api/member";
 
-const TrySignup = () => {
+const Signup: React.FC = () => {
   const [Email, setEmail] = useState("");
   const [PassWord, setPassWord] = useState("");
   const [Name, setName] = useState("");
@@ -21,16 +20,22 @@ const TrySignup = () => {
     // }
     else if (PassWord === "")
       return toast.warning("패스워드가 입력되지 않았어요!");
-
-    const { data }: any = await SignupRequest(Name, Email, PassWord);
-    toast.success("회원가입이 되었습니다!");
-    navigate("/login");
+    try {
+      const { data } = await customAxios.post("user/resistor", {
+        name: Name,
+        email: Email,
+        password: PassWord,
+      });
+      toast.success("회원가입이 되었습니다!");
+      navigate("/login");
+      return { data };
+    } catch (e: any) {
+      const { data } = e.response;
+      console.error(data.message);
+      console.error("data : ", data);
+    }
   };
-  return { Name, Email, PassWord, setName, setEmail, setPassWord, onSignup };
-};
-const Signup: React.FC = () => {
-  const { Name, Email, PassWord, setEmail, setPassWord, setName, onSignup } =
-    TrySignup();
+
   return (
     <>
       <S.Login>

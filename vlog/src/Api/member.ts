@@ -1,6 +1,6 @@
 import { MemberController } from "../utils/Libs/urls";
 import { LoginType } from "../types";
-import { customAxios } from "../utils/Libs/CustomAxois";
+import { customAxios } from "../Libs/CustomAxois";
 import { toast } from "react-toastify";
 
 export const LoginRequest = async (email: string, password: string) => {
@@ -11,6 +11,7 @@ export const LoginRequest = async (email: string, password: string) => {
     });
     customAxios.defaults.headers.common["Authorization"] = data.accessToken;
     customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
+
     return { data };
   } catch (e: any) {
     const { data } = e.response;

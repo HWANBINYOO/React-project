@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
-import { customAxios } from "../../utils/Libs/CustomAxois";
+import { customAxios } from "../../Libs/CustomAxois";
 interface BlogTypeProp {
   blogIn: BlogType;
 }
@@ -86,7 +86,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           <S.Img src={Blogrl} />
           <S.desc>{blogIn.content}</S.desc>
         </S.TextBox>
-        <S.ProfileWapper onClick={(e) => navigate(`/profile/${userId}`)}>
+        <S.ProfileWapper onClick={(e: any) => navigate(`/profile/${userId}`)}>
           {profileImg ? (
             <S.ProfileImg src={profileImg} />
           ) : (

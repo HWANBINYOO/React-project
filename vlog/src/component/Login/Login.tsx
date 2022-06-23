@@ -3,37 +3,29 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { toast } from "react-toastify";
-import { customAxios } from "../../utils/Libs/CustomAxois";
-import Cookies from "universal-cookie";
+import { customAxios } from "../../Libs/CustomAxois";
+import { MemberController } from "../../Libs/url";
 import { LoginRequest } from "../../Api/member";
 
-const TryLogin = () => {
-  const cookies = new Cookies();
+const Login = () => {
   const [Email, setEmail] = useState<string>("");
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
 
-  const onLogin = () => {
-    const onLogin = async () => {
-      if (Email === "") {
-        return toast.warning("이메일을 입력해주세요!!");
-      } else if (PassWord === "") {
-        return toast.warning("비밀번호를 입력해주세요!");
-      }
-      const { data }: any = await LoginRequest(Email, PassWord);
+  const onLogin = async () => {
+    if (Email === "") {
+      return toast.warning("이메일을 입력해주세요!!");
+    } else if (PassWord === "") {
+      return toast.warning("비밀번호를 입력해주세요!");
+    }
+    const { data }: any = await LoginRequest(Email, PassWord);
 
-      localStorage.setItem("Blog_accessToken", data.accessToken);
-      localStorage.setItem("Blog_refreshToken", data.refreshToken);
-
-      toast.success("로그인 되었습니다!");
-      navigate("/board");
-    };
+    localStorage.setItem("Blog_accessToken", data.accessToken);
+    localStorage.setItem("Blog_refreshToken", data.refreshToken);
+    toast.success("로그인 되었습니다!");
+    navigate("/board");
   };
-  return { Email, PassWord, setEmail, setPassWord, onLogin };
-};
 
-const Login = () => {
-  const { Email, PassWord, setEmail, setPassWord, onLogin } = TryLogin();
   return (
     <>
       <S.Login>
@@ -43,7 +35,7 @@ const Login = () => {
         <S.LoginInput>
           <p>Email</p>
           <input
-            onChange={(e) => setEmail(e.currentTarget.value)}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Email을 입력하세요"
           />
         </S.LoginInput>
@@ -51,7 +43,7 @@ const Login = () => {
           <p>PassWord</p>
           <input
             type="password"
-            onChange={(e) => setPassWord(e.currentTarget.value)}
+            onChange={(e) => setPassWord(e.target.value)}
             placeholder="PassWord을 입력하세요"
           />
         </S.LoginInput>

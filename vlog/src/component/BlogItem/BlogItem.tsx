@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { useEffect, useState } from "react";
-import { customAxios } from "../../utils/Libs/CustomAxois";
+import { customAxios } from "../../Libs/CustomAxois";
 
 // const BlogItem: React.FC<BlogType> = ({ name, date, title, desc, blogId }) => {
 const BlogItem: React.FC<BlogType> = ({
@@ -43,14 +43,16 @@ const BlogItem: React.FC<BlogType> = ({
   }, []);
   return (
     <>
-      <S.BlogItem onClick={(e) => navigate(`/board/${board_id}`)}>
+      <S.BlogItem onClick={(e: any) => navigate(`/board/${board_id}`)}>
         <S.Img src={blogImg} />
         <S.TextBox>
           <S.Title>{title}</S.Title>
           <S.desc>{content}</S.desc>
           <S.ItemBottom>
             <S.BottomLeft>
-              <S.MemberImg onClick={(e) => navigate(`/profile/${user_id}`)}>
+              <S.MemberImg
+                onClick={(e: any) => navigate(`/profile/${user_id}`)}
+              >
                 {profileImg ? (
                   <img src={profileImg} />
                 ) : (
