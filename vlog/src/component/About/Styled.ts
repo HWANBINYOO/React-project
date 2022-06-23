@@ -50,6 +50,7 @@ export const Intrudece = styled.div`
 
 export const Img = styled.img`
   width: ${(props: any) => props.width};
+  object-fit: cover;
 `;
 
 export const AboutContents = styled.div`

@@ -22,13 +22,12 @@ export default function About() {
         <S.IntrudeceWapper>
           <S.Intrudece>
             <p style={{ transform: `translateX(${position}px)` }}>김성길</p>
-            안녕하세요
+            안녕하세요 서버 공부하는 김성길입니다
             <br />
-            성길tv에 성길이에요
+            프레임 워크는 스프링 부트를 이용하였고
             <br />
-            스프링 1인자에요
+            프로젝트 나랑 같이 할 사람 성길#0091 연락 ㄱㄱ
             <br />
-            산업기사 그냥 따죠
           </S.Intrudece>
           <S.Intrudece>
             <p style={{ transform: `translateX(${position}px)` }}>유환빈</p>
@@ -43,7 +42,7 @@ export default function About() {
         </S.IntrudeceWapper>
         <S.AboutContents>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/2977.jpg"} />
+            <S.Img style={{ width: "200px" }} src={"/img/geern.jpg"} />
             <S.decs>
               <p>제가 제일 좋아하는 과일</p>
               <p>청포도</p>
@@ -59,11 +58,10 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/11.jpg"} />
+            <S.Img style={{ width: "200px" }} src={"/img/kot.jpg"} />
             <S.decs>
               <p>제가 좋아하는 음식</p>
-              <p>자장면</p>
-              <p>정말 좋아해요</p>
+              <p>떡볶이</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
@@ -75,7 +73,7 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/song.png"} />
+            <S.Img style={{ width: "200px" }} src={"/img/bikeman.jpg"} />
             <S.decs>
               <p>제가 좋아하는 취미</p>
               <p>자전거</p>
@@ -90,7 +88,7 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/piano.jpg"} />
+            <S.Img style={{ width: "200px" }} src={"/img/bolwing.jpg"} />
             <S.decs>
               <p>볼링치는걸 좋아해요</p>
               <p>100점은 그냥 넘기죠</p>
