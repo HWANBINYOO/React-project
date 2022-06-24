@@ -72,10 +72,8 @@ export const profileimgUpdateReqeuset = async (file: string) => {
     });
     toast.success("수정되었습니다!");
   } catch (e: any) {
-    const { data } = e.response;
-    console.error(data.message);
-    console.error("data : ", data);
-    toast.error(data.message);
+    console.error(e.message);
+    toast.error(e.message);
   }
 };
 
@@ -87,9 +85,10 @@ export const profileUpdageReqeuset = async (
   try {
     await customAxios.patch(MemberController.updateProfile(), {
       name: name,
-      password: password,
-      newPassword: newPassword,
+      password: "",
+      newPassword: "",
     });
+    toast.success("수정되었습니다!");
   } catch (e: any) {
     const { data } = e.response;
     console.error(data.message);

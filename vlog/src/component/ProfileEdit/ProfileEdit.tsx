@@ -59,14 +59,26 @@ const ProfileEdit = () => {
 
   const onClick = async (event: any) => {
     event.preventDefault();
-    // if (ChangePassWord === "") {
-    //   return toast.warning("새로운패스워드를 입력하지 않았어요!");
-    // } else if (PassWordAgain === "") {
-    //   return toast.warning("새로운패스워드재입력를 입력하지 않았어요!");
-    // } else if (PassWordAgain !== ChangePassWord) {
-    //   return toast.warning("새로운패스워드가 일치하지 않아요!");
-    // }
+
+    if (PassWord != "" && ChangePassWord == "" && PassWordAgain == "") {
+      return toast.warning("새로운패스워드를 입력하지 않았어요!");
+    } else if (PassWord != "" && ChangePassWord != "" && PassWordAgain == "") {
+      return toast.warning("패스워드재입력을 입력하지 않았어요!");
+    } else if (PassWordAgain != ChangePassWord) {
+      return toast.warning("새로운패스워드기 일치하지 않아요!");
+    }
+    if (
+      PassWordAgain == "" &&
+      PassWord == "" &&
+      ChangePassWord == "" &&
+      Name == ""
+    ) {
+      return toast.warning("이름을 입력하지 않았어요!");
+    }
     profileUpdageReqeuset(Name, PassWord, ChangePassWord);
+    setTimeout(() => {
+      navigate(`/profile/${userId}`);
+    }, 500);
   };
 
   return (

@@ -46,7 +46,6 @@ export default function About() {
             <S.decs>
               <p>제가 제일 좋아하는 과일</p>
               <p>청포도</p>
-              <p>예</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
