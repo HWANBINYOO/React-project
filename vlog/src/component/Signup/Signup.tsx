@@ -19,8 +19,9 @@ const Signup: React.FC = () => {
     // else if (!emailRegex.test(Email)) {
     //   return toast.warning("이메일 형식이 잘못됬어요!");
     // }
-    else if (PassWord === "")
+    else if (PassWord === "") {
       return toast.warning("패스워드가 입력되지 않았어요!");
+    }
 
     const { data }: any = await signupRequest(Name, Email, PassWord);
 

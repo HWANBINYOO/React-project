@@ -7,9 +7,7 @@ export const myboardsReqeuset = async (user_id: number | string) => {
     const { data } = await customAxios.get(MemberController.myBoards(user_id));
     return { data };
   } catch (e: any) {
-    const { data } = e.response;
-    console.error(data.message);
-    console.error("data : ", data);
+    console.error(e.message);
   }
 };
 
@@ -18,9 +16,7 @@ export const boards = async () => {
     const { data } = await customAxios.get(boardController.boards());
     return { data };
   } catch (e: any) {
-    const { data } = e.response;
-    console.error(data.message);
-    console.error("data : ", data);
+    console.error(e.message);
   }
 };
 
@@ -29,9 +25,7 @@ export const boardImgReqeuset = async (board_id: number | string) => {
     const { data } = await customAxios.get(boardController.boardImg(board_id));
     return { data };
   } catch (e: any) {
-    const { data } = e.response;
-    console.error(data.message);
-    console.error("data : ", data);
+    console.error(e.message);
   }
 };
 
@@ -42,8 +36,6 @@ export const deleteboardReqeuset = async (board_id: number | string) => {
     );
     return { data };
   } catch (e: any) {
-    const { data } = e.response;
-    console.error(data.message);
-    console.error("data : ", data);
+    console.error(e.message);
   }
 };
