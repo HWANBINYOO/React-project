@@ -47,7 +47,11 @@ const BlogItem: React.FC<BlogType> = ({
                 {profileImg ? (
                   <img src={profileImg} />
                 ) : (
-                  <img src={"/img/profile.png"} />
+                  <img
+                    src={
+                      "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/profile.png"
+                    }
+                  />
                 )}
               </S.MemberImg>
               <S.MemberId>{user_name}</S.MemberId>

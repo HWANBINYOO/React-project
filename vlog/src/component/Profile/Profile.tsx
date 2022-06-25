@@ -44,7 +44,11 @@ const Profile = () => {
             {profile?.url ? (
               <img src={profile?.url} />
             ) : (
-              <img src={"/img/profile.png"} />
+              <img
+                src={
+                  "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/profile.png"
+                }
+              />
             )}
           </S.ProfileImg>
           <S.User>

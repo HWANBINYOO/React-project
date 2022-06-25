@@ -76,7 +76,11 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           {profileImg ? (
             <S.ProfileImg src={profileImg} />
           ) : (
-            <S.ProfileImg src={"/img/profile.png"} />
+            <S.ProfileImg
+              src={
+                "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/profile.png"
+              }
+            />
           )}
           <S.ProfileName>{blogIn.user_name}</S.ProfileName>
         </S.ProfileWapper>

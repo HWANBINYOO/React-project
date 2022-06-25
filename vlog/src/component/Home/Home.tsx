@@ -5,12 +5,36 @@ export default function Home() {
     <>
       <S.Home>
         <S.HelloPickture>
-          <S.Img src={"/img/dhd.webp"} />
-          <S.Img src={"/img/2977.jpg"} />
-          <S.Img src={"/img/11.jpg"} />
-          <S.Img src={"/img/piano.jpg"} />
-          <S.Img src={"/img/song.png"} />
-          <S.Img src={"/img/car.webp"} />
+          <S.Img
+            src={
+              "https://devlog-s3-bucket.s3.ap-northeast-2.amazonaws.com/Img/dhd.webp"
+            }
+          />
+          <S.Img
+            src={
+              "https://devlog-s3-bucket.s3.ap-northeast-2.amazonaws.com/Img/2977.jpg"
+            }
+          />
+          <S.Img
+            src={
+              "https://devlog-s3-bucket.s3.ap-northeast-2.amazonaws.com/Img/11.jpg"
+            }
+          />
+          <S.Img
+            src={
+              "https://devlog-s3-bucket.s3.ap-northeast-2.amazonaws.com/Img/piano.jpg"
+            }
+          />
+          <S.Img
+            src={
+              "https://devlog-s3-bucket.s3.ap-northeast-2.amazonaws.com/Img/song.png"
+            }
+          />
+          <S.Img
+            src={
+              "https://devlog-s3-bucket.s3.ap-northeast-2.amazonaws.com/Img/car.webp"
+            }
+          />
         </S.HelloPickture>
         <S.GoLogin>
           <Link to="/login" style={{ textDecoration: "none", color: "black" }}>

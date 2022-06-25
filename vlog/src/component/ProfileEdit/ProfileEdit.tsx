@@ -108,7 +108,11 @@ const ProfileEdit = () => {
                 <img src={imgurl} />
               )
             ) : (
-              <img src={"/img/profile.png"} />
+              <img
+                src={
+                  "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/profile.png"
+                }
+              />
             )}
           </S.ProfileImg>
           <form name="files" method="patch" onSubmit={onClickImg}>

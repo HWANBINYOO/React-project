@@ -90,7 +90,15 @@ const BlogAdd = () => {
         </S.Box>
         <S.BlogAddImgWapper>
           <S.BlogImg>
-            {file ? <img src={imgBase64} /> : <img src={"/img/white.png"} />}
+            {file ? (
+              <img src={imgBase64} />
+            ) : (
+              <img
+                src={
+                  "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/white.png"
+                }
+              />
+            )}
           </S.BlogImg>
           <form
             name="files"

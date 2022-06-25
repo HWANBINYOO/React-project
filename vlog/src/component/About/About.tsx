@@ -42,14 +42,24 @@ export default function About() {
         </S.IntrudeceWapper>
         <S.AboutContents>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/geern.jpg"} />
+            <S.Img
+              style={{ width: "200px" }}
+              src={
+                "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/geern.jpg"
+              }
+            />
             <S.decs>
               <p>제가 제일 좋아하는 과일</p>
               <p>청포도</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/2977.jpg"} />
+            <S.Img
+              style={{ width: "200px" }}
+              src={
+                "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/2977.jpg"
+              }
+            />
             <S.decs>
               <p>제가 제일 좋아하는 과일</p>
               <p>귤</p>
@@ -57,14 +67,24 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/kot.jpg"} />
+            <S.Img
+              style={{ width: "200px" }}
+              src={
+                "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/kot.jpg"
+              }
+            />
             <S.decs>
               <p>제가 좋아하는 음식</p>
               <p>떡볶이</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/11.jpg"} />
+            <S.Img
+              style={{ width: "200px" }}
+              src={
+                "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/11.jpg"
+              }
+            />
             <S.decs>
               <p>제가 좋아하는 음식</p>
               <p>초밥</p>
@@ -72,7 +92,12 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/bikeman.jpg"} />
+            <S.Img
+              style={{ width: "200px" }}
+              src={
+                "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/bikeman.jpg"
+              }
+            />
             <S.decs>
               <p>제가 좋아하는 취미</p>
               <p>자전거</p>
@@ -80,21 +105,36 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/song.png"} />
+            <S.Img
+              style={{ width: "200px" }}
+              src={
+                "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/song.png"
+              }
+            />
             <S.decs>
               <p>음악감상이 취미</p>
               <p>주로 팝송을 들어요</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/bolwing.jpg"} />
+            <S.Img
+              style={{ width: "200px" }}
+              src={
+                "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/bolwing.jpg"
+              }
+            />
             <S.decs>
               <p>볼링치는걸 좋아해요</p>
               <p>100점은 그냥 넘기죠</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
-            <S.Img style={{ width: "200px" }} src={"/img/piano.jpg"} />
+            <S.Img
+              style={{ width: "200px" }}
+              src={
+                "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/piano.jpg"
+              }
+            />
             <S.decs>
               <p>치아노치기가 취미</p>
               <p>주로 클래식곡 쳐요</p>

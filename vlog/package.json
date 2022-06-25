@@ -3,7 +3,8 @@
     "src/types"
   ],
   "main": "public/Main.js",
-  "homepage": "/",
+  "homepage": ".",
+
   "name": "vlog",
   "version": "0.1.0",
   "private": true,

@@ -111,7 +111,11 @@ const Blog: React.FC<BlogType> = () => {
               />
             ))
           ) : (
-            <S.Img src={"/img/loading.gif"} />
+            <S.Img
+              src={
+                "https://devlog-s3-bucket.s3.ap-northeast-2.amazonaws.com/Img/loading.gif"
+              }
+            />
           )}
         </S.BLogWarpper>
       </S.Blog>
