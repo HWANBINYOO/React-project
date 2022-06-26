@@ -34,23 +34,26 @@ export const IntrudeceWapper = styled.div`
 
 export const Intrudece = styled.div`
   width: 40%;
-  height: 700px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: center;
   justify-content: flex-end;
   text-align: center;
+  font-size: 1.3rem;
 
   p {
     text-decoration: none;
     font-size: 2rem;
+    font-weight: bold;
   }
 
   img {
-    width: 70%;
-    height: 500px;
+    width: 40%;
+    height: 400px;
     object-fit: cover;
+    border-radius: 10px;
   }
 `;
 
@@ -84,4 +87,8 @@ export const decs = styled.div`
   gap: 5px;
   width: 200px;
   margin: auto 0;
+
+  p {
+    font-size: 1.4rem;
+  }
 `;
