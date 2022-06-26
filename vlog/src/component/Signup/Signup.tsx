@@ -1,7 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { customAxios } from "../../Libs/CustomAxois";
 import { toast } from "react-toastify";
 import * as S from "./Styled";
 import { signupRequest } from "../../Api/member";

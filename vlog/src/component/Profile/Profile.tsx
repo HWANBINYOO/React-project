@@ -1,4 +1,3 @@
-import { response } from "express";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { myboardsReqeuset } from "../../Api/board";

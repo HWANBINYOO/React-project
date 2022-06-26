@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { useEffect, useState } from "react";
-import { customAxios } from "../../Libs/CustomAxois";
 import { boardImgReqeuset } from "../../Api/board";
 import { myProfileImgReqeuset } from "../../Api/member";
 

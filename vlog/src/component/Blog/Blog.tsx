@@ -3,10 +3,7 @@ import BlogItem from "../BlogItem/BlogItem";
 import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
-import { customAxios } from "../../Libs/CustomAxois";
-import { boardController } from "../../Libs/url";
 import { boards } from "../../Api/board";
-import { AnyTypeAnnotation } from "@babel/types";
 
 // const a = [
 //   {

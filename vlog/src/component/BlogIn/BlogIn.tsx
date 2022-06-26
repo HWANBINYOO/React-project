@@ -2,7 +2,6 @@ import * as S from "./Styled";
 import { BlogType } from "../../types";
 import Footer from "../Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
