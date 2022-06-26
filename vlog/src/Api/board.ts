@@ -31,10 +31,8 @@ export const boardImgReqeuset = async (board_id: number | string) => {
 
 export const deleteboardReqeuset = async (board_id: number | string) => {
   try {
-    const { data } = await customAxios.delete(
-      boardController.deleteBoard(board_id)
-    );
-    return { data };
+    await customAxios.delete(boardController.deleteBoard(board_id));
+    toast.success("성공적으로 삭제되었습니다!");
   } catch (e: any) {
     console.error(e.message);
   }

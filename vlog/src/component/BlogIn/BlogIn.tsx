@@ -35,9 +35,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   }, []);
 
   const DelectBlog = async () => {
-    const { data }: any = await deleteboardReqeuset(blogIn.board_id);
-    toast.success(data);
-    navigate(-1);
+    deleteboardReqeuset(blogIn.board_id);
   };
 
   return (

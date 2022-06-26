@@ -12,8 +12,9 @@ export const loginRequest = async (email: string, password: string) => {
     customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
     return { data };
   } catch (e: any) {
-    console.error(e.message);
-    toast.error(e.message);
+    const { data } = e.response;
+    console.error("data : ", data);
+    toast.error(data.message);
   }
 };
 
@@ -30,7 +31,9 @@ export const signupRequest = async (
     });
     return { data };
   } catch (e: any) {
-    console.error(e.message);
+    const { data } = e.response;
+    console.error("data : ", data);
+    toast.error(data.message);
   }
 };
 
@@ -39,7 +42,9 @@ export const profileReqeuset = async (user_id: number | string) => {
     const { data } = await customAxios.get(MemberController.profile(user_id));
     return { data };
   } catch (e: any) {
-    console.error(e.message);
+    const { data } = e.response;
+    console.error("data : ", data);
+    toast.error(data.message);
   }
 };
 
@@ -50,7 +55,9 @@ export const myProfileImgReqeuset = async (user_id: number | string) => {
     );
     return { data };
   } catch (e: any) {
-    console.error(e.message);
+    const { data } = e.response;
+    console.error("data : ", data);
+    toast.error(data.message);
   }
 };
 
@@ -65,8 +72,9 @@ export const profileimgUpdateReqeuset = async (file: string) => {
     });
     toast.success("수정되었습니다!");
   } catch (e: any) {
-    console.error(e.message);
-    toast.error(e.message);
+    const { data } = e.response;
+    console.error("data : ", data);
+    toast.error(data.message);
   }
 };
 
@@ -83,6 +91,8 @@ export const profileUpdageReqeuset = async (
     });
     toast.success("수정되었습니다!");
   } catch (e: any) {
-    console.error(e.message);
+    const { data } = e.response;
+    console.error("data : ", data);
+    toast.error(data.message);
   }
 };
