@@ -29,22 +29,28 @@ export const About = styled.div`
 export const IntrudeceWapper = styled.div`
   width: 100%;
   display: flex;
+  justify-content: center;
 `;
 
 export const Intrudece = styled.div`
-  width: 50%;
-  height: 300px;
+  width: 40%;
+  height: 700px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: center;
   justify-content: flex-end;
-  margin: 5% 0;
   text-align: center;
 
   p {
     text-decoration: none;
     font-size: 2rem;
+  }
+
+  img {
+    width: 70%;
+    height: 500px;
+    object-fit: cover;
   }
 `;
 
