@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
+import { KindType } from "../../types";
 import * as S from "./Styled";
 
 export default function KindIn() {
@@ -9,6 +10,10 @@ export default function KindIn() {
   const [HeaderInput, setHeaderInput] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  const [kindIn, setKindIn] = useState<KindType>();
+  const url = "http://10.120.74.35:8001";
+  const [myimgurl, userMyimgurl] = useState<string>();
+  const param = useParams();
 
   useEffect(() => {
     console.log(location.pathname);
@@ -16,13 +21,15 @@ export default function KindIn() {
       try {
         const { data } = await customAxios.get(location.pathname);
         console.log(data);
+        setKindIn(data);
+        userMyimgurl(url.concat(data.imgurl));
       } catch (e: any) {
         const { data } = e.response;
         console.error(data.message);
       }
     }
     getKind();
-  }, []);
+  }, [location.pathname]);
 
   const onHome = () => {
     navigate("/");
@@ -31,10 +38,11 @@ export default function KindIn() {
   //구매하기로
   const onButtonClick = async (name: string) => {
     try {
-      const { data } = await customAxios.post(name, {
+      const { data } = await customAxios.post(`${name}/${param.id}`, {
         Color: SelectedColor,
         Size: SelectedSize,
       });
+      navigate(`/pur/${param.id}`);
       console.log(data);
     } catch (e: any) {
       const { data } = e.response;
@@ -68,11 +76,11 @@ export default function KindIn() {
           </S.SuggestWapper>
         </S.LeftContent>
         <S.KindInImgWapper>
-          <S.KindInImg src={"/img/bluepants.png"} />
+          <S.KindInImg src={myimgurl} />
         </S.KindInImgWapper>
         <S.KindRight>
           <S.KindDecs>
-            <S.KindTitle>와이드 청바지 와이드 데님 팬츠</S.KindTitle>
+            <S.KindTitle>{kindIn?.title}</S.KindTitle>
             <S.KindSize>
               <p>XS(25):허리 34.5 밑위 26 허벅지 29 밑단 20 총장 96.5</p>
               <p>S(26):허리 38 밑위 27 허벅지 30 밑단 21 총장 98</p>
@@ -83,7 +91,7 @@ export default function KindIn() {
             </S.KindSize>
           </S.KindDecs>
           <S.KindCost>
-            <S.KindTop>34,200원</S.KindTop>
+            <S.KindTop>{kindIn?.prise}</S.KindTop>
             <S.hr />
             <S.KindCostBottom>
               <S.KindChoose>옵션선택</S.KindChoose>
