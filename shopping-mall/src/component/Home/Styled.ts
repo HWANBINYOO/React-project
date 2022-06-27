@@ -28,6 +28,7 @@ export const Content = styled.div<ContentFontColorProps>`
   &:hover {
     background-image: url(${(props) => props.imgurl});
     background-size: 100%;
+    background-size: cover;
   }
 `;
 

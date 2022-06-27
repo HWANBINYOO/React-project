@@ -1,5 +1,5 @@
 import SignIn from "./SignIn/SignIn";
-import SignUp from "./SignUp/SignUp";
+import SignUp from "./Signup/Signup";
 import Header from "./Header/Header";
 import Profile from "./Profile/Profile";
 import Home from "./Home/Home";

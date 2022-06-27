@@ -9,10 +9,8 @@ const SignIn = () => {
   const [Email, setEmail] = useState<string>("");
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
-  const JWT_EXPIRY_TIME = 3 * 3600 * 1000;
-  let ACCESS_TOKEN;
   // let REFRESH_TOKEN;
-  const [cookies, setCookie] = useCookies(["AccessToken"]);
+  const [cookies, setCookie] = useCookies(["AccessToken", "RefreshToken"]);
 
   const onLogin = async () => {
     try {
@@ -23,27 +21,23 @@ const SignIn = () => {
       });
 
       console.log(data);
-      ACCESS_TOKEN = data.accessToken;
-      // REFRESH_TOKEN = data.refreshToken;
-      onLoginSuccess(ACCESS_TOKEN);
-      //로그아웃하면 쿠키 삭제
-      //cookies.remove('refresh_token');
+
       customAxios.defaults.headers.common[
         "Authorization"
       ] = `${data.accessToken}`;
-      customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
+      // customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
 
-      //토큰 쿠키에 저장
-      // setCookie("refreshToken", REFRESH_TOKEN, {
-      //   path: "/refreshToken",
-      //   secure: true,
-      //   sameSite: "none",
-      // });
-      setCookie("AccessToken", ACCESS_TOKEN, {
+      setCookie("AccessToken", data.accessToken, {
         path: "/accessToken",
         secure: true,
         sameSite: "none",
       });
+      setCookie("RefreshToken", data.refreshToken, {
+        path: "/refreshToken",
+        secure: true,
+        sameSite: "none",
+      });
+
       navigate("/");
     } catch (e: any) {
       if (e.message === "Request failed with status code 400") {
@@ -62,26 +56,6 @@ const SignIn = () => {
     }
   };
   // accessToken 토큰 재발급 요청
-  const onSilentRefresh = async (accessToken: undefined) => {
-    try {
-      const { data } = await customAxios.post("/silent-refresh", accessToken);
-      ACCESS_TOKEN = data.accessToken;
-    } catch (e: any) {
-      const { data } = e.response;
-      console.error("data : ", data);
-    }
-  };
-
-  // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
-  const onLoginSuccess = (accessToken: undefined) => {
-    // accessToken 설정
-    customAxios.defaults.headers.common[
-      "Authorization"
-    ] = `Bearer ${accessToken}`;
-
-    // accessToken 만료하기 1분 전에 로그인 연장
-    setTimeout(onSilentRefresh, JWT_EXPIRY_TIME - 60000);
-  };
 
   return (
     <>

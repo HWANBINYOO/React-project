@@ -6,8 +6,11 @@ import { KindType } from "../../types";
 import * as S from "./Styled";
 import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
+import { useCookies } from "react-cookie";
 
 const KindContent = () => {
+  const [cookies, setCookie] = useCookies(["AccessToken", "RefreshToken"]);
+
   const [Kinds, setKinds] = useState<KindType[]>();
   const [searchTerm, setSearchTerm] = useState<string>("");
   const param = useParams();

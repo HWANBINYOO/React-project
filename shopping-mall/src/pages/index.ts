@@ -1,6 +1,6 @@
 import HomePage from "./HomePage";
 import SignInPage from "./SignInPage";
-import SignUpPage from "./SignUpPage";
+import SignUpPage from "./SignupPage";
 import ProfilePage from "./ProfilePage";
 import KindPage from "./KindPage/KindPage";
 import KindInPage from "./KindInPage/KindInPage";
