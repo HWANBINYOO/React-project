@@ -1,19 +1,46 @@
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
 
-const KindIn = () => {
+export default function KindIn() {
   const [SelectedColor, setSelectedColor] = useState("");
   const [SelectedSize, setSelectedSize] = useState("");
   const [HeaderInput, setHeaderInput] = useState("");
   const navigate = useNavigate();
-  const param = useParams();
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log(location.pathname);
+    async function getKind() {
+      try {
+        const { data } = await customAxios.get(location.pathname);
+        console.log(data);
+      } catch (e: any) {
+        const { data } = e.response;
+        console.error(data.message);
+      }
+    }
+    getKind();
+  }, []);
 
   const onHome = () => {
     navigate("/");
   };
 
-  const onButtonClick = (name: string) => {};
+  //구매하기로
+  const onButtonClick = async (name: string) => {
+    try {
+      const { data } = await customAxios.post(name, {
+        Color: SelectedColor,
+        Size: SelectedSize,
+      });
+      console.log(data);
+    } catch (e: any) {
+      const { data } = e.response;
+      console.error(data.message);
+    }
+  };
 
   return (
     <S.KindInWapper>
@@ -100,6 +127,4 @@ const KindIn = () => {
       </S.Contents>
     </S.KindInWapper>
   );
-};
-
-export default KindIn;
+}

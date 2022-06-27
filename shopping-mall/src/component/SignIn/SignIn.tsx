@@ -25,7 +25,7 @@ const SignIn = () => {
       customAxios.defaults.headers.common[
         "Authorization"
       ] = `${data.accessToken}`;
-      // customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
+      customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
 
       setCookie("AccessToken", data.accessToken, {
         path: "/accessToken",
