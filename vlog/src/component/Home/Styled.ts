@@ -10,9 +10,9 @@ export const Home = styled.div`
 `;
 
 export const HelloPickture = styled.div`
-  width: 50vw;
+  width: 40vw;
   display: grid;
-  height: 70vh;
+  height: 60vh;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, minmax(100px, auto));

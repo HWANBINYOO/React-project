@@ -21,7 +21,7 @@ export default function About() {
       <S.About>
         <S.IntrudeceWapper>
           <S.Intrudece>
-            <img src="/img/cat.jpg" />
+            <img src="https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/cat.jpg" />
             <p style={{ transform: `translateX(${position}px)` }}>김성길</p>
             안녕하세요 서버 공부하는 김성길입니다
             <br />
@@ -32,7 +32,7 @@ export default function About() {
             성길tv 구독 좋아요
           </S.Intrudece>
           <S.Intrudece>
-            <img src="/img/penguin.jpg" />
+            <img src="https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/%ED%8E%98%EA%B7%84.jpg" />
             <p style={{ transform: `translateX(${position}px)` }}>유환빈</p>
             안녕하세요
             <br />
