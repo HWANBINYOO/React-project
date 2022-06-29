@@ -39,10 +39,13 @@ export default function KindIn() {
   const onButtonClick = async (name: string) => {
     try {
       const { data } = await customAxios.post(`${name}/${param.id}`, {
-        Color: SelectedColor,
-        Size: SelectedSize,
+        color: SelectedColor,
+        size: SelectedSize,
+        title: kindIn?.title,
+        parise: kindIn?.prise,
+        imgurl: myimgurl,
       });
-      navigate(`/pur/${param.id}`);
+      navigate(`/${name}/${param.id}`);
       console.log(data);
     } catch (e: any) {
       const { data } = e.response;
@@ -125,7 +128,7 @@ export default function KindIn() {
             <S.Btn>장바구니</S.Btn>
             <S.Btn
               onClick={() => {
-                onButtonClick("pur");
+                onButtonClick("Buy");
               }}
             >
               구매하기

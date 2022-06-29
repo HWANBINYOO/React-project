@@ -14,7 +14,8 @@ export const BlogItem = styled.div`
   transition: all ease 0.25s 0s;
 
   &:hover {
-    transform: scale(1.03);
+    /* transform: scale(1.03); */
+    transform: scale3d(1.05, 1.05, 1.05);
   }
 `;
 
