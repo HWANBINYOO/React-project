@@ -33,7 +33,7 @@ export const IntrudeceWapper = styled.div`
 `;
 
 export const Intrudece = styled.div`
-  width: 40%;
+  width: 43%;
   height: 600px;
   display: flex;
   flex-direction: column;
