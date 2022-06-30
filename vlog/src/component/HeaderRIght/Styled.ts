@@ -6,7 +6,7 @@ export const HeaderRIght = styled.div`
   justify-content: space-between;
   width: 120px;
   position: fixed;
-  top: 30px;
+  top: 5vh;
   right: 25px;
 `;
 

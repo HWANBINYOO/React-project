@@ -36,6 +36,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
 
   const DelectBlog = async () => {
     deleteboardReqeuset(blogIn.board_id);
+    navigate(-1);
   };
 
   return (
