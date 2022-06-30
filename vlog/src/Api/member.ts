@@ -12,9 +12,11 @@ export const loginRequest = async (email: string, password: string) => {
     customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
     return { data };
   } catch (e: any) {
-    const { data } = e.response;
-    console.error("data : ", data);
-    toast.error(data.message);
+    console.log(e.message);
+
+    // const { data } = e.response;
+    // console.error("data : ", data);
+    // toast.error(data.message);
   }
 };
 
