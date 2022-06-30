@@ -46,26 +46,30 @@ const BlogAdd = () => {
 
   const onSubmit = async (event: any) => {
     event.preventDefault();
-    let formData = new FormData();
-    formData.append("file", file);
-    formData.append("title", title);
-    formData.append("content", desc);
-    formData.append("date", `${year}-${month}-${day}`);
-    try {
-      await customAxios.post("/board/write", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      toast.success("추가됐습니다!");
-      navigate("/board");
-    } catch (e: any) {
-      console.log(e);
-      if (e.response) {
-        const { data } = e.response;
-        console.error("data : ", data);
-        toast.warning(data.message);
+    if (file) {
+      let formData = new FormData();
+      formData.append("file", file);
+      formData.append("title", title);
+      formData.append("content", desc);
+      formData.append("date", `${year}-${month}-${day}`);
+      try {
+        await customAxios.post("/board/write", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        toast.success("추가됐습니다!");
+        navigate("/board");
+      } catch (e: any) {
+        console.log(e);
+        if (e.response) {
+          const { data } = e.response;
+          console.error("data : ", data);
+          toast.warning(data.message);
+        }
       }
+    } else {
+      toast.error("이미지가 선택되지 않았어요");
     }
   };
 
