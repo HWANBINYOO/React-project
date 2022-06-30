@@ -14,11 +14,14 @@ const Signup: React.FC = () => {
   const onSignup = async () => {
     const emailRegex =
       /([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    const PassWordPegex = /(?=.*\d{1,50}).{4,50}$/;
     if (Email === "") return toast.warning("이메일이 입력되지 않았어요!");
     else if (!emailRegex.test(Email)) {
-      return toast.warning("이메일 형식이 잘못됬어요!");
+      return toast.warning("이메일 형식이 잘못됐어요!");
     } else if (PassWord === "") {
       return toast.warning("패스워드가 입력되지 않았어요!");
+    } else if (!PassWordPegex.test(PassWord)) {
+      return toast.warning("패스워드 형식이 잘못됐어요!");
     }
 
     const { data }: any = await signupRequest(Name, Email, PassWord);
