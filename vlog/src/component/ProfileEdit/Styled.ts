@@ -17,6 +17,7 @@ export const ProfileImgEdit = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 15vh;
   font-size: 50px;
   padding: 50px 0 0 0;
   label {
@@ -42,6 +43,8 @@ export const ProfileImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: auto;
   img {
     border-radius: 50%;
     transition: all ease 0.2s 0s;
@@ -53,12 +56,14 @@ export const ProfileImg = styled.div`
 
 export const EditI = styled.form`
   width: 100%;
+  height: 10vh;
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
   font-size: 30px;
   margin: 20px 0;
   span {
+    height: 100%;
     width: 45%;
   }
 `;
@@ -104,6 +109,8 @@ export const ButtonS = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 40px 0;
+  height: 10vh;
+  width: 100%;
 `;
 export const Btn = styled.button`
   font-family: "GangwonEduSaeeum_OTFMediumA";
