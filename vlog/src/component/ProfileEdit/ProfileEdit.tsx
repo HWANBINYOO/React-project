@@ -87,13 +87,19 @@ const ProfileEdit = () => {
         {modalDisplay ? (
           <S.Modal>
             <S.ModalContainal>
-              {imgurl ? (
+              {imgurl || imgBase64 ? (
                 imgBase64 ? (
                   <img src={imgBase64} />
                 ) : (
                   <img src={imgurl} />
                 )
-              ) : null}
+              ) : (
+                <img
+                  src={
+                    "https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/profile.png"
+                  }
+                />
+              )}
               <button onClick={onClickImg}> 변경하기</button>
             </S.ModalContainal>
           </S.Modal>
@@ -101,7 +107,7 @@ const ProfileEdit = () => {
 
         <S.ProfileImgEdit>
           <S.ProfileImg>
-            {imgurl ? (
+            {imgurl || imgBase64 ? (
               imgBase64 ? (
                 <img src={imgBase64} />
               ) : (
