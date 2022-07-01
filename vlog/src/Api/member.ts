@@ -11,11 +11,11 @@ export const loginRequest = async (email: string, password: string) => {
     customAxios.defaults.headers.common["Authorization"] = data.accessToken;
     return { data };
   } catch (e: any) {
-    console.log(e.message);
+    // console.log(e.message);
 
-    // const { data } = e.response;
-    // console.error("data : ", data);
-    // toast.error(data.message);
+    const { data } = e.response;
+    console.error("data : ", data);
+    toast.error(data.message);
   }
 };
 
