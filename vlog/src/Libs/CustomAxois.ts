@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import { getRefresh } from "./getRefresh";
 
 export const customAxios: AxiosInstance = axios.create({

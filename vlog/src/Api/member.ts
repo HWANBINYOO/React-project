@@ -9,7 +9,6 @@ export const loginRequest = async (email: string, password: string) => {
       password: password,
     });
     customAxios.defaults.headers.common["Authorization"] = data.accessToken;
-    customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
     return { data };
   } catch (e: any) {
     console.log(e.message);
