@@ -1,21 +1,40 @@
 import styled from "styled-components";
 
-export const BlogItem = styled.div`
+type box = {
+  Xcenter: number;
+  Ycenter: number;
+  D: number;
+};
+
+export const BlogItemWapper = styled.div`
   width: 300px;
-  height: 440px;
+  height: 450px;
+  margin: 2rem 2rem;
+
+  transition: transform 200ms;
+
+  &:hover {
+    /* transform: scale3d(1.05, 1.05, 1); */
+  }
+`;
+
+export const BlogItem = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 1px gray solid;
+  border-radius: 9px;
   display: flex;
   flex-direction: column;
-  border: 1px gray solid;
-  margin: 2rem 2rem;
-  border-radius: 5px;
   justify-content: space-between;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
-  transition: all ease 0.25s 0s;
-
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
   &:hover {
-    /* transform: scale(1.03); */
-    transform: scale3d(1.05, 1.05, 1.05);
+    transform: rotate3d(
+      ${(props: box) =>
+        `-${props.Ycenter / 200},${props.Xcenter / 200},0,${props.D / 8}deg `}
+    );
   }
 `;
 

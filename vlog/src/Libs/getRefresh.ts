@@ -7,7 +7,6 @@ export const getRefresh = async (config: AxiosRequestConfig) => {
   const nowDate = new Date().getTime() / 1000;
 
   if (config.headers) {
-    console.log(config);
     config.headers["Authorization"] = accessToken;
   }
 
@@ -19,7 +18,7 @@ export const getRefresh = async (config: AxiosRequestConfig) => {
           RefreshToken: localStorage.getItem("Dotori_refreshToken"),
         },
       });
-      config.headers.common["authorization"] = await data.data.NewAccessToken;
+      config.headers["Authorization"] = await data.data.NewAccessToken;
 
       localStorage.setItem("Blog_accessToken", data.data.NewAccessToken);
       localStorage.setItem("Blog_refreshToken", data.data.NewRefreshToken);

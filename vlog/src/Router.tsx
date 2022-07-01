@@ -52,16 +52,16 @@ const Router = () => {
       <Route
         path="/board"
         element={
-          <PrivateRoute>
-            <BlogPage
-              title={""}
-              date={""}
-              content={""}
-              user_name={""}
-              board_id={0}
-              user_id={0}
-            />
-          </PrivateRoute>
+          // <PrivateRoute>
+          <BlogPage
+            title={""}
+            date={""}
+            content={""}
+            user_name={""}
+            board_id={0}
+            user_id={0}
+          />
+          // </PrivateRoute>
         }
       />
       <Route
