@@ -92,7 +92,6 @@ const BlogAdd = () => {
           </S.InputBox>
           <S.DescInputBox>
             <textarea
-              wrap="hard"
               name="textarea"
               onChange={onChangeDesc}
               placeholder="내용을 입력하세요(markdown)"
@@ -128,7 +127,7 @@ const BlogAdd = () => {
       </S.BlogAdd>
       <S.BlogAddpreview>
         <pre>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{desc}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} children={desc} />
         </pre>
       </S.BlogAddpreview>
     </S.BlogAddWapper>

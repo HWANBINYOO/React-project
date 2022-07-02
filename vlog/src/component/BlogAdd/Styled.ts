@@ -121,8 +121,9 @@ export const Button = styled.button`
 
 export const BlogAddpreview = styled.div`
   width: 44vw;
-  height: 100%;
+  height: 75vh;
   background-color: #f5f5f5;
-  padding: 50px 3vw 0 3vw;
+  padding: 50px 3vw 5vh 3vw;
   font-size: 2rem;
+  overflow-y: auto;
 `;
