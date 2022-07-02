@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { customAxios } from "../../Libs/CustomAxois";
 import { toast } from "react-toastify";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const BlogAdd = () => {
   const date = new Date();
@@ -24,6 +26,7 @@ const BlogAdd = () => {
   };
   const onChangeDesc = (e: any) => {
     setDesc(e.currentTarget.value);
+    console.log(desc);
   };
   const handleChangeFile = (event: any) => {
     event.preventDefault();
@@ -44,12 +47,17 @@ const BlogAdd = () => {
 
   const onSubmit = async (event: any) => {
     event.preventDefault();
+    let formData = new FormData();
+    formData.append("file", file);
+    formData.append("title", title);
+    formData.append("content", desc);
+    formData.append("date", `${year}-${month}-${day}`);
+    if (title == "") {
+      return toast.warning("제목이 비어있어요!");
+    } else if (desc == "") {
+      return toast.warning("내용이 비어있어요!");
+    }
     if (file) {
-      let formData = new FormData();
-      formData.append("file", file);
-      formData.append("title", title);
-      formData.append("content", desc);
-      formData.append("date", `${year}-${month}-${day}`);
       try {
         await customAxios.post("/board/write", formData, {
           headers: {
@@ -67,12 +75,12 @@ const BlogAdd = () => {
         }
       }
     } else {
-      toast.error("이미지가 선택되지 않았어요");
+      toast.warning("이미지가 선택되지 않았어요!");
     }
   };
 
   return (
-    <>
+    <S.BlogAddWapper>
       <S.BlogAdd>
         <S.Box>
           <S.InputBox>
@@ -84,9 +92,10 @@ const BlogAdd = () => {
           </S.InputBox>
           <S.DescInputBox>
             <textarea
+              wrap="hard"
               name="textarea"
               onChange={onChangeDesc}
-              placeholder="내용을 입력하세요"
+              placeholder="내용을 입력하세요(markdown)"
             />
           </S.DescInputBox>
         </S.Box>
@@ -102,12 +111,7 @@ const BlogAdd = () => {
               />
             )}
           </S.BlogImg>
-          <form
-            name="files"
-            method="post"
-            encType="multipart/form-data"
-            // onSubmit={onClick}
-          >
+          <form name="files" method="post" encType="multipart/form-data">
             <input
               id="change_img"
               type="file"
@@ -122,7 +126,12 @@ const BlogAdd = () => {
         <S.Today>{`${year}년 ${month}월 ${day}일 ${dayOfWeek}요일`}</S.Today>
         <S.Button onClick={onSubmit}>올리기</S.Button>
       </S.BlogAdd>
-    </>
+      <S.BlogAddpreview>
+        <pre>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{desc}</ReactMarkdown>
+        </pre>
+      </S.BlogAddpreview>
+    </S.BlogAddWapper>
   );
 };
 

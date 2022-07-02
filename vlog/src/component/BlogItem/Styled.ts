@@ -74,12 +74,12 @@ export const Title = styled.span`
 
 export const desc = styled.div`
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 16px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 `;
 

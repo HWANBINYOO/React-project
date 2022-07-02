@@ -27,6 +27,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
       const res2: any = await myProfileImgReqeuset(blogIn.user_id);
       setProfileImg(res2.data);
       const respone2 = await customAxios.get(`/user_name`);
+      console.log(blogIn.content);
 
       if (respone2.data.user_id === blogIn.user_id) {
         setDelectDisplay(true);

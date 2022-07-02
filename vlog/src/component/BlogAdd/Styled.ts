@@ -1,18 +1,24 @@
 import styled from "styled-components";
 
-export const BlogAdd = styled.div`
+export const BlogAddWapper = styled.div`
   width: 100vw;
   height: 80vh;
   padding-top: 2rem;
   display: flex;
+`;
+
+export const BlogAdd = styled.div`
+  width: 44vw;
+  height: 100%;
+  display: flex;
   flex-direction: column;
+  margin-left: 6vw;
 `;
 
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
   height: 50vh;
-  margin-left: 6vw;
 `;
 
 export const InputBox = styled.div`
@@ -79,7 +85,6 @@ export const BlogAddImgWapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   height: 100px;
-  margin-left: 6vw;
   label {
     position: relative;
     top: -30px;
@@ -100,13 +105,11 @@ export const BlogAddImgWapper = styled.div`
 `;
 
 export const Today = styled.span`
-  margin-left: 6vw;
   padding: 1.5rem 0;
 `;
 
 export const Button = styled.button`
   font-family: "GangwonEduSaeeum_OTFMediumA";
-  margin-left: 6vw;
   background-color: #ffc895;
   border-radius: 10px;
   font-size: 2rem;
@@ -114,4 +117,12 @@ export const Button = styled.button`
   width: 10rem;
   height: 5vh;
   text-align: center;
+`;
+
+export const BlogAddpreview = styled.div`
+  width: 44vw;
+  height: 100%;
+  background-color: #f5f5f5;
+  padding: 50px 3vw 0 3vw;
+  font-size: 2rem;
 `;
