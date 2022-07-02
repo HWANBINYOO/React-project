@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { toast } from "react-toastify";
 import { loginRequest } from "../../Api/member";
+import { MemberController } from "../../Libs/url";
+import { customAxios } from "../../Libs/CustomAxois";
 
 const Login = () => {
   const [Email, setEmail] = useState<string>("");
@@ -16,12 +18,24 @@ const Login = () => {
     } else if (PassWord === "") {
       return toast.warning("비밀번호를 입력해주세요!");
     }
-    const { data }: any = await loginRequest(Email, PassWord);
-
-    localStorage.setItem("Blog_accessToken", data.accessToken);
-    localStorage.setItem("Blog_refreshToken", data.refreshToken);
-    toast.success("로그인 되었습니다!");
-    navigate("/board");
+    try {
+      const { data } = await axios.post(
+        `https://server.dev-log.kr/${MemberController.signin()}`,
+        {
+          email: Email,
+          password: PassWord,
+        }
+      );
+      localStorage.setItem("Blog_accessToken", data.accessToken);
+      localStorage.setItem("Blog_refreshToken", data.refreshToken);
+      toast.success("로그인 되었습니다!");
+      navigate("/board");
+      return { data };
+    } catch (e: any) {
+      const { data } = e.response;
+      console.error("data : ", data);
+      toast.error(data.message);
+    }
   };
 
   return (

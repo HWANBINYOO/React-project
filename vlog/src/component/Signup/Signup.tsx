@@ -1,9 +1,11 @@
-import axios from "axios";
+import axios, { Axios } from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as S from "./Styled";
 import { signupRequest } from "../../Api/member";
+import { customAxios } from "../../Libs/CustomAxois";
+import { MemberController } from "../../Libs/url";
 
 const Signup: React.FC = () => {
   const [Email, setEmail] = useState("");
@@ -23,12 +25,22 @@ const Signup: React.FC = () => {
     } else if (!PassWordPegex.test(PassWord)) {
       return toast.warning("패스워드 형식이 잘못됐어요!");
     }
-
-    const { data }: any = await signupRequest(Name, Email, PassWord);
-
-    toast.success("회원가입이 되었습니다!");
-    navigate("/login");
-    return { data };
+    try {
+      await axios.post(
+        `https://server.dev-log.kr/${MemberController.signup()}`,
+        {
+          name: Name,
+          email: Email,
+          password: PassWord,
+        }
+      );
+      toast.success("회원가입이 되었습니다!");
+      navigate("/login");
+    } catch (e: any) {
+      const { data } = e.response;
+      console.error("data : ", data);
+      toast.error(data.message);
+    }
   };
 
   return (

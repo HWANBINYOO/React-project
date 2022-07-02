@@ -94,47 +94,7 @@ const Blog: React.FC<BlogType> = () => {
           </Link>
         </S.BlogButtonBox>
         <S.BLogWarpper>
-          <BlogItem
-            title={""}
-            date={""}
-            content={""}
-            user_name={""}
-            board_id={0}
-            user_id={0}
-          />
-          <BlogItem
-            title={""}
-            date={""}
-            content={""}
-            user_name={""}
-            board_id={0}
-            user_id={0}
-          />
-          <BlogItem
-            title={""}
-            date={""}
-            content={""}
-            user_name={""}
-            board_id={0}
-            user_id={0}
-          />
-          <BlogItem
-            title={""}
-            date={""}
-            content={""}
-            user_name={""}
-            board_id={0}
-            user_id={0}
-          />
-          <BlogItem
-            title={""}
-            date={""}
-            content={""}
-            user_name={""}
-            board_id={0}
-            user_id={0}
-          />
-          {/* {Blogs ? (
+          {Blogs ? (
             Blogs.sort(sortObject).map((item, index) => (
               <BlogItem
                 key={index}
@@ -152,7 +112,7 @@ const Blog: React.FC<BlogType> = () => {
                 "https://devlog-s3-bucket.s3.ap-northeast-2.amazonaws.com/Img/loading.gif"
               }
             />
-          )} */}
+          )}
         </S.BLogWarpper>
       </S.Blog>
     </>
