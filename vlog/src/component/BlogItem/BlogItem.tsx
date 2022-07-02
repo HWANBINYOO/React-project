@@ -16,7 +16,6 @@ const BlogItem: React.FC<BlogType> = ({
   const navigate = useNavigate();
   const [blogImg, setBlogImg] = useState<string>();
   const [profileImg, setProfileImg] = useState<string>();
-  // const [MouseIn, setMouseIn] = useState(false);
   const BlogItemRef = useRef<any>();
 
   const [X, setX] = useState(0);
@@ -24,21 +23,15 @@ const BlogItem: React.FC<BlogType> = ({
   const [Width, setWidth] = useState(0);
   const [Height, setHeight] = useState(0);
 
-  const [Left, setLeft] = useState(0);
-  const [Top, setTop] = useState(0);
   const [centerX, setCenterX] = useState(0);
   const [centerY, setCenterY] = useState(0);
   const [D, setD] = useState(0);
-
   useEffect(() => {
-    setX(BlogItemRef.current.getBoundingClientRect().x);
-    setY(BlogItemRef.current.getBoundingClientRect().y);
-    setWidth(BlogItemRef.current.getBoundingClientRect().width);
-    setHeight(BlogItemRef.current.getBoundingClientRect().height);
-
-    console.log(X, Y, Width, Height);
-
     async function getblog() {
+      setX(BlogItemRef.current.getBoundingClientRect().x);
+      setY(BlogItemRef.current.getBoundingClientRect().y);
+      setWidth(BlogItemRef.current.getBoundingClientRect().width);
+      setHeight(BlogItemRef.current.getBoundingClientRect().height);
       try {
         const respone: any = await boardImgReqeuset(board_id);
         setBlogImg(respone.data);
@@ -52,7 +45,6 @@ const BlogItem: React.FC<BlogType> = ({
     }
     getblog();
   }, []);
-
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
@@ -67,23 +59,22 @@ const BlogItem: React.FC<BlogType> = ({
     setHeight(BlogItemRef.current.getBoundingClientRect().height);
   };
   const MouseIn = () => {
-    addEventListener("mousemove", mouseMove);
+    BlogItemRef.current.addEventListener("mousemove", mouseMove);
   };
-
-  const mouseMove = (e: any) => {
-    setLeft(e.clientX - X);
-    setTop(e.clientY - Y);
-    setCenterX(Left - Width / 2);
-    setCenterY(Top - Height / 2);
-    setD(Math.sqrt(centerX ** 2 + centerY ** 2));
-    console.log(centerX, centerY);
-  };
-
   const mouseLeave = () => {
-    removeEventListener("mouseleave", mouseMove);
-    setCenterX(0);
-    setCenterY(0);
-    setD(0);
+    BlogItemRef.current.removeEventListener("mousemove", mouseMove);
+    BlogItemRef.current.style.transform = "";
+    BlogItemRef.current.style.boxShadow = "";
+  };
+  const mouseMove = (e: any) => {
+    // Left = e.clientX - X , Top = e.clientY - Y
+    setCenterX(e.clientX - X - Width / 2);
+    setCenterY(e.clientY - Height / 2);
+    setD(
+      Math.sqrt(
+        (e.clientX - X - Width / 2) ** 2 + (e.clientY - Y - Height / 2) ** 2
+      )
+    );
   };
 
   return (

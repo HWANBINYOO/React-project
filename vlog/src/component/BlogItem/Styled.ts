@@ -1,24 +1,23 @@
 import styled from "styled-components";
 
-type box = {
+type boxProps = {
   Xcenter: number;
   Ycenter: number;
-  D: number;
+  D?: number;
 };
 
 export const BlogItemWapper = styled.div`
   width: 300px;
   height: 450px;
   margin: 2rem 2rem;
-
   transition: transform 200ms;
-
   &:hover {
-    /* transform: scale3d(1.05, 1.05, 1); */
+    transform: scale3d(1.03, 1.03, 1.03);
   }
 `;
 
 export const BlogItem = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   border: 1px gray solid;
@@ -28,12 +27,18 @@ export const BlogItem = styled.div`
   justify-content: space-between;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
-  transition-duration: 250ms;
+  transition-duration: 200ms;
   transition-timing-function: ease-out;
   &:hover {
+    box-shadow: ${(props: boxProps) =>
+      `${-props.Xcenter / 10}px ${
+        -props.Ycenter / 20
+      }px 8px rgba(0, 0, 0, 0.2)`};
     transform: rotate3d(
-      ${(props: box) =>
-        `-${props.Ycenter / 200},${props.Xcenter / 200},0,${props.D / 8}deg `}
+      ${(props: boxProps) =>
+        `${-props.Ycenter / 200},${props.Xcenter / 200},0,${
+          props.D ? props.D / 12 : 1 / 8
+        }deg `}
     );
   }
 `;
@@ -62,7 +67,6 @@ export const Title = styled.span`
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
-  //글자수가많으면 ...으로 처리한다
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

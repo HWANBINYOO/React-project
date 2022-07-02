@@ -102,6 +102,38 @@ const Blog: React.FC<BlogType> = () => {
             board_id={0}
             user_id={0}
           />
+          <BlogItem
+            title={""}
+            date={""}
+            content={""}
+            user_name={""}
+            board_id={0}
+            user_id={0}
+          />
+          <BlogItem
+            title={""}
+            date={""}
+            content={""}
+            user_name={""}
+            board_id={0}
+            user_id={0}
+          />
+          <BlogItem
+            title={""}
+            date={""}
+            content={""}
+            user_name={""}
+            board_id={0}
+            user_id={0}
+          />
+          <BlogItem
+            title={""}
+            date={""}
+            content={""}
+            user_name={""}
+            board_id={0}
+            user_id={0}
+          />
           {/* {Blogs ? (
             Blogs.sort(sortObject).map((item, index) => (
               <BlogItem
