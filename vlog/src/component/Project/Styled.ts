@@ -9,7 +9,6 @@ export const Project = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   overflow-y: scroll;
-  /* background-color: black; */
 `;
 
 export const ProjectTitle = styled.p`

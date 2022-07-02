@@ -13,12 +13,10 @@ export const Projectdesc = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
 `;
 
 export const Img = styled.img`
   width: 45%;
-  /* height: 250px; */
   margin: auto 0;
 `;
 

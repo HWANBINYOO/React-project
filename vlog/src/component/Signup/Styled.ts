@@ -46,8 +46,6 @@ export const SignupInput = styled.div`
   }
 `;
 
-// export const PassWord = styled.div``;
-
 export const LoginButton = styled.button`
   font-family: "SuncheonB";
   width: 15%;
