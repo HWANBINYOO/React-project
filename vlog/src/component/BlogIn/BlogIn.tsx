@@ -28,10 +28,6 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
       const res2: any = await myProfileImgReqeuset(blogIn.user_id);
       setProfileImg(res2.data);
       const respone2 = await customAxios.get(`/user_name`);
-      console.log(blogIn.content);
-      setDesc(blogIn.content.replaceAll("<br/>", "\r\n"));
-      console.log(blogIn.content.replaceAll("<br/>", "\r\n"));
-
       if (respone2.data.user_id === blogIn.user_id) {
         setDelectDisplay(true);
       } else {
@@ -77,7 +73,10 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           <S.Img src={Blogrl} />
           <S.desc>
             <pre>
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{desc}</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                children={blogIn.content}
+              />
             </pre>
           </S.desc>
         </S.TextBox>
