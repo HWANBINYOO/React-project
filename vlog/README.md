@@ -1,1 +1,1 @@
-- [Devlog 실행화면:](https://dev-log.kr)
+- [Devlog 실행화면](https://dev-log.kr)
