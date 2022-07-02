@@ -50,7 +50,7 @@ const BlogAdd = () => {
     let formData = new FormData();
     formData.append("file", file);
     formData.append("title", title);
-    formData.append("content", desc);
+    formData.append("content", desc.replace(/(?:\r\n|\r|\n)/g, "<br/>"));
     formData.append("date", `${year}-${month}-${day}`);
     if (title == "") {
       return toast.warning("제목이 비어있어요!");

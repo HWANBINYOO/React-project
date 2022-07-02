@@ -38,7 +38,7 @@ export const Img = styled.img`
 
 export const desc = styled.div`
   width: 50%;
-  height: 210px;
+  min-height: 300px;
   font-size: 1.5rem;
   padding-top: 5rem;
   margin: 0 auto;
