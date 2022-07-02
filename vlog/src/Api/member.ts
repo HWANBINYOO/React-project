@@ -1,6 +1,7 @@
 import { MemberController } from "../Libs/url";
 import { customAxios } from "../Libs/CustomAxois";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 export const loginRequest = async (email: string, password: string) => {
   try {
@@ -80,15 +81,21 @@ export const profileimgUpdateReqeuset = async (file: string) => {
 export const profileUpdageReqeuset = async (
   name: string,
   password: string,
-  newPassword: string
+  newPassword: string,
+  userId: string
 ) => {
+  const navigate = useNavigate();
+
   try {
     await customAxios.patch(MemberController.updateProfile(), {
       name: name,
-      password: "",
-      newPassword: "",
+      password: password,
+      newPassword: newPassword,
     });
     toast.success("수정되었습니다!");
+    setTimeout(() => {
+      navigate(`/profile/${userId}`);
+    }, 500);
   } catch (e: any) {
     const { data } = e.response;
     console.error("data : ", data);

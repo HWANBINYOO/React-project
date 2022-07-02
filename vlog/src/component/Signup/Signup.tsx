@@ -23,7 +23,7 @@ const Signup: React.FC = () => {
     } else if (PassWord === "") {
       return toast.warning("패스워드가 입력되지 않았어요!");
     } else if (!PassWordPegex.test(PassWord)) {
-      return toast.warning("패스워드 형식이 잘못됐어요!");
+      return toast.warning("패스워드가 4자리 이상이려야해요!(숫자포함)");
     }
     try {
       await axios.post(

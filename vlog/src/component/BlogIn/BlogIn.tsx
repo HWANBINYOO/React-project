@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import { customAxios } from "../../Libs/CustomAxois";
 import { myProfileImgReqeuset } from "../../Api/member";
 import { boardImgReqeuset, deleteboardReqeuset } from "../../Api/board";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 interface BlogTypeProp {
   blogIn: BlogType;
 }
@@ -68,7 +71,11 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         </S.NameDate>
         <S.TextBox>
           <S.Img src={Blogrl} />
-          <S.desc>{blogIn.content}</S.desc>
+          <S.desc>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {blogIn.content}
+            </ReactMarkdown>
+          </S.desc>
         </S.TextBox>
         <S.ProfileWapper onClick={(e: any) => navigate(`/profile/${userId}`)}>
           {profileImg ? (

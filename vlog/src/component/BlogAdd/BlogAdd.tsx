@@ -21,10 +21,8 @@ const BlogAdd = () => {
 
   const onChangeTitle = (e: any) => {
     setTitle(e.currentTarget.value);
-    console.log(title);
   };
   const onChangeDesc = (e: any) => {
-    console.log(e.target.value);
     setDesc(e.currentTarget.value);
   };
   const handleChangeFile = (event: any) => {

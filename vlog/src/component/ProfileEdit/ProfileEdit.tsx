@@ -12,6 +12,7 @@ import {
 const ProfileEdit = () => {
   const navigate = useNavigate();
   const [Name, setName] = useState("");
+  const [OriginName, setOriginName] = useState("");
   const [userId, setUserId] = useState("");
   const [PassWord, setPassWord] = useState("");
   const [ChangePassWord, setChangePassWord] = useState("");
@@ -24,6 +25,7 @@ const ProfileEdit = () => {
   useEffect(() => {
     async function Getprofile() {
       const { data } = await customAxios.get("user_name");
+      setOriginName(data.name);
       setName(data.name);
       setUserId(data.user_id);
       const res = await myProfileImgReqeuset(data.user_id);
@@ -67,18 +69,7 @@ const ProfileEdit = () => {
     } else if (PassWordAgain != ChangePassWord) {
       return toast.warning("새로운패스워드기 일치하지 않아요!");
     }
-    if (
-      PassWordAgain == "" &&
-      PassWord == "" &&
-      ChangePassWord == "" &&
-      Name == ""
-    ) {
-      return toast.warning("이름을 입력하지 않았어요!");
-    }
-    profileUpdageReqeuset(Name, PassWord, ChangePassWord);
-    setTimeout(() => {
-      navigate(`/profile/${userId}`);
-    }, 500);
+    profileUpdageReqeuset(Name, PassWord, ChangePassWord, userId);
   };
 
   return (
