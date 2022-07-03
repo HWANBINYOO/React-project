@@ -124,6 +124,6 @@ export const BlogAddpreview = styled.div`
   height: 75vh;
   background-color: #f5f5f5;
   padding: 50px 3vw 5vh 3vw;
-  font-size: 2rem;
+  font-size: 1.5rem;
   overflow-y: auto;
 `;

@@ -19,8 +19,6 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const [DelectDisplay, setDelectDisplay] = useState(false);
   const [userId, setUserId] = useState(blogIn.user_id);
   const [profileImg, setProfileImg] = useState<string>();
-  const [desc, setDesc] = useState<any>();
-
   useEffect(() => {
     async function GetBlogImg() {
       const res: any = await boardImgReqeuset(blogIn.board_id);

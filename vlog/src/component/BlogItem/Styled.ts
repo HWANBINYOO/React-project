@@ -60,10 +60,10 @@ export const Img = styled.img`
   border-radius: 5px;
 `;
 
-export const Title = styled.span`
+export const Title = styled.h1`
   width: 100%;
   height: 30px;
-  font-size: 1.3rem;
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
@@ -74,7 +74,7 @@ export const Title = styled.span`
 
 export const desc = styled.div`
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;

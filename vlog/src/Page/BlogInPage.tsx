@@ -14,7 +14,6 @@ const BlogInPage: React.FC = () => {
       try {
         const response = await customAxios.get(`/board/${param.id}`);
         setBlogIn(response.data);
-        console.log(response.data);
       } catch (e: any) {
         const { data } = e.response;
         console.error("data : ", data);
