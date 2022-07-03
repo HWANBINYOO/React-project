@@ -15,7 +15,7 @@ export const getRefresh = async (config: AxiosRequestConfig) => {
       const { data } = await axios.put(`https://server.dev-log.kr/refresh`, {
         headers: {
           Authorization: "",
-          RefreshToken: localStorage.getItem("Dotori_refreshToken"),
+          RefreshToken: localStorage.getItem("Blog_refreshToken"),
         },
       });
       if (config.headers) {

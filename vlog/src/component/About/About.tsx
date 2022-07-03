@@ -66,7 +66,6 @@ export default function About() {
             <S.decs>
               <p>제가 제일 좋아하는 과일</p>
               <p>귤</p>
-              <p>겨울에 거의 매일먹어요</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
@@ -90,8 +89,7 @@ export default function About() {
             />
             <S.decs>
               <p>제가 좋아하는 음식</p>
-              <p>초밥</p>
-              <p>그중에서 연어초밥을가장 좋아해요</p>
+              <p>연어초밥</p>
             </S.decs>
           </S.AboutContent>
           <S.AboutContent>
@@ -141,7 +139,7 @@ export default function About() {
             <S.decs>
               <p>치아노치기가 취미</p>
               <p>주로 클래식곡 쳐요</p>
-              <p>리스트 사랑의꿈까지 칠줄알아요</p>
+              <p>리스트 사랑의꿈까지 쳐봤어요</p>
             </S.decs>
           </S.AboutContent>
         </S.AboutContents>
