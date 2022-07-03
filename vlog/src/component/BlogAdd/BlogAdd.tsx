@@ -26,7 +26,6 @@ const BlogAdd = () => {
   };
   const onChangeDesc = (e: any) => {
     setDesc(e.currentTarget.value);
-    console.log(desc);
   };
   const handleChangeFile = (event: any) => {
     event.preventDefault();
@@ -126,6 +125,7 @@ const BlogAdd = () => {
         <S.Button onClick={onSubmit}>올리기</S.Button>
       </S.BlogAdd>
       <S.BlogAddpreview>
+        <h1>{title}</h1>
         <pre>
           <ReactMarkdown remarkPlugins={[remarkGfm]} children={desc} />
         </pre>

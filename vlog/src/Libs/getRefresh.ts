@@ -18,12 +18,13 @@ export const getRefresh = async (config: AxiosRequestConfig) => {
           RefreshToken: localStorage.getItem("Dotori_refreshToken"),
         },
       });
-      config.headers["Authorization"] = await data.data.NewAccessToken;
-
+      if (config.headers) {
+        config.headers["Authorization"] = await data.data.NewAccessToken;
+      }
       localStorage.setItem("Blog_accessToken", data.data.NewAccessToken);
       localStorage.setItem("Blog_refreshToken", data.data.NewRefreshToken);
     } catch (e: any) {
-      if (e.message === "Request failed with status code 401") {
+      if (e.message === "유효하지 않은 Token입니다.") {
         alert("로그아웃 되었어요");
         localStorage.removeItem("Blog_accessToken");
         localStorage.removeItem("Blog_refreshToken");

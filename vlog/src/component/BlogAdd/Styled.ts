@@ -28,11 +28,12 @@ export const InputBox = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
+  margin-top: 20px;
 
   textarea {
     font-family: "GangwonEduSaeeum_OTFMediumA";
     width: 100%;
-    height: 10vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,14 +56,14 @@ export const DescInputBox = styled.div`
     margin-top: 1rem;
     font-family: "GangwonEduSaeeum_OTFMediumA";
     width: 100%;
-    height: 30vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     border: none;
     outline: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     resize: none;
   }
 `;
@@ -123,7 +124,15 @@ export const BlogAddpreview = styled.div`
   width: 44vw;
   height: 75vh;
   background-color: #f5f5f5;
-  padding: 50px 3vw 5vh 3vw;
-  font-size: 1.5rem;
+  padding: 00px 3vw 5vh 3vw;
+  font-size: 1.25rem;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-size: 3rem;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
 `;

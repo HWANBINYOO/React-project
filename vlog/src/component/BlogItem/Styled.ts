@@ -63,7 +63,7 @@ export const Img = styled.img`
 export const Title = styled.h1`
   width: 100%;
   height: 30px;
-  font-size: 35px;
+  font-size: 1.7rem;
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
@@ -74,7 +74,7 @@ export const Title = styled.h1`
 
 export const desc = styled.div`
   width: 100%;
-  font-size: 14px;
+  font-size: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
