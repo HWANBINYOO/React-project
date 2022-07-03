@@ -65,6 +65,9 @@ export const EditI = styled.form`
   span {
     height: 100%;
     width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 `;
 
