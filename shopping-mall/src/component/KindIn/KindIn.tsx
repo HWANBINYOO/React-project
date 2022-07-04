@@ -11,7 +11,6 @@ export default function KindIn() {
   const navigate = useNavigate();
   const location = useLocation();
   const [kindIn, setKindIn] = useState<KindType>();
-  const url = "http://10.120.74.35:8001";
   const [myimgurl, userMyimgurl] = useState<string>();
   const param = useParams();
 
@@ -22,7 +21,7 @@ export default function KindIn() {
         const { data } = await customAxios.get(location.pathname);
         console.log(data);
         setKindIn(data);
-        userMyimgurl(url.concat(data.imgurl));
+        userMyimgurl(data.imgurl);
       } catch (e: any) {
         const { data } = e.response;
         console.error(data.message);

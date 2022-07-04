@@ -9,7 +9,6 @@ const SignIn = () => {
   const [Email, setEmail] = useState<string>("");
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
-  // let REFRESH_TOKEN;
   const [cookies, setCookie] = useCookies(["AccessToken", "RefreshToken"]);
 
   const onLogin = async () => {
