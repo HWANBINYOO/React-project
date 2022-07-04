@@ -13,10 +13,18 @@ export const myboardsReqeuset = async (user_id: number | string) => {
 };
 
 export const boards = async () => {
+  const navigate = useNavigate();
   try {
     const { data } = await customAxios.get(boardController.boards());
     return { data };
   } catch (e: any) {
+    if (
+      e.message ===
+      "Failed to load resource: the server responded with a status of 403()"
+    ) {
+      navigate("/");
+      location.reload();
+    }
     console.error(e.message);
   }
 };

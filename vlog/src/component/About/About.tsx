@@ -137,7 +137,7 @@ export default function About() {
               }
             />
             <S.decs>
-              <p>치아노치기가 취미</p>
+              <p>피아노치기가 취미</p>
               <p>주로 클래식곡 쳐요</p>
               <p>리스트 사랑의꿈까지 쳐봤어요</p>
             </S.decs>

@@ -4,7 +4,7 @@ export const HeaderRIght = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 120px;
+  width: 180px;
   position: fixed;
   top: 5vh;
   right: 25px;
@@ -12,11 +12,11 @@ export const HeaderRIght = styled.div`
 
 export const Profile = styled.div`
   text-align: center;
-  width: 50px;
-  height: 30px;
+  width: 80px;
+  height: 45px;
   img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     border-radius: 50%;
     object-fit: cover;
@@ -27,8 +27,8 @@ export const LogoutButton = styled.button`
   font-family: "GangwonEduSaeeum_OTFMediumA";
   background-color: black;
   color: white;
-  width: 70px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
   border: none;
   border-radius: 5px;
   font-size: 1rem;

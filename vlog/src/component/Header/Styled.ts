@@ -10,8 +10,8 @@ export const Header = styled.div`
 `;
 
 export const HeaderMenu = styled.span`
-  width: 150px;
-  height: 3vh;
+  width: 200px;
+  height: 3.6vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ export const HeaderMenu = styled.span`
   cursor: pointer;
   border-radius: 10px;
 
-  font-size: 1rem;
+  font-size: 1.3rem;
   transition: all ease 0.5s 0s;
   // border-radius: 20%;
 
