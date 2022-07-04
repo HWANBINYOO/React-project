@@ -68,10 +68,6 @@ export const BlogButtonBox = styled.div`
     text-decoration: none;
     color: black;
   }
-
-  &:hover {
-    background-color: #d3d3d3;
-  }
 `;
 
 export const Button = styled.button`
@@ -83,6 +79,11 @@ export const Button = styled.button`
   border-radius: 10px;
   border: none;
   font-size: 0.3rem;
+  transition: all ease 0.2s 0s;
+
+  &:hover {
+    border-radius: 0px;
+  }
 `;
 
 export const Name = styled.div`

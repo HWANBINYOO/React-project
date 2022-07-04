@@ -70,7 +70,6 @@ export const profileimgUpdateReqeuset = async (file: string) => {
         "Content-Type": "multipart/form-data",
       },
     });
-    toast.success("수정되었습니다!");
   } catch (e: any) {
     const { data } = e.response;
     console.error("data : ", data);
@@ -97,8 +96,9 @@ export const profileUpdageReqeuset = async (
       navigate(`/profile/${userId}`);
     }, 500);
   } catch (e: any) {
-    const { data } = e.response;
-    console.error("data : ", data);
-    toast.error(data.message);
+    // const { data } = e.response;
+    // console.error("data : ", data);
+    // toast.error(data.message);
+    toast.error(e.message);
   }
 };

@@ -61,7 +61,6 @@ const ProfileEdit = () => {
 
   const onClick = async (event: any) => {
     event.preventDefault();
-
     if (PassWord != "" && ChangePassWord == "" && PassWordAgain == "") {
       return toast.warning("새로운패스워드를 입력하지 않았어요!");
     } else if (PassWord != "" && ChangePassWord != "" && PassWordAgain == "") {
