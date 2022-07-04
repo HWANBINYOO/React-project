@@ -124,3 +124,51 @@ export const ProfileImg = styled.img`
 export const ProfileName = styled.span`
   font-size: 2rem;
 `;
+
+export const Modal = styled.div`
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.3s 0;
+  background-color: rgba(255, 255, 255, 0.5);
+`;
+
+export const ModalContainal = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  width: 300px;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+  border: 0px solid black;
+  border-radius: 15px;
+  transition: all ease-in-out 0.3s 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  img {
+    background-color: white;
+    width: 70%;
+    height: 60%;
+    border: 0px solid black;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  button {
+    font-family: "GangwonEduSaeeum_OTFMediumA";
+    font-size: 30px;
+    width: 250px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: white;
+  }
+`;

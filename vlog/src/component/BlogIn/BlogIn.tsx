@@ -19,6 +19,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   const [DelectDisplay, setDelectDisplay] = useState(false);
   const [userId, setUserId] = useState(blogIn.user_id);
   const [profileImg, setProfileImg] = useState<string>();
+  const [modalDisplay, setmodalDisplay] = useState(true);
   useEffect(() => {
     async function GetBlogImg() {
       const res: any = await boardImgReqeuset(blogIn.board_id);
@@ -45,6 +46,26 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   return (
     <>
       <S.BlogIn>
+        {modalDisplay ? (
+          <S.Modal>
+            <S.ModalContainal>
+              <button
+                style={{ backgroundColor: "#aeddff", fontSize: "2rem" }}
+                onClick={() => setmodalDisplay(false)}
+              >
+                취소하기
+              </button>
+              <button
+                style={{ backgroundColor: " rgb(255, 157, 149)" }}
+                onClick={DelectBlog}
+              >
+                {" "}
+                삭제하기
+              </button>
+            </S.ModalContainal>
+          </S.Modal>
+        ) : null}
+
         <S.BlogButtonBox>
           <Link
             to="/boardadd"
@@ -61,7 +82,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           </Link>
 
           <S.Button
-            onClick={DelectBlog}
+            onClick={() => setmodalDisplay(true)}
             style={{
               backgroundColor: " rgb(255, 157, 149)",
               display: DelectDisplay ? "block" : "none",
