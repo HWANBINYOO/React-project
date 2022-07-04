@@ -19,7 +19,7 @@ export const boards = async () => {
   } catch (e: any) {
     console.error(e.message);
     if (e.message == "Request failed with status code 403") {
-      alert("로그아웃 되었어요");
+      toast.success("로그아웃 되었어요");
       localStorage.removeItem("Blog_accessToken");
       localStorage.removeItem("Blog_refreshToken");
       window.location.replace("/");
