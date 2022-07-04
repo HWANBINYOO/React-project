@@ -34,12 +34,12 @@ export const BlogItem = styled.div`
       `${-props.Xcenter / 10}px ${
         -props.Ycenter / 20
       }px 8px rgba(0, 0, 0, 0.2)`};
-    transform: rotate3d(
+    /* transform: rotate3d(
       ${(props: boxProps) =>
-        `${-props.Ycenter / 200},${props.Xcenter / 200},0,${
-          props.D ? props.D / 12 : 1 / 8
-        }deg `}
-    );
+      `${-props.Ycenter / 200},${props.Xcenter / 200},0,${
+        props.D ? props.D / 12 : 1 / 8
+      }deg `}
+    ); */
   }
 `;
 

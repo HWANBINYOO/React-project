@@ -54,8 +54,8 @@ const ProfileEdit = () => {
   //수정사항 서버로보내기 (profile사진)
   const onClickImg = async (event: any) => {
     event.preventDefault();
-    await profileimgUpdateReqeuset(file);
     setmodalDisplay(false);
+    await profileimgUpdateReqeuset(file);
   };
   const onClick = async (event: any) => {
     event.preventDefault();

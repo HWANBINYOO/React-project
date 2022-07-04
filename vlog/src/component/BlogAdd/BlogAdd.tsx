@@ -6,6 +6,7 @@ import { customAxios } from "../../Libs/CustomAxois";
 import { toast } from "react-toastify";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Name } from "../BlogIn/Styled";
 
 const BlogAdd = () => {
   const date = new Date();
@@ -14,6 +15,7 @@ const BlogAdd = () => {
   const day = date.getDate();
   const week = ["일", "월", "화", "수", "목", "금", "토"];
   const dayOfWeek = week[date.getDay()];
+  const [buttondisplay, setbuttondisplay] = useState(false);
 
   const [title, setTitle] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
@@ -36,6 +38,9 @@ const BlogAdd = () => {
       const base64 = reader.result;
       if (base64) {
         setImgBase64(base64.toString()); // 파일 base64 상태 업데이트
+        if (title && desc) {
+          setbuttondisplay(true);
+        }
       }
     };
     if (event.target.files[0]) {
@@ -45,36 +50,39 @@ const BlogAdd = () => {
   };
 
   const onSubmit = async (event: any) => {
-    event.preventDefault();
-    let formData = new FormData();
-    formData.append("file", file);
-    formData.append("title", title);
-    formData.append("content", desc);
-    formData.append("date", `${year}-${month}-${day}`);
-    if (title == "") {
-      return toast.warning("제목이 비어있어요!");
-    } else if (desc == "") {
-      return toast.warning("내용이 비어있어요!");
-    }
-    if (file) {
-      try {
-        await customAxios.post("/board/write", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
-        toast.success("추가됐습니다!");
-        navigate("/board");
-      } catch (e: any) {
-        console.log(e);
-        if (e.response) {
-          const { data } = e.response;
-          console.error("data : ", data);
-          toast.warning(data.message);
-        }
+    if (buttondisplay) {
+      setbuttondisplay(false);
+      event.preventDefault();
+      let formData = new FormData();
+      formData.append("file", file);
+      formData.append("title", title);
+      formData.append("content", desc);
+      formData.append("date", `${year}-${month}-${day}`);
+      if (title == "") {
+        return toast.warning("제목이 비어있어요!");
+      } else if (desc == "") {
+        return toast.warning("내용이 비어있어요!");
       }
-    } else {
-      toast.warning("이미지가 선택되지 않았어요!");
+      if (file) {
+        try {
+          await customAxios.post("/board/write", formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          });
+          toast.success("추가됐습니다!");
+          navigate("/board");
+        } catch (e: any) {
+          console.log(e);
+          if (e.response) {
+            const { data } = e.response;
+            console.error("data : ", data);
+            toast.warning(data.message);
+          }
+        }
+      } else {
+        toast.warning("이미지가 선택되지 않았어요!");
+      }
     }
   };
 
@@ -122,7 +130,12 @@ const BlogAdd = () => {
         </S.BlogAddImgWapper>
 
         <S.Today>{`${year}년 ${month}월 ${day}일 ${dayOfWeek}요일`}</S.Today>
-        <S.Button onClick={onSubmit}>올리기</S.Button>
+        <S.Button
+          style={{ backgroundColor: buttondisplay ? "#ffc895 " : "#d3d3d3" }}
+          onClick={onSubmit}
+        >
+          올리기
+        </S.Button>
       </S.BlogAdd>
       <S.BlogAddpreview>
         <h1>{title}</h1>

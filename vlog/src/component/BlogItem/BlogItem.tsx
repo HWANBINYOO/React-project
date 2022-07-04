@@ -52,7 +52,7 @@ const BlogItem: React.FC<BlogType> = ({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  });
+  }, [board_id]);
 
   const handleResize = () => {
     setX(BlogItemRef.current.getBoundingClientRect().x);
@@ -86,7 +86,11 @@ const BlogItem: React.FC<BlogType> = ({
       onMouseLeave={mouseLeave}
       onClick={(e) => navigate(`/board/${board_id}`)}
     >
-      <S.BlogItem Xcenter={centerX} Ycenter={centerY} D={D}>
+      <S.BlogItem
+        Xcenter={centerX}
+        Ycenter={centerY}
+        //  D={D}
+      >
         <S.Img src={blogImg} />
         <S.TextBox>
           <S.Title>{title}</S.Title>
