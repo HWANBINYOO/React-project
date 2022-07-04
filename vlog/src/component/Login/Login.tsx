@@ -61,7 +61,7 @@ const Login = () => {
         </S.LoginInput>
         <S.LoginButton onClick={() => onLogin()}>Login</S.LoginButton>
         <Link to="/register" style={{ textDecoration: "none", color: "black" }}>
-          <p>회원가입하거가기</p>
+          <p>회원가입하러가기</p>
         </Link>
       </S.Login>
     </>

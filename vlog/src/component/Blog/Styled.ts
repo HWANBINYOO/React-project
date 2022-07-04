@@ -29,8 +29,8 @@ export const BlogButtonBox = styled.div`
   width: max-content;
   height: max-content;
   position: fixed;
-  right: 10vw;
-  top: 60vh;
+  right: 5vw;
+  top: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
