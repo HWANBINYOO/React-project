@@ -23,8 +23,8 @@ const Profile = () => {
       if (data.user_id == param.user_id) setmy(true);
       SetProfile(res?.data);
       setBlogs(res2?.data.blogs);
+      console.log(res2?.data.blogs);
     }
-
     Getprofile();
   }, [param.user_id]);
 

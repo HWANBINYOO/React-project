@@ -46,7 +46,7 @@ const BlogItem: React.FC<BlogType> = ({
       }
     }
     getblog();
-  }, []);
+  }, [board_id]);
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
