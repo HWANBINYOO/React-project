@@ -3,7 +3,7 @@ import Blog from "./Blog/Blog";
 import BlogAdd from "./BlogAdd/BlogAdd";
 import BlogIn from "./BlogIn/BlogIn";
 import BlogItem from "./BlogItem/BlogItem";
-import Footer from "./Footer/Footer";
+// import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
@@ -22,7 +22,7 @@ export {
   BlogAdd,
   BlogIn,
   BlogItem,
-  Footer,
+  // Footer,
   Header,
   Home,
   Login,

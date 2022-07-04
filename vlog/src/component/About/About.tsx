@@ -1,5 +1,4 @@
 import * as S from "./Styled";
-import Footer from "../Footer/Footer";
 import { useEffect, useState } from "react";
 
 export default function About() {
@@ -143,7 +142,6 @@ export default function About() {
             </S.decs>
           </S.AboutContent>
         </S.AboutContents>
-        <Footer />
       </S.About>
     </>
   );
