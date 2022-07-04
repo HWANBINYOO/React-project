@@ -42,6 +42,7 @@ export const desc = styled.div`
   font-size: 1.5rem;
   padding-top: 5rem;
   margin: 0 auto;
+  text-align: left;
 `;
 
 export const date = styled.div`

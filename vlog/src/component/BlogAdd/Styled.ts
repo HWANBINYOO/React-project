@@ -129,6 +129,7 @@ export const BlogAddpreview = styled.div`
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+
   h1 {
     font-size: 3rem;
     height: 100px;
