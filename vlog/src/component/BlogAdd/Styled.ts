@@ -135,4 +135,8 @@ export const BlogAddpreview = styled.div`
     display: flex;
     align-items: center;
   }
+
+  pre {
+    white-space: pre-wrap;
+  }
 `;

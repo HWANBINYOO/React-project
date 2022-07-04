@@ -45,7 +45,6 @@ export const desc = styled.div`
   text-align: left;
 
   pre {
-    width: 100%;
     white-space: pre-wrap;
   }
 `;
