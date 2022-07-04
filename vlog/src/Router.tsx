@@ -75,9 +75,9 @@ const Router = () => {
       <Route
         path="/boardadd"
         element={
-          <PrivateRoute>
-            <BlogAddPage />
-          </PrivateRoute>
+          // <PrivateRoute>
+          <BlogAddPage />
+          // </PrivateRoute>
         }
       />
       <Route

@@ -4,10 +4,11 @@ export const Login = styled.div`
   padding-top: 10vh;
 
   width: 80%;
+  height: 90vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
 `;
 
 export const LoginTitle = styled.span`

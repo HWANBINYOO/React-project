@@ -9,7 +9,7 @@ export const BlogAddWapper = styled.div`
 
 export const BlogAdd = styled.div`
   width: 44vw;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   margin-left: 6vw;
