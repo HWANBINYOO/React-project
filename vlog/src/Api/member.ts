@@ -42,9 +42,7 @@ export const profileReqeuset = async (user_id: number | string) => {
     const { data } = await customAxios.get(MemberController.profile(user_id));
     return { data };
   } catch (e: any) {
-    const { data } = e.response;
-    console.error("data : ", data);
-    toast.error(data.message);
+    console.log(e);
   }
 };
 
@@ -55,9 +53,7 @@ export const myProfileImgReqeuset = async (user_id: number | string) => {
     );
     return { data };
   } catch (e: any) {
-    const { data } = e.response;
-    console.error("data : ", data);
-    toast.error(data.message);
+    console.log(e);
   }
 };
 
@@ -70,10 +66,9 @@ export const profileimgUpdateReqeuset = async (file: string) => {
         "Content-Type": "multipart/form-data",
       },
     });
+    toast.success("수정되었습니다!");
   } catch (e: any) {
-    const { data } = e.response;
-    console.error("data : ", data);
-    toast.error(data.message);
+    toast.error("다시 확인해주세요");
   }
 };
 
@@ -96,9 +91,6 @@ export const profileUpdageReqeuset = async (
       navigate(`/profile/${userId}`);
     }, 500);
   } catch (e: any) {
-    // const { data } = e.response;
-    // console.error("data : ", data);
-    // toast.error(data.message);
-    toast.error(e.message);
+    toast.error("다시 확인해주세요");
   }
 };

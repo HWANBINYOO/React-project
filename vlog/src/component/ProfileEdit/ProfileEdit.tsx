@@ -8,6 +8,7 @@ import {
   profileimgUpdateReqeuset,
   profileUpdageReqeuset,
 } from "../../Api/member";
+import { MemberController } from "../../Libs/url";
 
 const ProfileEdit = () => {
   const navigate = useNavigate();
@@ -45,30 +46,45 @@ const ProfileEdit = () => {
       }
     };
     if (event.target.files[0]) {
-      console.log(event.target.files[0]);
       reader.readAsDataURL(event.target.files[0]); // 1. 파일을 읽어 버퍼에 저장합니다.
       setFile(event.target.files[0]); // 파일 상태 업데이트
     }
     setmodalDisplay(true);
   };
-
-  //수정사항 서버로보내기 (profile사진포함)
+  //수정사항 서버로보내기 (profile사진)
   const onClickImg = async (event: any) => {
     event.preventDefault();
     await profileimgUpdateReqeuset(file);
     setmodalDisplay(false);
   };
-
   const onClick = async (event: any) => {
     event.preventDefault();
-    if (PassWord != "" && ChangePassWord == "" && PassWordAgain == "") {
-      return toast.warning("새로운패스워드를 입력하지 않았어요!");
-    } else if (PassWord != "" && ChangePassWord != "" && PassWordAgain == "") {
-      return toast.warning("패스워드재입력을 입력하지 않았어요!");
-    } else if (PassWordAgain != ChangePassWord) {
-      return toast.warning("새로운패스워드기 일치하지 않아요!");
+    try {
+      if (PassWord != "" && ChangePassWord == "" && PassWordAgain == "") {
+        return toast.warning("새로운패스워드를 입력하지 않았어요!");
+      } else if (
+        PassWord != "" &&
+        ChangePassWord != "" &&
+        PassWordAgain == ""
+      ) {
+        return toast.warning("패스워드재입력을 입력하지 않았어요!");
+      } else if (PassWordAgain != ChangePassWord) {
+        return toast.warning("새로운패스워드기 일치하지 않아요!");
+      }
+      await customAxios.patch(MemberController.updateProfile(), {
+        name: Name,
+        password: PassWord,
+        newPassword: PassWordAgain,
+      });
+      toast.success("수정되었습니다!");
+      setTimeout(() => {
+        navigate(`/profile/${userId}`);
+      }, 500);
+    } catch (e: any) {
+      const { data } = e.response;
+      console.error("data : ", data);
+      toast.error(data.message);
     }
-    profileUpdageReqeuset(Name, PassWord, ChangePassWord, userId);
   };
 
   return (

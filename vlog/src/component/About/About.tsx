@@ -23,13 +23,13 @@ export default function About() {
           <S.Intrudece>
             <img src="https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/cat.jpg" />
             <p style={{ transform: `translateX(${position}px)` }}>김성길</p>
-            안녕하세요 서버 공부하는 김성길입니다
+            안녕하세요
+            <br />
+            서버 공부하는 김성길입니다
             <br />
             프레임 워크는 스프링 부트를 이용하였고
             <br />
             프로젝트 나랑 같이 할 사람 성길#0091 연락 ㄱㄱ
-            <br />
-            성길tv 구독 좋아요
           </S.Intrudece>
           <S.Intrudece>
             <img src="https://devlogfront.s3.ap-northeast-2.amazonaws.com/Img/%ED%8E%98%EA%B7%84.jpg" />

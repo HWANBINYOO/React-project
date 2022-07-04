@@ -90,7 +90,7 @@ const BlogItem: React.FC<BlogType> = ({
         <S.Img src={blogImg} />
         <S.TextBox>
           <S.Title>{title}</S.Title>
-          <S.desc>{content.replaceAll("#", "")}</S.desc>
+          <S.desc>{content.replaceAll(/(#|-|\+)*/g, "")}</S.desc>
           <S.ItemBottom>
             <S.BottomLeft>
               <S.MemberImg onClick={(e) => navigate(`/profile/${user_id}`)}>
