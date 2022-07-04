@@ -59,7 +59,6 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
                 style={{ backgroundColor: " rgb(255, 157, 149)" }}
                 onClick={DelectBlog}
               >
-                {" "}
                 삭제하기
               </button>
             </S.ModalContainal>
@@ -101,12 +100,12 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         <S.TextBox>
           <S.Img src={Blogrl} />
           <S.desc>
-            <pre>
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                children={blogIn.content}
-              />
-            </pre>
+            {/* <pre> */}
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              children={blogIn.content}
+            />
+            {/* </pre> */}
           </S.desc>
         </S.TextBox>
         <S.ProfileWapper onClick={(e: any) => navigate(`/profile/${userId}`)}>

@@ -31,7 +31,7 @@ export const BlogItem = styled.div`
   transition-timing-function: ease-out;
   &:hover {
     box-shadow: ${(props: boxProps) =>
-      `${-props.Xcenter / 10}px ${
+      `${-props.Xcenter / 5}px ${
         -props.Ycenter / 20
       }px 8px rgba(0, 0, 0, 0.2)`};
     /* transform: rotate3d(

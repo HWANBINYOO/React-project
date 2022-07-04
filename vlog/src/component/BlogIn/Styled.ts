@@ -37,12 +37,17 @@ export const Img = styled.img`
 `;
 
 export const desc = styled.div`
-  width: 50%;
+  max-width: 80%;
   min-height: 300px;
   font-size: 2rem;
   padding-top: 5rem;
   margin: 0 auto;
   text-align: left;
+
+  pre {
+    width: 100%;
+    word-break: break-all;
+  }
 `;
 
 export const date = styled.div`
