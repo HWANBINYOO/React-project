@@ -26,7 +26,7 @@ const Profile = () => {
     }
 
     Getprofile();
-  }, []);
+  }, [param.user_id]);
 
   function sortObject(a: any, b: any) {
     return b.board_id - a.board_id;
