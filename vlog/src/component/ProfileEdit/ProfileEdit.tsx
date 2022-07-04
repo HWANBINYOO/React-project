@@ -106,7 +106,12 @@ const ProfileEdit = () => {
                   }
                 />
               )}
-              <button onClick={onClickImg}> 변경하기</button>
+              <button
+                style={{ backgroundColor: " rgb(255, 157, 149)" }}
+                onClick={onClickImg}
+              >
+                변경하기
+              </button>
             </S.ModalContainal>
           </S.Modal>
         ) : null}

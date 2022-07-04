@@ -150,7 +150,7 @@ export const ModalContainal = styled.div`
   top: 55%;
   transform: translate(-50%, -50%);
   max-height: 80%;
-  width: 680px;
+  width: 40vw;
   height: 80%;
   display: flex;
   flex-direction: column;
@@ -174,7 +174,7 @@ export const ModalContainal = styled.div`
   button {
     font-family: "GangwonEduSaeeum_OTFMediumA";
     font-size: 30px;
-    width: 250px;
+    width: 220px;
     height: 60px;
     border-radius: 10px;
     background-color: white;
