@@ -46,7 +46,7 @@ export const desc = styled.div`
 
   pre {
     width: 100%;
-    word-break: break-all;
+    white-space: pre-wrap;
   }
 `;
 

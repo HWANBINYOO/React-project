@@ -100,12 +100,12 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         <S.TextBox>
           <S.Img src={Blogrl} />
           <S.desc>
-            {/* <pre> */}
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              children={blogIn.content}
-            />
-            {/* </pre> */}
+            <pre>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                children={blogIn.content}
+              />
+            </pre>
           </S.desc>
         </S.TextBox>
         <S.ProfileWapper onClick={(e: any) => navigate(`/profile/${userId}`)}>

@@ -15,14 +15,10 @@ export const HeaderMenu = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
   border-radius: 10px;
-
   font-size: 1.3rem;
   transition: all ease 0.5s 0s;
-  // border-radius: 20%;
-
   &:hover {
     background-color: ${(props: any) => props.ProfileColor};
   }
