@@ -73,8 +73,8 @@ export const BlogButtonBox = styled.div`
 
 export const Button = styled.button`
   z-index: -10;
-  width: 4rem;
-  height: 1.3rem;
+  width: 6rem;
+  height: 2rem;
   background-color: ${(props: any) => props.backgroundColor};
   outline: none;
   border-radius: 10px;
