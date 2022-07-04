@@ -48,9 +48,16 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         <S.BlogButtonBox>
           <Link
             to="/boardadd"
-            style={{ textDecoration: "none", color: "black" }}
+            style={{
+              textDecoration: "none",
+              color: "black",
+            }}
           >
-            <S.Button style={{ backgroundColor: "#aeddff" }}>+</S.Button>
+            <S.Button
+              style={{ backgroundColor: "#aeddff", fontSize: "1.4rem" }}
+            >
+              +
+            </S.Button>
           </Link>
 
           <S.Button
@@ -58,6 +65,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
             style={{
               backgroundColor: " rgb(255, 157, 149)",
               display: DelectDisplay ? "block" : "none",
+              fontSize: "1.2rem",
             }}
           >
             x

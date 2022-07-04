@@ -79,7 +79,7 @@ export const Button = styled.button`
   outline: none;
   border-radius: 10px;
   border: none;
-  font-size: 0.3rem;
+  /* font-size: 1.4rem; */
   transition: all ease 0.2s 0s;
 
   &:hover {
