@@ -11,7 +11,6 @@ const KindContent = () => {
   const [Kinds, setKinds] = useState<KindType[]>();
   const [searchTerm, setSearchTerm] = useState<string>("");
   const param = useParams();
-
   console.log(param.name);
   const [open, setopen] = useState<boolean>(false);
   const [SearchBoxWidth, setSearchBoxWidth] = useState<number>(60);
@@ -22,8 +21,7 @@ const KindContent = () => {
         console.log(data);
         setKinds(data);
       } catch (e: any) {
-        const { data } = e.response;
-        console.error(data.message);
+        console.error(e.message);
       }
     }
     getKind();

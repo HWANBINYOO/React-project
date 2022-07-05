@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
 import { useCookies } from "react-cookie";
+import axios from "axios";
+import { baseURL } from "../../config/config";
 
 const SignIn = () => {
   const [Email, setEmail] = useState<string>("");
@@ -13,7 +15,7 @@ const SignIn = () => {
 
   const onLogin = async () => {
     try {
-      const { data } = await customAxios.post("/login/", {
+      const { data } = await axios.post(`${baseURL}/login/`, {
         email: Email,
         password: PassWord,
       });
@@ -21,6 +23,10 @@ const SignIn = () => {
       customAxios.defaults.headers.common[
         "Authorization"
       ] = `${data.accessToken}`;
+      customAxios.defaults.headers.common[
+        "RefreshToken"
+      ] = `${data.refreshToken}`;
+
       customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
       setCookie("AccessToken", data.accessToken, {
         path: "/accessToken",

@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
+import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { baseURL } from "../../config/config";
 import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
 
@@ -17,7 +19,7 @@ const Signup = () => {
         return console.log("패스워드가 입력되지 않았어요!");
       else if (PassWord !== PassWordCheck)
         return console.log("패스워드가 일치하지 않아요");
-      const { data } = await customAxios.post("user/", {
+      const { data } = await axios.post(`${baseURL}/user/`, {
         email: Email,
         password: PassWord,
       });

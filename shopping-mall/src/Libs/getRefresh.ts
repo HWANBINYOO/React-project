@@ -8,7 +8,7 @@ export const getRefresh = async (config: AxiosRequestConfig) => {
   let refeshToken = cookies.RefreshToken ?? "";
   if (config.headers) {
     config.headers["Authorization"] = accessToken;
-    config.headers["Authorization"] = refeshToken;
+    config.headers["RefreshToken"] = refeshToken;
   }
   return config;
 };
