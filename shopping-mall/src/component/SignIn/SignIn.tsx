@@ -13,19 +13,15 @@ const SignIn = () => {
 
   const onLogin = async () => {
     try {
-      console.log(Email, PassWord);
       const { data } = await customAxios.post("/login/", {
         email: Email,
         password: PassWord,
       });
-
       console.log(data);
-
       customAxios.defaults.headers.common[
         "Authorization"
       ] = `${data.accessToken}`;
       customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
-
       setCookie("AccessToken", data.accessToken, {
         path: "/accessToken",
         secure: true,
@@ -39,19 +35,7 @@ const SignIn = () => {
 
       navigate("/");
     } catch (e: any) {
-      if (e.message === "Request failed with status code 400") {
-        if (e.response) {
-          const { data } = e.response;
-          console.error("data : ", data);
-          console.error(data.message);
-        }
-      } else if (e.message === "Request failed with status code 404") {
-        if (e.response) {
-          const { data } = e.response;
-          console.error("data : ", data);
-          console.error(data.message);
-        }
-      }
+      console.error(e.message);
     }
   };
   // accessToken 토큰 재발급 요청

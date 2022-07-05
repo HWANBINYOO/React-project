@@ -1,8 +1,9 @@
 import axios, { AxiosInstance } from "axios";
+import { baseURL } from "../config/config";
 import { getRefresh } from "./getRefresh";
 
 export const customAxios: AxiosInstance = axios.create({
-  baseURL: `http://10.120.74.35:8001/`,
+  baseURL: baseURL,
 });
 
 customAxios.interceptors.request.use(getRefresh);
