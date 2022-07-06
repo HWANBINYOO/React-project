@@ -28,7 +28,6 @@ const Login = () => {
       );
       localStorage.setItem("Blog_accessToken", data.accessToken);
       localStorage.setItem("Blog_refreshToken", data.refreshToken);
-      toast.success("로그인 되었습니다!");
       navigate("/board");
       return { data };
     } catch (e: any) {
