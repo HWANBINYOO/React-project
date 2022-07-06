@@ -82,7 +82,7 @@ const Blog: React.FC<BlogType> = () => {
     getblog();
   }, []);
 
-  function sortObject(a: any, b: any) {
+  function sortObject(a: BlogType, b: BlogType) {
     return b.board_id - a.board_id;
   }
   return (
