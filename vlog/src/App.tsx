@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <RecoilRoot>
         <ToastContainer
-          position={toast.POSITION.TOP_LEFT}
+          position={toast.POSITION.TOP_RIGHT}
           transition={Flip}
           autoClose={900}
         />
