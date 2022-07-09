@@ -38,7 +38,6 @@ export const BlogButtonBox = styled.div`
   z-index: 100;
   gap: 1px;
   transition: all ease 0.25s 0s;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   a {
     text-decoration: none;
@@ -47,6 +46,7 @@ export const BlogButtonBox = styled.div`
 `;
 
 export const Button = styled.button<StyleProps>`
+  font-family: "GangwonEduSaeeum_OTFMediumA";
   z-index: -10;
   width: 6rem;
   height: 2rem;
@@ -56,6 +56,7 @@ export const Button = styled.button<StyleProps>`
   border: none;
   font-size: 1.4rem;
   transition: all ease 0.2s 0s;
+  color: #2c2c2c;
 
   &:hover {
     border-radius: 0px;

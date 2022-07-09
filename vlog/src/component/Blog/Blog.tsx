@@ -91,7 +91,7 @@ const Blog: React.FC<BlogType> = () => {
       <S.Blog>
         <S.BlogButtonBox>
           <Link to="/boardadd">
-            <S.Button color="#aeddff">+</S.Button>
+            <S.Button color="#aeddff">추가</S.Button>
           </Link>
         </S.BlogButtonBox>
         <S.BLogWarpper>

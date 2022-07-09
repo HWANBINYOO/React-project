@@ -64,11 +64,9 @@ export const BlogButtonBox = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 10%;
-  z-index: 100;
+  z-index: 1;
   gap: 1px;
   transition: all ease 0.25s 0s;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
   a {
     text-decoration: none;
     color: black;
@@ -76,6 +74,7 @@ export const BlogButtonBox = styled.div`
 `;
 
 export const Button = styled.button`
+  font-family: "GangwonEduSaeeum_OTFMediumA";
   z-index: -10;
   width: 6rem;
   height: 2rem;
@@ -83,9 +82,8 @@ export const Button = styled.button`
   outline: none;
   border-radius: 10px;
   border: none;
-  /* font-size: 1.4rem; */
   transition: all ease 0.2s 0s;
-
+  color: #2c2c2c;
   &:hover {
     border-radius: 0px;
   }
@@ -146,16 +144,14 @@ export const ModalContainal = styled.div`
   top: 55%;
   transform: translate(-50%, -50%);
   max-height: 80%;
-  width: 300px;
+  width: 50%;
   height: 20%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   background-color: black;
   border: 0px solid black;
-  border-radius: 15px;
-  transition: all ease-in-out 0.3s 0;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -170,9 +166,13 @@ export const ModalContainal = styled.div`
   button {
     font-family: "GangwonEduSaeeum_OTFMediumA";
     font-size: 30px;
-    width: 250px;
-    height: 60px;
+    width: 150px;
+    height: 100px;
     border-radius: 10px;
     background-color: white;
+  }
+  button:hover {
+    transition: all ease-in-out 0.05s;
+    transform: scale(1.05);
   }
 `;

@@ -40,7 +40,6 @@ const BlogAdd = () => {
         );
         setEditboard(boardfilter);
         console.log(boardfilter);
-        console.log();
         setTitle(boardfilter[0]?.title);
         setDesc(boardfilter[0]?.content);
         setFile(boardfilter[0]?.url);
@@ -50,9 +49,6 @@ const BlogAdd = () => {
     GetBlogImg();
   }, []);
 
-  const onChangeDesc = (e: any) => {
-    setDesc(e.currentTarget.value);
-  };
   const handleChangeFile = (event: any) => {
     event.preventDefault();
     let reader = new FileReader();
