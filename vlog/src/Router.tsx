@@ -58,7 +58,7 @@ const Router = () => {
               date={""}
               content={""}
               user_name={""}
-              board_id={0}
+              board_id={"0"}
               user_id={0}
             />
           </PrivateRoute>

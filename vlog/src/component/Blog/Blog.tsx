@@ -4,6 +4,7 @@ import * as S from "./Styled";
 import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
 import { boards } from "../../Api/board";
+import { AnyTxtRecord } from "dns";
 
 // const a = [
 //   {
@@ -82,7 +83,7 @@ const Blog: React.FC<BlogType> = () => {
     getblog();
   }, []);
 
-  function sortObject(a: BlogType, b: BlogType) {
+  function sortObject(a: any, b: any) {
     return b.board_id - a.board_id;
   }
   return (

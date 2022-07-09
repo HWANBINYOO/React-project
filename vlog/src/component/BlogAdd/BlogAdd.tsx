@@ -8,7 +8,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { BlogType } from "../../types";
 
-import { useRecoilState } from "recoil";
+import { useRecoilState, useResetRecoilState } from "recoil";
 import { boardFixidState, boardFixState } from "../../recoil/BoardFix";
 import { boards } from "../../Api/board";
 
@@ -27,16 +27,16 @@ const BlogAdd = () => {
   const [file, setFile] = useState<string | undefined>(""); //파일
   const [imgBase64, setImgBase64] = useState<string | undefined>(""); // 파일 base64
 
-  const [BoardEdit, setBoardEdit] = useRecoilState(boardFixState); // useState 형식
+  const [BoardEditBoolean, setBoardEditBoolean] = useRecoilState(boardFixState); // useState 형식
   const [boardEditN, setboardEditN] = useRecoilState(boardFixidState);
   const [editboard, setEditboard] = useState<BlogType>();
 
   useEffect(() => {
     async function GetBlogImg() {
-      if (BoardEdit) {
+      if (BoardEditBoolean) {
         const { data }: any = await boards();
         const boardfilter = data?.blogs.filter(
-          (item: BlogType) => item.board_id == boardEditN
+          (item: BlogType) => (item.board_id = boardEditN)
         );
         setEditboard(boardfilter);
         console.log(boardfilter);
@@ -113,6 +113,48 @@ const BlogAdd = () => {
     }
   };
 
+  const onEdit = async (event: any) => {
+    if (buttondisplay) {
+      setbuttondisplay(false);
+      event.preventDefault();
+      let formData = new FormData();
+      if (boardEditN && file && title && desc && year && month && day) {
+        formData.append("board_id", boardEditN);
+        formData.append("file", file);
+        formData.append("title", title);
+        formData.append("content", desc);
+        formData.append("date", `${year}-${month}-${day}`);
+      }
+      if (title == "") {
+        return toast.warning("제목이 비어있어요!");
+      } else if (desc == "") {
+        return toast.warning("내용이 비어있어요!");
+      }
+      if (file) {
+        try {
+          await customAxios.post(`/board/${boardEditN}`, formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          });
+          setBoardEditBoolean(false);
+          setboardEditN("0");
+          toast.success("수정됬습니다!");
+          navigate("/board");
+        } catch (e: any) {
+          console.log(e);
+          if (e.response) {
+            const { data } = e.response;
+            console.error("data : ", data);
+            toast.warning(data.message);
+          }
+        }
+      } else {
+        toast.warning("이미지가 선택되지 않았어요!");
+      }
+    }
+  };
+
   return (
     <S.BlogAddWapper>
       <S.BlogAdd>
@@ -159,12 +201,21 @@ const BlogAdd = () => {
         </S.BlogAddImgWapper>
 
         <S.Today>{`${year}년 ${month}월 ${day}일 ${dayOfWeek}요일`}</S.Today>
-        <S.Button
-          style={{ backgroundColor: buttondisplay ? "#ffc895 " : "#d3d3d3" }}
-          onClick={onSubmit}
-        >
-          올리기
-        </S.Button>
+        {BoardEditBoolean ? (
+          <S.Button
+            style={{ backgroundColor: buttondisplay ? "#ffc895 " : "#d3d3d3" }}
+            onClick={onEdit}
+          >
+            수정하기
+          </S.Button>
+        ) : (
+          <S.Button
+            style={{ backgroundColor: buttondisplay ? "#ffc895 " : "#d3d3d3" }}
+            onClick={onSubmit}
+          >
+            올리기
+          </S.Button>
+        )}
       </S.BlogAdd>
       <S.BlogAddpreview>
         <h1>{title}</h1>

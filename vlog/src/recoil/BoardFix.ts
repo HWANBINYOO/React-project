@@ -5,7 +5,7 @@ export const boardFixState = atom<boolean>({
   default: false,
 });
 
-export const boardFixidState = atom<number | string>({
+export const boardFixidState = atom<string>({
   key: "boardFixidState",
-  default: 0,
+  default: "0",
 });

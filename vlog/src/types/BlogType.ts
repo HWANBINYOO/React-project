@@ -3,7 +3,7 @@ export interface BlogType {
   date: string;
   content: string;
   user_name: string;
-  board_id: number;
+  board_id: string;
   user_id: number;
   url?: string;
 }
