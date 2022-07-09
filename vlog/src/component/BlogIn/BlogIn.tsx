@@ -8,11 +8,15 @@ import { myProfileImgReqeuset } from "../../Api/member";
 import { boardImgReqeuset, deleteboardReqeuset } from "../../Api/board";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { useRecoilState } from "recoil";
+import { boardFixidState, boardFixState } from "../../recoil/BoardFix";
 
 interface BlogTypeProp {
   blogIn: BlogType;
 }
 const BlogIn = ({ blogIn }: BlogTypeProp) => {
+  const [BoardEdit, setBoardEdit] = useRecoilState(boardFixState); // useState 형식
+  const [boardEditN, setboardEditN] = useRecoilState(boardFixidState);
   const navigate = useNavigate();
   const [Blogrl, setBlogurl] = useState();
   const [DelectDisplay, setDelectDisplay] = useState(false);
@@ -34,6 +38,12 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
     }
     GetBlogImg();
   }, []);
+
+  const goBoardEdit = () => {
+    setBoardEdit(true);
+    setboardEditN(blogIn.board_id);
+    navigate("/boardadd");
+  };
 
   const DelectBlog = async () => {
     deleteboardReqeuset(blogIn.board_id);
@@ -88,6 +98,16 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
             }}
           >
             x
+          </S.Button>
+          <S.Button
+            onClick={goBoardEdit}
+            style={{
+              backgroundColor: "#ffaa66",
+              display: DelectDisplay ? "block" : "none",
+              fontSize: "1rem",
+            }}
+          >
+            &
           </S.Button>
         </S.BlogButtonBox>
         <S.Title>{blogIn.title}</S.Title>

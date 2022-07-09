@@ -1,12 +1,16 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./Styled";
 import { customAxios } from "../../Libs/CustomAxois";
 import { toast } from "react-toastify";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Name } from "../BlogIn/Styled";
+import { BlogType } from "../../types";
+
+import { useRecoilState } from "recoil";
+import { boardFixidState, boardFixState } from "../../recoil/BoardFix";
+import { boards } from "../../Api/board";
 
 const BlogAdd = () => {
   const date = new Date();
@@ -17,15 +21,35 @@ const BlogAdd = () => {
   const dayOfWeek = week[date.getDay()];
   const [buttondisplay, setbuttondisplay] = useState(false);
 
-  const [title, setTitle] = useState<string>("");
-  const [desc, setDesc] = useState<string>("");
+  const [title, setTitle] = useState<string | undefined>("");
+  const [desc, setDesc] = useState<string | undefined>("");
   const navigate = useNavigate();
-  const [file, setFile] = useState(""); //파일
-  const [imgBase64, setImgBase64] = useState(""); // 파일 base64
+  const [file, setFile] = useState<string | undefined>(""); //파일
+  const [imgBase64, setImgBase64] = useState<string | undefined>(""); // 파일 base64
 
-  const onChangeTitle = (e: any) => {
-    setTitle(e.currentTarget.value);
-  };
+  const [BoardEdit, setBoardEdit] = useRecoilState(boardFixState); // useState 형식
+  const [boardEditN, setboardEditN] = useRecoilState(boardFixidState);
+  const [editboard, setEditboard] = useState<BlogType>();
+
+  useEffect(() => {
+    async function GetBlogImg() {
+      if (BoardEdit) {
+        const { data }: any = await boards();
+        const boardfilter = data?.blogs.filter(
+          (item: BlogType) => item.board_id == boardEditN
+        );
+        setEditboard(boardfilter);
+        console.log(boardfilter);
+        console.log();
+        setTitle(boardfilter[0]?.title);
+        setDesc(boardfilter[0]?.content);
+        setFile(boardfilter[0]?.url);
+        setImgBase64(boardfilter[0]?.url);
+      }
+    }
+    GetBlogImg();
+  }, []);
+
   const onChangeDesc = (e: any) => {
     setDesc(e.currentTarget.value);
   };
@@ -54,15 +78,18 @@ const BlogAdd = () => {
       setbuttondisplay(false);
       event.preventDefault();
       let formData = new FormData();
-      formData.append("file", file);
-      formData.append("title", title);
-      formData.append("content", desc);
-      formData.append("date", `${year}-${month}-${day}`);
+      if (file && title && desc && year && month && day) {
+        formData.append("file", file);
+        formData.append("title", title);
+        formData.append("content", desc);
+        formData.append("date", `${year}-${month}-${day}`);
+      }
       if (title == "") {
         return toast.warning("제목이 비어있어요!");
       } else if (desc == "") {
         return toast.warning("내용이 비어있어요!");
       }
+
       if (file) {
         try {
           await customAxios.post("/board/write", formData, {
@@ -93,15 +120,17 @@ const BlogAdd = () => {
           <S.InputBox>
             <textarea
               name="textareaTitle"
-              onChange={onChangeTitle}
+              onChange={(e: any) => setTitle(e.currentTarget.value)}
               placeholder="제목을 입력해주세요"
+              value={title}
             />
           </S.InputBox>
           <S.DescInputBox>
             <textarea
               name="textarea"
-              onChange={onChangeDesc}
+              onChange={(e: any) => setDesc(e.currentTarget.value)}
               placeholder="내용을 입력하세요(markdown)"
+              value={desc}
             />
           </S.DescInputBox>
         </S.Box>
@@ -140,7 +169,7 @@ const BlogAdd = () => {
       <S.BlogAddpreview>
         <h1>{title}</h1>
         <pre>
-          <ReactMarkdown remarkPlugins={[remarkGfm]} children={desc} />
+          <ReactMarkdown remarkPlugins={[remarkGfm]} children={desc ?? ""} />
         </pre>
       </S.BlogAddpreview>
     </S.BlogAddWapper>

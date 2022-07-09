@@ -5,4 +5,5 @@ export interface BlogType {
   user_name: string;
   board_id: number;
   user_id: number;
+  url?: string;
 }

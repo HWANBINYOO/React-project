@@ -12,12 +12,12 @@ const KindContent = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const param = useParams();
   console.log(param.name);
-  const [open, setopen] = useState<boolean>(false);
-  const [SearchBoxWidth, setSearchBoxWidth] = useState<number>(60);
+  const [open, setopen] = useState(false);
+  const [SearchBoxWidth, setSearchBoxWidth] = useState(60);
   useEffect(() => {
     async function getKind() {
       try {
-        const { data } = await customAxios.get(`kind/${param.name}`);
+        const { data } = await customAxios.get(`/kind/${param.name}`);
         console.log(data);
         setKinds(data);
       } catch (e: any) {
