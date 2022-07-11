@@ -15,7 +15,7 @@ interface BlogTypeProp {
   blogIn: BlogType;
 }
 const BlogIn = ({ blogIn }: BlogTypeProp) => {
-  const [BoardEdit, setBoardEdit] = useRecoilState(boardFixState); // useState 형식
+  const [BoardEdit, setBoardEdit] = useRecoilState(boardFixState);
   const [boardEditN, setboardEditN] = useRecoilState(boardFixidState);
   const navigate = useNavigate();
   const [Blogrl, setBlogurl] = useState();
@@ -58,110 +58,52 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   return (
     <>
       <S.BlogIn>
-        {/* {delectmodalDisplay ? (
-          <S.Modal>
-            <S.ModalContainal>
-              <button
-                style={{ backgroundColor: "#aeddff", fontSize: "2rem" }}
-                onClick={() => setDelectmodalDisplay(false)}
-              >
-                취소하기
-              </button>
-              <button
-                style={{ backgroundColor: " rgb(255, 157, 149)" }}
-                onClick={DelectBlog}
-              >
-                삭제하기
-              </button>
-            </S.ModalContainal>
-          </S.Modal>
-        ) : null} */}
-
-        {modalDisplay ? (
-          <S.Modal>
-            <S.ModalContainal>
-              <button
-                style={{ backgroundColor: "#aeddff", fontSize: "2rem" }}
-                onClick={() => setmodalDisplay(false)}
-              >
-                취소하기
-              </button>
-              <button
-                style={{ backgroundColor: "#c3dcba" }}
-                onClick={() => navigate("/boardadd")}
-              >
-                추가하기
-              </button>
-              <button
-                style={{ backgroundColor: "#ffaa66" }}
-                onClick={goBoardEdit}
-              >
-                수정하기
-              </button>
-              <button
-                style={{ backgroundColor: " rgb(255, 157, 149)" }}
-                onClick={DelectBlog}
-              >
-                삭제하기
-              </button>
-            </S.ModalContainal>
-          </S.Modal>
-        ) : null}
-
-        <S.BlogButtonBox>
-          {/* <S.Button
-            onClick={() => setmodalDisplay(true)}
-            style={{
-              backgroundColor: " #3f3b3b",
-              display: DelectDisplay ? "block" : "none",
-              fontSize: "2rem",
-              color: "#ffffff",
-            }}
-          >
-            ...
-          </S.Button> */}
-
-          {/* <Link
-            to="/boardadd"
-            style={{
-              textDecoration: "none",
-              color: "black",
-            }}
-          >
-            <S.Button
-              style={{ backgroundColor: "#aeddff", fontSize: "1.4rem" }}
-            >
-              추가
-            </S.Button>
-          </Link>
-
-          <S.Button
-            onClick={() => setDelectmodalDisplay(true)}
-            style={{
-              backgroundColor: " rgb(255, 157, 149)",
-              display: DelectDisplay ? "block" : "none",
-              fontSize: "1.4rem",
-            }}
-          >
-            삭제
-          </S.Button>
-          <S.Button
-            onClick={goBoardEdit}
-            style={{
-              backgroundColor: "#ffaa66",
-              display: DelectDisplay ? "block" : "none",
-              fontSize: "1.4rem",
-            }}
-          >
-            수정
-          </S.Button> */}
-        </S.BlogButtonBox>
         <S.Title>{blogIn.title}</S.Title>
         <S.NameDate>
           <S.Name>
             {blogIn.user_name} · {blogIn.date}
           </S.Name>
-          <S.H1 onClick={() => setmodalDisplay(true)}>...</S.H1>
+          <S.H1 onClick={() => setmodalDisplay(!modalDisplay)}>
+            ...
+            {modalDisplay ? (
+              // <S.Modal>
+              <S.ModalContainal>
+                <button
+                  // style={{ backgroundColor: "#c3dcba" }}
+                  onClick={() => navigate("/boardadd")}
+                  style={{
+                    borderTopLeftRadius: "10px",
+                    borderTopRightRadius: "10px",
+                  }}
+                >
+                  추가
+                </button>
+                <button
+                  // style={{ backgroundColor: "#ffaa66" }}
+                  onClick={goBoardEdit}
+                >
+                  수정
+                </button>
+                <button
+                  // style={{ backgroundColor: " rgb(255, 157, 149)" }}
+                  onClick={DelectBlog}
+                >
+                  삭제
+                </button>
+                <button
+                  // style={{ backgroundColor: "#aeddff" }}
+                  onClick={() => setmodalDisplay(false)}
+                  style={{
+                    borderBottomLeftRadius: "10px",
+                    borderBottomRightRadius: "10px",
+                  }}
+                >
+                  취소
+                </button>
+              </S.ModalContainal>
+            ) : // </S.Modal>
+            null}
+          </S.H1>
         </S.NameDate>
         <S.TextBox>
           <S.Img src={Blogrl} />

@@ -95,6 +95,7 @@ export const Name = styled.div`
 `;
 
 export const H1 = styled.h1`
+  position: relative;
   font-size: 3rem;
   cursor: pointer;
   color: gray;
@@ -144,44 +145,38 @@ export const Modal = styled.div`
   right: 0;
   bottom: 0;
   transition: all ease-in-out 0.3s 0;
-  background-color: rgba(255, 255, 255, 0.5);
 `;
 
 export const ModalContainal = styled.div`
-  position: fixed;
-  left: 50%;
-  top: 55%;
+  /* position: fixed;
+  left: 57%;
+  top: 48%; */
+  position: absolute;
+  bottom: -190px;
+  right: -94px;
+
   transform: translate(-50%, -50%);
-  max-height: 80%;
-  width: 50%;
-  height: 20%;
+  max-height: 80vh;
+  width: 12vw;
+  height: 14vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: black;
-  border: 0px solid black;
+  background-color: white;
+  border: 1px solid black;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  img {
-    background-color: white;
-    width: 70%;
-    height: 60%;
-    border: 0px solid black;
-    border-radius: 50%;
-    object-fit: cover;
-  }
   button {
     font-family: "GangwonEduSaeeum_OTFMediumA";
-    font-size: 30px;
-    width: 150px;
-    height: 100px;
-    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+    height: 25%;
+    /* border-radius: 15px; */
     background-color: white;
+    border: 0.1px solid gray;
   }
-  button:hover {
+  /* button:hover {
     transition: all ease-in-out 0.05s;
     transform: scale(1.05);
-  }
+  } */
 `;
