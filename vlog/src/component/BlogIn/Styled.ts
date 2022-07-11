@@ -94,13 +94,22 @@ export const Name = styled.div`
   color: gray;
 `;
 
+export const H1 = styled.h1`
+  font-size: 3rem;
+  cursor: pointer;
+  color: gray;
+
+  &:hover {
+    color: black;
+  }
+`;
+
 export const NameDate = styled.div`
-  width: 100%;
+  width: 34%;
+  height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 0px;
-  padding-right: 29vw;
 `;
 
 export const ProfileWapper = styled.div`

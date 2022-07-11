@@ -27,8 +27,10 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
   useEffect(() => {
     async function GetBlogImg() {
       const res: any = await boardImgReqeuset(blogIn.board_id);
+      console.log(res.data);
       setBlogurl(res.data);
       const res2: any = await myProfileImgReqeuset(blogIn.user_id);
+
       setProfileImg(res2.data);
       const respone2 = await customAxios.get(`/user_name`);
       if (respone2.data.user_id === blogIn.user_id) {
@@ -107,7 +109,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
         ) : null}
 
         <S.BlogButtonBox>
-          <S.Button
+          {/* <S.Button
             onClick={() => setmodalDisplay(true)}
             style={{
               backgroundColor: " #3f3b3b",
@@ -117,7 +119,8 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
             }}
           >
             ...
-          </S.Button>
+          </S.Button> */}
+
           {/* <Link
             to="/boardadd"
             style={{
@@ -158,6 +161,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           <S.Name>
             {blogIn.user_name} · {blogIn.date}
           </S.Name>
+          <S.H1 onClick={() => setmodalDisplay(true)}>...</S.H1>
         </S.NameDate>
         <S.TextBox>
           <S.Img src={Blogrl} />
