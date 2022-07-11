@@ -36,7 +36,7 @@ const BlogAdd = () => {
       if (BoardEditBoolean) {
         const { data }: any = await boards();
         const boardfilter = data?.blogs.filter(
-          (item: BlogType) => (item.board_id = boardEditN)
+          (item: BlogType) => item.board_id == boardEditN
         );
         setEditboard(boardfilter);
         console.log(boardfilter);
@@ -44,6 +44,7 @@ const BlogAdd = () => {
         setDesc(boardfilter[0]?.content);
         setFile(boardfilter[0]?.url);
         setImgBase64(boardfilter[0]?.url);
+        setbuttondisplay(true);
       }
     }
     GetBlogImg();
@@ -67,44 +68,20 @@ const BlogAdd = () => {
       reader.readAsDataURL(event.target.files[0]); // 1. 파일을 읽어 버퍼에 저장합니다.
       setFile(event.target.files[0]); // 파일 상태 업데이트
     }
-    // let formData = new FormData();
-    // if (file) {
-    //   formData.append("file", file);
-    // }
-
-    // try {
-    //   await customAxios.post("/board/write", formData, {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   });
-    //   toast.success("이미지 변경 되었습니다!");
-    //   navigate("/board");
-    // } catch (e: any) {
-    //   console.log(e);
-    //   if (e) {
-    //     console.log(e.message);
-    //   }
-    // }
   };
 
   const onSubmit = async (event: any) => {
+    event.preventDefault();
     if (buttondisplay) {
       setbuttondisplay(false);
-      event.preventDefault();
       let formData = new FormData();
       if (file && title && desc && year && month && day) {
         formData.append("file", file);
-        // formData.append("title", title);
-        // formData.append("content", desc);
-        // formData.append("date", `${year}-${month}-${day}`);
         let boardDto = {
           title: title,
-          desc: desc,
+          content: desc,
           date: `${year}-${month}-${day}`,
         };
-        console.log(boardDto);
-
         formData.append(
           "boardDto",
           new Blob([JSON.stringify(boardDto)], { type: "application/json" })
@@ -138,55 +115,53 @@ const BlogAdd = () => {
   };
 
   const onEdit = async (event: any) => {
-    setbuttondisplay(true);
-    // if (buttondisplay) {
-    event.preventDefault();
-    let formData = new FormData();
-    if (boardEditN && file && title && desc && year && month && day) {
-      // formData.append("board_id", boardEditN);
-      formData.append("file", file);
-      // formData.append("title", title);
-      // formData.append("content", desc);
-      // formData.append("date", `${year}-${month}-${day}`);
-      let boardDto = {
-        title: title,
-        content: desc,
-        board_id: boardEditN,
-        date: `${year}-${month}-${day}`,
-      };
-      formData.append(
-        "boardDto",
-        new Blob([JSON.stringify(boardDto)], { type: "application/json" })
-      );
-    }
-    if (title == "") {
-      return toast.warning("제목이 비어있어요!");
-    } else if (desc == "") {
-      return toast.warning("내용이 비어있어요!");
-    }
-    if (file) {
-      try {
-        await customAxios.patch(`/board/update/${boardEditN}`, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
-        setBoardEditBoolean(false);
-        setboardEditN("0");
-        toast.success("수정됬습니다!");
-        navigate("/board");
-      } catch (e: any) {
-        console.log(e);
-        if (e.response) {
-          const { data } = e.response;
-          console.error("data : ", data);
-          toast.warning(data.message);
-        }
+    if (buttondisplay) {
+      setbuttondisplay(false);
+      event.preventDefault();
+      let formData = new FormData();
+      if (boardEditN && file && title && desc && year && month && day) {
+        formData.append("file", file);
+        let boardDto = {
+          title: title,
+          content: desc,
+          board_id: boardEditN,
+          date: `${year}-${month}-${day}`,
+        };
+        formData.append(
+          "boardDto",
+          new Blob([JSON.stringify(boardDto)], { type: "application/json" })
+        );
       }
-    } else {
-      toast.warning("이미지가 선택되지 않았어요!");
+      if (title == "") {
+        return toast.warning("제목이 비어있어요!");
+      } else if (desc == "") {
+        return toast.warning("내용이 비어있어요!");
+      }
+      if (file) {
+        try {
+          await customAxios.patch(`/board/update/${boardEditN}`, formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          });
+          setBoardEditBoolean(false);
+          setboardEditN("0");
+          console.log(boardEditN);
+
+          toast.success("수정됬습니다!");
+          navigate("/board");
+        } catch (e: any) {
+          console.log(e);
+          if (e.response) {
+            const { data } = e.response;
+            console.error("data : ", data);
+            toast.warning(data.message);
+          }
+        }
+      } else {
+        toast.warning("이미지가 선택되지 않았어요!");
+      }
     }
-    // }
   };
 
   return (

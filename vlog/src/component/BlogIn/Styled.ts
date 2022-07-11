@@ -145,20 +145,57 @@ export const Modal = styled.div`
   right: 0;
   bottom: 0;
   transition: all ease-in-out 0.3s 0;
+  background-color: rgba(255, 255, 255, 0.5);
+`;
+
+export const ModalContainalDelete = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  width: 20%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  border: 0px solid black;
+  border-radius: 10px;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  button {
+    font-family: "GangwonEduSaeeum_OTFMediumA";
+    font-size: 1.5rem;
+    width: 7vw;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+  }
+  button:hover {
+    transition: all ease-in-out 0.05s;
+    transform: scale(1.05);
+  }
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  gap: 20px;
 `;
 
 export const ModalContainal = styled.div`
-  /* position: fixed;
-  left: 57%;
-  top: 48%; */
   position: absolute;
-  bottom: -190px;
-  right: -94px;
+  bottom: -26vh;
+  right: -8vw;
 
   transform: translate(-50%, -50%);
   max-height: 80vh;
-  width: 12vw;
-  height: 14vh;
+  width: 16vw;
+  height: 17vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,15 +205,13 @@ export const ModalContainal = styled.div`
   border-radius: 10px;
   button {
     font-family: "GangwonEduSaeeum_OTFMediumA";
-    font-size: 1rem;
+    font-size: 1.5rem;
     width: 100%;
     height: 25%;
-    /* border-radius: 15px; */
     background-color: white;
-    border: 0.1px solid gray;
+    border: 1px solid gray;
   }
-  /* button:hover {
-    transition: all ease-in-out 0.05s;
-    transform: scale(1.05);
-  } */
+  button:hover {
+    border: 2px solid black;
+  }
 `;

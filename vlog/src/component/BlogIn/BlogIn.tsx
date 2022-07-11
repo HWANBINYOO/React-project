@@ -57,6 +57,27 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
 
   return (
     <>
+      {delectmodalDisplay ? (
+        <S.Modal>
+          <S.ModalContainalDelete>
+            <h1>정말 삭제하시겠습니까?</h1>
+            <S.Buttons>
+              <button
+                style={{ backgroundColor: "#aeddff" }}
+                onClick={() => setDelectmodalDisplay(false)}
+              >
+                취소하기
+              </button>
+              <button
+                style={{ backgroundColor: " rgb(255, 157, 149)" }}
+                onClick={DelectBlog}
+              >
+                삭제하기
+              </button>
+            </S.Buttons>
+          </S.ModalContainalDelete>
+        </S.Modal>
+      ) : null}
       <S.BlogIn>
         <S.Title>{blogIn.title}</S.Title>
         <S.NameDate>
@@ -69,7 +90,6 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
               // <S.Modal>
               <S.ModalContainal>
                 <button
-                  // style={{ backgroundColor: "#c3dcba" }}
                   onClick={() => navigate("/boardadd")}
                   style={{
                     borderTopLeftRadius: "10px",
@@ -78,20 +98,11 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
                 >
                   추가
                 </button>
-                <button
-                  // style={{ backgroundColor: "#ffaa66" }}
-                  onClick={goBoardEdit}
-                >
-                  수정
-                </button>
-                <button
-                  // style={{ backgroundColor: " rgb(255, 157, 149)" }}
-                  onClick={DelectBlog}
-                >
+                <button onClick={goBoardEdit}>수정</button>
+                <button onClick={() => setDelectmodalDisplay(true)}>
                   삭제
                 </button>
                 <button
-                  // style={{ backgroundColor: "#aeddff" }}
                   onClick={() => setmodalDisplay(false)}
                   style={{
                     borderBottomLeftRadius: "10px",
