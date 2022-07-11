@@ -201,17 +201,16 @@ export const ModalContainal = styled.div`
   align-items: center;
   justify-content: space-around;
   background-color: white;
-  border: 1px solid black;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   button {
     font-family: "GangwonEduSaeeum_OTFMediumA";
     font-size: 1.5rem;
     width: 100%;
     height: 25%;
     background-color: white;
-    border: 1px solid gray;
+    border: 0.1px solid gray;
   }
   button:hover {
-    border: 2px solid black;
   }
 `;
