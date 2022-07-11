@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type DelectDisplayProps = {
+  DelectDisplay: boolean;
+};
+
 export const BlogIn = styled.div`
   width: 100vw;
   height: 80vh;
@@ -207,7 +211,8 @@ export const ModalContainal = styled.div`
     font-family: "GangwonEduSaeeum_OTFMediumA";
     font-size: 1.5rem;
     width: 100%;
-    height: 25%;
+    height: ${(props: DelectDisplayProps) =>
+      props.DelectDisplay ? "25%" : "50%"};
     background-color: white;
     border: 0.1px solid gray;
   }

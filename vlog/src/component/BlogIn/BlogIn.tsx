@@ -88,7 +88,7 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
             ...
             {modalDisplay ? (
               // <S.Modal>
-              <S.ModalContainal>
+              <S.ModalContainal DelectDisplay={DelectDisplay}>
                 <button
                   onClick={() => navigate("/boardadd")}
                   style={{
@@ -98,8 +98,16 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
                 >
                   추가
                 </button>
-                <button onClick={goBoardEdit}>수정</button>
-                <button onClick={() => setDelectmodalDisplay(true)}>
+                <button
+                  style={{ display: DelectDisplay ? "block" : "none" }}
+                  onClick={goBoardEdit}
+                >
+                  수정
+                </button>
+                <button
+                  style={{ display: DelectDisplay ? "block" : "none" }}
+                  onClick={() => setDelectmodalDisplay(true)}
+                >
                   삭제
                 </button>
                 <button
