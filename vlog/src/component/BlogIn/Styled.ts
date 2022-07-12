@@ -43,7 +43,7 @@ export const Img = styled.img`
 export const desc = styled.div`
   max-width: 80%;
   min-height: 300px;
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding-top: 5rem;
   margin: 0 auto;
   text-align: left;
