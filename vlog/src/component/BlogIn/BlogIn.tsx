@@ -84,7 +84,10 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
           <S.Name>
             {blogIn.user_name} · {blogIn.date}
           </S.Name>
-          <S.H1 onClick={() => setmodalDisplay(!modalDisplay)}>
+          <S.H1
+            onClick={() => setmodalDisplay(!modalDisplay)}
+            style={{ display: DelectDisplay ? "block" : "none" }}
+          >
             ...
             {modalDisplay ? (
               // <S.Modal>
@@ -98,16 +101,8 @@ const BlogIn = ({ blogIn }: BlogTypeProp) => {
                 >
                   추가
                 </button>
-                <button
-                  style={{ display: DelectDisplay ? "block" : "none" }}
-                  onClick={goBoardEdit}
-                >
-                  수정
-                </button>
-                <button
-                  style={{ display: DelectDisplay ? "block" : "none" }}
-                  onClick={() => setDelectmodalDisplay(true)}
-                >
+                <button onClick={goBoardEdit}>수정</button>
+                <button onClick={() => setDelectmodalDisplay(true)}>
                   삭제
                 </button>
                 <button

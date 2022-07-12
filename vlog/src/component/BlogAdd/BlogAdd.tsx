@@ -148,7 +148,7 @@ const BlogAdd = () => {
           setboardEditN("0");
           console.log(boardEditN);
 
-          toast.success("수정됬습니다!");
+          toast.success("수정됐습니다!");
           navigate("/board");
         } catch (e: any) {
           console.log(e);

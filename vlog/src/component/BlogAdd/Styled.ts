@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const BlogAddWapper = styled.div`
   width: 100vw;
-  height: 80vh;
-  padding-top: 2rem;
+  height: 100vh;
   display: flex;
 `;
 
 export const BlogAdd = styled.div`
+  padding-top: 2rem;
   width: 44vw;
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin-left: 6vw;
@@ -18,7 +18,7 @@ export const BlogAdd = styled.div`
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  height: 55vh;
 `;
 
 export const InputBox = styled.div`
@@ -47,7 +47,7 @@ export const InputBox = styled.div`
 
 export const DescInputBox = styled.div`
   width: 100%;
-  height: 30vh;
+  height: 45vh;
   display: flex;
   justify-content: center;
   background-color: white;
@@ -72,6 +72,8 @@ export const BlogImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100px;
+
   img {
     transition: all ease 0.2s 0s;
     width: 90px;
@@ -85,7 +87,7 @@ export const BlogAddImgWapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 100px;
+  height: 20vh;
   label {
     position: relative;
     top: -30px;
@@ -115,15 +117,15 @@ export const Button = styled.button`
   font-size: 2rem;
   border: none;
   width: 10rem;
-  height: 5vh;
+  height: 7vh;
   text-align: center;
 `;
 
 export const BlogAddpreview = styled.div`
   width: 44vw;
-  height: 75vh;
+  height: 100vh;
   background-color: #f5f5f5;
-  padding: 00px 3vw 5vh 3vw;
+  padding: 2rem 3vw 5vh 3vw;
   font-size: 1.25rem;
   overflow-y: auto;
   display: flex;
@@ -135,8 +137,8 @@ export const BlogAddpreview = styled.div`
     display: flex;
     align-items: center;
   }
-
-  pre {
+  pre p {
     white-space: pre-wrap;
+    margin-right: 3vw;
   }
 `;
