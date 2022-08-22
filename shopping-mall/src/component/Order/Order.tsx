@@ -121,9 +121,9 @@ const Order = () => {
               <S.OrderCompany>쇼핑그라운드</S.OrderCompany>
               <S.OrderBottomBox>
                 <S.OrderTop>
-                  <S.OrderImg />
+                  <S.OrderImg src={"http://10.120.74.35:8001/media/Product/%EB%8C%80%EB%B0%95%EB%82%9C%EB%B0%95%EC%96%91_%EC%85%94%EB%A7%81_%ED%81%AC%EB%A1%AD_%EC%B2%AD%EC%9E%90%EC%BC%93.png"} />
                   <S.OrderDecs>
-                    NMX 고퀄기획 세미와이드 트임슬랙스 BEIGE, M / 1개
+                  대박난박양 셔링 크롭 청자켓 BEIGE, M / 1개
                   </S.OrderDecs>
                 </S.OrderTop>
                 <S.OrderCost>24,900원</S.OrderCost>

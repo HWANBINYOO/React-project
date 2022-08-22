@@ -37,20 +37,18 @@ export default function KindIn() {
 
   //구매하기로
   const onButtonClick = async (name: string) => {
-    try {
-      const { data } = await axios.post(`${baseURL}/${name}/${param.id}`, {
-        color: SelectedColor,
-        size: SelectedSize,
-        title: kindIn?.title,
-        parise: kindIn?.prise,
-        imgurl: myimgurl,
-      });
+    // try {
+    //   await axios.post(`${baseURL}/${name}/${param.id}`, {
+    //     product: kindIn?.id,
+    //     colors: SelectedColor,
+    //     size: SelectedSize,
+    //   });
       navigate(`/${name}/${param.id}`);
-      console.log(data);
-    } catch (e: any) {
-      const { data } = e.response;
-      console.error(data.message);
-    }
+    //   console.log(param.id);
+    // } catch (e: any) {
+    //   const { data } = e.response;
+    //   console.error(data.message);
+    // }
   };
 
   return (
