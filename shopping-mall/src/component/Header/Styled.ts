@@ -6,7 +6,8 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-  background-color: white;
+  /* background-color: white; */
+  background: url("/img/header.jpg");
 `;
 export const HeaderBottom = styled.div`
   height: 10vh;

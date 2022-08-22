@@ -21,7 +21,7 @@ export const KindWapper = styled.div`
 export const KindHeader = styled.div`
   width: 100%;
   height: 90px;
-  background-color: black;
+  background: url("/img/header.jpg");
   display: flex;
   justify-content: flex-end;
   align-items: center;

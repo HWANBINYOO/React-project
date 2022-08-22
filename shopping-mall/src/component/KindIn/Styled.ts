@@ -11,7 +11,8 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d9d9d9;
+  background: url("/img/header.jpg");
+
 `;
 
 export const RIghtWapper = styled.div`
