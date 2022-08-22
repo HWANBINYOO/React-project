@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { customAxios } from "../../Libs/CustomAxois";
 import * as S from "./Styled";
-import { useCookies } from "react-cookie";
+// import { useCookies } from "react-cookie";
 import axios from "axios";
 import { baseURL } from "../../config/config";
 
@@ -11,7 +10,7 @@ const SignIn = () => {
   const [Email, setEmail] = useState<string>("");
   const [PassWord, setPassWord] = useState<string>("");
   const navigate = useNavigate();
-  const [cookies, setCookie] = useCookies(["AccessToken", "RefreshToken"]);
+  // const [cookies, setCookie] = useCookies(["AccessToken", "RefreshToken"]);
 
   const onLogin = async () => {
     try {
@@ -20,24 +19,21 @@ const SignIn = () => {
         password: PassWord,
       });
       console.log(data);
-      customAxios.defaults.headers.common[
-        "Authorization"
-      ] = `${data.accessToken}`;
-      customAxios.defaults.headers.common[
-        "RefreshToken"
-      ] = `${data.refreshToken}`;
 
-      customAxios.defaults.headers.common["RefreshToken"] = data.refreshToken;
-      setCookie("AccessToken", data.accessToken, {
-        path: "/accessToken",
-        secure: true,
-        sameSite: "none",
-      });
-      setCookie("RefreshToken", data.refreshToken, {
-        path: "/refreshToken",
-        secure: true,
-        sameSite: "none",
-      });
+      // customAxios.defaults.headers.common["Authorization"] = `${data.accessToken}`;
+      // customAxios.defaults.headers.common["RefreshToken"] = `${data.refreshToken}`;
+
+
+      // setCookie("AccessToken", data.accessToken, {
+      //   path: "/accessToken",
+      //   secure: true,
+      //   sameSite: "none",
+      // });
+      // setCookie("RefreshToken", data.refreshToken, {
+      //   path: "/refreshToken",
+      //   secure: true,
+      //   sameSite: "none",
+      // });
 
       navigate("/");
     } catch (e: any) {

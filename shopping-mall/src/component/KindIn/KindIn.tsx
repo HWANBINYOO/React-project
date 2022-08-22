@@ -1,6 +1,7 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { customAxios } from "../../Libs/CustomAxois";
+import { baseURL } from "../../config/config";
 import { KindType } from "../../types";
 import * as S from "./Styled";
 
@@ -18,7 +19,7 @@ export default function KindIn() {
     console.log(location.pathname);
     async function getKind() {
       try {
-        const { data } = await customAxios.get(location.pathname);
+        const { data } = await axios.get(`${baseURL}/${location.pathname}`);
         console.log(data);
         setKindIn(data);
         userMyimgurl(data.imgurl);
@@ -37,7 +38,7 @@ export default function KindIn() {
   //구매하기로
   const onButtonClick = async (name: string) => {
     try {
-      const { data } = await customAxios.post(`${name}/${param.id}`, {
+      const { data } = await axios.post(`${baseURL}/${name}/${param.id}`, {
         color: SelectedColor,
         size: SelectedSize,
         title: kindIn?.title,

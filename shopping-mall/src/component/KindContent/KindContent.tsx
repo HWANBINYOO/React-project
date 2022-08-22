@@ -5,19 +5,19 @@ import { useParams } from "react-router-dom";
 import { KindType } from "../../types";
 import * as S from "./Styled";
 import { useEffect, useState } from "react";
-import { customAxios } from "../../Libs/CustomAxois";
+import { baseURL } from "../../config/config";
+import axios from "axios";
 
 const KindContent = () => {
+  const param = useParams();
   const [Kinds, setKinds] = useState<KindType[]>();
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const param = useParams();
-  console.log(param.name);
   const [open, setopen] = useState(false);
   const [SearchBoxWidth, setSearchBoxWidth] = useState(60);
   useEffect(() => {
     async function getKind() {
       try {
-        const { data } = await customAxios.get(`/kind/${param.name}`);
+        const { data } = await axios.get(`${baseURL}/kind/${param.name}`);
         console.log(data);
         setKinds(data);
       } catch (e: any) {
